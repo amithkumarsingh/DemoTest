@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sonography"
+        android:textSize="@dimen/sixteensp"
+        android:textColor="@color/colorBlack"
+        android:padding="@dimen/eightdp"
+        android:layout_alignParentStart="true"
+        android:id="@+id/procedure_name"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/colorBlack"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/eightdp"
+        android:id="@+id/procedure_price"/>
+</RelativeLayout>

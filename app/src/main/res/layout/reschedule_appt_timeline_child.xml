@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="16dp">
+
+    <RelativeLayout
+        android:id="@+id/secondStatusLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/leftCircleImageSecond"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/fill_circle">
+
+        </ImageView>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_toRightOf="@+id/leftCircleImageSecond"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorGrey2"
+            android:id="@+id/sepratorLayout"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/appointmentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sepratorLayout"
+            android:text="Payment Collection Done"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondStatusLayout"
+        android:layout_marginLeft="8dp">
+        <RelativeLayout
+            android:id="@+id/lineLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorGrey1">
+            <RelativeLayout
+                android:id="@+id/linelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:background="@color/colorWhite">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp">
+
+                    <TextView
+                        android:id="@+id/appt_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2:30pm"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        android:layout_marginTop="8dp"/>
+                    <TextView
+                        android:layout_below="@+id/appt_time"
+                        android:id="@+id/book_appointment_by"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Booked by:"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:visibility="visible"
+                        android:layout_marginBottom="8dp"/>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/siq_20"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/staff_permi"
+        android:textColor="@color/black"
+        android:textSize="@dimen/siq_20"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_subTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_title"
+        android:layout_marginTop="@dimen/siq_12"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/siq_16"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_auto_share_GBP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/siq_8"
+        android:layout_marginTop="@dimen/siq_24"
+        android:layout_below="@+id/tv_subTitle"
+        android:weightSum="1">
+    <LinearLayout
+        android:id="@+id/ll_auto_share_GBP_Content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/siq_8"
+        android:orientation="vertical"
+        android:layout_weight="0.8"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/tv_auto_share_GBP_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_enable_GBP"
+            android:textColor="@color/black"
+            android:textSize="@dimen/siq_14"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_marginTop="@dimen/siq_8"
+            android:id="@+id/tv_auto_share_GBP_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="@dimen/siq_12"
+            android:textColor="@color/black"
+            android:text="@string/view_enable_title_GBP" />
+    </LinearLayout>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sc_auto_share_GBP"
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_update_GBP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_auto_share_GBP"
+        android:layout_marginTop="@dimen/siq_16"
+        android:layout_marginStart="@dimen/siq_16"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_Update_GBP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="0.8"
+            android:drawableLeft="@drawable/custom_enter_right_icon"
+            android:drawablePadding="@dimen/siq_6"
+            android:gravity=""
+            android:text="@string/allow_config_GBP"
+            android:textColor="@color/colorGrey2"
+            android:textSize="@dimen/siq_14"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_weight="0.2"
+            android:id="@+id/sc_Update_GBP"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_buttons_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_update_GBP"
+        android:layout_marginTop="@dimen/siq_18"
+        android:layout_marginBottom="@dimen/siq_20"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btn_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/siq_8"
+            android:text="@string/close"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/colorGrey1"
+            android:layout_marginStart="@dimen/siq_16"
+            android:textSize="@dimen/siq_12"
+            android:textStyle="bold"
+            android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@string/update_permission"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginStart="@dimen/siq_16"
+            android:textStyle="bold"
+            android:textSize="@dimen/siq_12"
+            android:textAllCaps="false"
+            android:paddingStart="@dimen/siq_16"
+            android:paddingEnd="@dimen/siq_16"
+            android:paddingTop="@dimen/siq_8"
+            android:paddingBottom="@dimen/siq_8"
+            android:visibility="visible" />
+    </LinearLayout>
+</RelativeLayout>

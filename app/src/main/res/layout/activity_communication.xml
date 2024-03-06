@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CommunicationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/commToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:titleTextColor="@color/colorWhite"
+            app:subtitleTextColor="@color/colorWhite"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/commVideoArtLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/commVideoCount"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent2"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/commVideoText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Videos"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="85dp"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/commVideoCount"/>
+
+            <TextView
+                android:id="@+id/commVideoDesp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Some Description"
+                android:visibility="gone"
+                android:textSize="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_above="@+id/commVideoPublish"
+                android:layout_toEndOf="@+id/commVideoCount"
+                android:layout_below="@+id/commVideoText"/>
+
+            <ImageView
+                android:id="@+id/commVideoArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="85dp"
+                android:layout_alignParentEnd="true"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_publish"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/commVideoPublish"
+                tools:ignore="ContentDescription"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/commVideoPublish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create now"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey1"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/commTextArtLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/commTextCount"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent2"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/commTextText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Written Articles"
+                android:layout_toLeftOf="@+id/writtenArticlesArrow"
+                android:textSize="25dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="40dp"
+                android:textStyle="bold"
+                android:layout_marginTop="85dp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/commTextCount"/>
+
+            <TextView
+                android:id="@+id/commTextDesp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Some Description"
+                android:textSize="20dp"
+                android:visibility="gone"
+                android:layout_marginStart="30dp"
+                android:layout_above="@+id/commTextPublish"
+                android:layout_toEndOf="@+id/commTextCount"
+                android:layout_below="@+id/commTextText"/>
+
+            <ImageView
+                android:id="@+id/writtenArticlesArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="85dp"
+                android:layout_alignParentEnd="true"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/commTextPublish"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/commTextPublish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/write"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey1"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/commPdfLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/commPdfCount"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent2"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/commPdfText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PDFs"
+                android:layout_toLeftOf="@+id/pdfArticlesArrow"
+                android:textSize="25dp"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="40dp"
+                android:textStyle="bold"
+                android:layout_marginTop="85dp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="10dp"
+                android:layout_toEndOf="@+id/commPdfCount"/>
+
+            <TextView
+                android:id="@+id/commPdfDesp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Some Description"
+                android:textSize="20dp"
+                android:visibility="gone"
+                android:layout_marginStart="30dp"
+                android:layout_above="@+id/commPdfPublish"
+                android:layout_toEndOf="@+id/commPdfCount"
+                android:layout_below="@+id/commPdfText"/>
+
+            <ImageView
+                android:id="@+id/pdfArticlesArrow"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginEnd="5dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="85dp"
+                android:layout_alignParentEnd="true"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_pen"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/commPdfPublish"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/commPdfPublish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Upload"
+                android:textColor="@color/colorAccent"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey1"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/commMessageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/commMessageCount"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent2"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/commMessageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_send"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="85dp"
+                android:layout_marginStart="10dp"
+                android:layout_centerInParent="true"
+                android:layout_toEndOf="@+id/commMessageCount"/>
+
+            <TextView
+                android:id="@+id/commMessageDesp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Some Description"
+                android:textSize="20dp"
+                android:visibility="gone"
+                android:layout_marginStart="30dp"
+                android:layout_above="@+id/commMessagePublish"
+                android:layout_toEndOf="@+id/commMessageCount"
+                android:layout_below="@+id/commMessageText"/>
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="85dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"/>
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_send"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/commMessagePublish"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/commMessagePublish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/send"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="20dp"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueLight2"
+    tools:context=".PatientRecordsMoreInfoActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/recordMoreToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/interactionDetailsCard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/recordMoreToolbar"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:id="@+id/interactionLabelLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Interaction Details"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/interactionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/interactionLabelLayout"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/interactionDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Video on 23 Mar, 2020 @ 12:30"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/recordMoreInfoCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/interactionDetailsCard"
+        android:layout_marginTop="20dp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="2dp"
+        android:layout_above="@id/card_buttons">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/recordMoreList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/recordDetailsLabelLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Record Details"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/recordDateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/recordDetailsLabelLayout"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Added on 23 Mar, 2020"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/moreInfoRecycleView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="5dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal" />
+
+
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/recordMoreLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:weightSum="1">
+
+                    <TextView
+                        android:id="@+id/recordMoreInfoFirstTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Dummy Text"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/recordMoreInfoSecondTv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:text="Dummy Text"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="10dp"
+        android:elevation="@dimen/siq_10"
+        android:id="@+id/card_buttons"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/rl_buttons_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/ll_buttons"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_Delete"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/siq_16"
+                    android:layout_marginEnd="@dimen/siq_20"
+                    android:backgroundTint="@color/red"
+                    android:drawableLeft="@drawable/custom_trash_icon"
+                    android:drawableTint="@color/white"
+                    android:paddingStart="@dimen/siq_16"
+                    android:paddingTop="@dimen/siq_8"
+                    android:paddingEnd="@dimen/siq_16"
+                    android:paddingBottom="@dimen/siq_8"
+                    android:text="@string/delete"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/siq_12"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <Button
+                    android:id="@+id/btn_Edit"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/siq_20"
+                    android:layout_marginEnd="@dimen/siq_16"
+                    android:backgroundTint="@color/blue"
+                    android:drawableLeft="@drawable/ic_edit"
+                    android:drawableTint="@color/white"
+                    android:paddingStart="@dimen/siq_16"
+                    android:paddingTop="@dimen/siq_6"
+                    android:paddingEnd="@dimen/siq_16"
+                    android:paddingBottom="@dimen/siq_6"
+                    android:text="@string/edit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/siq_12"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

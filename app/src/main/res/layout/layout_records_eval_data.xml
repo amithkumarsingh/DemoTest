@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/symptoms"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_rectangle_shape"
+                android:padding="5dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recordEvalSymptomRv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:visibility="visible"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/invest_result"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_rectangle_shape"
+                android:padding="5dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recordEvalInvestRv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:visibility="visible"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/diagnosis"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_rectangle_shape"
+                android:padding="5dp"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:textColor="@color/colorWhite"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recordEvalDiagRv"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="5dp"
+                android:visibility="visible"
+                android:clipToPadding="false" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

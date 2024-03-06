@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RecordsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="200dp">
+
+            <RelativeLayout
+                android:id="@+id/dignosisSectionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/eightdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Last Captured"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/appt_create_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:drawableStart="@drawable/ic_add2"
+                    android:drawablePadding="@dimen/eightdp"
+                    android:drawableTint="@color/colorAccent"
+                    android:text="@string/create_note"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lastInteractionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dignosisSectionLayout"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:text="Last Interaction :"
+                    android:textColor="@color/colorGreyText"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/appt_last_iteraction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:text="Clinic on 23 Jun, 2020 @ 12:30"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appt_diagnosis_records_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lastInteractionLayout"
+                android:layout_marginTop="@dimen/eightdp"
+                android:clipToPadding="false"
+                android:orientation="horizontal" />
+
+
+            <LinearLayout
+                android:id="@+id/appt_no_diagnosis_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lastInteractionLayout"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/sixteendp"
+                    android:layout_marginEnd="@dimen/sixteendp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/no_appointment_image_background"
+                    android:paddingStart="@dimen/twentyfourdp"
+                    android:paddingTop="@dimen/twentyfourdp"
+                    android:paddingEnd="@dimen/eightdp"
+                    android:src="@drawable/ic_medical_records" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Notes Added Yet"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/appt_create_note_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:elevation="@dimen/eightdp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:src="@drawable/ic_add2"
+                            android:tint="@color/colorWhite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginEnd="@dimen/twentyfourdp"
+                            android:text="@string/create_note"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/appointmentRecordProgressbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="250dp">
+
+            <RelativeLayout
+                android:id="@+id/sharedRecordLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/eightdp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="Shared Records"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/appt_sharedRecords_view_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="View full history"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+
+
+                <RelativeLayout
+                    android:id="@+id/appointmentSharedRecordProgressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/appt_shared_records_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/sharedRecordLayout"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:clipToPadding="false"
+                android:orientation="horizontal" />
+
+
+            <LinearLayout
+                android:id="@+id/appt_no_record_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/sixteendp"
+                    android:layout_marginEnd="@dimen/sixteendp"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/no_appointment_image_background"
+                    android:paddingTop="@dimen/twentyfourdp"
+                    android:paddingEnd="@dimen/eightdp"
+                    android:src="@drawable/ic_search_patient" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/noRecordSharedWithYouText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No Records Added Yet"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

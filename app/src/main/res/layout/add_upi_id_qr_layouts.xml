@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/const_UPI_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_marginBottom="@dimen/siq_18">
+
+    <LinearLayout
+        android:id="@+id/ll_UPI"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/drawable_upi_rectangle_round_curve"
+        android:gravity="center"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="1"
+            android:baselineAligned="false"
+            tools:ignore="MissingConstraints,UselessParent">
+
+            <LinearLayout
+                android:id="@+id/ll_enter_UPI"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="0.7"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_UPI_ID"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_upi_id"
+                    app:tint="@color/colorAccent"
+                    tools:ignore="ContentDescription" />
+
+                <EditText
+                    android:id="@+id/et_enter_UPI"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="4dp"
+                    android:background="@null"
+                    android:hint="Enter UPI ID"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textSize="16sp"
+                    tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_copy_UPI"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_margin="6dp"
+                android:layout_weight="0.3"
+                android:background="@drawable/drawable_upi_rectangle_round_curve"
+                android:backgroundTint="@color/light_blue"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_copy_UPI"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/salesiq_copy_icon"
+                    app:tint="@color/colorAccent"
+                    tools:ignore="ContentDescription" />
+
+                <TextView
+                    android:id="@+id/tv_copy_UPI"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="4dp"
+                    android:text="Copy ID"
+                    android:textColor="@color/upi_screenText_color"
+                    android:textSize="12sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_Or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/siq_12"
+        android:text="OR"
+        android:textColor="@color/upi_screenText_color"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_UPI"
+        tools:ignore="HardcodedText" />
+
+    <LinearLayout
+        android:id="@+id/upload_QR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/drawable_upi_rectangle_round_curve"
+        android:backgroundTint="@color/light_blue"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/siq_10"
+        android:paddingTop="@dimen/siq_8"
+        android:paddingEnd="@dimen/siq_10"
+        android:paddingBottom="@dimen/siq_8"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Or">
+
+        <ImageView
+            android:id="@+id/img_upload_QR"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:backgroundTint="@color/colorBlueLight"
+            android:src="@drawable/ic_uplaod_upi"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_upload_QR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:text="Upload UPI QR"
+            android:textColor="@color/upi_screenText_color"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_parent_added_QR"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/drawable_upi_rectangle_round_curve"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upload_QR"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:id="@+id/ll_added_QRName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="1"
+            android:baselineAligned="false"
+            tools:ignore="MissingConstraints,UselessParent">
+            <LinearLayout
+                android:id="@+id/ll_enter_QR"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:layout_weight="0.78"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_UPI_QR"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_qr_scan"
+                    tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_added_QRName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_4"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text=""
+                android:textSize="16sp"
+                android:textColor="@color/upi_screenText_color"
+                tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/ll_Upload_Delete_QR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="0.22"
+                android:backgroundTint="@color/light_blue"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/img_edit_QR_Name"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="6dp"
+                    android:background="@color/light_blue"
+                    android:padding="3dp"
+                    android:src="@drawable/ic_uplaod_upi"
+                    tools:ignore="ContentDescription" />
+
+                <ImageView
+                    android:id="@+id/img_delete_QR_Name"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/ic_delete_red"
+                    android:textColor="@color/upi_screenText_color"
+                    tools:ignore="ContentDescription" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_UPI"
+        android:layout_width="200dp"
+        android:layout_height="2dp"
+        android:layout_margin="18dp"
+        android:background="@color/colorGrey3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_parent_added_QR" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/appointment_order_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/orderDetails_heading"
+        android:layout_marginStart="@dimen/siq_10"
+        android:layout_marginTop="@dimen/siq_14"
+        android:layout_marginEnd="@dimen/siq_10"
+        android:layout_marginBottom="@dimen/eightdp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/drawable_rectangle_payments">
+
+        <LinearLayout
+            android:id="@+id/orderDetails_serviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/siq_10"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_order_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Service Name"
+                android:textSize="@dimen/siq_14" />
+
+            <TextView
+                android:id="@+id/serviceName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Video Consultation"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/siq_16" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="@dimen/siq_10"
+            android:layout_marginEnd="@dimen/siq_28"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amount"
+                android:textSize="@dimen/siq_14" />
+
+            <TextView
+                android:id="@+id/orderDetails_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1500"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/siq_16" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/orderDetails_serviceName"
+            android:layout_marginTop="@dimen/siq_14">
+
+            <LinearLayout
+                android:id="@+id/layout_remove_procedure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/payment_remove_procedure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/siq_16"
+                    android:text="@string/remove_service"
+                    android:textColor="@color/colorRed"
+                    android:textSize="@dimen/siq_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_expandCollapse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/siq_20"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/orderDetails_expand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="19dp"
+                    android:layout_marginRight="@dimen/siq_10"
+                    android:layout_weight="0.8"
+                    android:text="Expand"
+                    android:textSize="@dimen/siq_16" />
+
+                <TextView
+                    android:id="@+id/orderDetails_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/siq_10"
+                    android:text="Collapse"
+                    android:textSize="@dimen/siq_20"
+                    android:visibility="gone" />
+
+                <ImageButton
+                    android:id="@+id/icon_expand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/ic_expand"
+                    android:visibility="visible" />
+
+                <ImageButton
+                    android:id="@+id/icon_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.2"
+                    android:background="@drawable/ic_collapse"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/costDetails_Layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_expand"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/tax_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/serviceTax_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Service Cost"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/serviceTax_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:maxLength="5"
+                    android:text="3800"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/taxGst_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tax_Layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/gst_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Tax(15% GST)"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/taxAmt_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="200"
+                    android:maxLength="5"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/discount_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/taxGst_Layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/discount_Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Discount"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/discountRemoveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/discount_Text"
+                    android:text="(Apply Coupon)"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:maxLength="5"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/totalPay_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/discount_Layout"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/totalPay_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="Total Pay"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="15dp" />
+
+
+                <TextView
+                    android:id="@+id/totalPay_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="4000"
+                    android:maxLength="5"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

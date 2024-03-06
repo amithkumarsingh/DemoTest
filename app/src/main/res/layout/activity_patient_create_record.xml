@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientCreateRecordActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/recordEpisDropdown"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/colorPrimary">
+
+            <Spinner
+                android:id="@+id/recordEpisSelectEpis"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_rectangle_shape" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="20dp"
+                android:src="@drawable/ic_arrow_down" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/recordCreateNotesForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone"
+            android:layout_below="@+id/recordEpisDropdown"
+            android:layout_above="@+id/createRecordBottomLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/createNotesHnUploadFile"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    android:background="@color/colorAccent">
+
+                    <ImageView
+                        android:id="@+id/uploadIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload"
+                        android:tint="@color/colorWhite"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_file"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/uploadIcon"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <EditText
+                    android:id="@+id/createNotesHnDesp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:hint="@string/enter_desp"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:scrollbars="vertical" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/medical_prescription"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable_rectangle_shape">
+
+                    <Spinner
+                        android:id="@+id/createNotesHnMedPres"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/createNotesHnValidTillLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/valid_till"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/createNotesHnValidTill"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test_prescription"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable_rectangle_shape">
+
+                    <Spinner
+                        android:id="@+id/createNotesHnTestPres"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/createNotesHnImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/recordsCreateSymptomForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone"
+            android:layout_below="@+id/recordEpisDropdown"
+            android:layout_above="@+id/createRecordBottomLayout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/createSymptomName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_symptom_name"
+                    android:background="@drawable/drawable_rectangle_shape" />
+
+                <EditText
+                    android:id="@+id/createSymptomDesp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:hint="@string/enter_desp"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:scrollbars="vertical" />
+
+                <TextView
+                    android:id="@+id/createSympFirstReportonLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/first_report"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/createSympFirstReporton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable_rectangle_shape">
+
+                    <Spinner
+                        android:id="@+id/createSympStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/recordCreateInvestForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_above="@+id/createRecordBottomLayout"
+            android:layout_below="@+id/recordEpisDropdown"
+            android:visibility="gone">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/recordCreateInvestName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_invest_name"
+                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                <EditText
+                    android:id="@+id/recordCreateInvestParam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_parameter"
+                    android:background="@drawable/drawable_rectangle_shape" />
+
+                <EditText
+                    android:id="@+id/recordCreateInvestParamValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_parameter_value"
+                    android:background="@drawable/drawable_rectangle_shape" />
+
+                <EditText
+                    android:id="@+id/recordCreateInvestNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|left"
+                    android:inputType="textMultiLine"
+                    android:lines="8"
+                    android:hint="@string/write_notes"
+                    android:maxLines="10"
+                    android:minLines="6"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:scrollbars="vertical" />
+
+                <RelativeLayout
+                    android:id="@+id/recordCreateInvestUpload"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_margin="10dp"
+                    android:elevation="2dp"
+                    android:background="@color/colorAccent">
+
+                    <ImageView
+                        android:id="@+id/investUploadIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_upload"
+                        android:tint="@color/colorWhite"
+                        android:layout_centerInParent="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/upload_file"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/investUploadIcon"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/recordCreateDiagForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:layout_below="@+id/recordEpisDropdown"
+            android:layout_above="@+id/createRecordBottomLayout"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/recordCreateDiagName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="10dp"
+                    android:hint="@string/enter_diag_name"
+                    android:background="@drawable/drawable_rectangle_shape" />
+
+                <LinearLayout
+                    android:id="@+id/recordCreateDiagValues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:background="@color/colorWhite"
+                    android:layout_margin="10dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/recordCreateDiagValueClose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:src="@drawable/ic_close"/>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/posited_on"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/recordCreateDiagPosited"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable_rectangle_shape">
+
+                    <Spinner
+                        android:id="@+id/recordCreateDiagStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/recordCreateDiagConfirmLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/confirmed_ruled"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    />
+
+                <TextView
+                    android:id="@+id/recordCreateDiagConfirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:textSize="20dp"
+                    android:padding="10dp"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/createRecordBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:id="@+id/createRecordBack"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorCardBack"
+                android:text="@string/back"/>
+
+            <Button
+                android:id="@+id/createRecordSaveData"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textColor="@color/colorWhite"
+                android:background="@color/colorPrimaryDark"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="FILTERS"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/filterClear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_clear_filter" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/durationFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Duration"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterDurationGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterDurationAll"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationToday"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Today"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationWeek"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Week"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationMonth"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Month"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/filterDurationGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:id="@+id/conditionFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Condition"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterConditionGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterConditionAllType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterSameType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Same"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterBetterType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Better"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterWorseType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Worse"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="visible"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:id="@+id/instructionTypeFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Instruction Type"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterInstructionTypeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterInstructionTypeAll"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterInstructionCompletely"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Completely"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterInstructionPartially"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Partially"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterInstructionNo"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="No"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#e0e0e0" />
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/apptBookedFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Follow Up Appointment Booked Type"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterApptBookedGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterApptBookedAll"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptBookedYes"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptBookedNo"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="No"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#e0e0e0" />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="0dp">
+
+            <RadioGroup
+                android:id="@+id/filterApptTypeGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeProcedure"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Procedure"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeOther"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Other"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeFirstVisit"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="First Visit"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/filterApptApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:text="Apply"/>
+
+    </LinearLayout>
+
+</LinearLayout>

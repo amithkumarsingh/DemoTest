@@ -1,0 +1,839 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.EMRAddNotesActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/emrAddingNotesToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Patient Name"
+        app:titleTextColor="@color/colorWhite" />
+
+    <RelativeLayout
+        android:id="@+id/rl_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/emrAddingNotesToolbar">
+
+        <!--handwritten note main layout-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/handWrittenMainLayout"
+            android:visibility="gone">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="72dp">
+                    <RelativeLayout
+                        android:id="@+id/handWrittenNoteLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="60dp"
+                        android:background="@drawable/drawable_appointment_background_shadow"
+                        android:backgroundTint="@color/colorBlueLight2">
+
+                        <RelativeLayout
+                            android:id="@+id/handwrittenNoteButtonLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginTop="30dp"
+                            android:layout_marginRight="@dimen/sixteendp"
+                            android:background="@drawable/drawable_radius_shape">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="30dp"
+                                android:src="@drawable/ic_pen"
+                                app:tint="@color/colorWhite" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="30dp"
+                                android:gravity="center"
+                                android:text="Upload Handwritten Notes"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/attachedImageNameLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/handwrittenNoteButtonLayout"
+                            android:layout_marginTop="20dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/sixteendp"
+                                android:layout_marginRight="@dimen/sixteendp"
+                                android:id="@+id/attached_image_text"
+                                android:text="IMG2020.png file has been attached"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/attachedViewAndRemoveLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/attachedImageNameLayout"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginRight="30dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Remove File"
+                                android:id="@+id/remove_file"
+                                android:textColor="@color/colorDanger"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:text="View File"
+                                android:id="@+id/view_file"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/attachDescriptionLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/attachedViewAndRemoveLayout"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginTop="60dp"
+                            android:layout_marginRight="@dimen/sixteendp">
+
+                            <TextView
+                                android:id="@+id/descriptionText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Description"
+                                android:textColor="@color/colorGreyText"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+
+                                <EditText
+                                    android:layout_width="match_parent"
+                                    android:layout_height="220dp"
+                                    android:layout_below="@+id/descriptionText"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/drawable_rectangle_shape"
+                                    android:backgroundTint="@color/colorWhite"
+                                    android:gravity="left|top"
+                                    android:hint="Enter some description..."
+                                    android:id="@+id/handwritten_description"
+                                    android:padding="10dp"
+                                    android:textStyle="bold" />
+
+                            </androidx.cardview.widget.CardView>
+
+
+                        </RelativeLayout>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/attachDescriptionLayout"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginRight="@dimen/sixteendp"
+                            android:id="@+id/prescription_text"
+                            android:text="Medicine Prescription"
+                            android:layout_marginTop="@dimen/sixteendp"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/medicine_prescription_card"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/prescription_text"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:layout_marginEnd="@dimen/sixteendp"
+                            app:cardCornerRadius="@dimen/fourdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/medicine_prescription_spinner"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enter_phone_edit"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="@dimen/sixteendp"
+                                    android:src="@drawable/ic_chevron_down" />
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/medicine_prescription_card"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginRight="@dimen/sixteendp"
+                            android:id="@+id/prescription_valid_till_text"
+                            android:text="Prescription Valid Till"
+                            android:layout_marginTop="@dimen/sixteendp"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/prescription_valid_till_card"
+                            android:layout_below="@+id/prescription_valid_till_text"
+                            android:drawableEnd="@drawable/ic_calendar"
+                            android:background="@drawable/onboarding_button_background"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginEnd="@dimen/sixteendp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:text="12 Mar, 2020"
+                            android:textStyle="bold"
+                            android:textSize="18sp"
+                            android:textColor="@color/colorBlack"
+                            android:elevation="2dp"
+                            android:padding="@dimen/sixteendp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/prescription_valid_till_card"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginRight="@dimen/sixteendp"
+                            android:id="@+id/test_prescription_text"
+                            android:text="Test Prescription"
+                            android:layout_marginTop="@dimen/sixteendp"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/test_prescription_card"
+                            android:layout_width="match_parent"
+                            android:layout_below="@+id/test_prescription_text"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:layout_marginEnd="@dimen/sixteendp"
+                            app:cardCornerRadius="@dimen/fourdp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/test_prescription_spinner"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enter_phone_edit"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="@dimen/sixteendp"
+                                    android:src="@drawable/ic_chevron_down" />
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+            </ScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:id="@+id/rl_save_close_handWritten">
+
+                <TextView
+                    android:id="@+id/save_and_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="30dp"
+                    android:padding="@dimen/eightdp"
+                    android:text="Save &amp; Close "
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/saveAndAddMoreLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Save &amp; Add More"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+        <!--symptom main layout-->
+        <RelativeLayout
+            android:id="@+id/symptomMainLayout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:id="@+id/recordsCreateSymptomForm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/createRecordBottomLayout"
+                android:fillViewport="true"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/symptoms_acTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:hint="@string/enter_symptom_name"
+                        android:padding="10dp">
+
+                    </AutoCompleteTextView>
+
+
+                    <EditText
+                        android:id="@+id/createSymptomDesp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:gravity="top|left"
+                        android:hint="@string/enter_desp"
+                        android:inputType="textMultiLine"
+                        android:lines="8"
+                        android:maxLines="10"
+                        android:minLines="6"
+                        android:padding="10dp"
+                        android:scrollbars="vertical" />
+
+                    <TextView
+                        android:id="@+id/createSympFirstReportonLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/first_report" />
+
+                    <TextView
+                        android:id="@+id/createSympFirstReporton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:padding="10dp"
+                        android:text=""
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/status" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/createSympStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/createRecordBottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/createRecordSymptomBack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorCardBack"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:text="@string/save_and_close"/>
+
+                <Button
+                    android:id="@+id/createRecordSaveSymptomData"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save_and_more"
+                    android:textColor="@color/colorWhite"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--investigation main layout-->
+        <RelativeLayout
+            android:id="@+id/investigationMainLayout"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:id="@+id/recordCreateInvestForm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_above="@+id/createInvesRecordBottomLayout"
+                android:visibility="visible">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/recordCreateInvestName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/enter_invest_name"
+                        android:background="@drawable/drawable_rectangle_shape"/>
+
+                    <EditText
+                        android:id="@+id/recordCreateInvestParam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/enter_parameter"
+                        android:background="@drawable/drawable_rectangle_shape" />
+
+                    <EditText
+                        android:id="@+id/recordCreateInvestParamValue"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/enter_parameter_value"
+                        android:background="@drawable/drawable_rectangle_shape" />
+
+                    <EditText
+                        android:id="@+id/recordCreateInvestNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top|left"
+                        android:inputType="textMultiLine"
+                        android:lines="8"
+                        android:hint="@string/write_notes"
+                        android:maxLines="10"
+                        android:minLines="6"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:scrollbars="vertical" />
+
+                    <RelativeLayout
+                        android:id="@+id/rl_attachment_parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/sixteendp"
+                            android:layout_marginRight="@dimen/sixteendp"
+                            android:id="@+id/tv_attachment_name_investigation"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="@dimen/siq_16"
+                            android:textStyle="bold" />
+                        <RelativeLayout
+                            android:id="@+id/rl_remove_view_Investigation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_attachment_name_investigation"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="@dimen/siq_10"
+                            android:layout_marginRight="30dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Remove File"
+                                android:id="@+id/tv_remove_investigation"
+                                android:textColor="@color/colorDanger"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:text="View File"
+                                android:id="@+id/tv_view_investigation"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/recordCreateInvestUpload"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@color/colorAccent"
+                        android:elevation="2dp"
+                        android:gravity="center">
+
+                        <ImageView
+                            android:id="@+id/investUploadIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_upload"
+                            app:tint="@color/colorWhite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_toRightOf="@+id/investUploadIcon"
+                            android:text="@string/upload_file"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/investigationImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+
+            <LinearLayout
+                android:id="@+id/createInvesRecordBottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/createRecordInvesBack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorCardBack"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:text="@string/save_and_close"/>
+
+                <Button
+                    android:id="@+id/createRecordSaveinvesData"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:text="@string/save_and_more"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <!--daignosis main layout-->
+        <RelativeLayout
+            android:id="@+id/daignosisMainLayout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:id="@+id/recordCreateDiagForm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_above="@+id/createDaigRecordBottomLayout"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/recordCreateDiagName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="@string/enter_diag_name"
+                        android:background="@drawable/drawable_rectangle_shape" />
+
+                    <LinearLayout
+                        android:id="@+id/recordCreateDiagValues"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:background="@color/colorWhite"
+                        android:layout_margin="10dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/recordCreateDiagValueClose"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:src="@drawable/ic_close"/>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/posited_on"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/recordCreateDiagPosited"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/status"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/recordCreateDiagStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/recordCreateDiagConfirmLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/confirmed_ruled"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/recordCreateDiagConfirmed"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:padding="10dp"
+                        android:layout_margin="10dp"/>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+
+
+            <LinearLayout
+                android:id="@+id/createDaigRecordBottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:id="@+id/createRecordDaigBack"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorCardBack"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:text="@string/save_and_close"/>
+
+                <Button
+                    android:id="@+id/createRecordSaveDaigData"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:text="@string/save_and_more"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorPrimaryDark"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/ll_update_record"
+        android:visibility="gone">
+        <Button
+            android:id="@+id/btn_update_record"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/colorWhite"
+            android:background="@color/colorCardBack"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:text="@string/update_record"/>
+    </LinearLayout>
+
+</RelativeLayout>

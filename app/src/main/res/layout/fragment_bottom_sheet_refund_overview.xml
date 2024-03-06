@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationLanguageBottomSheet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- settlement payment info layout-->
+
+        <RelativeLayout
+            android:id="@+id/settlementPaymentInfoLayout"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetMessageHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/bottomSheetMessageTextHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Settlement Payment Status Info"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/bottomSheetCancelIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:src="@drawable/ic_close" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/totalOverviewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottomSheetMessageHeading">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/siq_24">
+
+
+                    <RelativeLayout
+                        android:id="@+id/successfulSettlementLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bottomSheetViewLayout"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/successfulSettlementHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Succesful Settlement"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/successfulSettlementNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/successfulSettlementHeading"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/this_message_will_only"
+                            android:textColor="@color/colorGreyText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/pendingSettlementLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/successfulSettlementLayout"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/pendingSettlementHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pending Settlement"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/pendingSettlementNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pendingSettlementHeading"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/this_message_will_only"
+                            android:textColor="@color/colorGreyText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/totalOverviewCloseButtonLayout"
+                        android:layout_width="170dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/pendingSettlementLayout"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:backgroundTint="@color/colorGreyText">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorWhite">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Close"
+                                android:textColor="@color/colorGreyText"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <!-- settlement payment info layout-->
+
+        <RelativeLayout
+            android:id="@+id/activeConsultationInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetMessageActiveConsultationHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/bottomSheetMessageActiveConsultationTextHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Refund Payment Status Info"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/bottomSheetRefundCancelIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/colorWhite"
+                    android:src="@drawable/ic_close" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/activeConsultationViewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottomSheetMessageActiveConsultationHeading">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/siq_24">
+
+
+                    <RelativeLayout
+                        android:id="@+id/pendingStatusLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/pendingHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refund Completed"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/pendingNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/pendingHeading"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/completed_refund_bottom"
+                            android:textColor="@color/colorGreyText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/receivedStatusLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pendingStatusLayout"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/receivedHeading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refund Pending"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/successStatusNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/receivedHeading"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/pending_refund_bottom"
+                            android:textColor="@color/colorGreyText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/success_StatusLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/receivedStatusLayout"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp">
+
+                        <TextView
+                            android:id="@+id/success_Heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refund Scheduled"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/receivedStatusNote"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/success_Heading"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/scheduled_refund_bottom"
+                            android:textColor="@color/colorGreyText" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/activeConsultationCloseButtonLayout"
+                        android:layout_width="170dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/success_StatusLayout"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:backgroundTint="@color/colorGreyText">
+
+                        <RelativeLayout
+                            android:id="@+id/layout_refund_close"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorWhite">
+
+                            <TextView
+                                android:id="@+id/closeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Close"
+                                android:textColor="@color/colorGreyText"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

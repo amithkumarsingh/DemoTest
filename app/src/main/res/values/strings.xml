@@ -1,0 +1,1167 @@
+<resources>
+    <!--
+    <string name="app_name">Clinic Plus</string>
+-->
+
+    <!--home fragment-->
+    <string name="how_it_works">How It Works?</string>
+    <string name="adding_notes_1">Start by creating a case for the patient.</string>
+    <string name="adding_notes_2">For each case, you can have multiple interactions (or consultations) with the patient (clinic, video, chat, call etc.). E.g. you can think of one clinic appointment as one interaction (or consultation) and a phone call as another interaction.</string>
+    <string name="adding_notes_3">Save records and create prescriptions for any interaction you have with the patient.</string>
+    <string name="adding_notes_4">If a particular case is closed, you can create a new case for the patient where appropriate.</string>
+    <string name="step1_case_name">Step 1. Enter Case Name</string>
+    <string name="step2_create_interactions">Step 2. Create Interaction</string>
+    <string name="dont_show_again">Don\'t show again</string>
+    <string name="proceed_to_add_record">Proceed To Add Records</string>
+    <string name="proceed_to_create_notes">Proceed To Create Notes</string>
+    <string name="create_new_interaction">Create New Interaction</string>
+    <string name="casetitle">Case: </string>
+    <string name="interaction">Interaction</string>
+    <string name="exit">Exit</string>
+    <string name="adding_notes">Adding Notes</string>
+    <string name="no_notes_text">Select which type of record you want to add</string>
+    <string name="upload_handwritten_notes">Upload HandWritten Notes</string>
+    <string name="log_evaluation_records">Log Evaluation Records</string>
+    <string name="log_treatment_plan">Log Treatment Plan</string>
+    <string name="share_prescription">Share Prescription</string>
+    <string name="save_prescription">Save Prescription</string>
+    <string name="gettingstarted">Getting Started</string>
+    <string name="no_patient_text">No patient found in the name of</string>
+    <string name="all_category_text">All Category</string>
+    <string name="searching_patient">Searching.Please wait...</string>
+    <string name="empty_patient_text">Please search for the patient you want to book an appointment for</string>
+    <string name="add_patient_text">To Book an Appt. you need to add a patient</string>
+    <string name="add_patient_button_text">Add First Patient</string>
+    <string name="setup_practice_button_text">Setup Practice</string>
+    <string name="setup_practice_text">Add/Configure Services like Video,Clinic or Chat for Consultation</string>
+    <string name="setup_profile_button_text">Profile</string>
+    <string name="setup_profile_text">Setup your Personal &amp; Professional identity</string>
+    <string name="setup_staff_button_text">Staff</string>
+    <string name="setup_staff_text">Have People to help?</string>
+    <string name="setup_preferences_text">Set your Reminders, Records Preferences</string>
+    <string name="setup_preferences_button_text">Preferences</string>
+    <string name="search_text">Search for patient by name or number</string>
+    <string name="patient_search_text"><font size="16">Id/Name/Ph-Number</font></string>
+    <!--
+        <string name="patient_search_text_withID"><font size="16">Id/Name/Ph-Number</font></string>
+    -->
+
+    <string name="add_new_patient_button_text">Add Patient</string>
+    <string name="search_error_text">No match found for this patient.\nPlease click on \"Add\" to create a profile now.</string>
+    <string name="view_all_patients"><u>View all Patients</u></string>
+    <string name="enter_patient_name">Enter Patient Name *</string>
+    <string name="enter_patient_contact">Enter Patient Contact *</string>
+    <string name="enter_patient_email">Enter Patient Email</string>
+    <string name="enter_patient_age">Enter Patient Age</string>
+    <string name="select_patient_gender">Select Patient Gender</string>
+    <string name="patient_type">Patient Type</string>
+    <string name="select_patient_interface">Select Patient Interface</string>
+    <string name="enter_patient_category">Enter Patient Category</string>
+    <string name="enterage">Enter Age</string>
+    <string name="enterid">Enter ID</string>
+    <string name="enter_category">Enter Category</string>
+    <string name="save_patient">Save Patient</string>
+    <string name="add_patient_title">Add New Patient</string>
+    <string name="view_profile"><u>View Profile</u></string>
+    <string name="create_note">Create Note</string>
+    <string name="book_new">Book New Appt.</string>
+    <string name="home_botnav_home">Home</string>
+    <string name="home_botnav_appt">Appointment</string>
+    <string name="home_botnav_patient">Patient</string>
+    <string name="home_botnav_chat">Chat</string>
+    <string name="home_botnav_more">More</string>
+    <string name="home_menu_setting">Settings</string>
+    <string name="type">Type</string>
+    <string name="attendance">Attendance</string>
+    <string name="payment">Payment</string>
+    <string name="cancel">Cancel</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="note">Notes</string>
+    <string name="notes">Notes: </string>
+    <string name="completed">Completed</string>
+    <string name="none">None</string>
+    <string name="set_type">Set Type</string>
+    <string name="pending">Pending</string>
+    <string name="view">View</string>
+    <string name="category_assigned">Assigned</string>
+    <string name="na">NA</string>
+    <string name="assign_cat">Category</string>
+    <string name="filter">Filter</string>
+    <string name="search">Search</string>
+    <string name="video_article">Videos</string>
+    <string name="text_article">Written Articles</string>
+    <string name="add_article">Add Article</string>
+    <string name="msg_send">Messages</string>
+    <string name="publish">Publish New</string>
+    <string name="write">Write New</string>
+    <string name="send">Send New</string>
+    <string name="more">More</string>
+    <string name="registered">Registered</string>
+    <string name="internal">Internal</string>
+    <string name="edit">Edit</string>
+    <string name="call">Call</string>
+    <string name="background">Background</string>
+    <string name="family">Family</string>
+    <string name="records">Records</string>
+    <string name="add">Add</string>
+    <string name="appointment">Appointment</string>
+    <string name="book">Book</string>
+    <string name="shared_by_patient">Shared By Patient</string>
+    <string name="view_attachment">View Attachment</string>
+    <string name="select_from_current_case">Select from current case</string>
+    <string name="proceed">Proceed</string>
+    <string name="or">OR</string>
+    <string name="enter_case_name">Enter Case Name</string>
+    <string name="create_proceed">Create &amp; Proceed</string>
+    <string name="create_interaction">Create Interaction</string>
+    <string name="select_mode">Select Mode</string>
+    <string name="on">ON</string>
+    <string name="at">AT</string>
+    <string name="interaction_details">Interaction Details</string>
+    <string name="pdf">PDF</string>
+    <string name="written_notes">Handwritten notes</string>
+    <string name="evaluation">Evaluation</string>
+    <string name="treatment_plan">Treatment Plan</string>
+    <string name="view_all">View All</string>
+    <string name="attachment">Attachment</string>
+    <string name="pres_valid_till">Prescription Valid Till</string>
+    <string name="description">Description</string>
+    <string name="medical_prescription">Medical Prescription</string>
+    <string name="test_prescription">Test Prescription</string>
+    <string name="save">Save</string>
+    <string name="search_patient">Search Patient</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="find_earliest">Find Earliest</string>
+    <string name="next_date">Next Date</string>
+    <string name="select_a_slot">Select a slot</string>
+    <string name="patient_name">Name</string>
+    <string name="patient_number">Number</string>
+    <string name="patient_email">Email</string>
+    <string name="patient_age">Age</string>
+    <string name="patient_id">ID</string>
+    <string name="create_app_access">Create App Access</string>
+    <string name="create_patient">Create Patient</string>
+    <string name="enter_name_no_id">Enter Name/Number/ID</string>
+    <string name="to_book_appt">To Book An Appointment</string>
+    <string name="book_search_empty_text">1. Search for a patient by name or number.\n OR \n 2. Add a new patient by clicking the button below.</string>
+    <string name="articles">Articles</string>
+    <string name="video_details">Video Details</string>
+    <string name="title_mandatory">Title (Mandatory)</string>
+    <string name="description_mandatory">Description (Mandatory)</string>
+    <string name="language">Language</string>
+    <string name="select_language">Select language</string>
+    <string name="next">NEXT</string>
+    <string name="video_url">Video URL (Mandatory)</string>
+    <string name="create">CREATE</string>
+    <string name="text_articles">Text articles</string>
+    <string name="content_mandatory">Content (mandatory)</string>
+    <string name="image_articles">Image article</string>
+    <string name="add_image">Add Image</string>
+    <string name="create_message">Send Message</string>
+    <string name="write_message_here">Write message here</string>
+    <string name="consulted_patient">Consulted Patients Only</string>
+    <string name="all_register_user">All Registered Users</string>
+    <string name="this_message_will_only">This message will be instantly sent as a notification (NOT SMS) to your consulted patients who have downloaded your mobile app</string>
+    <string name="successful_settlement_notes">successful settlement is the amount which transferred successfully into your account by payU.</string>
+    <string name="pending_settlement_notes">If patient complete the payment process through online then the payment status will be Received</string>
+    <string name="pending_status_notes">If patient has not done the payment yet for the current consultation, the payment status will be pending. Usually this happens when the payment is offline for clinic consultation</string>
+    <string name="received_status_notes">If patient complete the payment process through online then the payment status will be Received</string>
+    <string name="payment_received">Payment Received Successfully</string>
+    <string name="pending_settlement_bottom">This Indicates that the amount has not been credited to your account due to certain reasons-\n 1.You need to complete KYC verification on PayU portal as you have reached 10K limit.\n 2.Your payment is still under process</string>
+    <string name="success_settlement_bottom">This Indicates that the amount has been successfully credited to your account via PayU.</string>
+    <string name="completed_refund_bottom">This indicates that the refund amount has been successfully credited to the patients account</string>
+    <string name="pending_refund_bottom">This indicates that the refund amount has not yet been Transferred and is being processed</string>
+    <string name="scheduled_refund_bottom">This indicates that the refund has been initiated. You can override the Request to cancel the refund</string>
+    <string name="payment_create_invoice">Do you want to create invoice?</string>
+    <string name="payment_status_initiated">Payment Status has been updated.</string>
+    <string name="send_message">Send message</string>
+    <string name="sending_message">Sending message</string>
+    <string name="common_camera_permission_message">You Need To Give Camera Permission</string>
+    <string name="common_storage_permission_message">You Need To Give Storage Permission</string>
+    <string name="common_uploading_image">Uploading File</string>
+    <string name="category">Category</string>
+    <string name="play">Play</string>
+    <string name="no_slot_available_message">Sorry no slots available for now</string>
+    <string name="booking_details_text">Booking Details</string>
+    <string name="fee_details_text">Fee Details</string>
+    <string name="fee_text">Fee</string>
+    <string name="discount_text">Discount</string>
+    <string name="apply_coupon_text">(Apply Coupon)</string>
+    <string name="total_text">Total</string>
+    <string name="common_pay_now">Pay Now</string>
+    <string name="please_select_a_slot">Please Select A Slot</string>
+    <string name="common_book_now">Book Now</string>
+    <string name="you_will_pay_at_your_clinic">You will pay at clinic</string>
+    <string name="order_summary_header">Order Summary</string>
+    <string name="image_upload_sucessfully">Image Uploaded Successfully</string>
+    <string name="common_select_picture">Select Picture</string>
+    <string name="image_upload_failed">Image Upload Failed</string>
+    <string name="delete">Delete</string>
+    <string name="attempted">Attempted</string>
+    <string name="failed">Failed</string>
+    <string name="sent">Sent</string>
+    <string name="done">DONE</string>
+    <string name="received">Received</string>
+    <string name="received_and_receipt">Received &amp; Create Receipt </string>
+    <string name="sends">Send</string>
+    <string name="complete_appointments">Complete</string>
+    <string name="message">Messages</string>
+    <string name="add_video">Add Video</string>
+    <string name="external_video">External Video</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="select_service">Select Service</string>
+    <string name="time_to_block">Time to block</string>
+    <string name="enter_reason">Enter Reason (optional)</string>
+    <string name="block_time">Block Time</string>
+    <string name="active_chat">Active Chats</string>
+    <string name="past_chat">Past Chats</string>
+    <string name="valid_till">Valid Till</string>
+    <string name="expired_on">Expired On</string>
+    <string name="book_again">Book Again</string>
+    <string name="empty_chat">No chat data found</string>
+    <string name="history">History</string>
+    <string name="book_appt">Book Appt</string>
+    <string name="add_note">Add Note</string>
+    <string name="view_note">View Note</string>
+    <string name="enter_msg">Enter Message</string>
+    <string name="need_help">Need Help?</string>
+    <string name="contact_us_sub_text">Get in touch with us if you have any query.</string>
+    <string name="whatapp_us">WhatsApp Us</string>
+    <string name="whatapp_sub_text">Message us directly on our business number</string>
+    <string name="email_us">Email Us</string>
+    <string name="email_sub_text">Send your query to our official email</string>
+    <string name="profile">Profile</string>
+    <string name="personal">Personal</string>
+    <string name="professional">Professional</string>
+    <string name="financial">Financial</string>
+    <string name="time_block">Time Block</string>
+    <string name="service">Services</string>
+    <string name="record_pref">Record Pref.</string>
+    <string name="appt_reminder">Appt. Reminder</string>
+    <string name="appt_statistic">Appt. Statistic</string>
+    <string name="enter_email">Email</string>
+    <string name="enter_email_edit">Enter Email</string>
+    <string name="enter_experience">Enter Experience</string>
+    <string name="enter_phone">Phone Number</string>
+    <string name="enter_phone_edit">Enter Phone Number</string>
+    <string name="select_gender">Select Gender</string>
+    <string name="update">Update</string>
+    <string name="dob">Date Of Birth</string>
+    <string name="enter_yrs_exp">Enter Years Of Experience</string>
+    <string name="languages">Languages</string>
+    <string name="qualification">Qualification</string>
+    <string name="acc_holder_name">Account Holder\'s Name</string>
+    <string name="bank_name">Bank Name</string>
+    <string name="bank_branch">Bank Branch</string>
+    <string name="acc_no">Account Number</string>
+    <string name="ifsc_code">IFSC Code</string>
+    <string name="type_here">Type Here</string>
+    <string name="symptoms">Symptoms</string>
+    <string name="observation">Observation</string>
+    <string name="invest_result">Investigation Results</string>
+    <string name="diagnosis">Diagnosis</string>
+    <string name="sms_1">SMS 1</string>
+    <string name="sms_2">SMS 2</string>
+    <string name="email_1">Email 1</string>
+    <string name="email_2">Email 2</string>
+    <string name="hr_before">You have to fill in hours before appointment (max. 24 hours)</string>
+    <string name="avg_patient_arrival">Avg. Patient Arrival</string>
+    <string name="avg_time_in_lobby">Avg. Time In Lobby</string>
+    <string name="avg_consult_delay">Avg. Consultation Delay</string>
+    <string name="avg_consult_time">Avg. Consultation Time</string>
+    <string name="show_my_record">Search patient</string>
+    <string name="show_my_calender">What\'s today\'s schedule?</string>
+    <string name="ai_know_more">Know more</string>
+    <string name="i_am_late">I am late</string>
+    <string name="cancel_appt">Cancel today\'s appointments</string>
+    <string name="type_a_message">Type A Message</string>
+    <string name="service_setup">Service setup</string>
+    <string name="setup_your_service_here">You can setup your services here</string>
+    <string name="video">Video</string>
+    <string name="setup">Setup</string>
+    <string name="instant_video">Instant Video</string>
+    <string name="chat">Chat</string>
+    <string name="clinic">Clinic</string>
+    <string name="clinic_service_disabled_settings_msg">(Clinic service has been disabled in settings)</string>
+    <string name="video_service_disabled_settings_msg">(Video service has been disabled in settings)</string>
+    <string name="instant_video_service_disabled_settings_msg">(Instant Video service has been disabled in settings)</string>
+    <string name="chat_service_disabled_settings_msg">(Chat service has been disabled in settings)</string>
+    <string name="instant_video_setting">Instant video setting</string>
+    <string name="price">Price</string>
+    <string name="date_time">Date/Time</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="enable_disable">Enable/Disable</string>
+    <string name="chat_setting">Chat setting</string>
+    <string name="validity">Validity</string>
+    <string name="enter_duration">Enter duration</string>
+    <string name="video_setting">Video setting</string>
+    <string name="clinic_one_setting">Clinic 1</string>
+    <string name="clinic_two_setting">Clinic 2</string>
+    <string name="clinic_three_setting">Clinic 3</string>
+    <string name="address">Address</string>
+    <string name="wait_while_sign_in">Wait while we log you in ...</string>
+
+    <string name="common_sign_in">Signing In</string>
+    <string name="could_not_login">Could Not Login. Please Enter Valid Details</string>
+    <string name="you_have_been_successfully_login">You Have Been Successfully Logged In.</string>
+    <string name="requesting_server">Requesting Server...</string>
+    <string name="otp_request">OTP Request</string>
+    <string name="slow_internet_connection">Slow internet connection, please try again later</string>
+    <string name="sending_update_request">Sending Update Request...</string>
+    <string name="updating_password">Updating Password</string>
+    <string name="enter_email_mobile">You must enter email or mobile number</string>
+    <string name="enter_password">You must enter password</string>
+    <string name="enter_mobile_number">You must enter mobile number</string>
+    <string name="enter_OTP_number">You must enter OTP number</string>
+    <string name="re_enter_password">You must re-enter password</string>
+    <string name="user">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="sign_in">SIGN IN</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="register_now">Register now</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="get_otp">GET OTP</string>
+    <string name="email_or_phone_number">Email or phone</string>
+    <string name="enter_email_or_phone">Enter Email / phone</string>
+    <string name="enter_passw0rd">Enter Password</string>
+    <string name="otp">OTP</string>
+    <string name="phone">Phone</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="update_password">UPDATE PASSWORD</string>
+    <string name="please_wait_loading_message">Please Wait...</string>
+    <string name="logging_out">Logging Out</string>
+    <string name="could_not_log_you_out">Could Not Log You Out</string>
+    <string name="you_have_been_successfully_logged_out">You Have Been Successfully Logged Out</string>
+    <string name="wait_while_we_updating">Wait while we updating</string>
+    <string name="wait_while_deleting">Wait while deleting</string>
+    <string name="updating">Updating</string>
+    <string name="wait_while_creating">Please wait while we are creating</string>
+    <string name="wait_while_we_fetching">Please wait while fetch your data</string>
+    <string name="fetching">Fetching</string>
+    <string name="changing_time_format">Changing Time Format</string>
+    <string name="could_not_update">Could not update, please try again</string>
+    <string name="app_reminder_message">Values must be less than 72 and greater than 1</string>
+    <string name="could_not_fetch">Could not fetch</string>
+    <string name="today"><u>Today</u></string>
+    <string name="please_select_service">Please select one service</string>
+    <string name="end_date_warning">You cannot have end date less before start date</string>
+    <string name="end_time_warning">You cannot have end time less before start time</string>
+    <string name="do_you_wish">Do you wish to block your time?</string>
+    <string name="yes">Ok</string>
+    <string name="no">Don\'t Allow</string>
+    <string name="fetching_block_time">Fetching time block data...</string>
+    <string name="please_wait">Please wait</string>
+    <string name="no_block_time">No data present for now</string>
+    <string name="add_new">Add New</string>
+    <string name="appointment_not_booked_message">You have no appointments for now.</string>
+    <string name="no_records_found">No Records Found.</string>
+    <string name="patient_no_message">You have no patient for now.</string>
+    <string name="common_opps_somthing_went_wrong_message">Oops Something went wrong.</string>
+    <string name="no_patient_found">No patient found.</string>
+    <string name="patient_info">Patient Info</string>
+    <string name="family_info">Family Info</string>
+    <string name="name">Name</string>
+    <string name="age">Age</string>
+    <string name="relation">Relation</string>
+    <string name="selected_case_name">Select Case Name</string>
+    <string name="create_new">Create\n New</string>
+    <string name="case_info">Case Info</string>
+    <string name="no_of_interaction">No. Of Interactions</string>
+    <string name="last_interaction">Last Interaction</string>
+    <string name="handwriten_notes">Handwritten Notes</string>
+    <string name="first_report">First Reported On</string>
+    <string name="status">Status</string>
+    <string name="file">File</string>
+    <string name="parameters">Parameters</string>
+    <string name="value">Value</string>
+    <string name="posited_on">Posited On</string>
+    <string name="confirmed_ruled">Confirmed/Ruled Out On</string>
+    <string name="this_consult">This Consultation</string>
+    <string name="upload_note">Upload Note</string>
+    <string name="add_eval">Add Evaluation</string>
+    <string name="set_treat">Set Treatment</string>
+    <string name="enter_name">Enter Patient Name *</string>
+    <string name="enter_phno">Enter Patient PH Number</string>
+    <!--<string name="enter_email">Enter Patient Email</string>-->
+    <string name="enter_id">Patient ID</string>
+    <string name="enter_id_edit">Enter Patient ID</string>
+    <string name="enter_height">Patient Height &lt;in cm&gt;</string>
+    <string name="enter_age">Patient Age &lt;in years&gt;</string>
+    <string name="enter_dob">DOB</string>
+    <string name="enter_dob_edit">Enter DOB</string>
+    <string name="enter_bloodg">Blood Group</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="create_case_proceed_warn">Please Enter Case Name</string>
+    <string name="upload_file">Upload File</string>
+    <string name="enter_desp">Enter Description</string>
+    <string name="uploading_image">Uploading Image</string>
+    <string name="uploading_pdf">Uploading PDF</string>
+    <string name="upload_img_success">Image Uploaded Successfully</string>
+    <string name="upload_pdf_success">PDF Uploaded Successfully</string>
+    <string name="upload_img_error">Image Upload Failed</string>
+    <string name="saving_data_success">Data saved successfully</string>
+    <string name="saving_data_failed">Data failed to save. Try again later</string>
+    <string name="please_attach_url">Please Attach A File</string>
+    <string name="process_request">Processing your request...</string>
+    <string-array name="paymentTypelistArray">
+        <item>Select Mode</item>
+        <item>Cash</item>
+        <item>Credit Card</item>
+        <item>Debit Card</item>
+        <item>Net Banking</item>
+    </string-array>
+    <string-array name="appointmentDelaylistArray">
+        <item>Minutes</item>
+        <item>Hours</item>
+    </string-array>
+
+    <string-array name="PayUModeOptions">
+        <item>PayU Biz</item>
+        <item>PayU Money</item>
+    </string-array>
+
+    <string-array name="appointmentBulkCancelListArray">
+        <item>Select Time</item>
+        <item>Today</item>
+        <item>Yesterday</item>
+        <item>This week so far</item>
+        <item>Last week</item>
+        <item>This month so far</item>
+        <item>Last month</item>
+
+
+    </string-array>
+    <string-array name="DurationListArray">
+        <item>All</item>
+        <item>Today</item>
+        <item>This Week</item>
+        <item>This Month</item>
+        <item>Specific Date</item>
+    </string-array>
+    <string name="interaction_changed">Create an interaction first</string>
+    <string name="appt_status_update">Appointment status updated successfully</string>
+    <string name="register_successfully">You have register successfully</string>
+    <string name="join_video">Join Video</string>
+    <string name="appt_cancel">Your Appointment cancelled successfully</string>
+    <string name="join_video_msg">Waiting for patient to join</string>
+    <string name="back">Back</string>
+    <string name="ai_cancel_appt">Bookings found. Process?</string>
+    <string name="less">Less</string>
+    <string name="update_patient">Patient details updated</string>
+    <string name="update_patient_err">Update failed. Try again later</string>
+    <string name="family_name">Family Name</string>
+    <string name="family_age">Family Age</string>
+    <string name="problems">Problems</string>
+    <string name="add_family_success">Family data added.</string>
+    <string name="add_family_error">Error adding family data.</string>
+    <string name="record_cases">Records Cases</string>
+    <string name="no_data_found">No Data Found</string>
+    <string name="loading_data">Loading Data</string>
+    <string name="data_load_failed">Error fetching data. Try again later</string>
+    <string name="fetching_file">Fetching file</string>
+    <string name="symptom">Symptoms</string>
+    <string name="investigation">Investigation</string>
+    <string name="all_encounter">All Interaction</string>
+    <string name="no_encounter_shared_with_you">No interaction shared with you</string>
+    <string name="position_on">Posited On:&#160;</string>
+    <string name="enter_full_Name">Enter Full Name</string>
+    <string name="enter_email_address">Enter Email Address *</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_ten_digit_phone_number">Enter 10 digit Phone Number</string>
+    <string name="enter_qualification">Enter Qualifications (eg. MBBS,MD)</string>
+    <string name="enter_specialization">Enter Specialization (eg. Dermatologist,Cardiologist)</string>
+    <string name="enter_focus_area">Enter Focus Areas (eg. Diabetes,Weight Loss,Joint Pain</string>
+    <string name="enter_registration_no">Enter Registration No.</string>
+    <string name="enter_experiences">Enter Experience</string>
+    <string name="enter_referral_code">Enter Referral Code</string>
+    <string name="enter_symptom_name">Enter Symptom Name</string>
+    <string name="enter_invest_name">Enter Name</string>
+    <string name="write_notes">Write Notes</string>
+    <string name="enter_parameter">Enter Parameter</string>
+    <string name="enter_parameter_value">Enter Value</string>
+    <string name="enter_diag_name">Enter Diagnosis</string>
+    <string name="please_select_encounter">Please select one interaction</string>
+    <string name="add_record">Add Record</string>
+    <string name="common_task">Task</string>
+    <string name="mandatory_hint">&#160;(mandatory)</string>
+    <string name="select_option">Select Option</string>
+    <string name="repeat">Repeat</string>
+    <string name="one_time">Onetime</string>
+    <string name="select_check_box_option">Select One Checkbox Option</string>
+    <string name="please_attached_file">Please Attach A File</string>
+    <string name="common_please_wait_loading_message">Please Wait...</string>
+    <string name="creating_your_record">Creating Your Record</string>
+    <string name="record_added_successfully">Record Added Successfully</string>
+    <string name="record_updated_successfully">Record Updated Successfully</string>
+    <string name="record_deleted_successfully">Record Deleted Successfully</string>
+    <string name="is_mandatory">&#160;is Mandatory</string>
+    <string name="create_new_case">Create New Case</string>
+    <string name="share">Share</string>
+    <string name="fetching_polices">Fetching Policies...</string>
+    <string name="compny_polices">Company Policy</string>
+    <string name="no_attachment">No Attachment</string>
+    <string name="add_view">Add/View</string>
+    <string name="past_records">Past Records</string>
+    <string name="submission_date">Consult Date</string>
+    <string name="submission_date_two">Response Date</string>
+    <string name="appointment_on">Appointment on</string>
+    <string name="follow_up_date">Follow-up Date</string>
+    <string name="condition">Condition</string>
+    <string name="follow_instruct">Followed Instructions?</string>
+    <string name="report">Report</string>
+    <string name="patient_msg">Patient Message</string>
+    <string name="appt_note">Appt Note</string>
+    <string name="follow_up">Follow-up</string>
+    <string name="set_pref">Set Preference</string>
+    <string name="follow_up_time">Follow-up time (in days)</string>
+    <string name="apply_changes">Apply Changes</string>
+    <string name="no_of_days">Enter Number Of Days</string>
+    <string name="follow_questions">Follow-up Questionnaire</string>
+    <string name="notification_setup">Notification Setup</string>
+    <string name="notify_me">Notify Me</string>
+    <string name="all_submission">All Submissions</string>
+    <string name="specific_submission">Notifications</string>
+    <string name="notify_staff">Notify My Staff</string>
+    <string name="contact_details">Contact Details</string>
+    <string name="staff_name">Staff Email</string>
+    <string name="staff_no">Staff Number</string>
+    <string name="how_feeling">How are you feeling?</string>
+    <string name="follow_inst">Are you following our instructions?</string>
+    <string name="file_report">Report/File Upload</string>
+    <string name="current_status">Describe current status</string>
+    <string name="option_book_appt">Option to book appointment</string>
+    <string name="patient_feeling">Patient feeling same or worse</string>
+    <string name="instruction_question">Not following instructions completely</string>
+    <string name="describe_condition">Described his/her condition</string>
+    <string name="upload_a_file">Uploaded a file</string>
+    <string name="follow_up_info">After the designated time, patients will automatically receive a SMS and an email to update their current health status.
+
+They can also use the link to upload a file or book an appointment.
+
+Note: You can overrule follow up rules for specific appointments from the Appointments page.</string>
+
+    <string name="instant_support">Instant Support</string>
+    <string name="instant_support_sub_text">Chat with us now for any query</string>
+    <string name="sub_date">Response Date: </string>
+    <string name="enable_follow_up">Enable Follow-up</string>
+    <string name="follow_up_detail">Follow-up Details</string>
+    <string name="appt_date">Consult Date</string>
+    <string name="case_Tabname_Doctor">Doctors</string>
+    <string name="case_Tabname_Org">Organisation</string>
+    <string name="create_new_2">Create New</string>
+    <string name="create_task">Create Task</string>
+    <string name="case_channel_empty_text">You are not part of any case channel yet.\n\n To create a new case go to \n Appointments -> Select a Patient -> and Press Create Discussion.</string>
+    <string name="creating_new_channel">Creating new channel</string>
+    <string name="case_channel_dialog_text">Fetching your case channels</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="new_post">New Post</string>
+    <string name="more_information">More Information</string>
+    <string name="login">LOGIN</string>
+
+    <string-array name="select_Status_array">
+        <item>All</item>
+        <item>Open</item>
+        <item>On hold</item>
+        <item>Cancelled</item>
+        <item>Completed</item>
+    </string-array>
+
+    <string-array name="sort_By_Array">
+        <item>Sort By</item>
+        <item>Task(Ascending)</item>
+        <item>Task(Descending)</item>
+        <item>Due On(Ascending)</item>
+        <item>Due On(Descending)</item>
+    </string-array>
+
+    <string-array name="duration_Array">
+        <item>All</item>
+        <item>Last 24 Hours</item>
+        <item>Last 7 Days</item>
+        <item>Last 30 Days</item>
+        <item>Last 90 Days</item>
+        <item>Last 365 Days</item>
+    </string-array>
+
+    <string-array name="case_channel_sort_by">
+        <item>Name</item>
+        <item>Created On</item>
+    </string-array>
+
+    <string-array name="case_channel_sort_order">
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="emr_botnav_profile">Profile</string>
+    <string name="emr_botnav_shared">Shared By Patient</string>
+    <string name="emr_botnav_notes">Consultation Notes</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="e.g.7">E.g. 145</string>
+    <string name="gender">Gender</string>
+    <string name="height_inches">Height (in cm)</string>
+    <string name="save_proceed">Save &amp; Proceed</string>
+    <string name="create_family_empty">Create profile of Patient\'s Family</string>
+    <string name="add_family_history">Add Family History</string>
+    <string name="enter_person_name">Enter Person Name</string>
+    <string name="any_problem">Any Problem?</string>
+    <string name="enter_problems">Enter Problems</string>
+    <string name="add_family_member">Add Family Member</string>
+    <string name="title_activity_video_screen">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="permission_text">You need to provide CAMERA and MICROPHONE permission</string>
+    <string name="give_permission">Give Permission</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="family_details">Family Details</string>
+    <!--
+        <string name="exo_media_demo">https://storage.googleapis.com/exoplayer-test-media-0/play.mp3</string>
+    -->
+    <string name="read">Read</string>
+    <string name="no_feeds">No articles have been published</string>
+
+    <string name="doctor_join_text">Doctor Link</string>
+    <string name="patient_join_text">Patient Link</string>
+    <string name="send_join_link_text">Send Video Link</string>
+
+
+    //merchant gateway verify
+    <string name="verify_merchant">To enable digital payment collections from patients, You need to create/activate your PayUMoney account.</string>
+    <string name="verify_merchant_failed">Bank verification failed from PayU system.</string>
+    <!--<string name="merchant_setUpForm">To enable digital payment collections from patients, You need to create/activate your PayUMoney account. </string>
+-->
+    //merchant gateway setup from
+    <string name="merchant_setUpForm">To enable digital payment collections from patients, You need to create/activate your PayUMoney account.\n<b>Steps to activate your PayU account: </b>\nTo enable online payment collections on your WhiteCoats application, Please take 10 minutes and complete PayU account activation.\n1. Log into your dashboard with your registered email ID and number or via OTP received on your registered mobile number.\n2. Verify your bank account and start collecting payments instantly.This short video will show you how to verify your bank account in 2 minutes.\n3. Once you have completed Bank verification,please enter your website and application URL(you would have received this in an email from the WC team).\n4. Complete the requested document upload and e-sign to activate your account.</string>
+    <string name="setUP3_merchant">To accept online payments from patients and receive them directly to your bank account in a safe and secure manner, a merchant account is needed.\nWhiteCoats has tied up with PayU - one of India\'s largest payment services provider - to <b>empower doctors to collect online payments from patients directly and safely.</b></string>
+
+    <string name="create_new_account">Create PayU Merchant Account</string>
+    <string name="connect_exist_account1">Connect Existing Account</string>
+    <string name="connect_exist_account"><b><u>I already have a PayU merchant account</u></b></string>
+
+    <string name="create_merchant">Create payU Merchant</string>
+    <string name="update_details">Update Details</string>
+    <string name="update_bank_details"><u>Update Bank Details</u></string>
+    <string name="edit_merchant">Edit Merchant Details</string>
+    <string name="update_bank_merchant">Update Bank Details</string>
+    //create new account
+    <string name="create_newAccount">Create PayU Account</string>
+    <string name="heading_create_newAccount_dummy">Create your PayUmoney account by submitting the following details.</string>
+    <string name="heading_create_newStep1">Step 1 of 2:<b>Merchant Details</b></string>
+    <string name="heading_create_newStep2">Step 2 of 2:<b>Bank Details</b></string>
+    <string name="enter_otp">Enter OTP*</string>
+    <string name="merchant_name">Merchant Name*</string>
+    <string name="merchant_email">Merchant Email*</string>
+    <string name="merchant_phone">Merchant Phone*</string>
+    <string name="bank_account_no">Bank Account No.*</string>
+    <string name="monthly_amount">Monthly Expected Amount*</string>
+    <string name="bank_Reenter_account_no">Re-enter Bank Account No.*</string>
+    <string name="bank_ifsc_code">Bank Account IFSC Code*</string>
+    <string name="bank_account_holder_name">Bank Account Holder Name*</string>
+    <string name="pan_number">PAN Number (for practice):*</string>
+    <string name="panCard_name">Name on PAN Card:*</string>
+    <string name="hAddress">Address*</string>
+    <string name="PinCode">Pin Code*</string>
+    <string name="business_registered_name">Practice Name (as per PAN card)*</string>
+    <string name="business_entity_type">Registration Type For Practice*</string>
+    <string name="business_category">Business Category*</string>
+    <string name="business_sub_category">Business SubCategory*</string>
+    <string name="business_url">Business URL*</string>
+    <string name="android_url">Android URL*</string>
+
+    <string name="enter_hit_otp">Eg: 152488</string>
+    <string name="enter_expires">OTP Expires in 15:00 MINUTES</string>
+    <string name="enter_merchant_name">Enter Merchant Name</string>
+    <string name="enter_merchant_email">Enter Merchant Email</string>
+    <string name="enter_merchant_phone">Enter Merchant Phone</string>
+    <string name="enter_bank_account_no">E.g: 3445238723</string>
+    <string name="enter_monthly_amount">E.g: 40000</string>
+    <string name="enter_ReBank_account_no">Re-enter Bank Account No.</string>
+    <string name="enter_bank_ifsc_code">Enter Bank Account IFSC Code*</string>
+    <string name="enter_bank_accHolder_name">E.g: Mark Boe</string>
+    <string name="enter_practice_name">E.g: Mark Boe</string>
+    <string name="enter_address">E.g: Building Name.,Street Name</string>
+    <string name="enter_pinCode">Enter Pin Code</string>
+    <string name="enter_panName">E.g: Mark Boe</string>
+    <string name="enter_panNumber">E.g: BMFPE3445D</string>
+    <string name="enter_business_registered_name">Enter Business Registered Name</string>
+    <string name="enter_business_url">Enter Business URL</string>
+    <string name="enter_android_url">Enter Android URL</string>
+
+    //Existing account
+    <string name="connect_existing_account">Connect Existing Account</string>
+    <string name="connect_existing_account_dummy">Please login to your PayUmoney account here to get this info. Click here to know where you can find your <b>MID,Salt, and key</b>.</string>
+    <string name="connect_existing_account_heading1"><b>How to Connect the PayU Account</b></string>
+    <string name="connect_existing_account_heading2">1.Please login to your PayUmoney account\n2.Go to Setting and find your <b>MID,Salt, and key</b>.\n3.Enter your details below in the form and click Connect Account button</string>
+    <string name="connect_existing_account_dummy2">To get any help regarding this, please <b><u>click here.</u></b>
+    You can also email at <b>whitecoats.support@payu.in</b></string>
+    <string name="merchant_mid">Merchant MID*</string>
+    <string name="merchant_key">Merchant Key*</string>
+    <string name="merchant_Salt">Merchant Salt*</string>
+    <string name="enter_merchant_mid">Enter Merchant MID</string>
+    <string name="enter_merchant_key">Enter Merchant key</string>
+    <string name="enter_merchant_salt">Enter Merchant Salt</string>
+    <string name="connect_account">Connect Account</string>
+    <string name="save_next_step">Save &amp; Next Step</string>
+    <string name="connecting_status">Connecting Status</string>
+    <string name="bottom_heading1">To get any help regarding this,please <u><b>click here.</b></u></string>
+    <string name="bottom_heading2">You can also email at <b>whitecoats.support@payu.in</b></string>
+    <string name="createMerchant_ribbon">Dont refresh/close the app without submitting the form. You will have to re-enter the form again</string>
+
+    //penny amount
+    <string name="enter_penny_amount">Enter Penny Amount</string>
+    <string name="heading_penny_amount">Please enter the amount you received into your bank A/C No..</string>
+    <string name="penny_otp_heading">We have sent OTP on your mobile number</string>
+    <string name="otp_expires">OTP Expires in 30:00 min</string>
+    <string name="otp_note">Note:After OTP, PayU system will deposit a small amount into your bank account and you will have to enter it in the next step.</string>
+    <string name="enter_amount">Enter Amount*</string>
+    <string name="enter_OTP">Enter OTP*</string>
+    <string name="verify">Verify</string>
+    <string name="submit">Submit</string>
+    <string name="penny_verification">Penny Verification</string>
+    <string name="do_penny_verification">Verify Manually Now</string>
+    <string name="upload_kyc">Upload KYC Document</string>
+    <string name="penny_verification_statement">Additional verification required to complete bank verification.</string>
+    <string name="verification_exhausted_heading_statement">Unfortunately,your verification attempts have been exhausted</string>
+    <string name="how_it_works_merchant"><b>You can complete your bank account verification manually by following the steps below.</b></string>
+    <string name="how_it_works_steps">1. An OTP will be sent to your mobile number. Please enter it for verification.\n2. You would have received a small amount in the bank account you had provided. Please enter the value of that amount.\nIf the above two details match, the bank account will be verified instantly, and you may start receiving online payments from patients immediately.</string>
+    <string name="change_bankAccount">If not, you may repeat the steps above OR <b><u>change the bank account</u></b></string>
+    <string name="retry_penny_verification">Retry Penny Verification</string>
+    //bank verify in progress
+    <string name="bank_inProgress1"><b>Your bank verification is in progress:</b></string>
+    <string name="bank_inProgress2">Please check your status again at</string>
+    <string name="bank_inProgress3">to proceed further</string>
+    //bank failed
+    <string name="bank_failed_text1">Your bank account could not be verified.</string>
+    <string name="bank_failed_text2">This could be because of an issue with the account details or with the payment systems.</string>
+    <string name="bank_failed_text3">Kindly update your bank account and try again.</string>
+    <string name="bank_failed_text4">Kindly contact us if you need further assistance.</string>
+    <string name="bank_failed_text5"></string>
+    //update merchant
+    <string name="account_status_statement">After submitting the bank details, system will auto verify the bank details using the API, which will take 15 mins of time</string>
+    <string name="merchantAcc_status">Merchant Account Status</string>
+    <string name="verification_statement">Additional Verification Required</string>
+    <string name="verification_exhausted_statement">Verification Attempts Exhausted</string>
+    <string name="verification_successful_old_heading">Bank Verification Successful</string>
+    <string name="verification_successful_old_statement">To Complete KYC click here. This will allow you to receive settlements into your bank account.</string>
+    <string name="verification_bankFailed_statement">Bank Verification Failed</string>
+    <string name="verification_bankInProgress_statement">Bank Verification In Progress</string>
+    <string name="verification_success">Verification Successful</string>
+    <string name="account_status">Account Status</string>
+    <string name="account_created">Account Created</string>
+    <string name="pan_status">Pan Status</string>
+    <string name="merDetails_filled">Merchant Details</string>
+    <string name="bankDetails">Bank Details</string>
+    <string name="change_Bank_Details"><u>Change Bank Details</u></string>
+    <string name="change_Pan_merchant_Details"><u>Change PAN/Merchant Details</u></string>
+    <string name="practiceInfo">Practice Information</string>
+    <string name="Verify_now"><u>Verify Manually Now</u></string>
+    <string name="bank_verification_status">Bank Verification Status</string>
+    <string name="verification_heading">Unfortunately your Bank Verification Failed.To complete the verification you can do it by doing <b>Penny Verification</b></string>
+
+    <string name="update_merchant_details">Update Merchant Details</string>
+    //Bank verification
+    <string name="msg_bankVerification">Bank verification is successful.\nTo complete merchant account creation, tap on the link and complete KYC process with PayU.</string>
+    <string name="msg_whyUpload_kyc"><b>Why Upload KYC?</b>\nWhen bank verification is complete,but KYC is pending, user will receive settlement only upto <b>\u20B910000</b></string>
+    <string name="msg_beyond">Beyond \u20B910000, patients can still book appointment by making payments but, user will not receive settlement.</string>
+    //bank details statement
+    <string name="bankDetailsStatement">To change your bank account, For security reasons you need to first enter the OTP sent to your mobile number </string>
+    //pan details statement
+    <string name="panDetailsStatement">To change your pan details, For security reasons you need to first enter the OTP sent to your mobile number </string>
+    //save &amp; proceed text
+    <string name="createStep_text_part1">The above details will form your merchant identity with PayU.\n<b>For most doctors, this would be their own name, email and mobile. </b></string>
+    <string name="createStep_text_part2"><u>If your practice is a separate legal entity (e.g. partnership, private limited etc.) </u>, you may want this to be the name of your registered business, registered email and mobile.</string>
+
+    //Bank verification success
+    <string name="verification_success_part1">Bank verification is successful. You can now start receiving payments from your patients directly.\n<b>You will start receiving money into your bank account upto INR 10,000/- only, until you complete KYC.</b></string>
+    <string name="verification_success_part2"><u>Click here </u>to go to PayU Portal</string>
+    <string name="verification_success_part3"><b>Once your cumulative/total patient payments go above INR 10,000/, for compliance reasons as per regulations,</b>\nyou will need to provide additional documents as per the nature of your business and sign a standard agreement with PayU.When agreement is not signed, upto ₹10,000, amount will be settled to Bank. When it exceeds ₹10,000, upto ₹50,000 will be held in account until KYC and agreement sign is done. Also note, your patients will not be able to do any transactions once your cumulative/total patient payments reach ₹50,000 unless you complete KYC.</string>
+    <string name="verification_success_part4">For most doctors, this may simply be providing a photocopy of<b> Aadhaar and Pan Card.</b></string>
+    <string name="verification_success_part5">However, if your practice is a more sophisticated registered legal entity (e.g. a private limited, partnership etc.), you may be required to submit additional documents as <b>determined by PayUs compliance needs</b></string>
+    <string name="verification_success_part6">Note: This step is mandatory once you cross INR 10,000 in cumulative online payments.</string>
+    <string name="verification_success_part7"><u>Failing to do so means you will stop receiving payments from your patients with immediate effect.</u></string>
+    <string name="upload_KYC"><b><u>Complete KYC</u></b></string>
+    //penny dialog title
+    <string name="penny_verify">Penny Verification</string>
+
+    //bank details
+    <string name="bank_holder_name">Bank Holder Name*</string>
+    <string name="reEnter_bank_acc_no">Re-enter Bank Account No*</string>
+    <string name="bank_note">Note: You may be required to undergo additional verification. If the bank account holder name does not match the merchant name.</string>
+    //set up
+    <string name="setUp1_merchant"><b>Why do I need to have a PayU merchant account? </b></string>
+    <string name="setUp4_merchant"><b><u>Steps to activate your PayU account: </u></b></string>
+    <string name="setUp5_merchant">There are two types of PayU account activation.\n<b>Type 1. Without KYC</b>\nThis takes less than 5 minutes and allows you to immediately start collecting payments upto INR 10,000 (cumulative).\n1. Choose your merchant account holder details.\n2. Enter your practice details (Pan, business type etc.) AND bank account details.\n3. Your details will be sent to PayU for auto-verification. If successful, you may immediately start
+        receiving payments in your bank account upto a total of INR 10,000/- (cumulatively). If auto-verification is unsuccessful, you may be asked to either verify your bank account or provide additional documents.\n<b>Type 2. With KYC </b><u>Once your cumulative/total patient payments go above INR 10,000/-, for compliance reasons as per regulations,</u> you will need to provide additional documents as per the nature of your
+        business and sign a standard agreement with PayU.\nFor most doctors, this may simply be providing a photocopy of Aadhaar and Pan Card. However, if your practice is a more sophisticated registered legal entity (e.g. a private limited, partnership etc.), you may be required to submit additional documents<b>as determined by PayU\'s compliance needs</b></string>
+    <string name="setUp6_merchant">Note: This step is mandatory once you cross INR 10,000 in cumulative online payments.</string>
+    <string name="setUp7_merchant"><u>Failing to do so means you will stop receiving payments from your patients with immediate effect.</u></string>
+    <string name="queries_week">(Monday to Friday-10am to 7pm)</string>
+
+    <string name="create_success_dialog"><b>Thank you</b></string>
+    <string name="success_dialog2">Your details have been submitted successfully to PayU.</string>
+    <string name="success_dialog3">We will initiate you via email once PayU completes its auto verification attempt.</string>
+    <string name="success_dialog4"><b>This is usually takes 30 minutes.</b></string>
+    <string name="success_dialog5">Alternatively, please check back the status in 2 Hours to know the status.</string>
+
+    //payU support dialog
+    <string name="support_payU_statement">Access your merchant details,view detailed payment history,complete your KYC process or get any other help. </string>
+    <string name="support_payU_link"><u>Access PayU Account</u></string>
+
+    //exhausted dialog
+    <string name="exhausted_thanks1">Thank you for reaching out to us.</string>
+    <string name="exhausted_thanks2">You will receive a call back from our team within 48hrs.</string>
+
+    //upshot events
+    <string name="SignupLoginRegisterNow">SignupLoginRegisterNow</string>
+    <string name="SignupLoginForgotPassword">SignupLoginForgotPassword</string>
+    <string name="RegisterNowSignInImpressions">RegisterNowSignInImpressions</string>
+    <string name="LoginEmailIDPhone">LoginEmailIDPhone</string>
+    <string name="LoginPassword">LoginPassword</string>
+    <string name="LoginSignInButton">LoginSignInButton</string>
+
+    <string name="HomeDashboardScreen">HomeDashboardScreen</string>
+    <string name="HomeAssistantScreen">HomeAssistantScreen</string>
+    <string name="HomeSupportScreen">HomeSupportScreen</string>
+    <string name="FirstTimeLogin">FirstTimeLogin</string>
+    <string name="onProfileClicked">onProfileClicked</string>
+    <string name="IntroScreen">IntroScreen</string>
+    <string name="SplashScreenImpressions">SplashScreenImpressions</string>
+    <string name="DashboardSearchPatient">DashboardSearchPatient</string>
+    <string name="DashboardAddPatient">DashboardAddPatient</string>
+    <string name="DashboardViewAllPatients">DashboardViewAllPatients</string>
+    <string name="DashboardPracticesFilter">DashboardPracticesFilter</string>
+    <string name="DashboardBookNewAppt">DashboardBookNewAppt</string>
+    <string name="DashboardRegisterOnlineTraining">DashboardRegisterOnlineTraining</string>
+    <string name="DashboardQuickActionBookAppt">DashboardQuickActionBookAppt</string>
+    <string name="DashboardQuickActionAddPatient">DashboardQuickActionAddPatient</string>
+    <string name="DashboardQuickActionBlockTime">DashboardQuickActionBlockTime</string>
+    <string name="DashboardQuickActionShareArticle">DashboardQuickActionShareArticle</string>
+    <string name="DashboardQuickActionShareVideo">DashboardQuickActionShareVideo</string>
+    <string name="DashboardQuickActionNewMessage">DashboardQuickActionNewMessage</string>
+    //user setup
+    <string name="PracticeSetUpComplete">PracticeSetUpComplete</string>
+    <string name="NoPracticeSetUp">NoPracticeSetUp</string>
+    <string name="ClinicSetUpComplete">ClinicSetUpComplete</string>
+    <string name="NoClinicSetUp">NoClinicSetUp</string>
+    <string name="VideoSetUpComplete">VideoSetUpComplete</string>
+    <string name="NoVideoSetUp">NoVideoSetUp</string>
+    <string name="ChatSetUpComplete">ChatSetUpComplete</string>
+    <string name="NoChatSetUp">NoChatSetUp</string>
+    <string name="InstantVideoSetUpComplete">InstantVideoSetUpComplete</string>
+    <string name="NoInstantVideoSetUp">NoInstantVideoSetUp</string>
+    <string name="MerchantAccountExists">MerchantAccountExists</string>
+    <string name="NoMerchantAccount">NoMerchantAccount</string>
+    <string name="BankAccountVerified">BankAccountVerified</string>
+    <string name="BankAccountNotVerified">BankAccountNotVerified</string>
+    <string name="AddPatientComplete">AddPatientComplete</string>
+    <string name="NoPatientAdded">NoPatientAdded</string>
+    <string name="BookAppointmentComplete">BookAppointmentComplete</string>
+    <string name="NoAppointmentBooked">NoAppointmentBooked</string>
+    <string name="CreateRecordsComplete">CreateRecordsComplete</string>
+    <string name="NoRecordsCreated">NoRecordsCreated</string>
+    <string name="ShareRecordsComplete">ShareRecordsComplete</string>
+    <string name="NoRecordsShared">NoRecordsShared</string>
+
+    //patient screen
+    <string name="PatientScreenImpressions">PatientScreenImpressions</string>
+    <string name="PatientSearch">PatientSearch</string>
+    <string name="PatientInfoArrow">PatientInfoArrow</string>
+    <string name="PatientInfoEditProfile">PatientInfoEditProfile</string>
+    <string name="PatientInfoFamilyBG">PatientInfoFamilyBG</string>
+    <string name="PatientInfoFamilyBGAdd">PatientInfoFamilyBGAdd</string>
+    <string name="PatientMore">PatientMore</string>
+    <string name="PatientMoreVideo">PatientMoreVideo</string>
+    <string name="PatientMoreClinic">PatientMoreClinic</string>
+    <string name="PatientMoreInstantVideo">PatientMoreInstantVideo</string>
+    <string name="PatientMoreNotes">PatientMoreNotes</string>
+    //add patient
+    <string name="AddNewPatientSavePatient">AddNewPatientSavePatient</string>
+    <string name="AddNewPatientPatientName">AddNewPatientPatientName</string>
+    <string name="AddNewPatientPatientContact">AddNewPatientPatientContact</string>
+    <string name="AddNewPatientPatientEmail">AddNewPatientPatientEmail</string>
+    <string name="AddNewPatientPatientAge">AddNewPatientPatientAge</string>
+    <string name="AddNewPatientPatientType">AddNewPatientPatientType</string>
+    <string name="AddNewPatientPatientInterface">AddNewPatientPatientInterface</string>
+    <string name="AddNewPatientPatientID">AddNewPatientPatientID</string>
+    <string name="AddNewPatientPatientCategory">AddNewPatientPatientCategory</string>
+    //SetupPracticesScreen
+    <string name="ServiceSetupScreenImpressions">ServiceSetupScreenImpressions</string>
+    <string name="ServiceSetupVideo">ServiceSetupVideo</string>
+    <string name="ServiceSetupInstantVideo">ServiceSetupInstantVideo</string>
+    <string name="ServiceSetupChat">ServiceSetupChat</string>
+    <string name="ServiceSetupClinic">ServiceSetupClinic</string>
+    //VideoSetupScreen
+    <string name="VideoSetupName">VideoSetupName</string>
+    <string name="VideoSetupDescription">VideoSetupDescription</string>
+    <string name="VideoSetupFee">VideoSetupFee</string>
+    <string name="VideoSetupApptDuration">VideoSetupApptDuration</string>
+    <string name="VideoSetupAdvanceBookingTime">VideoSetupAdvanceBookingTime</string>
+    <string name="VideoSetupAdvanceBookingStartTime">VideoSetupAdvanceBookingStartTime</string>
+    <string name="VideoSetupNext">VideoSetupNext</string>
+    <string name="VideoSetupSlotScreenImpressions">VideoSetupSlotScreenImpressions</string>
+    <string name="VideoSetupSlotEdit">VideoSetupSlotEdit</string>
+    <string name="VideoSetupSlotOk">VideoSetupSlotOk</string>
+    //InstantVideoSetupScreen
+    <string name="InstantVideoSetupScreenImpressions">InstantVideoSetupScreenImpressions</string>
+    <string name="InstantVideoSetupDescription">InstantVideoSetupDescription</string>
+    <string name="InstantVideoSetupFee">InstantVideoSetupFee</string>
+    <string name="InstantVideoSetupDaysStart">InstantVideoSetupDaysStart</string>
+    <string name="InstantVideoSetupDaysEnd">InstantVideoSetupDaysEnd</string>
+    <string name="InstantVideoSetupStartTime">InstantVideoSetupStartTime</string>
+    <string name="InstantVideoSetupEndTime">InstantVideoSetupEndTime</string>
+    <string name="InstantVideoSetupSetup">InstantVideoSetupSetup</string>
+    //ClinicSetupScreen
+    <string name="ClinicSetupScreenImpressions">ClinicSetupScreenImpressions</string>
+    <string name="ClinicSetupName">ClinicSetupName</string>
+    <string name="ClinicSetupDescription">ClinicSetupDescription</string>
+    <string name="ClinicSetupFee">ClinicSetupFee</string>
+    <string name="ClinicSetupAddress">ClinicSetupAddress</string>
+    <string name="ClinicSetupApptDuration">ClinicSetupApptDuration</string>
+    <string name="ClinicSetupAdvanceBookingTime">ClinicSetupAdvanceBookingTime</string>
+    <string name="ClinicSetupNext">ClinicSetupNext</string>
+    <string name="ClinicSetupSlotScreenImpressions">ClinicSetupSlotScreenImpressions</string>
+    <string name="ClinicSetupSlotEdit">ClinicSetupSlotEdit</string>
+    <string name="ClinicSetupSlotOk">ClinicSetupSlotOk</string>
+    //register now
+    <string name="RegisterNowDocinfoImpressions">RegisterNowDocinfoImpressions</string>
+    <string name="RegisterNowName">RegisterNowName</string>
+    <string name="RegisterNowEmail">RegisterNowEmail</string>
+    <string name="RegisterNowMobileNo">RegisterNowMobileNo</string>
+    <string name="RegisterNowQualifications">RegisterNowQualifications</string>
+    <string name="RegisterNowSpecialization">RegisterNowSpecialization</string>
+    <string name="RegisterNowFocusAreas">RegisterNowFocusAreas</string>
+    <string name="RegisterNowSignUp">RegisterNowSignUp</string>
+    <string name="RegisterNowLoginHere">RegisterNowLoginHere</string>
+
+    //assistant tab events
+    <string name="AssistantKnowMore">AssistantKnowMore</string>
+    <string name="AssistantIamLate">AssistantIamLate</string>
+    <string name="AssistantWhatsTodaySchedule">AssistantWhatsTodaySchedule</string>
+    <string name="AssistantCancelTodayAppts">AssistantCancelTodayAppts</string>
+    <string name="AssistantSearchPatients">AssistantSearchPatients</string>
+    <string name="AssistantText">AssistantText</string>
+    <string name="AssistantRecord">AssistantRecord</string>
+    <string name="AssistantSend">AssistantSend</string>
+    //HomeDashboardScreen event
+    <string name="DashboardAddFirstPatient">DashboardAddFirstPatient</string>
+    <string name="DashboardSetupPractices">DashboardSetupPractices</string>
+    <string name="DashboardProfile">DashboardProfile</string>
+    <string name="DashboardPreference">DashboardPreference</string>
+    //practice setup upshot events
+    <string name="ServiceSetupScreenImpression">ServiceSetupScreenImpression</string>
+    <string name="SetUpVideoPracticeButton">SetUpVideoPracticeButton</string>
+    <string name="SetUpInstantVideoPracticeButton">SetUpInstantVideoPracticeButton</string>
+    <string name="SetUpChatPracticeButton">SetUpChatPracticeButton</string>
+    <string name="SetUpClinicPracticeButton">SetUpClinicPracticeButton</string>
+
+    <string name="VideoServiceSetUpComplete">VideoServiceSetUpComplete</string>
+    <string name="InstantVideoServiceSetUpComplete">InstantVideoServiceSetUpComplete</string>
+    <string name="ClinicServiceSetUpComplete">ClinicServiceSetUpComplete</string>
+    <string name="ChatServiceSetUpComplete">ChatServiceSetUpComplete</string>
+    <!-- <string name="AddPatientComplete">AddPatientComplete</string>-->
+    <string name="PaymentSetUpScreenImpression">PaymentSetUpScreenImpression</string>
+    //payment screen upshot events
+    <string name="PaymentCreatePayUAccount">PaymentCreatePayUAccount</string>
+    <string name="PaymentConnectAccount">PaymentConnectAccount</string>
+    <string name="ApptBookNowSuccess">ApptBookNowSuccess</string>
+
+    <string name="no_appointement">You have no appointments coming</string>
+    <string name="book_appointment">Book Appointment</string>
+    <string name="open_calendar">Open Calendar View</string>
+    <string name="patient_search_appt">Search for patient</string>
+    <string name="book_an_appt"><u>Book an appointment</u></string>
+    <string name="clear_filter"><u>Clear Filter</u></string>
+    <string name="procesure_link"><u>http://clinicplus.whitecoats.com/#/app/other-sevices</u></string>
+    <string name="remove_procedure"><u>Remove Procedure</u></string>
+    <string name="remove_discount"><u>(Remove)</u></string>
+    <string name="apply_discount"><u>Apply Discount</u></string>
+    <string name="add_medicine_text"><i>if you have your own medication then add them in your database for future use</i></string>
+
+    //Appointment events
+    <string name="Appointments_listView">AppointmentsListView</string>
+    <string name="AppointmentsNewAppointment">AppointmentsNewAppointment</string>
+    <string name="AppointmentsOpenTabBookAppointment">AppointmentsOpenTabBookAppointment</string>
+    <string name="AppointmentsOpenTabCalenderView">AppointmentsOpenTabCalenderView</string>
+    <string name="AppointmentsListSelectClinic">AppointmentsListSelectClinic</string>
+    <string name="AppointmentsListCancelAllAppointment">AppointmentsListCancelAllAppointment</string>
+    <string name="AppointmentsListCancelAppointment">AppointmentsListCancelAppointment</string>
+    <string name="AppointmentsListIncompletePaymentDetails">AppointmentsListIncompletePaymentDetails</string>
+    <string name="AppointmentsListPaymentDetails">AppointmentsListPaymentDetails</string>
+    <string name="AppointmentsListStartConsult">AppointmentsListStartConsult</string>
+    <string name="AppointmentsListJoinConsult">AppointmentsListJoinConsult</string>
+    <string name="AppointmentsListDelayIntimation">AppointmentsListDelayIntimation</string>
+    <string name="AppointmentsListSearchPatient">AppointmentsListSearchPatient</string>
+    <string name="AppointmentsSearchPatientBookAppointment">AppointmentsSearchPatientBookAppointment</string>
+    <string name="AppointmentsFloatingBookAppointment">AppointmentsFloatingBookAppointment</string>
+    <string name="AppointmentsListFilters">AppointmentsListFilters</string>
+    <string name="AppointmentsCalenderView">AppointmentsCalenderView</string>
+    <string name="AppointmentsCalenderBookAppointment">AppointmentsCalenderBookAppointment</string>
+    <string name="AppointmentsCalenderCancelAppointment">AppointmentsCalenderCancelAppointment</string>
+    <string name="AppointmentsCalenderIncompletePaymentDetails">AppointmentsCalenderIncompletePaymentDetails</string>
+    <string name="AppointmentsCalenderPaymentDetails">AppointmentsCalenderPaymentDetails</string>
+    <string name="AppointmentsCalenderStartConsult">AppointmentsCalenderStartConsult</string>
+    <string name="AppointmentsCalenderJoinConsult">AppointmentsCalenderJoinConsult</string>
+    //capture note events
+    <string name="CaptureNotesScreenNotesCaptured">CaptureNotesScreenNotesCaptured</string>
+    <string name="CaptureNotesScreenAddNotes">CaptureNotesScreenAddNotes</string>
+    <string name="CaptureNotesScreenAddPrescription">CaptureNotesScreenAddPrescription</string>
+    <string name="CaptureNotesScreenAddMedicine">CaptureNotesScreenAddMedicine</string>
+    <string name="CaptureNotesScreenEndConsult">CaptureNotesScreenEndConsult</string>
+    <string name="CaptureNotesScreenEditNotes">CaptureNotesScreenEditNotes</string>
+    <string name="CaptureNotesScreenDeletePoint">CaptureNotesScreenDeletePoint</string>
+    <string name="CaptureNotesScreenViewAllPrescription">CaptureNotesScreenViewAllPrescription</string>
+    <string name="CaptureNotesScreenDiscontinueMedicine">CaptureNotesScreenDiscontinueMedicine</string>
+    //medication screen
+    <string name="MedicationScreenImpressions">MedicationScreenImpressions</string>
+    <string name="MedicationScreenSearch">MedicationScreenSearch</string>
+    <string name="MedicationMedicineName">MedicationMedicineName</string>
+    <string name="MedicationMedicineCompanyName">MedicationMedicineCompanyName</string>
+    <string name="MedicationMedicineSave">MedicationMedicineSave</string>
+    <string name="MedicationScreenForDays">MedicationScreenForDays</string>
+    <string name="MedicationScreenFrequency">MedicationScreenFrequency</string>
+    <string name="MedicationScreenIntakeMethod">MedicationScreenIntakeMethod</string>
+    <string name="MedicationScreenStrength">MedicationScreenStrength</string>
+    <string name="MedicationScreenDose">MedicationScreenDose</string>
+    <string name="MedicationScreenInstructions">MedicationScreenInstructions</string>
+    <string name="MedicationScreenPrescribe">MedicationScreenPrescribe</string>
+
+    //prescriptions events
+    <string name="PrescriptionScreenDownload">PrescriptionScreenDownload</string>
+    <string name="PrescriptionScreenClose">PrescriptionScreenClose</string>
+    <string name="PrescriptionScreenPrevious">PrescriptionScreenPrevious</string>
+    <string name="PrescriptionScreenNext">PrescriptionScreenNext</string>
+
+    //Appointment details events
+    <string name="AppointmentDetailsCheckIn">AppointmentDetailsCheckIn</string>
+    <string name="AppointmentDetailsAddProcedure">AppointmentDetailsAddProcedure</string>
+    <string name="AppointmentDetailsStartConsult">AppointmentDetailsStartConsult</string>
+    <string name="AppointmentDetailsJoin">AppointmentDetailsJoin</string>
+    <string name="AppointmentDetailApplyDiscount">AppointmentDetailApplyDiscount</string>
+    <string name="AppointmentDetailsPaymentMode">AppointmentDetailsPaymentMode</string>
+    <string name="AppointmentDetailsPaymentConfirm">AppointmentDetailsPaymentConfirm</string>
+
+    //adding procedure events
+    <string name="AddingProcedureScreenSearch">AddingProcedureScreenSearch</string>
+    <string name="AddingProcedureScreenAdd">AddingProcedureScreenAdd</string>
+    <string name="AddingProcedureScreenRemove">AddingProcedureScreenRemove</string>
+    <string name="AddingProcedureScreenApplyDiscount">AddingProcedureScreenApplyDiscount</string>
+
+    //records screen events
+    <string name="RecordsScreenImpressions">RecordsScreenImpressions</string>
+    <string name="RecordsScreenCreateNote">RecordsScreenCreateNote</string>
+
+    //appointment completed events
+    <string name="AppointmentCompletedFollowUp">AppointmentCompletedFollowUp</string>
+    <string name="AppointmentCompletedNextConsult">AppointmentCompletedNextConsult</string>
+    <string name="AppointmentCompletedBackToHome">AppointmentCompletedBackToHome</string>
+    //impressions
+    <string name="AppointmentsListScreenImpressions">AppointmentsListScreenImpressions</string>
+    <string name="AppointmentsOpenTabImpressions">AppointmentsOpenTabImpressions</string>
+    <string name="AppointmentsClosedTabImpressions">AppointmentsClosedTabImpressions</string>
+    <string name="AppointmentDetailsScreenImpressions">AppointmentDetailsScreenImpressions</string>
+    <string name="AddingProcedureScreenImpressions">AddingProcedureScreenImpressions</string>
+    <string name="AppointmentCompletedScreenImpressions">AppointmentCompletedScreenImpressions</string>
+
+    //Simplified payments events
+    <string name="PaymentOverviewScreenImpression">PaymentOverviewScreenImpression</string>
+    <string name="TransactionsScreenImpression">TransactionsScreenImpression</string>
+    <string name="PaymentNotificationPreferenceScreenImpression">PaymentNotificationPreferenceScreenImpression</string>
+    <string name="TransactionsPageFiltersScreenImpression">TransactionsPageFiltersScreenImpression</string>
+    <string name="TransactionsPageOrderDetailsScreenImpression">TransactionsPageOrderDetailsScreenImpression</string>
+    <string name="TransactionPagePaymentHistoryButtonScreenImpression">TransactionPagePaymentHistoryButtonScreenImpression</string>
+
+    //payment received
+    <string name="InvoiceShared">Invoice Shared with the Patient</string>
+    <string name="FindInvoice">Patient can find the invoice link in their SMS or Email.</string>
+
+    <string name="dictate_pres">Dictate Prescription</string>
+    <string name="start_dictate">Start Dictating</string>
+    <string name="pause_dictate">Pause Dictation</string>
+    <string name="start_testing_mic">Start Testing Mic</string>
+    <string name="clear_dictation">Clear All Dictations</string>
+    <string name="save_records">Save Records</string>
+    <string name="stop_dictate">Stop Dictation</string>
+    <string name="voice_emr_help">
+        1. Press the start button to activate the voice capturing mic. Please ensure you give the mic permission to record your voice. \n\n 2. Please be very clear of what you say so that the AI can catch your word correctly. It will be best if you will dictate close to the mic. \n\n3. When you dictate and the AI fails to understand the word, try talking slowly to see if it understand what you say. \n\n4. There might be many cases where the AI will not recognise certain word as they may not be in our database. In such case please enter it manually for now as we will update the database with those new words. \n\n5. You can easily Pause and Resume Dictation in between. \n\n6. When you dictate you can see the text feedback in "Your Dictation" Section. \n\n7. There are different sections to help you understand what you can dictate and record the data. \n\n8. Once done you can stop the dictation and review the output. We also give edit option for you to correct the mistake happened during the dictation.
+    </string>
+
+    <string name="voice_emr_commands">
+        1. Patient &lt;<b>vital</b>&gt; is &lt;<b>value</b>&gt; eg. "patient bp is 120 by 80" \n2. <b>Take</b> &lt;<b>medicine-name</b>&gt; [frequency] [for N days] [directions] [after | before food] eg. "take Meftal tablet SOS for 7 days after food", "take Crocin twice daily" \n3. <b>Go for</b> &lt;<b>testnames</b>&gt; after N days eg. "go for CBC, blood sugar", "go for MRI after 3 days" \n4. &lt;<b>testname</b>&gt; is positive (or a numeric value) eg. "blood sugar is 140", "malarial parasite test is positive" \n5. Patient <b>complains</b> of &lt;<b>symptoms</b>&gt; [from ...] eg. Patient complains of body pain from past 3 days \n6. She has <b>history of</b> &lt;<b>symptoms</b>&gt; [from last ..] eg. patient has history of headache from last 3 years \n7.Patient has <b>family history</b> of &lt;<b>symptoms</b>&gt; eg. he has family history of diabetes, hypertension \n8. Patient &lt;<b>habit</b>&gt; [since …] eg. Patient is smoking since last 10 years. \n9. He/she has &lt;<b>symptoms</b>&gt; eg. "she has rashes, fever and headache" \n10. He has &lt;<b>allergy-type</b>&gt; <b>allergy</b> from &lt;<b>allergen</b>&gt; causing &lt;<b>symptom</b>&gt; eg. he has food allergy from peanuts causing skin rashes \n11. He/she is diagnosed with &lt;<b>disease-name</b>&gt; eg. "she is diagnosed with diabetes type two" \n12. <b>You can see me after</b> N days or <b>Follow up after</b> N days (follow up)  eg. "follow up after 1 month" \n13. <b>SIMBO NOTE ...</b> &lt;<b>dictate notes</b>&lt; …. <b>SIMBO EXIT</b> (or any other Simbo command - to exit note-taking mode) \n14. <b>SIMBO</b> &lt;<b>section</b>&gt; <b>NOTE</b> …. eg. Simbo medical-history note \n15. <b>SIMBO</b> &lt;<b>section</b>&gt; <b>[item|number] # NOTE</b> …  eg. Simbo medicine item 3 note ...
+
+        <!--                1. Symptoms are fever, cold \n2. Vitals are Blood Pressure 120 60 Temperature 70 \n3. Patient has reported headache and fever since 3 days \n4. Prescribing Crocin 250 twice a day for 3 days. Follow-up after 3 days.-->
+    </string>
+
+    <string name="can_try_again">Press [img src=ok16/] to accept or [img src=retry16/] to retry</string>
+
+    <string name="AppointmentCancel_status">Patient has done online Payment. Do you want to initiate the refund?</string>
+    <string name="AppointmentRefundPolicy"><i>100% refund policy</i></string>
+    //My Payments
+    <string name="remove_service">(<u>Remove Service</u>)</string>
+    <string name="MyPayments">Payments</string>
+    <string name="Overview">Overview</string>
+    <string name="Transactions">Transactions</string>
+    <string name="payment_notification">Payment Notification</string>
+    <string name="payment_notification_preference">Payment Notification Preference</string>
+    <string name="transaction_search"><font size="12">Search by Patient name,Mobile number,Order ID</font></string>
+    <string name="payment_save_preference">Save Preference</string>
+    <string name="payment_note">Note: Select the duration frequency for receiving SMS/email on the refund/settlement status from time to time </string>
+    <string name="create_receipt"><u>Create Receipt</u></string>
+    <string name="payment_history"><u>Payment History</u></string>
+    <string name="order_details"><u>Order Details</u></string>
+    <string name="create_payment">Payment Receive &amp; Create Invoice </string>
+
+    <string name="patient_updates_reschedule_text">Patient will be receive notification with updated details through SMS or Email.</string>
+    <string name="reschedule_appointment_success">Appointment Rescheduled Successfully to </string>
+    <string name="reschedule_appointment_confirm_button">Confirm Rescheduled Appointment</string>
+    <string name="appt_setting_text">For video appts. 2 reminders are sent:\n a) 1 hour before the appointment. \n b) 15 minutes before the appointment.</string>
+    <string name="hours_before_appt_text">hours before appointment\n(max.72 hours)</string>
+
+    <string name="help_me_setup_text">Thank you for reaching out. one of our client success partners will reach out to you shortly to help you. If you can\’t wait to get going, please feel free to use the live chat option between Monday to Friday 10 am to 7 pm.</string>
+
+    <string name="take_notes_text"><u>Take Notes</u></string>
+    <string name="remove">Remove</string>
+    <string name="apply_to_all">Apply To All</string>
+    <string name="remove_header_GBP">Remove Google Business Profile Page Link ?</string>
+    <string name="remove_title_GBP">Note: After you remove your GBP page link the corresponding SMS and Email won\'t be triggered and sent to your Patients</string>
+    <string name="apply_all_header_GBP">Apply Google Business Profile Link To All Service ?</string>
+    <string name="apply_all_title_GBP">Note: Applying same link to all your Products will send the same link for all service</string>
+    <string name="staff_permi">Staff Permission</string>
+    <string name="view_enable_GBP">View &amp; Enable Auto Share GBP</string>
+    <string name="view_enable_title_GBP">To allow GBP configuration by staff the View Permission should be enabled</string>
+    <string name="allow_config_GBP">Allow Configure &amp; Update GBP Link </string>
+    <string name="update_permission">Update Permission</string>
+
+    <string name="delay_note">Note: Delay intimation is sent only for clinic appointments</string>
+
+
+    <string name="No_Patient_Found">No Patient Found</string>
+    <string name="Zero_Results">0 Result Found</string>
+    <string name="Internal">Internal</string>
+    <string name="Registered">Registered</string>
+    <string name="Load_More">Load More</string>
+    <string name="After_Book_Note">After booking consult, you will have a maximum of 10 minutes to join the video consult.</string>
+    <string name="Slot_Not_Available">Slots are NOT available for this date.\n Please try with other date.</string>
+    <string name="Slot_Not_aVail_Header">Slots are NOT available.</string>
+
+    <string name="enterPhone">Enter Phone</string>
+    <string name="enterEmail">Enter Email</string>
+    <string name="add_services_note"><b>Note:</b> Updating services will reset invoice values.</string>
+
+    <string name="save_and_close">Save &amp; Close</string>
+    <string name="save_and_more">Save &amp; Add More</string>
+    <string name="update_record">Update Record</string>
+    <string name="removing_record">Removing the record</string>
+    <string name="how_its_work"><u>How it works?</u></string>
+    <string name="addMedicineNameValid">Please select a medicine from the drop down list or add to database</string>
+    <string name="Upi_body">Enter your UPI id to enable patient do online payment to you. Please make sure you enter your correct UPI Id for smooth payment.</string>
+    <string name="staff_body">Provide a staff contact number so that your patient can contact them and confirm the appointment via UPI payment.</string>
+    <string name="offline_payment_content">All the payment will be collected offline for all your services. You can manually change the payment status in appointment list once the patient pays you.</string>
+    <string name="payU_body">You can input your own Payment Merchant Account. You can get all the information on your payment console.</string>
+</resources>

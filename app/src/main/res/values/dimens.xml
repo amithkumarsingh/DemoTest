@@ -1,0 +1,31 @@
+<resources>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <!-- login screen -->
+    <dimen name="loginCardLayout">184dp</dimen>
+    <dimen name="loginCardLayoutHeight">300dp</dimen>
+
+    <dimen name="marginStart20">20dp</dimen>
+
+    <dimen name="libTextImg">200dp</dimen>
+    <dimen name="libTextImgMargin">40dp</dimen>
+
+    <dimen name="graphWidth">20dp</dimen>
+
+    <dimen name="patientInfoHeight">200dp</dimen>
+    <dimen name="eightdp">8dp</dimen>
+    <dimen name="sixteensp">16sp</dimen>
+    <dimen name="fourtyfourdp">44dp</dimen>
+    <dimen name="twentyfoursp">24sp</dimen>
+    <dimen name="twentysp">20sp</dimen>
+    <dimen name="sixteendp">16dp</dimen>
+    <dimen name="thirtytwodp">32dp</dimen>
+    <dimen name="twentyfourdp">24dp</dimen>
+    <dimen name="twelevesp">12sp</dimen>
+    <dimen name="eighteensp">18sp</dimen>
+    <dimen name="fourdp">4dp</dimen>
+    <dimen name="twodp">2dp</dimen>
+    <dimen name="thirtytwosp">32sp</dimen>
+</resources>

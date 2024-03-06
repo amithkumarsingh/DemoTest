@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/dailogArticleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorAccent">
+
+
+        <TextView
+            android:id="@+id/dailogArticleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="Reply"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dailogArticleCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_cancel"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/amountPaidLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/messageSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="60dp">
+
+
+            <EditText
+                android:id="@+id/amountPaid"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/drawable_rectangle_chat_box"
+                android:lines="1"
+                android:maxLines="1"
+                android:text="" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentRight="true"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorAccent"
+                android:src="@drawable/ic_send" />
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>

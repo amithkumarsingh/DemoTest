@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/caseTaskard"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/taskListName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textSize="17dp"
+                android:text="Task Name"
+                android:scrollHorizontally="true"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_toStartOf="@+id/taskListDateLabel"
+                android:layout_marginEnd="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/caseChannelListDate"/>
+
+            <TextView
+                android:id="@+id/taskListDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Due on"
+                android:layout_alignParentEnd="true"
+                android:textStyle="bold"
+                android:layout_marginEnd="20dp" />
+
+            <TextView
+                android:id="@+id/taskListDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Jan, 20"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorBlack"
+                android:layout_below="@+id/taskListDateLabel"
+                android:textStyle="bold"
+                android:layout_marginEnd="20dp" />
+
+            <TextView
+                android:id="@+id/assigned_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:textSize="15dp"
+                android:text="Assigned To:"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/taskListName"/>
+
+            <TextView
+                android:id="@+id/assigned_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr.Example"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/taskListName"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/assigned_title"/>
+            <View
+                android:id="@+id/viewLine"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_below="@+id/assigned_title"
+                android:layout_width="match_parent"
+                android:background="@color/colorBlack"
+                android:layout_height="1dp"/>
+            <TextView
+                android:id="@+id/createdBy_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="20dp"
+                android:textSize="15dp"
+                android:text="Created By:"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/viewLine"/>
+
+            <TextView
+                android:id="@+id/created_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr.Example"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/viewLine"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/createdBy_title"/>
+            <TextView
+                android:id="@+id/status_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="20dp"
+                android:textSize="15dp"
+                android:text="Status:"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/createdBy_title"/>
+
+            <TextView
+                android:id="@+id/statusText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="On going"
+                android:textSize="15dp"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:layout_marginTop="13dp"
+                android:layout_below="@+id/createdBy_title"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/status_title"/>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

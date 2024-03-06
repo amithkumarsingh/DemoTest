@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNavText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Task List Filter"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/taskListFilterClear"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:tint="#FFFF"
+            android:src="@drawable/ic_clear_filter" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filterLayOut"
+        android:layout_below="@+id/nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/statusLayout"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Select Status"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/selectStatusSpinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/statusLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_rectangle_shape">
+
+            <Spinner
+                android:id="@+id/selectStatusSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:backgroundTint="@color/colorGrey2" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/assignedLayout"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/selectStatusSpinnerLayout"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Assigned To"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/assignedSpinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/assignedLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_rectangle_shape">
+
+            <Spinner
+                android:id="@+id/assignedSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:backgroundTint="@color/colorGrey2"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sortByLayout"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/assignedSpinnerLayout"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:text="Sort By"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginBottom="20dp"
+            android:id="@+id/sortBySpinnerLayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/sortByLayout"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/drawable_rectangle_shape">
+
+            <Spinner
+                android:id="@+id/sortBySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:backgroundTint="@color/colorGrey2"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_marginBottom="@dimen/marginStart20"
+        android:layout_below="@+id/filterLayOut"
+        android:id="@+id/applyFilterButton"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:text="Apply Filter"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/drawable_capsule_view"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"/>
+
+
+
+</RelativeLayout>

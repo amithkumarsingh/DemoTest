@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/dailogArticleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dailogArticleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Join Video"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dailogArticleCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/joinVideoSendReminderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:background="@color/colorBlueLight2"
+        android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="40dp">
+
+        <RelativeLayout
+            android:id="@+id/sendReminderTextLayout"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/sendReminderText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:gravity="center"
+                android:text="Patient has yet to complete the Payment"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/sendSMSReminderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/sendReminderTextLayout"
+            android:layout_marginTop="10dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:background="@drawable/drawable_capsule_view"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="3dp">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Send Payment Reminder"
+                        android:textColor="@color/colorWhite" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/orSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/sendSMSReminderLayout"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <View
+                android:layout_width="70dp"
+                android:layout_height="2dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/colorGrey2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="70dp"
+                android:layout_height="2dp"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorGrey2" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/joinVideoTextLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_below="@+id/orSeparator">
+
+            <TextView
+                android:id="@+id/joinVideoText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Do you want to join the video and continue the consultation"
+                android:textColor="@color/colorBlack" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/joinVideoButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/joinVideoTextLayout"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="@dimen/sixteendp"
+            android:background="@drawable/drawable_capsule_view"
+            android:backgroundTint="@color/colorAccent"
+            android:padding="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_video"
+                    android:tint="@color/colorWhite" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Join Video"
+                    android:textColor="@color/colorWhite" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:tint="@color/colorWhite" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

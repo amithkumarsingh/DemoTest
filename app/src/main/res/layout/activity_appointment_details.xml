@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AppointmentDetailsActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:id="@+id/appt_details_appbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="@dimen/fourdp"
+            android:background="@color/colorPrimary"
+            android:orientation="horizontal">
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_gravity="center"
+                android:id="@+id/appt_details_back"
+                android:layout_marginStart="@dimen/eightdp"
+                android:background="@android:color/transparent"
+               android:padding="@dimen/eightdp"
+                app:tint="@color/white"
+                tools:ignore="ContentDescription" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sixteensp"
+                android:textStyle="bold"
+                android:id="@+id/appt_patient_name"/>
+        </LinearLayout>
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/appt_details_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/colorPrimary"
+            android:background="@color/colorWhite"
+            android:elevation="@dimen/fourdp"
+            app:tabMode="scrollable"/>
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/appt_details_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

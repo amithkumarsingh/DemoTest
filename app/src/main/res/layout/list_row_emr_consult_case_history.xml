@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="0dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/apptListDateGroupLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp">
+
+            <RelativeLayout
+                android:id="@+id/calenderImageIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true">
+
+                <ImageView
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@drawable/ic_calendar" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/calenderImageIcon">
+
+                <TextView
+                    android:id="@+id/interactionTextLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Interaction"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="14dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/interactionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/interactionTextLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="3dp"
+                    android:text="Phone On 01 May,20 @ 10:30"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/addingRecords"
+                android:layout_width="35dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/drawable_fill_circle"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:layout_height="35dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_plus"
+                    android:layout_centerInParent="true"
+                    app:tint="@color/colorWhite" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/categoryLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp">
+
+            <RelativeLayout
+                android:id="@+id/verticalViewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="105dp"
+                    android:background="@color/colorBlack" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/apptListHeaderLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/verticalViewLayout">
+
+
+                <RelativeLayout
+                    android:id="@+id/dateCreatedAtLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:background="@android:color/transparent">
+
+                    <RelativeLayout
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:background="@color/colorPrimary"
+                        android:padding="5dp">
+
+                        <ImageView
+                            android:id="@+id/clockIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/ic_clock"
+                            app:tint="@color/colorWhite" />
+
+                        <TextView
+                            android:id="@+id/createdAtDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_centerInParent="true"
+                            android:layout_toRightOf="@+id/clockIcon"
+                            android:text="9 May, 2020 12:30"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/isRecordData"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/dateCreatedAtLayout"
+                    android:layout_marginRight="10dp"
+                    android:visibility="visible"
+                    app:cardCornerRadius="0dp"
+                    app:cardElevation="2dp"
+                    app:cardUseCompatPadding="false">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:padding="5dp">
+
+
+                            <TextView
+                                android:id="@+id/categoryName"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="15dp"
+                                android:text="investigation results"
+                                android:layout_toLeftOf="@+id/categoryArrowIcon"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="20dp"
+                                android:textStyle="bold" />
+
+
+                            <ImageView
+                                android:id="@+id/categoryArrowIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginEnd="10dp"
+                                android:src="@drawable/ic_arrow_right" />
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:id="@+id/isNoRecordData"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:padding="5dp">
+
+
+                        <ImageView
+                            android:id="@+id/addRecordIcon"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="visible"
+                            android:src="@drawable/ic_add2"
+                            app:tint="@color/colorPrimaryDark" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_toRightOf="@+id/addRecordIcon"
+                            android:text="Add New Record"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/sepratorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:maxLines="1"
+                android:text="-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -"
+                android:textColor="@color/colorGreyText"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>

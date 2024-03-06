@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MyPaymentsFragment">
+
+    <RelativeLayout
+        android:id="@+id/toolbarHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/toolbarPayments_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/eightdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/eightdp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/paymentsToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/siq_48"
+            android:padding="@dimen/siq_10"
+            android:text="@string/MyPayments"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/siq_20"
+            tools:ignore="RelativeOverlap,RtlHardcoded" />
+
+        <ImageButton
+            android:id="@+id/toolbarSettingsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/ic_settings"
+            android:backgroundTint="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/paymentsTab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbarHeader"
+        android:background="#fff"
+        android:elevation="@dimen/eightdp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        tools:ignore="DisableBaselineAlignment">
+
+        <RelativeLayout
+            android:id="@+id/paymentsOverviewTab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/paymentsOverviewText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/Overview"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/overViewTab"
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorAccent" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/paymentsTransactionsTab"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.5">
+
+            <TextView
+                android:id="@+id/paymentsTransactionsText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/Transactions"
+                android:textStyle="bold" />
+
+            <View
+                android:id="@+id/transactionsTab"
+                android:layout_width="wrap_content"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/colorAccent"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout_payments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/paymentsTab"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>

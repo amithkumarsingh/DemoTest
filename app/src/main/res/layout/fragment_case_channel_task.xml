@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".casechannels.CaseChannelListActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/taskFilterCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:background="@drawable/drawable_rectangle_outline">
+
+                    <EditText
+                        android:id="@+id/caseChannelTaskSearchEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@+id/ccSearchIcon"
+                        android:background="@null"
+                        android:maxLines="1"
+                        android:lines="1"
+                        android:inputType="text"
+                        android:imeOptions="actionSearch"
+                        android:hint="Search for task"
+                        android:paddingStart="5dp" />
+
+                    <ImageButton
+                        android:id="@+id/ccSearchIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@null"
+                        android:src="@drawable/ic_search" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:padding="10dp">
+
+                    <Button
+                        android:id="@+id/filterButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:text="Filter"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/caseChannelTaskListRecycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/taskFilterCard"
+        android:layout_above="@+id/taskCreateNew"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false" />
+
+
+
+    <TextView
+        android:id="@+id/caseChannelEmptyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Empty Text"
+        android:layout_centerInParent="true"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:visibility="visible"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/taskCreateNew2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/caseChannelEmptyText"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_capsule_view"
+        android:text="@string/create_task"
+        android:textColor="@color/colorWhite" />
+
+
+    <Button
+        android:id="@+id/taskCreateNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/drawable_capsule_view"
+        android:text="@string/create_task"
+        android:textColor="@color/colorWhite" />
+
+
+</RelativeLayout>

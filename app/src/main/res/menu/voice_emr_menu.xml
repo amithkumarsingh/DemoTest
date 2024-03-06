@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/exitMenu"
+        android:icon="@drawable/ic_logout_white"
+        app:showAsAction="always"
+        android:iconTint="@color/colorWhite"
+        android:title="@string/exit" />
+
+    <item
+        android:id="@+id/helpMenu"
+        android:icon="@drawable/ic_help_white"
+        app:showAsAction="always"
+        android:iconTint="@color/colorWhite"
+        android:title="@string/need_help" />
+
+</menu>

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.VideoScreenActivity">
+
+    <RelativeLayout
+        android:id="@+id/mainVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+        <RelativeLayout
+            android:id="@+id/fullscreen_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/videoBottomLayout">
+
+            <TextView
+                android:id="@+id/videoPatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_margin="40dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+
+            <FrameLayout
+                android:id="@+id/videoSubscriberContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+
+            <TextView
+                android:id="@+id/videoTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="40dp"
+                android:text="00:00"
+                android:textColor="#fff"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/videoFullscreenText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:keepScreenOn="true"
+                android:text="@string/join_video_msg"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:textAlignment="center"
+                android:layout_centerInParent="true"
+                android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/loader"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:indeterminateTint="@color/colorWhite"
+                android:layout_below="@+id/videoFullscreenText"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/switchCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:tint="@color/colorWhite"
+                android:src="@drawable/ic_switch_camera_back" />
+
+            <FrameLayout
+                android:id="@+id/videoPublisherContainer"
+                android:layout_width="90dp"
+                android:layout_height="120dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#FFFFFF"
+                android:padding="2dp" />
+
+        </RelativeLayout>
+
+        <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+        <FrameLayout
+            android:id="@+id/videoBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:layout_alignParentBottom="true">
+
+            <RelativeLayout
+                android:id="@+id/fullscreen_content_controls"
+                style="?metaButtonBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/black_overlay"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoMic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="15dp"
+                    android:tint="@color/colorWhite"
+                    android:src="@drawable/ic_mic" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoHangCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="15dp"
+                    android:tint="@color/colorWhite"
+                    android:backgroundTint="@color/colorDanger"
+                    android:src="@drawable/ic_call_hang" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="5dp"
+                    android:tint="@color/colorWhite"
+                    android:layout_toRightOf="@+id/videoMic"
+                    android:src="@drawable/ic_video" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/permissionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/permissionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:layout_centerInParent="true"
+            android:text="@string/permission_text"
+            android:layout_margin="20dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/loader2"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:indeterminateTint="@color/colorWhite"
+            android:layout_below="@+id/permissionText"/>
+
+        <Button
+            android:id="@+id/givePermission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/give_permission"
+            android:textColor="@color/colorWhite"
+            android:backgroundTint="@color/colorPrimaryDark"
+            android:layout_below="@+id/permissionText"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

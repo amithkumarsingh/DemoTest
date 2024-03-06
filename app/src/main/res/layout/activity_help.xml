@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/commListToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:theme="@style/AppTheme.Toolbar"
+            android:navigationIcon="@drawable/ic_arrow_back"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:id="@+id/getHelpHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/commListToolbar"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@color/colorWhite"
+            android:elevation="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/need_help"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="@string/contact_us_sub_text"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/getHelpLiveChatCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:visibility="visible"
+            android:layout_below="@+id/getHelpHeader"
+            android:layout_margin="20dp"
+            card_view:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/getHelpLiveChatLogo"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_live_support"
+                        android:tint="@color/colorWhite"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/getHelpLiveChatText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instant_support"
+                    android:layout_toEndOf="@+id/getHelpLiveChatLogo"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/instant_support_sub_text"
+                    android:layout_toEndOf="@+id/getHelpLiveChatLogo"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/getHelpLiveChatText"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/getHelpOrSeparator2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:visibility="visible"
+            android:layout_below="@+id/getHelpLiveChatCard"
+            android:gravity="center">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey2"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey2"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/getHelpWhatAppCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/getHelpOrSeparator2"
+            card_view:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/getHelpWhatappLogo"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorGreen2">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_whatapp"
+                        android:tint="@color/colorWhite"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/getHelpWhatAppText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whatapp_us"
+                    android:layout_toEndOf="@+id/getHelpWhatappLogo"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/whatapp_sub_text"
+                    android:layout_toEndOf="@+id/getHelpWhatappLogo"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/getHelpWhatAppText"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/getHelpOrSeparator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/getHelpWhatAppCard"
+            android:gravity="center">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey2"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/or"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey2"
+                android:layout_marginStart="20dp"/>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/getHelpEmailCard"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:layout_below="@+id/getHelpOrSeparator"
+            card_view:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/getHelpEmailLogo"
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorRed">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/ic_email"
+                        android:tint="@color/colorWhite"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/getHelpEmailText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_us"
+                    android:layout_toEndOf="@+id/getHelpEmailLogo"
+                    android:layout_marginStart="10dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="15dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/email_sub_text"
+                    android:layout_toEndOf="@+id/getHelpEmailLogo"
+                    android:layout_marginStart="10dp"
+                    android:layout_below="@+id/getHelpEmailText"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--Discussion Group Section-->
+            <RelativeLayout
+                android:id="@+id/caseChannelsSection"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/caseChannelsTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/caseChannelsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Case Channels"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/caseChannelsTabViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:text="View all"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/discussionGroupEmptyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/caseChannelsText"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="80dp"
+                        android:text=""
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/caseChannelsTabRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingEnd="10dp"
+                    android:layout_below="@+id/caseChannelsTabLayout"
+                    android:paddingStart="10dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelTabEmptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="You are not part of any case channel yet"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textSize="14dp" />
+
+                <ProgressBar
+                    android:id="@+id/caseChannelTabLoader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+            <!--Discussion Task Section-->
+            <RelativeLayout
+                android:id="@+id/caseChannelsTaskSection"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/caseChannelsTaskLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Tasks"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/caseChannelsTaskRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingEnd="10dp"
+                    android:layout_below="@+id/caseChannelsTaskLayout"
+                    android:paddingStart="10dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelTaskEmptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="You are not part of any case channel yet"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textSize="14dp" />
+
+                <ProgressBar
+                    android:id="@+id/caseChannelTaskLoader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+            <!--Discussion Post Section-->
+            <RelativeLayout
+                android:id="@+id/caseChannelsPostSection"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/caseChannelsPostLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="Discussions"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/caseChannelsPostRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="1dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingEnd="10dp"
+                    android:layout_below="@+id/caseChannelsPostLayout"
+                    android:paddingStart="10dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelPostEmptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="You are not part of any case channel yet"
+                    android:layout_margin="10dp"
+                    android:textAlignment="center"
+                    android:visibility="gone"
+                    android:textSize="14dp" />
+
+                <ProgressBar
+                    android:id="@+id/caseChannelPostLoader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

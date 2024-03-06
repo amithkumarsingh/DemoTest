@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/dailogArticleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dailogArticleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Bulk Complete"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dailogArticleCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/bulkCancelLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ebf6f9"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:padding="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/selectTimeLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="90dp">
+
+
+                <TextView
+                    android:id="@+id/selectDurationText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:text="Select Duration"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enterDelayTimeCard" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/selectDelayInCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/selectDurationText"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:paddingBottom="10dp"
+                    app:cardCornerRadius="@dimen/fourdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/selectDelayInText">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/durationSpinner"
+                            android:layout_width="0dp"
+                            android:layout_height="40dp"
+                            android:layout_weight="7"
+                            android:background="@android:color/transparent"
+                            android:hint="Select Time"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:id="@+id/durationSpinnerImageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="false"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_chevron_down" />
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bulkCompleteConfirm_rl"
+                android:visibility="gone"
+                android:layout_below="@+id/selectTimeLayout">
+                <RelativeLayout
+                    android:id="@+id/checkBoxLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/amountPaidLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/amountPaidTextLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp">
+
+                            <TextView
+                                android:id="@+id/amountPaidText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:text="Send Follow-up?"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="40dp">
+
+                            <CheckBox
+                                android:id="@+id/followUpSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/amountPaidLayout"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal"
+
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/paymentModeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif"
+                            android:text="Generate Invoice?"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="40dp">
+
+                            <CheckBox
+                                android:id="@+id/generateInvoiceSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cancelConfirmLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/checkBoxLayout"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/cancelConfirmationText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:gravity="center"
+                        android:text="Do you want to cancel all Today appointment for Vidyavihar Clinic?"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/yesNoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cancelConfirmLayout"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/NoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:paddingLeft="30dp"
+                        android:text="NO"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorDanger"
+                        android:textSize="20dp"
+                        android:textStyle="bold"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/YesButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:paddingRight="30dp"
+                        android:text="YES"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="18dp"
+                        android:textStyle="bold"
+
+                        />
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

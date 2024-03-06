@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/appt_calendar_item_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/eightdp"
+        android:layout_marginTop="@dimen/eightdp"
+        android:layout_marginBottom="@dimen/eightdp"
+        android:text="2 nov, 2020"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sixteensp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/fourdp"
+        android:layout_marginBottom="12dp"
+        android:background="@color/white"
+        android:elevation="@dimen/fourdp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".35"
+                android:gravity="left"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp">
+
+                <RelativeLayout
+                    android:id="@+id/name_num_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_patient_general_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/siq_16"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="GS-120234"
+                        tools:ignore="HardcodedText"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:id="@+id/calendar_patient_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/siq_5"
+                        android:layout_marginBottom="@dimen/siq_5"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/sixteensp"
+                        android:textStyle="bold"
+                        android:text="havind"
+                        android:layout_below="@+id/tv_patient_general_id"/>
+
+                    <TextView
+                        android:id="@+id/patient_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/calendar_patient_name"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="@dimen/siq_5"
+                        android:layout_marginBottom="@dimen/siq_5"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/settlementPendingLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".65"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/settlementPendingLayoutR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/drawable_radius_shape_two"
+                    android:backgroundTint="@color/colorInfo"
+                    android:gravity="center">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/drawable_radius_shape_two"
+                        android:backgroundTint="@color/colorWhite"
+                        android:paddingTop="7dp"
+                        android:paddingBottom="7dp">
+
+                        <TextView
+                            android:id="@+id/settlementStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center"
+                            android:text="Settlement Pending"
+                            android:textColor="@color/colorInfo"
+                            android:textSize="@dimen/siq_12"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/open_appt_actions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight=".65"
+                android:gravity="right"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right"
+                        android:orientation="horizontal"
+                        android:weightSum="5">
+
+
+                        <LinearLayout
+                            android:id="@+id/appt_payment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/fourdp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="@dimen/fourdp"
+                            android:background="@drawable/appt_rupee_background"
+                            android:elevation="@dimen/fourdp"
+                            android:gravity="center"
+                            android:padding="@dimen/siq_8">
+
+                            <ImageView
+                                android:layout_width="@dimen/sixteendp"
+                                android:layout_height="@dimen/sixteendp"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_rupee"
+                                app:tint="@color/white" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/appt_cancel_single_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="@dimen/fourdp"
+                            android:layout_marginBottom="@dimen/fourdp"
+                            android:background="@drawable/circle_shap_red"
+                            android:elevation="@dimen/fourdp"
+                            android:gravity="center"
+                            android:padding="@dimen/siq_6">
+
+                            <ImageView
+                                android:id="@+id/single_appt_cancel"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:background="@android:color/transparent"
+                                android:src="@drawable/ic_close"
+                                app:tint="@color/colorDanger" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/appt_reschedule_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:background="@drawable/circle_shap"
+                            android:gravity="center"
+                            android:padding="@dimen/siq_7">
+
+                            <ImageButton
+                                android:id="@+id/single_reschedule_button"
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:background="@drawable/ic_calender_clock"
+                                android:backgroundTint="@color/colorGreyText"
+                                tools:ignore="ContentDescription" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/appt_complete_payment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:background="@drawable/new_appt_clinic_video_bg"
+                            android:clickable="true"
+                            android:elevation="@dimen/fourdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/fourdp"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="16dp"
+                            android:visibility="visible">
+
+                            <ImageButton
+                                android:id="@+id/appt_video"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/ic_video"
+                                android:backgroundTint="@color/white"
+                                android:visibility="visible"
+                                tools:ignore="ContentDescription" />
+                        </LinearLayout>
+
+
+                        <ImageButton
+                            android:id="@+id/appt_video_disable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="10dp"
+                            android:background="@drawable/ic_video_disabled"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="16dp"
+                            android:paddingRight="16dp"
+                            android:paddingBottom="16dp"
+                            android:visibility="gone" />
+
+
+                        <LinearLayout
+                            android:id="@+id/appt_mark_as_complete_calendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:background="@drawable/new_appt_clinic_video_bg"
+                            android:clickable="true"
+                            android:elevation="@dimen/fourdp"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/siq_6">
+
+                            <ImageButton
+                                android:id="@+id/appt_complete"
+                                android:layout_width="19dp"
+                                android:layout_height="19dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/appt_clinc_complete"
+                                android:visibility="visible"
+                                tools:ignore="ContentDescription" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <ImageButton
+                        android:id="@+id/appt_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/ic_arrow_right"
+                        android:visibility="gone" />
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/appt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sixteensp"
+                android:layout_marginBottom="@dimen/eightdp">
+
+                <LinearLayout
+                    android:id="@+id/time_main_lay1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_weight="0.9"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/calendar_appt_mode"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:maxLines="3"
+                            android:text="clinic consultation"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/time_main_lay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.1"
+                        android:paddingStart="15dp"
+                        android:paddingEnd="@dimen/siq_12">
+
+                        <LinearLayout
+                            android:id="@+id/app_time_date"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/appointment_time_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:ellipsize="end"
+                                android:maxLines="2"
+                                android:text="4 May,202112:"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/appointment_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12:30"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/sixteensp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rescheduleAppointmentTime"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:background="@color/colorAccent"
+                            android:orientation="vertical"
+                            android:padding="@dimen/siq_5"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:id="@+id/appt_calenderImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_calender_clock"
+                                android:backgroundTint="@color/colorWhite" />
+
+                            <TextView
+                                android:id="@+id/reschedule_appt_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginStart="5dp"
+                                android:layout_toEndOf="@+id/appt_calenderImage"
+                                android:text="4 May, 2021 12:30"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/closePaymentStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/time_main_lay1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:layout_marginEnd="@dimen/twentyfourdp"
+                    android:layout_marginBottom="@dimen/fourdp">
+
+                    <TextView
+                        android:id="@+id/appt_close_payment_status_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:text="Pending"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/sixteendp">
+
+                <TextView
+                    android:id="@+id/calendar_appt_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:text="Follow-up"
+                    android:textSize="@dimen/twelevesp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/appt_closed_take_notes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/siq_16"
+                    android:text="Take Notes"
+                    android:textSize="@dimen/siq_14"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/external_video_actions_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="16dp"
+                android:layout_toStartOf="@+id/send_join_link_patient"
+                android:orientation="horizontal"
+                android:visibility="visible"
+                android:weightSum="2">
+
+
+                <LinearLayout
+                    android:id="@+id/doctor_join_url_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edit_video_link"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_edit_video_link" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/doctor_join_text"
+                        android:textColor="@color/black" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/patient_join_url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_edit_video_link"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="4dp"
+                        android:src="@drawable/ic_edit_video_link" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:text="@string/patient_join_text"
+                        android:textColor="@color/black" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/send_join_link_patient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/siq_4"
+                android:layout_marginBottom="@dimen/siq_4"
+                android:background="@drawable/bg_edit_send_video_link"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="10dp"
+                android:text="@string/send_join_link_text"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/sepratorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGrey1" />
+
+        <LinearLayout
+            android:id="@+id/ll_parent_notes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp">
+
+
+            <TextView
+                android:id="@+id/create_view_invoice_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Create Invoice"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/create_view_receipt_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Create Receipt"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/appt_action"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="@string/take_notes_text"
+                android:textColor="@color/colorAccent"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/eightdp"
+            android:layout_marginBottom="@dimen/sixteendp"
+            android:visibility="gone">
+
+
+            <TextView
+                android:id="@+id/refundAmountLable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:paddingStart="5dp"
+                android:text="Refund Amount"
+                android:textSize="@dimen/siq_14"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/refundAmountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refundAmountLable"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:paddingStart="5dp"
+                android:text="Rs.5000"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/siq_14"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/video_cancel_appt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:padding="15dp"
+                android:text="Cancel Appt."
+                android:textColor="@color/colorDanger"
+                android:textSize="@dimen/siq_14"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/video_take_note_appt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:padding="15dp"
+                android:text="Take Notes"
+                android:textColor="@color/colorDanger"
+                android:textSize="@dimen/siq_14"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/cancel_appt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:padding="15dp"
+                android:text="Cancel Appt."
+                android:textColor="@color/colorDanger"
+                android:textSize="@dimen/siq_14"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

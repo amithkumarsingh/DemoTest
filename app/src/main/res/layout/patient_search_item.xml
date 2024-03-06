@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_patient_general_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
+        android:text="GS-12342"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/patient_suggestion_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="6dp"
+        android:paddingTop="@dimen/siq_4"
+        android:paddingBottom="@dimen/siq_4"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/sixteensp"
+        android:text="test"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorGrey1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+</LinearLayout>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/recordCategoryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#fff"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/recordCategorySelectedCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/recordCategoryNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_toEndOf="@+id/recordCategorySelectedCb"
+            android:textSize="19dp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/recordCategoryCountLayout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_toLeftOf="@+id/recordForwardIcon"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/recordCategoryCountv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:textSize="17dp"
+                android:text="00"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordForwardIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/recordEpisodesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#fff"
+        android:layout_marginTop="10dp"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/recordEpisodesSelectedCb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/recordEpisodesNameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentStart="true"
+            android:layout_toEndOf="@+id/recordEpisodesSelectedCb"
+            android:textSize="19dp"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/recordEpisodesShareLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/recordEpisodeForwardIcon"
+            android:gravity="center"
+            android:layout_centerInParent="true">
+
+            <ImageButton
+                android:id="@+id/recordEpisodesShareBtn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@android:color/transparent"
+                android:tint="@color/colorAccent"
+                android:src="@drawable/ic_share"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordEpisodeForwardIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_right"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

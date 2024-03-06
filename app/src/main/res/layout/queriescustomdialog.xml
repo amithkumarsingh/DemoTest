@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlueLight2"
+    tools:context=".activities.CreateNewAccount">
+
+    <RelativeLayout
+        android:id="@+id/dialogQueriesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/queriesToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Need Help"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogQueriesCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/queriesWeek_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogQueriesHeader"
+        android:layout_marginTop="@dimen/siq_24">
+
+        <TextView
+            android:id="@+id/weekText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/queries_week"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/queriesContact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/queriesWeek_layout"
+        android:layout_marginTop="@dimen/siq_12">
+
+        <RelativeLayout
+            android:id="@+id/phoneContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_call"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogPhoneNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:text="1800-00-00"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/watsappContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phoneContact_layout"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogWatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:backgroundTint="@color/colorGreen3"
+                android:background="@drawable/ic_whatapp"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogWatsappNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:text="1800-00-00"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/emailContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watsappContact_layout"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_email"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogEmailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|end"
+                android:text="support@whitecoats.com"
+                android:textColor="@color/colorBlack"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailContact_layout"
+            android:layout_marginTop="@dimen/siq_16">
+
+            <View
+                android:id="@+id/dividerFailedEndLine"
+                android:layout_width="wrap_content"
+                android:layout_height="2dp"
+                android:layout_weight="1"
+                android:background="@color/colorGrey1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_divider"
+            android:layout_marginTop="@dimen/siq_24"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btn_askQueries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_34"
+                android:layout_marginEnd="@dimen/siq_34"
+                android:background="@drawable/drawable_rounded_rectangle" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/layout_queries"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_divider"
+            android:layout_marginTop="@dimen/siq_24"
+            android:layout_marginBottom="@dimen/siq_24"
+            android:layout_marginStart="@dimen/siq_34"
+            android:layout_marginEnd="@dimen/siq_34"
+            android:background="@drawable/save_patient_button_background"
+            android:padding="@dimen/siq_12">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_support" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/siq_16"
+                android:layout_marginLeft="10dp"
+                android:layout_marginEnd="@dimen/siq_16">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ask any queries"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:tint="@color/colorWhite" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

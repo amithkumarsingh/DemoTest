@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:padding="0dp">
+
+
+        <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/sharedRecordCardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginBottom="1dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/apptHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorAccent">
+
+                    <RelativeLayout
+                        android:id="@+id/clinicName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/clinicImageIcon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:backgroundTint="@color/colorWhite"
+                            android:layout_marginLeft="5dp"
+                            android:layout_alignParentLeft="true"
+                            android:background="@drawable/ic_hospital" />
+
+
+                        <TextView
+                            android:id="@+id/homeAutoFollowUpClinicName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/clinicImageIcon"
+                            android:text="Vaibhav"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:maxEms="8"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold" />
+
+                        <!--<ImageView-->
+                            <!--android:id="@+id/infoImageIcon"-->
+                            <!--android:layout_width="20dp"-->
+                            <!--android:layout_height="20dp"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:layout_marginLeft="5dp"-->
+                            <!--android:layout_toRightOf="@+id/homeAutoFollowUpClinicName"-->
+                            <!--android:background="@drawable/ic_info"-->
+                            <!--android:backgroundTint="@color/colorWhite" />-->
+
+
+                    </RelativeLayout>
+
+                    <ImageView
+                        android:id="@+id/infoImageIcon"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_info"
+                        android:backgroundTint="@color/colorWhite" />
+
+
+
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/homeAutoFollowUpPatientName"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_alignParentLeft="true"-->
+                        <!--android:layout_marginLeft="10dp"-->
+                        <!--android:text="Vaibhav"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:textColor="@color/colorWhite"-->
+                        <!--android:textStyle="bold" />-->
+
+                    <TextView
+                        android:id="@+id/homeAutoFollowUpSubDateLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sub_date"
+                        android:textSize="12dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_below="@+id/clinicName"
+                        android:textColor="@color/colorWhite"/>
+
+                    <TextView
+                        android:id="@+id/homeAutoFollowUpApptDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="1 july,2019"
+                        android:textSize="12dp"
+                        android:layout_marginTop="2dp"
+                        android:layout_below="@+id/clinicName"
+                        android:layout_toEndOf="@+id/homeAutoFollowUpSubDateLabel"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/apptHeading"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/followUpClinicDateLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_toLeftOf="@+id/bookApptLayout"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/homeAutoFollowUpPatientName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="10dp"
+                                android:text="Vaibhav"
+                                android:textSize="16dp"
+                                android:layout_centerInParent="true"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/bookApptLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true">
+
+
+                            <TextView
+                                android:id="@+id/homeFollowUpDateText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="5dp"
+                                android:text="Follow Up Date"
+                                android:textColor="@color/colorCardBack"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/followUpDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/homeFollowUpDateText"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="1 july,2019"
+                                android:textStyle="bold"
+                                android:textSize="12dp"
+                                android:textColor="@color/colorBlack" />
+
+
+                            <Button
+                                android:id="@+id/apptBookButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_below="@+id/homeFollowUpDateText"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="5dp"
+                                android:text="Book appt."
+                                android:textStyle="bold"
+                                android:background="@color/colorAccent"
+                                android:textColor="@color/colorWhite" />
+
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/autoFollowUpViewLayout"
+                        android:layout_below="@+id/followUpClinicDateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorCardBack"
+                        android:layout_height="2sp"/>
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/autoFollowUpViewLayout"
+                        android:layout_marginTop="6dp">
+
+                        <RelativeLayout
+                            android:id="@+id/submissionDateLayout"
+                            android:layout_width="wrap_content"
+                            android:visibility="gone"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/submissionDateText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Submission Date" />
+
+                            <TextView
+                                android:id="@+id/submissionDateData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="1 july,2019"
+                                android:textSize="12dp"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/conditionLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/submissionDateLayout"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/conditionText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Condition" />
+
+                            <TextView
+                                android:id="@+id/conditionData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:text="Worse"
+                                android:textColor="@color/colorRed"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/followedInstructionLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/conditionLayout"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/followInstructionText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Followed Instructions?" />
+
+                            <TextView
+                                android:id="@+id/followedInstructionData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:text="Completely"
+                                android:textColor="@color/colorGreenLight"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/patientMessageLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followedInstructionLayout"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/patientMessageText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Patient's Message" />
+
+                            <TextView
+                                android:id="@+id/patientMessageData"
+                                android:layout_width="match_parent"
+                                android:layout_below="@+id/patientMessageText"
+                                android:layout_height="wrap_content"
+                                android:lines="1"
+                                android:ellipsize="end"
+                                android:text="not good fdfdsffddfddfdfd"
+                                android:textColor="@color/colorBlack"
+                                android:layout_marginEnd="10dp"
+                                android:layout_toLeftOf="@+id/followUpPatientMsgMore"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/followUpPatientMsgMore"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textStyle="bold"
+                                android:text="@string/more"
+                                android:textColor="@color/colorAccent"
+                                android:layout_alignParentEnd="true"
+                                android:layout_below="@+id/patientMessageText"/>
+
+
+                        </RelativeLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/reportLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/patientMessageLayout"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/reportText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Report" />
+
+                            <TextView
+                                android:id="@+id/reportData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:text="NA"
+                                android:textColor="@color/colorAccent"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/blankText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="5dp"
+                                android:text=""
+                                android:textColor="@color/colorAccent"
+                                android:textStyle="bold" />
+
+
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/apptLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/reportLayout"
+                            android:visibility="gone"
+                            android:layout_marginTop="6dp">
+
+                            <TextView
+                                android:id="@+id/apptNoteText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:text="Appt. Notes" />
+
+                            <TextView
+                                android:id="@+id/apptNoteData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_marginRight="20dp"
+                                android:text=""
+                                android:textColor="@color/colorAccent"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+
+
+
+
+                    </RelativeLayout>
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/recordSharedCategoryName"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="20dp"-->
+                    <!--android:text="Record Shared"-->
+                    <!--android:textAllCaps="true"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="5dp">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsPriLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Primary Text:" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsPriValue"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:text="Primary Value"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="5dp">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsSecLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Sec Text:" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsSecValue"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:text="Sec Value"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="5dp">-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsTerLabel"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Ternary Text:" />-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsTerValue"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:text="Ternary Value"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--</LinearLayout>-->
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/homeSharedRecordsView"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="end"-->
+                    <!--android:layout_marginEnd="10dp"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:text="@string/view"-->
+                    <!--android:textColor="@color/colorAccent"-->
+                    <!--android:textStyle="bold" />-->
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

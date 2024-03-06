@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="2dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp">
+
+                    <Spinner
+                        android:id="@+id/recordsHistCaseDrop"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:layout_marginStart="20dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:text="@string/selected_case_name"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/ic_arrow_down" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/records"
+                android:textColor="@color/colorGrey2" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/caseHistoryHandNotesCard"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/recordEpisNotesIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_notes"
+                        android:layout_marginStart="10dp"/>
+
+
+                    <TextView
+                        android:id="@+id/apptRecCaseRecordName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEpisNotesIcon"
+
+                        android:text="@string/handwriten_notes"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/apptHistHnCount"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toLeftOf="@+id/apptRecHistNotesArrow2"
+                        android:text="0"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/apptRecHistNotesArrow2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_arrow_right" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caseHistoryHandNoteRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:clipToPadding="false"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/caseHistHandNoteEmptyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:text="No Data Available"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recordsNotesEvalCardHistory"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <ImageView
+                        android:id="@+id/recordEpisEvalIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_evaluation" />
+
+                    <TextView
+                        android:id="@+id/recordEpisEval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEpisEvalIcon"
+                        android:text="@string/evaluation"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEpisEvalAddNew"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toLeftOf="@+id/recordEpisEvalCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEpisEvalCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEpisEvalArrowHistory"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEpisEvalCountHistory"
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <ProgressBar
+                            android:id="@+id/progressbarEvaluationHistory"
+                            android:layout_width="20dp"
+                            android:visibility="gone"
+                            android:textAlignment="center"
+                            android:layout_height="20dp" />
+
+
+                    </LinearLayout>
+
+
+                    <ImageView
+                        android:id="@+id/recordEpisEvalArrowHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentStart="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginStart="10dp"-->
+                    <!--android:text="@string/evaluation"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:textStyle="bold" />-->
+
+                    <!--<ImageView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginEnd="10dp"-->
+                    <!--android:src="@drawable/ic_arrow_right" />-->
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/recordEvalListLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recordEpisEvalLayout"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/colorWhite"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recordEvalRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/apptRowDocSelectorLayout"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/recordEpisObservationMainLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_below="@+id/recordEpisEvalLayout"-->
+                <!--android:visibility="gone">-->
+
+                <!--<LinearLayout-->
+                <!--android:id="@+id/recordEpisObservationListLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<android.support.v7.widget.RecyclerView-->
+                <!--android:id="@+id/recordEpisObservationRecyclerView"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:scrollbars="vertical" />-->
+
+
+                <!--</LinearLayout>-->
+
+                <!--</RelativeLayout>-->
+
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/recordsNotesEvalMoreHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F5F5F5"
+                android:visibility="gone">
+
+                <!--<include-->
+                <!--layout="@layout/layout_records_eval_data"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginStart="7dp"-->
+                <!--android:layout_marginEnd="7dp"-->
+                <!--android:visibility="visible" />-->
+
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/recordEpisEvaluationLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_below="@+id/recordEpisDropdown"-->
+                <!--android:visibility="gone">-->
+
+                <RelativeLayout
+                    android:id="@+id/recordEvalSymptomLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/recordEvalSymptomIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="35dp"
+                        android:src="@drawable/ic_vertigo" />
+
+                    <TextView
+                        android:id="@+id/recordEvalSymptom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEvalSymptomIcon"
+                        android:text="@string/symptom"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEvalSymptomAddNewHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone"
+                        android:layout_toLeftOf="@+id/recordEvalSymptomCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEvalSymptomCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEvalSymptomArrow"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEvalSymptomCountHistory"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/recordEvalSymptomArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/recordSymptomListLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recordEvalSymptomLayoutHistory"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/colorWhite"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recordSymptomRecyclerViewHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/apptRowDocSelectorLayout"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/recordEvalObsLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@+id/recordSymptomListLayoutHistory"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/recordEvalObsIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="35dp"
+                        android:src="@drawable/ic_investigation" />
+
+                    <TextView
+                        android:id="@+id/recordEvalObs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEvalObsIcon"
+                        android:text="@string/observation"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEvalObsAddNewHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toLeftOf="@+id/recordEvalObsCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEvalObsCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEvalObsArrowHistory"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEvalObsCountHistory"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/recordEvalObsArrowHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/recordEpisObservationMainLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/recordEvalObsLayoutHistory"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/recordEpisObservationListLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recordEpisObservationRecyclerViewHistory"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="5dp"
+                            android:scrollbars="vertical" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/recordEvalInvestLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@+id/recordEpisObservationMainLayoutHistory"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/recordEvalInvestIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="35dp"
+                        android:src="@drawable/ic_investigation_two" />
+
+                    <TextView
+                        android:id="@+id/recordEvalInvest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEvalInvestIcon"
+                        android:text="@string/investigation"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEvalInvestAddNewHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone"
+                        android:layout_toLeftOf="@+id/recordEvalInvestCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEvalInvestCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEvalInvestArrow"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEvalInvestCountHistory"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/recordEvalInvestArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/recordInvestListLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recordEvalInvestLayoutHistory"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/colorWhite"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recordInvestRecyclerViewHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/apptRowDocSelectorLayout"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/recordEvalDiagnosLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_below="@+id/recordInvestListLayoutHistory"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/colorWhite">
+
+                    <ImageView
+                        android:id="@+id/recordEvalDiagnosIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="35dp"
+                        android:src="@drawable/ic_diagnosis" />
+
+                    <TextView
+                        android:id="@+id/recordEvalDiagnos"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEvalDiagnosIcon"
+                        android:text="@string/diagnosis"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEvalDiagnosAddNewHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toLeftOf="@+id/recordEvalDiagnosCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:visibility="gone"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEvalDiagnosCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEvalDiagnosArrow"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEvalDiagnosCountHistory"
+                            android:layout_width="20dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/recordEvalDiagnosArrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/recordDiagnosListLayoutHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/recordEvalDiagnosLayoutHistory"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/colorWhite"
+                    android:visibility="gone">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recordDiagnosRecyclerViewHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/apptRowDocSelectorLayout"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+
+
+                <!--</RelativeLayout>-->
+
+
+            </RelativeLayout>
+
+
+
+<!--old one-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/caseHistoryEvalCard"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/evaluation"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_arrow_right" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <RelativeLayout
+                android:id="@+id/caseHistoryEvalMore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <include
+                    layout="@layout/layout_records_eval_data"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginStart="7dp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <!--end-->
+
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/recordsNotesTreatmentCardHistory"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/recordEpisTreatmentIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/ic_treatment_plan" />
+
+                    <TextView
+                        android:id="@+id/recordEpisTreatment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toRightOf="@+id/recordEpisTreatmentIcon"
+                        android:text="@string/treatment_plan"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/recordEpisTreatmentAddNewHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toLeftOf="@+id/recordEpisTreatmentCountLayout"
+                        android:text="@string/add_new"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/recordEpisTreatmentCountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_toStartOf="@+id/recordEpisTreatmentArrowHistory"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/recordEpisTreatmentCountHistory"
+                            android:layout_width="25dp"
+                            android:layout_height="wrap_content"
+                            android:text="0"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+                        <ProgressBar
+                            android:id="@+id/progressbarTreatmentHistory"
+                            android:layout_width="20dp"
+                            android:textAlignment="center"
+                            android:layout_height="20dp" />
+
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/recordEpisTreatmentArrowHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+
+                        android:src="@drawable/ic_arrow_right" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorGrey2" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/recordsNotesTreatRv"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="150dp"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:clipToPadding="false"-->
+            <!--android:visibility="gone" />-->
+
+            <RelativeLayout
+                android:id="@+id/recordEpisTreatmentMainLayoutHistory"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/recordsNotesTreatmentCardHistory"
+                android:visibility="gone">
+
+
+                <LinearLayout
+                    android:id="@+id/recordEpisTreatmentListLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recordEpisTreatmentRecyclerViewHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="5dp"
+                        android:scrollbars="vertical" />
+
+
+                </LinearLayout>
+            </RelativeLayout>
+
+
+
+<!--old treatmentplan-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/caseHistoryTreatmentCard"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="3dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/treatment_plan"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_arrow_right" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/caseHistoryTreatRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:clipToPadding="false"
+                android:visibility="gone" />
+
+            <!--end-->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

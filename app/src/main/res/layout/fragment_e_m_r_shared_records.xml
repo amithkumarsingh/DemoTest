@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.EMRSharedRecordsFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible"
+            android:layout_centerInParent="true"
+            android:id="@+id/noRecordLayout">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <View
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/onboarding_image_background_green"/>
+                <ImageView
+                    android:id="@+id/noSharedRecordImageIcon"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/ic_search_patient"
+                    android:adjustViewBounds="true"
+                    android:paddingTop="48dp"
+                    android:layout_marginTop="@dimen/thirtytwodp"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/noRecordText"
+                android:text="Suhail has not shared any records with you yet"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            android:id="@+id/recordLayout">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/record_filter_card"
+                        android:layout_width="0dp"
+                        android:layout_weight="2"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        app:cardCornerRadius="@dimen/fourdp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <Spinner
+                                android:id="@+id/record_filter"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+
+                                android:layout_weight="7"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enter_phone_edit"
+                                android:spinnerMode="dropdown" />
+
+                            <ImageView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:padding="@dimen/sixteendp"
+                                android:src="@drawable/ic_chevron_down" />
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/add_new_patient_button"
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:paddingTop="@dimen/sixteendp"
+                        android:paddingBottom="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:text="@string/all_category_text"
+                        android:textColor="@color/colorAccent"
+                        android:background="@drawable/all_category_background"/>
+                </LinearLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/shared_records_list"
+                    android:layout_marginTop="@dimen/sixteendp"
+                    android:paddingBottom="@dimen/thirtytwodp"
+                    android:overScrollMode="never"/>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/emr_shared_progress"
+            android:layout_centerInParent="true"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/go_up"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/sixteendp"
+            android:src="@drawable/ic_arrow_up"
+            android:tint="@color/colorWhite"
+            app:fabSize="mini"/>
+    </RelativeLayout>
+
+</FrameLayout>

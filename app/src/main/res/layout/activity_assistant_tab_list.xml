@@ -1,0 +1,662 @@
+<!--<LinearLayout android:orientation="vertical"--><!--android:layout_width="match_parent"--><!--android:layout_height="wrap_content"--><!--xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/assistantTabChatRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/assistantTabHorizontalScrollView1"
+            android:layout_marginBottom="10dp" />
+
+        <HorizontalScrollView
+            android:id="@+id/assistantTabHorizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/assistantTabLayoutChatbox"
+            android:layout_marginBottom="5dp"
+            android:scrollbars="none">
+
+            <RelativeLayout
+                android:id="@+id/assistantTabShapeLayout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/assistantTabCardview4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="20dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/assistantTabHelpShortcut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/helpIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:background="@drawable/drawable_capsule_view"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:padding="15dp" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_info"
+                                android:backgroundTint="@color/colorWhite"
+                                android:padding="10dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/helpIcon"
+                            android:text="@string/ai_know_more"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/assistantTabCardview3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/assistantTabCardview4"
+                    app:cardCornerRadius="20dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/assistantTabLateShortcut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/assistantTabLateIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/assistantTabShowLate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/drawable_capsule_view"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:padding="15dp" />
+
+                            <ImageView
+                                android:id="@+id/assistantTabShowLateFolder"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_clock"
+                                android:backgroundTint="@color/colorWhite"
+                                android:padding="10dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/assistantTabLateIcon"
+                            android:text="@string/i_am_late"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/assistantTabCardview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/assistantTabCardview3"
+                    app:cardCornerRadius="20dp">
+
+
+                    <RelativeLayout
+                        android:id="@+id/assistantTabApptShortcut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/calenderIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/showcalender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/drawable_capsule_view"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:padding="15dp" />
+
+                            <ImageView
+                                android:id="@+id/showcalenderFolder"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_calender"
+                                android:backgroundTint="@color/colorWhite"
+                                android:padding="10dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/calenderIcon"
+                            android:text="@string/show_my_calender"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/assistantTabCardview5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/assistantTabCardview6"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/assistantTabRecordShortcut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/assistantTabFolderIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/showRecord"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/drawable_capsule_view"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:padding="15dp" />
+
+                            <ImageView
+                                android:id="@+id/showRecordFolder"
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_folder2"
+                                android:backgroundTint="@color/colorWhite"
+                                android:padding="10dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/assistantTabFolderIcon"
+                            android:text="@string/show_my_record"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/assistantTabCardview6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toRightOf="@+id/assistantTabCardview"
+                    app:cardCornerRadius="20dp">
+
+                    <RelativeLayout
+                        android:id="@+id/assistantTabCancelApptShortcut"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/assistantTabCancelIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/drawable_capsule_view"
+                                android:backgroundTint="@color/colorPrimary"
+                                android:padding="15dp" />
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_cancel"
+                                android:backgroundTint="@color/colorWhite"
+                                android:padding="10dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/assistantTabCancelIcon"
+                            android:text="@string/cancel_appt"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </RelativeLayout>
+        </HorizontalScrollView>
+
+        <RelativeLayout
+            android:id="@+id/assistantTabLayoutChatbox"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/drawable_rectangle_without_border"
+            android:minHeight="46dp"
+            android:layout_margin="10dp"
+            android:elevation="2dp">
+
+            <EditText
+                android:id="@+id/assistantTabChatInputMsg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toLeftOf="@+id/assistantTabChatSendMsg"
+                android:background="@android:color/transparent"
+                android:hint="@string/type_a_message"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:maxLines="2" />
+
+            <!--<View-->
+                <!--android:layout_width="2dp"-->
+                <!--android:layout_height="46dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_marginTop="5dp"-->
+                <!--android:layout_toStartOf="@+id/assistantTabChatSendMsg"-->
+                <!--android:background="#dfdfdf" />-->
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/assistantTabChatSendMsg"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:fabCustomSize="40dp"
+                app:backgroundTint="@color/colorAccent"
+                android:clickable="true"
+                android:layout_margin="10dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_mic_assistance" />
+
+
+            <!--<ImageView-->
+                <!--android:id="@+id/assistantTabChatSendMsg"-->
+                <!--android:layout_width="40dp"-->
+                <!--android:layout_height="40dp"-->
+                <!--android:src="@drawable/ic_mic_assistance"-->
+                <!--android:backgroundTint="@color/colorAccent"-->
+                <!--android:layout_margin="10dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_centerInParent="true"-->
+                 <!--/>-->
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_info"
+                android:backgroundTint="@color/colorWhite"
+                android:padding="10dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabRecyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/assistantTabChatRecyclerView"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_marginBottom="115dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+    <!--<HorizontalScrollView-->
+    <!--android:id="@+id/assistantTabHorizontalScrollView1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:paddingTop="20dp"-->
+    <!--android:scrollbars="none"-->
+    <!--app:layout_constraintBottom_toTopOf="@+id/assistantTabLayoutChatbox"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabShapeLayout"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:padding="8dp">-->
+
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/assistantTabCardview3"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_marginRight="5dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--app:cardCornerRadius="20dp">-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabLate"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="5dp">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabLateIcon"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/assistantTabShowLate"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/drawable_capsule_view"-->
+    <!--android:backgroundTint="@color/colorPrimary"-->
+    <!--android:padding="15dp" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/assistantTabShowLateFolder"-->
+    <!--android:layout_width="18dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/ic_clock"-->
+    <!--android:backgroundTint="@color/colorWhite"-->
+    <!--android:padding="10dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_toRightOf="@+id/assistantTabLateIcon"-->
+    <!--android:text="@string/i_am_late"-->
+    <!--android:textColor="@color/colorPrimary"-->
+    <!--android:textStyle="bold" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--</android.support.v7.widget.CardView>-->
+
+    <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+    <!--android:id="@+id/assistantTabCardview"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_marginRight="5dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_toRightOf="@+id/assistantTabCardview3"-->
+
+    <!--app:cardCornerRadius="20dp">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabFolder"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="5dp">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabFolderIcon"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/showRecord"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/drawable_capsule_view"-->
+    <!--android:backgroundTint="@color/colorPrimary"-->
+    <!--android:padding="15dp" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/showRecordFolder"-->
+    <!--android:layout_width="18dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/ic_folder2"-->
+    <!--android:backgroundTint="@color/colorWhite"-->
+    <!--android:padding="10dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_toRightOf="@+id/assistantTabFolderIcon"-->
+    <!--android:text="@string/show_my_record"-->
+    <!--android:textColor="@color/colorPrimary"-->
+    <!--android:textStyle="bold" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--</android.support.v7.widget.CardView>-->
+
+
+    <!--<android.support.v7.widget.CardView-->
+    <!--android:id="@+id/assistantTabCardview2"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_marginRight="5dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_toRightOf="@+id/assistantTabCardview"-->
+    <!--app:cardCornerRadius="20dp">-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/calender"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:padding="5dp">-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/calenderIcon"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/showcalender"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/drawable_capsule_view"-->
+    <!--android:backgroundTint="@color/colorPrimary"-->
+    <!--android:padding="15dp" />-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/showcalenderFolder"-->
+    <!--android:layout_width="18dp"-->
+    <!--android:layout_height="18dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:background="@drawable/ic_calender"-->
+    <!--android:backgroundTint="@color/colorWhite"-->
+    <!--android:padding="10dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_toRightOf="@+id/calenderIcon"-->
+    <!--android:text="@string/show_my_calender"-->
+    <!--android:textColor="@color/colorPrimary"-->
+    <!--android:textStyle="bold" />-->
+    <!--</RelativeLayout>-->
+
+
+    <!--</android.support.v7.widget.CardView>-->
+
+
+    <!--</RelativeLayout>-->
+    <!--</HorizontalScrollView>-->
+
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/assistantTabLayoutChatbox"-->
+    <!--android:layout_width="0dp"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/assistantTabRecyclerView"-->
+    <!--android:background="@drawable/drawable_rectangle_without_border"-->
+    <!--android:minHeight="46dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--app:layout_constraintLeft_toLeftOf="parent"-->
+    <!--app:layout_constraintRight_toRightOf="parent">-->
+
+    <!--<EditText-->
+    <!--android:id="@+id/assistantTabChatInputMsg"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginLeft="16dp"-->
+    <!--android:layout_marginRight="28dp"-->
+    <!--android:layout_toLeftOf="@+id/assistantTabChatSendMsg"-->
+    <!--android:layout_weight="1"-->
+    <!--android:background="@android:color/transparent"-->
+    <!--android:hint="@string/type_a_message"-->
+    <!--android:maxLines="2" />-->
+
+    <!--<View-->
+    <!--android:layout_width="2dp"-->
+    <!--android:layout_height="46dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginBottom="5dp"-->
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_toLeftOf="@+id/assistantTabChatSendMsg"-->
+    <!--android:background="#dfdfdf" />-->
+
+    <!--<android.support.design.widget.FloatingActionButton-->
+    <!--android:id="@+id/assistantTabChatSendMsg"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:layout_marginBottom="10dp"-->
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:backgroundTint="@color/colorAccent"-->
+    <!--android:clickable="true"-->
+    <!--android:gravity="center"-->
+    <!--android:src="@drawable/ic_mic_assistance"-->
+    <!--android:textSize="14dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

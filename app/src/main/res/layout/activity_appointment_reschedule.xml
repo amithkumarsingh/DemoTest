@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.whitecoats.clinicplus.viewmodels.RescheduleApptViewModel" />
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#26D3D3D3">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/reschedule_toolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:theme="@style/AppTheme.Toolbar"
+            app:title="Payment Timeline"
+            app:titleTextColor="@color/colorWhite" />
+
+        <ScrollView xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/reschedule_date_lay"
+            android:layout_below="@+id/reschedule_toolBar">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                tools:context=".activities.AppointmentRescheduleActivity">
+
+                <RelativeLayout
+                    android:id="@+id/patient_details_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#26D3D3D3"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/patient_details_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Patient Details" />
+                    <TextView
+                        android:id="@+id/tv_patient_general_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/siq_14"
+                        android:textStyle="bold"
+                        android:layout_marginTop="6dp"
+                        android:text="GS-120234"
+                        tools:ignore="HardcodedText"
+                        android:visibility="gone"
+                        android:layout_below="@+id/patient_details_tv"/>
+
+                    <TextView
+                        android:id="@+id/patient_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_patient_general_id"
+                        android:layout_alignParentLeft="true"
+                        android:text="Patient Name"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/patient_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_patient_general_id"
+                        android:layout_alignParentRight="true"
+                        android:text="Patient Name"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/schedule_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_below="@+id/patient_details_layout"
+                    android:layout_marginTop="8dp"
+                    android:background="#26D3D3D3"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="16dp"
+                    android:paddingBottom="10dp">
+
+                    <TextView
+                        android:id="@+id/current_sche_appt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Current Scheduled Appointment" />
+
+                    <TextView
+                        android:id="@+id/consult_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/current_sche_appt"
+                        android:layout_marginTop="8dp"
+                        android:text="Video Consult"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/consult_time_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/consult_type"
+                        android:layout_marginTop="8dp"
+                        android:text="time and Date"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/reschedule_slot_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/schedule_layout"
+                    android:layout_marginTop="8dp"
+                    android:background="#26D3D3D3"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp">
+
+                    <TextView
+                        android:id="@+id/rescheduleText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Reschedule Appt." />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rescheduleText"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="8dp"
+                        android:text="Select Date"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:id="@+id/custom_date_lay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/rescheduleText"
+                        android:layout_alignParentRight="true"
+                        android:background="@color/colorPrimaryDark"
+                        android:padding="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"
+                        android:paddingBottom="8dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/ic_calender_white"
+                            android:drawablePadding="10dp"
+                            android:gravity="center"
+                            android:text="Custom Date"
+                            android:textColor="@color/white"
+                            android:tint="@color/white" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/num_of_slot_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/custom_date_lay"
+                        android:layout_marginTop="16dp"
+                        android:background="@drawable/rounded_corners"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp">
+
+                        <TextView
+                            android:id="@+id/date_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:text="Today,3 May"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/num_slots_avaliable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/date_tv"
+                            android:layout_centerHorizontal="true"
+                            android:text="14 slots Avaliable"
+                            android:textColor="@color/colorAccent" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/available_slot_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/num_of_slot_tv"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Available Slots"
+                        android:textColor="@color/colorAccent" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/available_slot_tv"
+                        android:layout_marginBottom="@dimen/siq_12">
+
+                        <RelativeLayout
+                            android:id="@+id/slots_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginRight="10dp">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/gridView1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:horizontalSpacing="5dp"
+                                    android:numColumns="4"
+                                    android:verticalSpacing="5dp"
+                                    android:visibility="visible">
+                                </androidx.recyclerview.widget.RecyclerView>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <ProgressBar
+                                        android:id="@+id/bookLoading"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:visibility="gone" />
+
+                                    <TextView
+                                        android:id="@+id/bookEmptyText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="@string/no_slot_available_message"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold"
+                                        android:visibility="visible" />
+
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/next_day_slot_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/timeSlot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="Time Slot" />
+
+                            <TextView
+                                android:id="@+id/no_slot_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/timeSlot"
+                                android:layout_marginTop="8dp"
+                                android:text="No slots are available or no slots are created on this date" />
+
+                            <TextView
+                                android:id="@+id/nextDayslotavailable_textview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/no_slot_tv"
+                                android:layout_marginTop="8dp"
+                                android:textColor="@color/colorAccent" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </ScrollView>
+        <RelativeLayout
+            android:id="@+id/reschedule_date_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:background="@color/white"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:id="@+id/reschedule_details_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="8dp"
+                android:text="Reschedule Details" />
+
+            <TextView
+                android:id="@+id/time_of_reschedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:layout_below="@+id/reschedule_details_tv"
+                android:textStyle="bold"
+                android:text="Select Date and Time to reschedule your appt." />
+
+
+            <TextView
+                android:id="@+id/submit_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_of_reschedule"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorGreyText"
+                android:clickable="false"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="@string/reschedule_appointment_confirm_button"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

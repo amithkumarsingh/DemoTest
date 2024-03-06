@@ -1,0 +1,104 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34__Changes_.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34__Changes_.xml
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34__Changes_.xml	
++++ /dev/null	
+@@ -1,4 +0,0 @@
+-<changelist name="Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]" date="1678683903385" recycled="true" deleted="true">
+-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]/shelved.patch" />
+-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 13-03-2023 10:34 [Changes]" />
+-</changelist>
+\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]/shelved.patch
+deleted file mode 100644
+--- a/.idea/shelf/Uncommitted_changes_before_Checkout_at_13-03-2023_10_34_[Changes]/shelved.patch	
++++ /dev/null	
+@@ -1,49 +0,0 @@
+-Index: .idea/modules.xml
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectModuleManager\">\r\n    <modules>\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/Doctors_App.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/Doctors_App.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.androidTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.androidTest.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.main.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.main.iml\" />\r\n      <module fileurl=\"file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.unitTest.iml\" filepath=\"$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.unitTest.iml\" />\r\n    </modules>\r\n  </component>\r\n</project>
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/.idea/modules.xml b/.idea/modules.xml
+---- a/.idea/modules.xml	(revision 8185bcfdf960b754966b5d30d8f4ee791fd37820)
+-+++ b/.idea/modules.xml	(date 1677758872402)
+-@@ -2,11 +2,11 @@
+- <project version="4">
+-   <component name="ProjectModuleManager">
+-     <modules>
+--      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Doctors_App.iml" filepath="$PROJECT_DIR$/.idea/modules/Doctors_App.iml" />
+--      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.iml" />
+--      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.androidTest.iml" />
+--      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.main.iml" />
+--      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Doctors_App.app.unitTest.iml" />
+-+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/whitecoats-myclinic.iml" filepath="$PROJECT_DIR$/.idea/modules/whitecoats-myclinic.iml" />
+-+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.iml" />
+-+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.androidTest.iml" />
+-+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.main.iml" />
+-+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/whitecoats-myclinic.app.unitTest.iml" />
+-     </modules>
+-   </component>
+- </project>
+-\ No newline at end of file
+-Index: app/prod/release/output-metadata.json
+-IDEA additional info:
+-Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+-<+>{\r\n  \"version\": 2,\r\n  \"artifactType\": {\r\n    \"type\": \"APK\",\r\n    \"kind\": \"Directory\"\r\n  },\r\n  \"applicationId\": \"com.whitecoats.clinicplus\",\r\n  \"variantName\": \"prodRelease\",\r\n  \"elements\": [\r\n    {\r\n      \"type\": \"SINGLE\",\r\n      \"filters\": [],\r\n      \"versionCode\": 7400,\r\n      \"versionName\": \"7.4.0\",\r\n      \"outputFile\": \"app-prod-release.apk\"\r\n    }\r\n  ]\r\n}
+-Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+-<+>UTF-8
+-===================================================================
+-diff --git a/app/prod/release/output-metadata.json b/app/prod/release/output-metadata.json
+---- a/app/prod/release/output-metadata.json	(revision 8185bcfdf960b754966b5d30d8f4ee791fd37820)
+-+++ b/app/prod/release/output-metadata.json	(date 1678435451490)
+-@@ -10,8 +10,8 @@
+-     {
+-       "type": "SINGLE",
+-       "filters": [],
+--      "versionCode": 7400,
+--      "versionName": "7.4.0",
+-+      "versionCode": 7500,
+-+      "versionName": "7.5.0",
+-       "outputFile": "app-prod-release.apk"
+-     }
+-   ]
+Index: app/uat/release/output-metadata.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"version\": 2,\r\n  \"artifactType\": {\r\n    \"type\": \"APK\",\r\n    \"kind\": \"Directory\"\r\n  },\r\n  \"applicationId\": \"com.whitecoats.clinicplus.uat\",\r\n  \"variantName\": \"uatRelease\",\r\n  \"elements\": [\r\n    {\r\n      \"type\": \"SINGLE\",\r\n      \"filters\": [],\r\n      \"versionCode\": 7200,\r\n      \"versionName\": \"7.2.0\",\r\n      \"outputFile\": \"app-uat-release.apk\"\r\n    }\r\n  ]\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/uat/release/output-metadata.json b/app/uat/release/output-metadata.json
+--- a/app/uat/release/output-metadata.json	
++++ b/app/uat/release/output-metadata.json	
+@@ -1,5 +1,5 @@
+ {
+-  "version": 2,
++  "version": 3,
+   "artifactType": {
+     "type": "APK",
+     "kind": "Directory"
+@@ -10,9 +10,11 @@
+     {
+       "type": "SINGLE",
+       "filters": [],
+-      "versionCode": 7200,
+-      "versionName": "7.2.0",
++      "attributes": [],
++      "versionCode": 7900,
++      "versionName": "7.9.0",
+       "outputFile": "app-uat-release.apk"
+     }
+-  ]
++  ],
++  "elementType": "File"
+ }
+\ No newline at end of file

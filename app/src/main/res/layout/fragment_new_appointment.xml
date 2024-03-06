@@ -1,0 +1,720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.NewAppointmentFragment">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/appoinment_header"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@color/colorPrimary"
+                android:elevation="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="9"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/service_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:background="@drawable/search_background"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/appt_services_view"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/eightdp"
+                            android:layout_weight="8"
+                            android:background="@android:color/transparent"
+                            android:ellipsize="end"
+                            android:paddingStart="@dimen/sixteendp"
+                            android:singleLine="true"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="true"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_chevron_down" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/appt_header_search"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sixteendp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_search"
+                        app:tint="@color/white" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/appt_header_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingBottom="@dimen/eightdp"
+                    android:src="@drawable/ic_filter"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/appt_header_listview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingBottom="@dimen/eightdp"
+                    android:src="@drawable/ic_feature_list"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/appt_list_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/appoinment_header"
+                android:layout_marginTop="-1dp"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/appointtmentTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="#fff"
+                    android:elevation="@dimen/eightdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RelativeLayout
+                        android:id="@+id/appointOpenTab"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:id="@+id/apptOpenText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Open"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/appointTabOpenBottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="3dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorAccent" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/appointClosedTab"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5">
+
+                        <TextView
+                            android:id="@+id/apptClosedText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Closed"
+                            android:textStyle="bold" />
+
+                        <View
+                            android:id="@+id/appointTabClosedBottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="3dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@color/colorAccent"
+                            android:visibility="invisible" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/appointtmentTab">
+
+                    <LinearLayout
+                        android:id="@+id/appt_search_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="@dimen/eightdp"
+                        android:paddingBottom="@dimen/eightdp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="8">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/eightdp"
+                                android:layout_marginTop="@dimen/fourdp"
+                                android:layout_marginEnd="@dimen/eightdp"
+                                android:layout_marginBottom="@dimen/fourdp"
+                                android:background="@drawable/search_background"
+                                android:elevation="@dimen/fourdp"
+                                android:orientation="horizontal">
+
+                                <AutoCompleteTextView
+                                    android:id="@+id/appt_search_partient"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginTop="@dimen/fourdp"
+                                    android:layout_marginBottom="@dimen/fourdp"
+                                    android:layout_weight="8"
+                                    android:background="@android:color/transparent"
+                                    android:ellipsize="end"
+                                    android:hint="@string/patient_search_text"
+                                    android:paddingStart="@dimen/sixteendp"
+                                    android:singleLine="true"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/searchImage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="@dimen/eightdp"
+                                    android:src="@drawable/ic_search" />
+                                <ImageView
+                                    android:id="@+id/clearImage"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="true"
+                                    android:padding="@dimen/eightdp"
+                                    android:src="@drawable/ic_close"
+                                    android:visibility="gone"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/appt_filter"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_filter" />
+
+                        <ImageView
+                            android:id="@+id/appt_calendar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:src="@drawable/ic_metro_calendar" />
+
+                    </LinearLayout>
+
+                    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/appointmentSwipeContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/appt_search_header">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/appt_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/appt_search_header"
+                            android:overScrollMode="never" />
+                    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+                    <LinearLayout
+                        android:id="@+id/appt_no_patient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/appt_search_header"
+                        android:layout_marginTop="@dimen/twentyfourdp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/appt_no_patient_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/sixteendp"
+                            android:paddingStart="@dimen/siq_15"
+                            android:paddingEnd="@dimen/siq_15"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/appt_no_patient_book_appt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/sixteendp"
+                            android:layout_marginBottom="@dimen/sixteendp"
+                            android:text="@string/book_an_appt"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/no_appointment_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/no_appointment_image_background"
+                        android:paddingStart="@dimen/eightdp"
+                        android:paddingTop="@dimen/twentyfourdp"
+                        android:paddingEnd="@dimen/eightdp"
+                        android:src="@drawable/ic_checkup" />
+
+                    <TextView
+                        android:id="@+id/no_appointment_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/twentyfourdp"
+                        android:text="@string/no_appointement"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/sixteendp" />
+
+                    <LinearLayout
+                        android:id="@+id/book_appointment_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/sixteendp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="@dimen/sixteendp"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:elevation="@dimen/eightdp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:src="@drawable/ic_add2"
+                            app:tint="@color/colorWhite" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginEnd="@dimen/twentyfourdp"
+                            android:gravity="center"
+                            android:text="@string/book_appointment"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/open_calendar_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="@dimen/sixteendp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/sixteendp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:src="@drawable/ic_metro_calendar"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginEnd="@dimen/twentyfourdp"
+                            android:gravity="center"
+                            android:text="@string/open_calendar"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/appt_calendar_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appoinment_header"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <androidx.core.widget.NestedScrollView
+                    android:id="@+id/appt_calendar_view_nestedscroll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/appt_calendar_search_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:orientation="horizontal"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="8"
+                                android:orientation="horizontal">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/eightdp"
+                                    android:layout_marginTop="@dimen/fourdp"
+                                    android:layout_marginEnd="@dimen/eightdp"
+                                    android:layout_marginBottom="@dimen/fourdp"
+                                    android:background="@drawable/search_background"
+                                    android:elevation="@dimen/fourdp"
+                                    android:orientation="horizontal">
+
+                                    <AutoCompleteTextView
+                                        android:id="@+id/appt_calendar_search_partient"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginTop="@dimen/eightdp"
+                                        android:layout_marginBottom="@dimen/eightdp"
+                                        android:layout_weight="9"
+                                        android:background="@android:color/transparent"
+                                        android:drawableStart="@drawable/ic_search"
+                                        android:drawablePadding="@dimen/eightdp"
+                                        android:ellipsize="end"
+                                        android:hint="@string/patient_search_text"
+                                        android:paddingStart="@dimen/sixteendp"
+                                        android:singleLine="true"
+                                        android:textColor="@color/colorBlack"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/appt_calendar_search_partient_close"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="1"
+                                        android:adjustViewBounds="true"
+                                        android:padding="@dimen/eightdp"
+                                        android:src="@drawable/ic_close" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/filter_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginEnd="@dimen/eightdp"
+                                android:text="10 filers applied"
+                                android:textSize="@dimen/twelevesp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/calednar_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/white"
+                            android:elevation="@dimen/fourdp"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:padding="14dp">
+
+                                <ImageView
+                                    android:id="@+id/appt_back_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:src="@drawable/ic_arrow_back2" />
+
+                                <TextView
+                                    android:id="@+id/month_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerHorizontal="true"
+                                    android:text="november"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/sixteensp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/appt_right_arrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/ic_arrow_right" />
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/legendLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                tools:ignore="HardcodedText">
+
+                                <TextView
+                                    android:id="@+id/legendText1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="SUN"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText2"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="MON"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText3"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="TUE"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText4"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="WED"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText5"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="THU"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText6"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="FRI"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                                <TextView
+                                    android:id="@+id/legendText7"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="center"
+                                    android:text="SAT"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/twelevesp" />
+
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:id="@+id/fl_calendarView">
+
+                                <com.kizitonwose.calendarview.CalendarView
+                                    android:id="@+id/appointmentCalendarView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    app:cv_dayViewResource="@layout/caledar_day"
+                                    app:cv_inDateStyle="allMonths"
+                                    app:cv_orientation="horizontal"
+                                    app:cv_outDateStyle="endOfRow"
+                                    app:cv_scrollMode="paged" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/appt_calendar_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:overScrollMode="never"
+                            android:paddingBottom="64dp" />
+
+                        <LinearLayout
+                            android:id="@+id/appt_calendar_no_record"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:layout_marginBottom="@dimen/sixteendp"
+                            android:background="@color/white"
+                            android:elevation="@dimen/fourdp"
+                            android:orientation="vertical"
+                            android:paddingTop="@dimen/twentyfourdp"
+                            android:paddingBottom="@dimen/twentyfourdp">
+
+                            <TextView
+                                android:id="@+id/appt_calendar_no_record_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="@dimen/eightdp"
+                                android:layout_marginBottom="@dimen/eightdp"
+                                android:text="No appointment found for the given filter"
+                                android:textSize="@dimen/sixteensp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/twentyfourdp"
+                                android:layout_marginBottom="@dimen/sixteendp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/appt_clear_filter"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/clear_filter"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="@dimen/sixteensp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/appt_calendar_book_appt"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="@string/book_an_appt"
+                                    android:textAlignment="center"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="@dimen/sixteensp"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </androidx.core.widget.NestedScrollView>
+
+
+            </LinearLayout>
+
+
+            <ProgressBar
+                android:id="@+id/appt_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_appointment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/eightdp"
+                android:src="@drawable/ic_add2"
+                android:tint="@color/colorWhite"
+                app:fabSize="normal"
+                tools:ignore="ContentDescription" />
+
+
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</FrameLayout>

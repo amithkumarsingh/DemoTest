@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/serviceCardViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhite">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/dayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true">
+
+                    <TextView
+                        android:id="@+id/dayText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="M"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="24dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/slotOneLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:id="@+id/slotOneText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="09:00-09:30"
+                        android:textColor="@color/colorSuccess"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/slotTwoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slotOneLayout"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="50dp">
+
+                    <TextView
+                        android:id="@+id/slotTwoText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="09:00-09:30"
+                        android:textColor="@color/colorSuccess"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

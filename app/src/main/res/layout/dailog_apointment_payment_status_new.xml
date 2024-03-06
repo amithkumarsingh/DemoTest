@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/dailogArticleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dailogArticleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Payment Status"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dailogArticleCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/receivedCreateReceiptLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:background="@color/colorBlueLight2"
+        android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/enterAmountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/enterAmountLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="Amount"
+                android:textColor="@color/colorBlack"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enterDelayTimeCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/enterAmountLabel"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="16dp"
+                android:padding="10dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <EditText
+                    android:id="@+id/amountPaid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Amount"
+                    android:inputType="number"
+                    android:padding="5dp" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/paymentModeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enterAmountLayout"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/paymentModeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:text="Payment Mode"
+                android:textColor="@color/colorBlack"
+                android:textSize="13dp"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/selectDelayInCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toRightOf="@+id/paymentModeText"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:cardElevation="2dp"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/paymentModeSpinner"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="7"
+                        android:background="@android:color/transparent"
+                        android:hint="Payment Mode"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:id="@+id/delayInImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="10dp"
+                        android:adjustViewBounds="false"
+                        android:src="@drawable/ic_chevron_down" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/createReceiptLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paymentModeLayout"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="@dimen/sixteendp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <RelativeLayout
+                    android:id="@+id/received"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/receivedCreateReceipt"
+                    android:layout_alignParentRight="true"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:text="Received"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/receivedCreateReceipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="7dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:text="Received &amp; Create Receipt"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/orSendReminderLayout"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/createReceiptLayout"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/orSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:visibility="visible">
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="2dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorGrey2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/or"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="70dp"
+                    android:layout_height="2dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@color/colorGrey2" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/sendSMSReminderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orSeparator">
+
+                <TextView
+                    android:id="@+id/sendReminderText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:gravity="center"
+                    android:text="Send an SMS reminder to Vaibhav with payment link"
+                    android:textColor="@color/colorBlack" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/sendSMSReminderButtonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sendSMSReminderLayout"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:background="@drawable/drawable_capsule_view"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:padding="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Send Payment Reminder"
+                        android:textColor="@color/colorWhite" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

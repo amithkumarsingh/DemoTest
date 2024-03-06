@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/eightdp">
+        <RelativeLayout
+            android:id="@+id/search_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone">
+
+            <fragment
+                android:name="com.whitecoats.clinicplus.fragments.SearchFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/onboarding_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eightdp"
+            android:text="@string/gettingstarted"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sixteensp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_layout"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/first_patient_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteendp"
+            android:backgroundTint="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="@dimen/eightdp"
+            app:layout_constraintTop_toBottomOf="@+id/onboarding_heading">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/sixteendp"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingBottom="@dimen/eightdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add_patient_text"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="@dimen/twelevesp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/add_first_patient_button"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/twelevesp"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:text="@string/add_patient_button_text"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/ic_patient"
+                        android:adjustViewBounds="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:paddingTop="@dimen/sixteendp"
+                        android:paddingStart="@dimen/sixteendp"
+                        android:paddingEnd="@dimen/sixteendp"
+                        android:background="@drawable/onboarding_image_background"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setup_practice_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteendp"
+            android:backgroundTint="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="@dimen/eightdp"
+            app:layout_constraintTop_toBottomOf="@+id/first_patient_cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingStart="@dimen/sixteendp"
+                    android:paddingEnd="@dimen/sixteendp"
+                    android:paddingBottom="@dimen/eightdp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/setup_practice_text"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/twelevesp" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/setup_practice_button"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:textSize="@dimen/twelevesp"
+                        android:textStyle="bold"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:text="@string/setup_practice_button_text"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/ic_setting_icon"
+                        android:adjustViewBounds="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:paddingTop="@dimen/twentyfourdp"
+                        android:paddingStart="@dimen/eightdp"
+                        android:paddingEnd="@dimen/eightdp"
+                        android:background="@drawable/onboarding_image_background"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setup_profile_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteendp"
+            android:backgroundTint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="@dimen/eightdp"
+            app:layout_constraintTop_toBottomOf="@+id/setup_practice_cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingStart="@dimen/sixteendp"
+                    android:paddingEnd="@dimen/sixteendp"
+                    android:paddingBottom="@dimen/eightdp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/setup_profile_text"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/twelevesp" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/setup_profile_button"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:textSize="@dimen/twelevesp"
+                        android:textStyle="bold"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:text="@string/setup_profile_button_text"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/ic_doctor"
+                        android:adjustViewBounds="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:paddingTop="@dimen/twentyfourdp"
+                        android:paddingStart="@dimen/eightdp"
+                        android:paddingEnd="@dimen/eightdp"
+                        android:background="@drawable/onboarding_image_background_green"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setup_staff_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteendp"
+            android:backgroundTint="@color/colorWhite"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:cardCornerRadius="@dimen/eightdp"
+            app:layout_constraintTop_toBottomOf="@+id/setup_profile_cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:paddingTop="@dimen/eightdp"
+                    android:paddingStart="@dimen/sixteendp"
+                    android:paddingEnd="@dimen/sixteendp"
+                    android:paddingBottom="@dimen/eightdp"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/setup_staff_text"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/twelevesp" />
+
+                    <Button
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:id="@+id/setup_staff_button"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:text="@string/setup_staff_button_text"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/twelevesp"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:src="@drawable/ic_staff_setup"
+                        android:adjustViewBounds="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:paddingTop="@dimen/twentyfourdp"
+                        android:paddingStart="@dimen/eightdp"
+                        android:paddingEnd="@dimen/eightdp"
+                        android:background="@drawable/onboarding_image_background_green"
+                        android:layout_centerInParent="true"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/setup_preferences_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/sixteendp"
+            android:backgroundTint="@color/colorWhite"
+            app:cardCornerRadius="@dimen/eightdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/setup_staff_cardView">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="4"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/sixteendp"
+                    android:paddingTop="@dimen/sixteendp"
+                    android:paddingEnd="@dimen/sixteendp"
+                    android:paddingBottom="@dimen/eightdp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/setup_preferences_text"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/twelevesp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/setup_preferences_button"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="@dimen/sixteendp"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:background="@drawable/onboarding_button_background_green"
+                        android:text="@string/setup_preferences_button_text"
+                        android:textSize="@dimen/twelevesp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorWhite" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5">
+
+                    <ImageView
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="@dimen/sixteendp"
+                        android:adjustViewBounds="true"
+                        android:background="@drawable/onboarding_image_background_green"
+                        android:paddingStart="@dimen/sixteendp"
+                        android:paddingTop="@dimen/twentyfourdp"
+                        android:paddingEnd="@dimen/sixteendp"
+                        android:src="@drawable/ic_setup" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

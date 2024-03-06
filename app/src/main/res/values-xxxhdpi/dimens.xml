@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- login screen -->
+    <dimen name="loginCardLayoutTopMargin">150dp</dimen>
+    <dimen name="loginCardLayoutHeight">300dp</dimen>
+    <dimen name="signUpCardLayoutTopMargin">90dp</dimen>
+    <dimen name="signUpCardLayoutHeight">430dp</dimen>
+
+    <!-- splash screen -->
+    <dimen name="splashLoadingMarginStart">135dp</dimen>
+    <dimen name="splashDocImageSize">150dp</dimen>
+    <dimen name="splashDocName">25dp</dimen>
+
+</resources>

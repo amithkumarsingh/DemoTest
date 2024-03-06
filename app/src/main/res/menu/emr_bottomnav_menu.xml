@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+    android:id="@+id/emrProfile"
+    android:icon="@drawable/ic_profile"
+    android:title="@string/emr_botnav_profile"
+    />
+
+    <item
+    android:id="@+id/emrSharedRecords"
+    android:icon="@drawable/ic_folder"
+    android:title="@string/emr_botnav_shared" />
+
+    <item
+    android:id="@+id/emrNotes"
+    android:icon="@drawable/ic_pdf_file"
+    android:title="@string/emr_botnav_notes" />
+
+</menu>

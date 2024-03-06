@@ -1,0 +1,46 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<ImageView-->
+    <!--android:id="@+id/badge"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="top|center_horizontal"-->
+    <!--android:layout_marginStart="10dp"-->
+    <!--android:gravity="center"-->
+    <!--android:padding="2dp"-->
+    <!--app:srcCompat="@drawable/notification_badge" />-->
+
+    <RelativeLayout
+        android:id="@+id/chatRelativeBadgeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginStart="10dp"
+        android:gravity="center"
+        android:padding="2dp"
+        android:backgroundTint="@color/colorRed"
+        android:background="@drawable/drawable_capsule_view">
+
+        <TextView
+            android:id="@+id/chatBadgeCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:textSize="10dp"
+            android:textColor="@color/colorWhite"
+
+            />
+
+
+    </RelativeLayout>
+
+
+</FrameLayout>
+
+
+

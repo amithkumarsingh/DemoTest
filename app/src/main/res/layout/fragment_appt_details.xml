@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ApptDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp">
+
+            <!--            android:layout_marginBottom="65dp" add in below layout in second phase-->
+
+            <RelativeLayout
+                android:id="@+id/captureNoteLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorGrey3"
+                android:elevation="5dp">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="false"
+                    android:paddingBottom="40dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/attendanceAndAppointmentLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+
+                            android:layout_marginTop="10dp"
+                            android:padding="10dp">
+
+                            <RelativeLayout
+                                android:id="@+id/attendanceLayoutHideShow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:visibility="visible">
+
+                                <RelativeLayout
+                                    android:id="@+id/apptStatusLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:visibility="gone">
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/apptStatusTextLayout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="10dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Appt. Status"
+                                            android:textColor="@color/colorBlack"
+                                            android:textSize="19dp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                    <TextView
+                                        android:id="@+id/apptStatusValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/apptStatusTextLayout"
+                                        android:layout_marginLeft="10dp"
+                                        android:layout_marginTop="10dp"
+                                        android:text="Cancelled by patent"
+                                        android:textColor="@color/colorDanger"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/attendanceTextLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Attendance"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="19dp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/attendanceLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/attendanceTextLayout"
+                                    android:layout_marginStart="@dimen/eightdp"
+                                    android:layout_marginTop="14dp"
+                                    android:layout_marginEnd="@dimen/eightdp"
+                                    android:layout_marginBottom="10dp"
+                                    android:background="@drawable/search_background"
+                                    android:elevation="@dimen/fourdp"
+                                    android:visibility="gone">
+
+                                    <TextView
+                                        android:id="@+id/attendanceAt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerVertical="true"
+                                        android:ellipsize="end"
+                                        android:padding="7dp"
+                                        android:paddingStart="@dimen/sixteendp"
+                                        android:text="Not yet in"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/checkInLayout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:background="@drawable/search_background"
+                                        android:backgroundTint="@color/colorAccent"
+                                        android:padding="7dp">
+
+                                        <TextView
+                                            android:id="@+id/checkIn"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentStart="true"
+                                            android:ellipsize="end"
+                                            android:text="Check in"
+                                            android:textColor="@color/colorWhite"
+                                            android:textSize="15dp"
+                                            android:textStyle="bold" />
+
+                                        <ImageView
+                                            android:id="@+id/checkInArrow"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="20dp"
+                                            android:layout_toRightOf="@+id/checkIn"
+                                            android:background="@drawable/ic_arrow_right2"
+                                            android:backgroundTint="@color/colorWhite" />
+
+                                    </RelativeLayout>
+
+
+                                </RelativeLayout>
+                            </RelativeLayout>
+
+                            <!--Appt. type-->
+
+                            <RelativeLayout
+                                android:id="@+id/appointmentTypeTextLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/attendanceLayoutHideShow"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Appt. Type"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="19dp"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/appointmentTypeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/appointmentTypeTextLayout"
+                                android:layout_marginStart="@dimen/eightdp"
+                                android:layout_marginTop="14dp"
+                                android:layout_marginEnd="@dimen/eightdp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/search_background"
+                                android:elevation="@dimen/fourdp"
+                                android:padding="7dp">
+
+                                <ImageView
+                                    android:id="@+id/ticketImage"
+                                    android:layout_width="14dp"
+                                    android:layout_height="14dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@drawable/ic_icon_awesome_tag" />
+
+
+                                <Spinner
+                                    android:id="@+id/appointmentTypeSpinner"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerVertical="true"
+                                    android:layout_toRightOf="@+id/ticketImage"
+                                    android:background="@android:color/transparent"
+                                    android:ellipsize="end"
+                                    android:paddingStart="@dimen/twentyfourdp"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                                <ImageButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@drawable/ic_arrow_down"
+                                    android:paddingStart="@dimen/sixteendp"
+                                    android:paddingTop="@dimen/fourdp"
+                                    android:paddingEnd="@dimen/sixteendp"
+                                    android:paddingBottom="@dimen/fourdp"
+                                    app:tint="@color/white" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/attendanceAndAppointmentViewLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/attendanceAndAppointmentLayout"
+                            android:layout_marginTop="10dp"
+                            android:background="@color/colorGrey2" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/paymentLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/attendanceAndAppointmentViewLayout"
+                            android:padding="20dp">
+
+
+                            <RelativeLayout
+                                android:id="@+id/amountPaidLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="150dp"
+                                android:background="@android:color/transparent"
+                                android:gravity="center"
+                                android:visibility="gone">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/paid" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/paymentTextLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Payment"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="19dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/consultationFeesLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/paymentTextLayout"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Consultation Fee"
+                                    android:textColor="@color/colorGreyText"
+                                    android:textSize="15dp" />
+
+
+                                <TextView
+                                    android:id="@+id/consultationAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Rs "
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/discountLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/consultationFeesLayout"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/discountText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Discount"
+                                    android:textColor="@color/colorGreyText"
+                                    android:textSize="15dp" />
+
+                                <TextView
+                                    android:id="@+id/discountRemoveText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_toRightOf="@+id/discountText"
+                                    android:text="(Remove)"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="15dp"
+                                    android:visibility="gone" />
+
+
+                                <TextView
+                                    android:id="@+id/discount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Rs "
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/netAmountLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/discountLayout"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Net Amount"
+                                    android:textColor="@color/colorGreyText"
+                                    android:textSize="15dp" />
+
+
+                                <TextView
+                                    android:id="@+id/netAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Rs "
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/taxLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/netAmountLayout"
+                                android:layout_marginTop="10dp">
+
+                                <TextView
+                                    android:id="@+id/taxesTextView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Taxes"
+                                    android:textColor="@color/colorGreyText"
+                                    android:textSize="15dp"
+                                    android:layout_marginEnd="55dp"/>
+
+
+                                <TextView
+                                    android:id="@+id/gstValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Rs "
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/totalLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/taxLayout"
+                                android:layout_marginTop="10dp"
+                                android:clickable="true"
+                                android:focusable="true"
+                                android:focusableInTouchMode="true">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Total Amount"
+                                    android:textColor="@color/colorGreyText"
+                                    android:textSize="15dp" />
+
+
+                                <TextView
+                                    android:id="@+id/rupees"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_toLeftOf="@+id/totalAmountEditTextLayout"
+                                    android:text="Rs  "
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+                                <RelativeLayout
+                                    android:id="@+id/totalAmountEditTextLayout"
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_toLeftOf="@+id/decimalValue"
+                                    android:background="@drawable/drawable_rectangle_shape"
+                                    android:backgroundTint="@color/colorBlack">
+
+                                    <EditText
+                                        android:id="@+id/totalAmountEditText"
+                                        android:layout_width="50dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_margin="1dp"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:backgroundTint="@color/colorWhite"
+                                        android:maxLines="1"
+                                        android:paddingRight="2dp"
+                                        android:text=""
+                                        android:textAlignment="textEnd"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="15dp"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+                                <TextView
+                                    android:id="@+id/decimalValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:text=""
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="15dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <!--add procedure-->
+
+                        <RelativeLayout
+                            android:id="@+id/addProcedureLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/paymentLayout"
+                            android:padding="20dp">
+
+                            <RelativeLayout
+                                android:id="@+id/addProcedureTextLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/addProcedure"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Add Service"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_below="@+id/addProcedure"
+                                    android:layout_marginTop="8dp"
+                                    android:gravity="center_horizontal"
+                                    android:text="@string/add_services_note">
+
+                                </TextView>
+
+
+                            </RelativeLayout>
+
+                            <TextView
+                                android:id="@+id/no_procedure_text"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/addProcedureTextLayout"
+                                android:layout_centerHorizontal="true"
+                                android:layout_marginTop="16dp"
+                                android:text="No Service found"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                            <RelativeLayout
+                                android:id="@+id/addProcedureRecyclerViewLAyout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/addProcedureTextLayout"
+                                android:layout_marginTop="15dp"
+                                android:visibility="visible">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/addProcedureRecyclerView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:overScrollMode="never"
+                                    android:scrollbars="vertical" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <!--totalPay layout-->
+
+                        <RelativeLayout
+                            android:id="@+id/totalPayLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/addProcedureLayout"
+                            android:padding="20dp">
+
+                            <RelativeLayout
+                                android:id="@+id/totalPayTextLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:text="Total Pay"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/totalPayValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:text="Rs "
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/payModeLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/totalPayTextLayout"
+                                android:layout_marginTop="15dp"
+                                android:visibility="visible">
+
+                                <RelativeLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:background="@drawable/drawable_rectangle_shape"
+                                    android:backgroundTint="@color/colorBlack">
+
+
+                                    <Spinner
+                                        android:id="@+id/paymentModeSpinner"
+                                        android:layout_width="150dp"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_marginStart="1dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_marginEnd="1dp"
+                                        android:layout_marginBottom="1dp"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/ic_arrow_down" />
+
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/confirmButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorGreen3"
+                                    android:paddingLeft="20dp"
+                                    android:paddingTop="5dp"
+                                    android:paddingRight="20dp"
+                                    android:paddingBottom="5dp">
+
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="Confirm"
+                                        android:textColor="@color/colorWhite"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/paymentHistoryLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/payModeLayout"
+                                android:layout_marginTop="15dp"
+                                android:visibility="gone">
+
+                                <RelativeLayout
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true"
+                                    android:background="@drawable/drawable_radius_shape_two">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:layout_height="wrap_content"
+                                        android:textStyle="bold"
+                                        android:paddingTop="7dp"
+                                        android:textColor="@color/colorWhite"
+                                        android:paddingBottom="7dp"
+                                        android:text="Payment History" />
+
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.core.widget.NestedScrollView>
+
+                <RelativeLayout
+                    android:id="@+id/appointmentDetailsProgressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/consultationTimeLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/consultationTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consultation Time: 12:00am"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="14dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/joinVideoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Join Video"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/cancelApptLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:backgroundTint="@color/colorDanger"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancel Consult"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/viewInvoiceLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/invoiceText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="View Invoice"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/ApptPageLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/receipt_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Create Receipt"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/appointmentDetailsBottomLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/consultationDurationLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Consultation Duration:00:30min"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/drawable_radius_shape_two"
+                android:backgroundTint="@color/colorAccent"
+                android:paddingLeft="25dp"
+                android:paddingTop="3dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="3dp">
+
+                <TextView
+                    android:id="@+id/startConsultationButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginBottom="20dp"
+                    android:text="Start Consult"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</FrameLayout>

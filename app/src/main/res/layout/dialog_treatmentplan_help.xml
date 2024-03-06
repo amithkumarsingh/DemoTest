@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:text="Hints"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:background="@null"
+            android:src="@drawable/ic_close"
+            android:tint="@color/white" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:text="Say “SIMBO Note &lt;notes&gt;” eg – SIMBO Note Patient age is 14 years. \nTake &lt;medicine-name&gt; [frequency] [for N days] [directions] [after | before food] \n You can see me after N days OR Follow up after N days" />
+
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/no"
+            android:layout_width="117dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/drawable_rectangle_border_red"
+            android:text="@string/no"
+            android:textColor="@color/exitColor"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+
+        <RelativeLayout
+            android:id="@+id/yes"
+            android:layout_width="117dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/drawable_rectangle_outline">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/yes"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

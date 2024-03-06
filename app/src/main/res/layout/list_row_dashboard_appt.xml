@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:paddingEnd="10dp"
+    tools:ignore="RtlSymmetry">
+
+    <RelativeLayout
+        android:id="@+id/noAppointmentAndChatBookedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:padding="0dp"
+        android:visibility="gone">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/dashBoardApptRowHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/drawable_appointment_background_shadow">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/homeApptListClinicName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="virar1"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/switchClinicText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/homeApptListClinicName"
+                                android:layout_marginTop="5dp"
+                                android:text="(switch clinic)"
+                                android:textColor="@color/colorAccent"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true">
+
+
+                            <RelativeLayout
+                                android:id="@+id/todaysCountLabelLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:id="@+id/todaysCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Today'a count"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/todaysCountLabelLayout"
+                                android:layout_alignParentEnd="true">
+
+
+                                <TextView
+                                    android:id="@+id/todaysCountValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1000"
+                                    android:textSize="18sp"
+                                    android:textColor="@color/colorBlack"
+                                    tools:ignore="HardcodedText" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/noAppointmentTextButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        tools:ignore="UselessParent">
+
+                        <RelativeLayout
+                            android:id="@+id/noAppointmentLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal">
+
+                            <TextView
+                                android:id="@+id/noAppointmentText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="You have no appointment for now"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="13dp"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/bookAppointmentButtonLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/noAppointmentLayout"
+                            android:layout_marginLeft="25dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="25dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:padding="5dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_add2"
+                                card_view:tint="@color/colorWhite" />
+
+                            <TextView
+                                android:id="@+id/bookNewAppointmetText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Book new Appt."
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <!--appointmentAndChatBookedLayout-->
+    <RelativeLayout
+        android:id="@+id/appointmentAndChatBookedLayout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:padding="0dp"
+        android:visibility="gone">
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="5dp"
+            card_view:cardCornerRadius="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/dashboardApptRowHeaderBooked"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:background="@drawable/drawable_appointment_background_shadow">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true">
+
+                            <TextView
+                                android:id="@+id/homeApptListClinicNameBooked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:maxLines="3"
+                                android:text="virar1"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="16dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/switchClinicTextBooked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/homeApptListClinicNameBooked"
+                                android:layout_marginTop="5dp"
+                                android:text="(switch clinic)"
+                                android:textColor="@color/colorAccent"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/layout_tCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true">
+
+
+                            <RelativeLayout
+                                android:id="@+id/todaysCountLabelLayoutBooked"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true">
+
+                                <TextView
+                                    android:id="@+id/todaysCountBooked"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Today'a count"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="12dp" />
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/todaysCountLabelLayoutBooked"
+                                android:layout_alignParentEnd="true">
+
+
+                                <TextView
+                                    android:id="@+id/todaysCountValueBooked"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="1000"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="18dp" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/noAppointmentTextButtonLayoutBooked"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/dashboardApptRowHeaderBooked"
+                    android:layout_centerInParent="true"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/leftArrowButtonLayout"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="8dp"
+                            android:background="@drawable/drawable_fill_circle"
+                            android:backgroundTint="@color/colorAccent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_arrow_back2"
+                                card_view:tint="@color/colorWhite" />
+
+                        </RelativeLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patientAppointmentCardView"
+                            android:layout_width="194dp"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginBottom="5dp"
+                            card_view:cardCornerRadius="0dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerInParent="true">
+
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_toStartOf="@+id/arrowImageLayout"
+                                    android:layout_centerInParent="true"
+                                    android:padding="3dp">
+
+                                    <TextView
+                                        android:id="@+id/patientName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:ellipsize="end"
+                                        android:maxLines="1"
+                                        android:text="Vaibhav Tailor"
+                                        android:textColor="@color/colorBlack"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/appointmentDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/patientName"
+                                        android:layout_marginTop="2dp"
+                                        android:text="On 20 Apr, 22 @ 09:50 pm"
+                                        android:textColor="@color/colorPrimary"
+                                        android:textSize="12dp"
+                                        android:textStyle="bold" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/arrowImageLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
+                                    android:padding="3dp">
+
+                                    <ImageView
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:src="@drawable/ic_arrow_right" />
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                        <RelativeLayout
+                            android:id="@+id/rightArrowButtonLayout"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="8dp"
+                            android:background="@drawable/drawable_fill_circle"
+                            android:backgroundTint="@color/colorAccent">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_arrow_right"
+                                card_view:tint="@color/colorWhite" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/bulkCancel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_close"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/delayIntimation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_run"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/bulkCompleteVideo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_tick"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/viewAllChat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:gravity="center_horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_arrow_top_right"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/bulkComplete"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_tick"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/dashBoardBookAppointment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_calendar"
+                                card_view:tint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

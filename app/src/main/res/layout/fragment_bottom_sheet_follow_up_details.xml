@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="10dp"
+                android:text="@string/follow_up_detail"
+                android:textColor="@color/colorWhite"
+                android:textSize="19sp"
+                tools:ignore="RelativeOverlap" />
+
+            <ImageView
+                android:id="@+id/followUpCloseDetails"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_close"
+                app:tint="@color/colorWhite"
+                tools:ignore="ContentDescription" />
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/followUpHeaderLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:orientation="vertical"
+                    android:background="@drawable/drawable_ripple_effect">
+                    <TextView
+                        android:id="@+id/tv_patient_general_id"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_alignParentStart="true"
+                        android:text="GS-12023"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        tools:ignore="HardcodedText,ObsoleteLayoutParam" />
+                    <TextView
+                        android:id="@+id/followUpPatientName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginTop="@dimen/siq_5"
+                        android:text="name"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:ignore="HardcodedText" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:weightSum="1"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/siq_3">
+
+                        <TextView
+                            android:id="@+id/followUpPatientPhone"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="1234567890"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText"
+                            android:layout_gravity="center"
+                            android:layout_weight="0.5"/>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end"
+                            android:gravity="end"
+                            android:layout_weight="0.5"
+                            android:layout_marginEnd="@dimen/siq_10"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/followUpSubmissionLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/submission_date_two"
+                                tools:ignore="RelativeOverlap" />
+
+                            <TextView
+                                android:id="@+id/followUpSubDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="23 th may 2022"
+                                android:textColor="@color/colorBlack"
+                                tools:ignore="HardcodedText" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                <LinearLayout
+                    android:id="@+id/apptListDetailLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorGrey3"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/apptAddressLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="5dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/followUpTypeIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:src="@drawable/ic_hospital"
+                            app:tint="@color/colorGreyText"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/followUpClinicName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/followUpTypeIcon"
+                            android:text=""
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            tools:ignore="RelativeOverlap" />
+
+                        <ImageButton
+                            android:id="@+id/followUpClinicInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@null"
+                            android:src="@drawable/ic_info"
+                            app:tint="@color/colorAccent"
+                            tools:ignore="ContentDescription" />
+
+                        <TextView
+                            android:id="@+id/followUpApptDateLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followUpClinicName"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/appt_date" />
+
+                        <TextView
+                            android:id="@+id/followUpApptDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followUpClinicName"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toEndOf="@+id/followUpApptDateLabel"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/followUpDateLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followUpApptDateLabel"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/follow_up_date" />
+
+                        <TextView
+                            android:id="@+id/followUpDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followUpApptDateLabel"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toEndOf="@+id/followUpDateLabel"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/followUpBookAppt"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/followUpApptDateLabel"
+                            android:text="@string/book_appt"
+                            android:textColor="@color/colorAccent"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorGrey2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:layout_weight="1"
+                        android:background="@color/colorWhite"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        tools:ignore="DisableBaselineAlignment,InefficientWeight">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            tools:ignore="NestedWeights">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/condition"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/followUpConditionStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Worse"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/follow_instruct"
+                                android:textAlignment="center"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/followUpInstStatus"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Worse"
+                                android:textColor="@color/colorGreyText"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/colorGrey2" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:gravity="center"
+                        tools:ignore="DisableBaselineAlignment">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/report"
+                                android:textAlignment="center"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/followUpViewReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/view"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="17sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/appt_note"
+                                android:textAlignment="center"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/followUpApptNotes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="-"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:paddingBottom="10dp"
+                        tools:ignore="DisableBaselineAlignment">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.6"
+                            android:orientation="vertical"
+                            tools:ignore="UselessParent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/patient_msg"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/followUpPatientMsg"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:text="Worse"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="17sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

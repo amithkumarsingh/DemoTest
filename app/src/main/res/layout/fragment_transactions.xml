@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#66D3D3D3">
+
+    <RelativeLayout
+        android:id="@+id/isTransactionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/searchSelectCardView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="@dimen/siq_10"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/siq_10"
+                android:layout_gravity="center"
+                android:layout_marginRight="@dimen/siq_10">
+
+                <LinearLayout
+                    android:id="@+id/searchView_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/siq_4"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_marginEnd="@dimen/siq_4"
+                    android:padding="4dp"
+                    android:layout_marginBottom="@dimen/fourdp"
+                    android:background="@drawable/drawable_rectangle_payments"
+                    android:orientation="horizontal">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/transaction_search_patient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/fourdp"
+                        android:layout_marginBottom="@dimen/fourdp"
+                        android:background="@android:color/transparent"
+                        android:ellipsize="end"
+                        android:hint="@string/patient_search_text"
+                        android:singleLine="true"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/ic_search"
+                        android:drawablePadding="8dp"
+                        android:paddingLeft="8dp"
+                        android:paddingRight="8dp"/>
+                </LinearLayout>
+                <!--<SearchView
+                    android:id="@+id/search_transactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/drawable_rectangle_payments"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="@string/transaction_search" />
+-->
+                <LinearLayout
+                    android:id="@+id/paymentsTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/searchView_layout"
+                    android:layout_marginLeft="@dimen/siq_4"
+                    android:layout_marginRight="@dimen/siq_4"
+                    android:background="#fff"
+                    android:elevation="@dimen/eightdp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <RelativeLayout
+                        android:id="@+id/layout_transaction_days"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/drawable_rectangle_payments"
+                        android:layout_marginRight="8dp">
+
+                        <com.whitecoats.clinicplus.utils.CustomSpinner
+                            android:id="@+id/days_type_transaction"
+                            style="@style/spinner_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:paddingRight="10dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/layout_transaction_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.5"
+                        android:background="@drawable/drawable_rectangle_payments"
+                        >
+
+                        <TextView
+                            android:id="@+id/paymentsTransactionsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/filter"
+                            android:layout_centerVertical="true"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorGreyText"
+                            android:layout_marginLeft="4dp"/>
+
+                        <TextView
+                            android:id="@+id/transactionsTabFilterText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:drawableRight="@drawable/ic_filter"
+                            android:layout_marginRight="4dp"
+                            android:drawablePadding="8dp"
+                            android:text=""
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/searchSelectCardView"
+            >
+
+            <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pagination_progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView_transactions"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            <LinearLayout
+                android:id="@+id/layout_transaction_no_record"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:elevation="@dimen/fourdp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/transaction_no_record_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:layout_marginBottom="@dimen/eightdp"
+                    android:text="No transaction found for the given filter"
+                    android:textSize="@dimen/siq_16"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <com.wang.avi.AVLoadingIndicatorView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:indicatorName="BallClipRotatePulseIndicator"
+                android:id="@+id/aviInTransactionTab"
+                app:indicatorColor="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:visibility="visible"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/emptyText"
+                android:text="All your consultation data will be available here to help you manage your payments."
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:visibility="visible"/>
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/noTransactionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:visibility="gone">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/undraw_online_transactions_ka"
+            android:padding="20dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="All your consultation data will be present here to help you manage your payments" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

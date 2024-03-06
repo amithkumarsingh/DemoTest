@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/homeToolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:background="?attr/colorPrimary"-->
+            <!--android:elevation="6dp"-->
+            <!--android:minHeight="?attr/actionBarSize"-->
+            <!--android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"-->
+            <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light">-->
+
+
+
+        <!--</android.support.v7.widget.Toolbar>-->
+
+        <RelativeLayout
+            android:id="@+id/homeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="6dp"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/homeDocImg"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:background="@drawable/ic_profile"
+                android:layout_marginStart="10dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/homeWelcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:layout_marginStart="7dp"
+                android:textColor="@color/colorWhite"
+                android:layout_toRightOf="@+id/homeDocImg"/>
+
+            <TextView
+                android:id="@+id/homeDocName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="22dp"
+                android:layout_marginStart="7dp"
+                android:textColor="@color/colorWhite"
+                android:layout_toEndOf="@+id/homeDocImg"
+                android:layout_below="@+id/homeWelcomeText"/>
+
+            <ImageView
+                android:id="@+id/homeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/homeTabLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/homeToolbar"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:minHeight="?attr/actionBarSize"
+            app:tabTextColor="@color/colorWhite"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/homeTabPager"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@id/homeTabLayout"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

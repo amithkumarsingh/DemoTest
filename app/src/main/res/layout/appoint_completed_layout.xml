@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/toolbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/fourdp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/appt_details_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/eightdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/eightdp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/toobar_patient_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sixteensp"
+            android:textStyle="bold" />
+    </LinearLayout>
+    <!--ENGG-3785 Clinic+ App issues(Android) hide the check box and
+    made the view center-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolbar_layout"
+            android:layout_margin="20dp">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/dailogArticleHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/dailogArticleHeaderText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:text="Appointment Completed"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/sharePrescriptionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dailogArticleHeader"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+
+                    <CheckBox
+                        android:id="@+id/sharePrescriptionCb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Share Prescription" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:id="@+id/followUpView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/sharePrescriptionLayout"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorGrey1"
+                    android:visibility="gone" />
+
+
+                <RelativeLayout
+                    android:id="@+id/sendFollowuUpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/followUpView"
+                    android:layout_marginTop="10dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/followUpOptionalText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Send follow-up (Optional)"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/howManyDaysDateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/followUpOptionalText"
+                        android:layout_marginTop="10dp"
+                        android:text="After how many days from 7 july, 2020"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/editTextLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/howManyDaysDateText"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="100dp">
+
+
+                        <RelativeLayout
+                            android:id="@+id/notesEditTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/noteCapturedText"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_radius_shape_two"
+                            android:backgroundTint="@color/colorGreyText">
+
+
+                            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/sharedRecordCardView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_marginBottom="2dp"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <EditText
+                                        android:id="@+id/followUpDayEditText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="35dp"
+                                        android:background="@android:color/transparent"
+                                        android:hint="Eg. 7"
+                                        android:inputType="number"
+                                        android:paddingLeft="7dp"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="19dp"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/notesCapturedEditTextLayoutButton"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/noteCapturedText"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_radius_shape_two">
+
+
+                            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/applyCouponCardView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginStart="2dp"
+                                android:layout_marginTop="2dp"
+                                android:layout_marginEnd="2dp"
+                                android:layout_marginBottom="2dp"
+                                card_view:cardCornerRadius="4dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/followupButton"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="35dp"
+                                    android:background="@color/colorAccent">
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:background="@drawable/ic_arrow_right2"
+                                        android:backgroundTint="@color/colorWhite" />
+
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/followUpSmsMessage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/editTextLayout"
+                        android:layout_marginTop="20dp"
+                        android:text="The data provided specifies that the patient will receive an SMS for the follow-up form"
+                        android:textSize="15dp"
+                        android:textStyle="bold|italic" />
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/followUpSmsMessage"
+                        android:layout_marginTop="40dp">
+
+                        <RelativeLayout
+                            android:id="@+id/backToHomeLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Back To Home"
+                                android:textColor="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/ToCreateInvoiceLayout"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:text="Create Invoice"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_arrow_right2"
+                                android:backgroundTint="@color/colorWhite" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+</RelativeLayout>

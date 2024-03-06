@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_light_white"
+    tools:context=".activities.UPIPaymentSetUpScreen">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/upiPaymentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/colorWhite"
+        app:titleTextColor="@color/colorWhite" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upiPaymentToolbar"
+        tools:ignore="MissingConstraints,ScrollViewCount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_how_it_works"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/how_its_work"
+                android:textColor="@color/upi_screenText_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.939"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_how_it_works">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/const_UPI"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/siq_20"
+                    android:layout_marginBottom="@dimen/siq_20">
+
+                    <TextView
+                        android:id="@+id/tv_UPI_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="UPI Id"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.06"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="HardcodedText,MissingConstraints" />
+
+                    <TextView
+                        android:id="@+id/tv_UPI_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/Upi_body"
+                        android:textSize="@dimen/siq_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_UPI_header" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/const_UPI_Add_Parent"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="@dimen/siq_20"
+                        android:layout_marginBottom="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_UPI_body">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_Add_UPI_IDS_QR"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:ignore="MissingConstraints" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        android:id="@+id/tv_Staff_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Provide Staff Contact Number"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/const_UPI_Add_Parent"
+                        tools:ignore="HardcodedText,MissingConstraints" />
+
+
+                    <TextView
+                        android:id="@+id/tv_staff_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/staff_body"
+                        android:textSize="@dimen/siq_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Staff_header" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_staff_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_staff_body"
+                        tools:ignore="MissingConstraints">
+
+                        <ImageView
+                            android:id="@+id/img_staff_icon"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_staff_profile"
+                            tools:ignore="ContentDescription" />
+
+                        <EditText
+                            android:id="@+id/et_staffName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@null"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textSize="16sp"
+                            android:hint="Enter staff name"
+                            tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_staff_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_staff_name"
+                        tools:ignore="MissingConstraints">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="8dp"
+                            android:src="@drawable/ic_call"
+                            tools:ignore="ContentDescription" />
+
+                        <EditText
+                            android:id="@+id/et_staff_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:background="@null"
+                            android:maxLength="10"
+                            android:inputType="number"
+                            android:scrollHorizontally="true"
+                            android:singleLine="true"
+                            android:textSize="16sp"
+                            android:hint="Enter staff contact"
+                            tools:ignore="Autofill,HardcodedText,MissingConstraints,RtlSymmetry,TextFields" />
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/sw_payment_mode_upi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layoutDirection="ltr"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.100"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_staff_number"
+                        app:switchPadding="8dp"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_switch_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Set Payment Mode"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="18sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/sw_payment_mode_upi"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_staff_number"
+                        tools:ignore="HardcodedText" />
+
+                    <Button
+                        android:id="@+id/btn_save_UPIIDs"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_margin="@dimen/siq_16"
+                        android:backgroundTint="@color/colorAccent"
+                        android:text="Save UPI IDs"
+                        android:textAllCaps="false"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.800"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/sw_payment_mode_upi"
+                        tools:ignore="HardcodedText" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_offline_payment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/siq_20"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/upiPaymentToolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/tv_offline_payment_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/offline_payment_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.474"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints"
+                android:paddingBottom="16dp"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/upi_screenText_color"/>
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/switch_payment_mode_offline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:theme="@style/SCBSwitch"
+                android:layout_marginTop="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_offline_payment_content"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tv_payment_mode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set Payment Mode"
+                android:layout_marginStart="@dimen/siq_6"
+                app:layout_constraintTop_toBottomOf="@+id/tv_offline_payment_content"
+                app:layout_constraintStart_toEndOf="@+id/switch_payment_mode_offline"
+                tools:ignore="MissingConstraints"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/upi_screenText_color"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

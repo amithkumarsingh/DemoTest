@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!--<androidx.appcompat.widget.Toolbar
+        android:id="@+id/otpDialogToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorRed"
+        android:visibility="visible"
+        app:subtitleTextColor="@color/colorWhite"
+        app:title="OTP "
+        app:titleTextColor="@color/colorWhite">
+
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="@dimen/siq_18"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/white" />
+    </androidx.appcompat.widget.Toolbar>-->
+
+    <RelativeLayout
+        android:id="@+id/Layout_otpDialog"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorDanger">
+
+
+        <TextView
+            android:id="@+id/otpDialogToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="OTP"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/closeCustomButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Layout_otpDialog">
+
+        <RelativeLayout
+            android:id="@+id/layout_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/siq_24">
+
+            <TextView
+                android:id="@+id/error_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eighteensp"
+                android:text="ERROR MSG"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bt_retry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_msg"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/save_patient_button_background"
+            android:text="@string/retry_penny_verification"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+</RelativeLayout>

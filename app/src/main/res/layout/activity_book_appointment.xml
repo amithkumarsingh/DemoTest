@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookAppointmentActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/bookApptToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:id="@+id/bookApptTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/bookApptToolbar"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/bookApptSearchTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/drawable_ripple_effect"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/search_patient"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/bookApptTab1line"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorAccent" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bookApptAddPatientTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/drawable_ripple_effect"
+                android:clickable="true"
+                android:focusable="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/add_patient"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/bookApptTab2line"
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorAccent"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/bookApptSearchLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/bookApptTabLayout"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:id="@+id/bookApptSearchEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+
+                <SearchView
+                    android:id="@+id/searchPatientEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="10dp"
+                    android:background="@android:color/transparent"
+                    android:queryHint="@string/enter_name_no_id"
+                    android:iconifiedByDefault="false"
+                    android:layout_toStartOf="@+id/searchPatientSearchBtn"
+                     /> <!-- set iconified by default to false -->
+
+                <ImageButton
+                    android:id="@+id/searchPatientSearchBtn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"
+                    android:elevation="3dp"
+                    android:background="@drawable/drawable_capsule_view"
+                    app:tint="@color/colorWhite" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/bookApptSearchCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bookApptSearchEdit"
+                android:layout_marginTop="10dp"
+                android:text="0 Result Found"
+                android:textAlignment="center"
+                android:visibility="gone"
+                android:textSize="16dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookApptRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/bookApptSearchCount"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal" />
+
+
+            <ProgressBar
+                android:id="@+id/appointLoader"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/appointEmptyViewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/appointEmptyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_no_message"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="@color/colorPrimary"-->
+                <!--android:text="Book Now"/>-->
+
+            </LinearLayout>
+
+
+
+            <TextView
+                android:id="@+id/searchPageEmptyText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/to_book_appt"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/searchPageEmptyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchPageEmptyText2"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:text="@string/book_search_empty_text"
+                android:textAlignment="center"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/searchPageAddPatient"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/searchPageEmptyText"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/drawable_capsule_view"
+                android:text="@string/add_patient"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bookApptAddPatientLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bookApptTabLayout"
+            android:layout_marginTop="10dp"
+            android:visibility="visible">
+             <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:context=".activities.AddPatientActivity">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/enter_name_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_patient_name"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_name_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_name_text">
+
+                            <EditText
+                                android:id="@+id/patient_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enter_invest_name"
+                                android:padding="@dimen/eightdp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_contact_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_patient_contact"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_name_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_contact_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_contact_text">
+
+                            <EditText
+                                android:id="@+id/patient_contact"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enterPhone"
+                                android:padding="@dimen/eightdp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_email_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_patient_email"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_contact_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_email_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_email_text">
+
+                            <EditText
+                                android:id="@+id/patient_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enterEmail"
+                                android:padding="@dimen/eightdp"
+                                tools:ignore="Autofill" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_age_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_patient_age"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_email_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_age_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_age_text">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <EditText
+                                    android:id="@+id/patient_age"
+                                    android:layout_width="200dp"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enterage"
+                                    android:maxLength="10"
+                                    android:inputType="numberDecimal"
+                                    android:padding="@dimen/eightdp" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/colorGrey1"
+                                    android:layout_toRightOf="@+id/patient_age"
+                                    android:orientation="horizontal">
+
+                                    <Spinner
+                                        android:id="@+id/patient_age_spin"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="5"
+                                        android:background="@android:color/transparent"
+                                        android:hint="@string/enter_phone_edit"
+                                        android:spinnerMode="dropdown" />
+
+                                    <ImageView
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_weight="3"
+                                        android:adjustViewBounds="false"
+                                        android:padding="12dp"
+                                        android:src="@drawable/ic_chevron_down" />
+                                </LinearLayout>
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_gender_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/select_patient_gender"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_age_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_gender_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_gender_text">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/patient_gender"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enter_phone_edit"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="false"
+                                    android:padding="12dp"
+                                    android:src="@drawable/ic_chevron_down" />
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/enter_interface_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_gender_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_interface_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_interface_text">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/patient_interface"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:hint="@string/enter_phone_edit"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:id="@+id/selectInterfaceDownArrow"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="false"
+                                    android:padding="12dp"
+                                    android:src="@drawable/ic_chevron_down"
+                                    android:visibility="gone"/>
+                            </LinearLayout>
+                        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/patient_type_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/patient_type"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_interface_card"
+                            android:visibility="gone"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patient_type_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/patient_type_text"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/patient_type"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:adjustViewBounds="false"
+                                    android:padding="12dp"
+                                    android:src="@drawable/ic_chevron_down" />
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_id_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_id_edit"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/patient_type_card"
+                            android:visibility="gone"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_id_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_id_text"
+                            android:visibility="gone">
+
+                            <EditText
+                                android:id="@+id/patient_id"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enterid"
+                                android:padding="@dimen/eightdp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/enter_category_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:layout_marginTop="@dimen/eightdp"
+                            android:text="@string/enter_patient_category"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_id_card" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/enter_category_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="16dp"
+                            app:cardCornerRadius="@dimen/fourdp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_category_text">
+
+                            <EditText
+                                android:id="@+id/patient_category"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@android:color/transparent"
+                                android:hint="@string/enter_category"
+                                android:padding="@dimen/eightdp" />
+                        </androidx.cardview.widget.CardView>
+
+                        <Button
+                            android:id="@+id/save_patient"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/save_patient_button_background"
+                            android:text="@string/save_patient"
+                            android:textAllCaps="false"
+                            android:textSize="@dimen/siq_16"
+                            app:backgroundTint="@null"
+                            android:textColor="@color/colorWhite"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/enter_category_card" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </ScrollView>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

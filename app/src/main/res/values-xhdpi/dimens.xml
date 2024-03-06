@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- login screen -->
+    <dimen name="loginCardLayout">120dp</dimen>
+    <dimen name="loginCardLayoutHeight">300dp</dimen>
+    <dimen name="signUpCardLayoutHeight">430dp</dimen>
+    <dimen name="signUpCardLayoutTopMargin">100dp</dimen>
+
+    <!-- splash screen -->
+    <dimen name="splashLoadingMarginStart">120dp</dimen>
+    <dimen name="splashDocImageSize">140dp</dimen>
+    <dimen name="splashDocName">25dp</dimen>
+
+    <!-- confirm order screen -->
+    <dimen name="confirmIconMarginStart">20dp</dimen>
+    <dimen name="confirmTextMarginStart">15dp</dimen>
+    <dimen name="confirmTextSize">18dp</dimen>
+    <dimen name="confirmCouponText">15dp</dimen>
+    <dimen name="confirmIconSize">25dp</dimen>
+    <dimen name="confirmTextTopGap">16dp</dimen>
+    <dimen name="confirmApptLayoutHeight">220dp</dimen>
+    <dimen name="confirmCouponTextTopMargin">68dp</dimen>
+    <dimen name="confirmTotalTextTopMargin">117dp</dimen>
+    <dimen name="confirmRsIconTextTopMargin">117dp</dimen>
+
+</resources>

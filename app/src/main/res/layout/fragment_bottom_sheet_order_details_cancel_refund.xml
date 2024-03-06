@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationLanguageBottomSheet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- settlement payment info layout-->
+
+        <RelativeLayout
+            android:id="@+id/activeConsultationInfoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetMessageActiveConsultationHeading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/bottomSheetMessageActiveConsultationTextHeading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="Refund Now"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="16dp" />
+
+                <ImageView
+                    android:id="@+id/refundNowCancelIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_close"
+                    android:backgroundTint="@color/colorWhite" />
+
+            </RelativeLayout>
+
+            <!-- refund main layout-->
+
+            <RelativeLayout
+                android:id="@+id/refundNowViewLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottomSheetMessageActiveConsultationHeading"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/siq_24">
+
+
+                    <RelativeLayout
+                        android:id="@+id/appointmentStatusLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bottomSheetViewLayout"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/appointmentStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Appointment Status: "
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/appointmentStatusValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/appointmentStatus"
+                            android:text="Consulted"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/paymentStatusLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/appointmentStatusLayout"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/paymentStatus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Payment Status: "
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/paymentStatusValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/paymentStatus"
+                            android:text="Settlement Done"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/initiateRefundProcessLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/paymentStatusLayout"
+                        android:layout_alignParentLeft="true"
+                        android:visibility="gone"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp">
+
+                        <TextView
+                            android:id="@+id/initiateTextLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Do you want to initiate refund process?"
+                            android:textStyle="bold" />
+
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/initiateTextLayout"
+                            android:text="Yes" />
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/initiateTextLayout"
+                            android:layout_marginLeft="30dp"
+                            android:layout_toRightOf="@+id/yes"
+                            android:text="No" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/amountPaidLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/initiateRefundProcessLayout"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/amountPaid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amount Paid: "
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/amountPaidValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/amountPaid"
+                            android:text="Rs. 5000"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/refundAmountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/amountPaidLayout"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp">
+
+                        <TextView
+                            android:id="@+id/refundAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refund Amount:"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/editTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+
+                            android:layout_below="@+id/refundAmount"
+                            android:layout_marginRight="40dp"
+                            android:background="@drawable/drawable_rectangle_shape">
+
+
+                            <EditText
+                                android:id="@+id/refundAmountEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="30dp"
+                                android:background="@android:color/transparent"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:inputType="number"
+                                android:maxLines="1"
+                                android:text="Rs. 5000"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/editTextLayout"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginTop="7dp"
+                            android:text="100 % refund policy"
+                            android:textColor="@color/colorGrey2"
+                            android:textStyle="italic" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/refundAmount"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="7dp"
+                            android:text="Rs."
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <!--close button-->
+                    <RelativeLayout
+                        android:id="@+id/activeConsultationCloseButtonLayout"
+                        android:layout_width="170dp"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/refundAmountLayout"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:backgroundTint="@color/colorGreyText">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorWhite">
+
+                            <TextView
+                                android:id="@+id/closeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Close"
+                                android:textColor="@color/colorGreyText"
+                                android:textStyle="bold" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                    <!--refund now-->
+                    <RelativeLayout
+                        android:id="@+id/refundNowLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_below="@+id/refundAmountLayout"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:backgroundTint="@color/colorDanger">
+
+
+                        <TextView
+                            android:id="@+id/refundNowText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Refund Now"
+                            android:textColor="@color/colorWhite"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <!--refund trigger message-->
+            <RelativeLayout
+                android:id="@+id/triggerMessageLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_below="@+id/bottomSheetMessageActiveConsultationHeading"
+                android:layout_marginTop="10dp">
+
+
+                <TextView
+                    android:id="@+id/triggerMessageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="Refund has been triggered"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+
+
+                <!--close button-->
+                <RelativeLayout
+                    android:id="@+id/CloseButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center_horizontal"
+                    android:layout_below="@+id/triggerMessageText"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:backgroundTint="@color/colorGreyText">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:backgroundTint="@color/colorWhite">
+
+                        <TextView
+                            android:id="@+id/closeTextTriggered"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="Close"
+                            android:textColor="@color/colorGreyText"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

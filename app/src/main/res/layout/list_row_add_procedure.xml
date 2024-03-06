@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/procedureNameLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/medicationNameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Sonography"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/removeProcedureText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Remove Service"
+                android:textColor="@color/colorDanger" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/chargesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/procedureNameLayout"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Charges"
+                android:textColor="@color/colorGreyText"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/chargesAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rs 100.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/taxLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chargesLayout"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Tax(18% GST)"
+                android:textColor="@color/colorGreyText"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/taxAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rs 00.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/discountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/taxLayout"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/discountAppliedText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Discount Applied"
+                android:textColor="@color/colorGreyText"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/discountRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/discountAppliedText"
+                android:text="(Remove)"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+
+            <TextView
+                android:id="@+id/discountAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rs 100.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/applyDiscountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Apply Discount"
+                android:textColor="@color/colorGreen3"
+                android:textSize="15dp" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/totalDiscount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discountLayout"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="Total Amount"
+                android:textColor="@color/colorGreyText"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/totalAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Rs 80.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

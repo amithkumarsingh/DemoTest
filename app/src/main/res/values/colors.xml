@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00A65A</color>
+    <color name="colorPrimaryDark">#008D4C</color>
+    <color name="colorAccent">#3C8DBC</color>
+    <color name="colorAccent2">#00EA99</color>
+    <color name="colorAccent3">#5EE9B9</color>
+    <color name="colorAccent4">#AAFBDF</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGreyText">#6C6C6D</color>
+    <color name="colorNavIcon">#dae9f6</color>
+    <color name="colorNavText">#015A3B</color>
+    <color name="colorGrey1">#D3D3D3</color>
+    <color name="colorGrey2">#ACACAC</color>
+    <color name="colorGrey3">#F3F3F3</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorDanger">#EB0000</color>
+    <color name="colorSuccess">#04C104</color>
+    <color name="colorInfo">#EBCF00</color>
+    <color name="colorDarkInfo">#FFC300</color>
+    <color name="colorPurple">#750F82</color>
+    <color name="lightPurple">#C9BDFF</color>
+    <color name="colorBackground">#F3F3F3</color>
+    <color name="colorPink">#F4769C</color>
+    <color name="colorGreen2">#11FF58</color>
+    <color name="colorRed">#D44638</color>
+    <color name="colorCardBack">#808A9F</color>
+    <color name="colorGreen3">#008000</color>
+    <color name="exitColor">#FF5959</color>
+    <color name="floatingBackground">#cc000000</color>
+
+    <color name="colorRedLight">#FB502B</color>
+    <color name="colorGreenLight">#36F893</color>
+    <color name="colorBlueLight">#84E9C6</color>
+    <color name="colorBlueLight2">#ECF0F5</color>
+    <color name="onboardingImageColor">#50ffffff</color>
+    <color name="onboaedingImageGreenColor">#5000A65A</color>
+    <color name="colorOrange">#FFA500</color>
+    <color name="noappintmentimagebluecolor">#903C8DBC</color>
+    <color name="appt_date_color">#90EBCF00</color>
+    <color name="appt_header_color">#303C8DBC</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="colorYellow">#8a6d3b</color>
+
+    <color name="noSlotsHeaderColor">#FF0023</color>
+    <color name="noSlotsTitleColor">#3D3D3D</color>
+    <color name="light_blue">#D8F1FF</color>
+    <color name="upi_screenText_color">#333333</color>
+    <color name="bg_color_light_white">#F0F0F0</color>
+
+
+</resources>

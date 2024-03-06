@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+
+<!--        <com.google.android.material.appbar.AppBarLayout-->
+<!--            android:id="@+id/appbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:background="@null"-->
+<!--            android:paddingBottom="5dp"-->
+<!--            app:elevation="0dp">-->
+
+<!--            &lt;!&ndash;        <androidx.appcompat.widget.Toolbar&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:id="@+id/toolbar"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:layout_height="?attr/actionBarSize"&ndash;&gt;-->
+<!--            &lt;!&ndash;            app:layout_collapseMode="pin"&ndash;&gt;-->
+<!--            &lt;!&ndash;            android:background="@color/colorPrimary"&ndash;&gt;-->
+<!--            &lt;!&ndash;            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>&ndash;&gt;-->
+<!--            <RelativeLayout-->
+<!--                android:id="@+id/homeToolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:elevation="6dp"-->
+<!--                android:background="@color/colorPrimary">-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/homeDocImg"-->
+<!--                    android:layout_width="40sp"-->
+<!--                    android:layout_height="40sp"-->
+<!--                    android:background="@drawable/ic_profile"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_alignParentStart="true"-->
+<!--                    android:backgroundTint="@color/colorWhite"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/homeWelcomeText"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Welcome,"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:textColor="@color/colorWhite"-->
+<!--                    android:layout_toRightOf="@+id/homeDocImg"/>-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/homeDocName"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text=""-->
+<!--                    android:textSize="22dp"-->
+<!--                    android:layout_marginStart="7dp"-->
+<!--                    android:textColor="@color/colorWhite"-->
+<!--                    android:layout_toEndOf="@+id/homeDocImg"-->
+<!--                    android:layout_below="@+id/homeWelcomeText"/>-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/homeSettings"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_settings"-->
+<!--                    android:layout_alignParentEnd="true"-->
+<!--                    android:layout_centerInParent="true"-->
+<!--                    android:layout_marginEnd="10dp"/>-->
+
+<!--            </RelativeLayout>-->
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/tabLayout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                app:tabGravity="fill"-->
+<!--                app:tabTextColor="@color/colorPrimary"-->
+<!--                android:background="@color/colorWhite"-->
+<!--                android:elevation="5dp"-->
+<!--                app:tabMode="scrollable"/>-->
+
+<!--        </com.google.android.material.appbar.AppBarLayout>-->
+
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:id="@+id/viewPager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_behavior="@string/appbar_scrolling_view_behavior" />-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+
+<!--            <ProgressBar-->
+<!--                android:id="@+id/dashboard_tab_progress"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_centerInParent="true"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="80dp"-->
+<!--                android:visibility="visible"-->
+
+<!--                />-->
+
+<!--        </RelativeLayout>-->
+
+
+        <!--    <fragment-->
+<!--        android:id="@+id/dashBoardFragment"-->
+<!--        android:name="com.whitecoats.clinicplus.fragments.DashboardFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/pullToRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+    <ScrollView
+        android:id="@+id/homeScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/trainingScheduleWebinarLayout"
+        android:fillViewport="true">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:id="@+id/search_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <fragment
+                    android:id="@+id/sfragment"
+                    android:name="com.whitecoats.clinicplus.fragments.SearchFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/practiceLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:text="Practices"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp"
+                            tools:ignore="HardcodedText" />
+
+                        <ImageView
+                            android:id="@+id/practicesDurationIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@+id/practicesDuration"
+                            android:src="@drawable/ic_filter_new"
+                            app:tint="@color/colorPrimary" />
+
+                        <TextView
+                            android:id="@+id/practicesDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/today"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/practiceLayout"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/dashBoardPracticesApptList"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:clipToPadding="false"
+                                android:orientation="horizontal"
+                                android:paddingStart="10dp"
+                                android:paddingEnd="10dp" />
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/practiceProgressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <!--Training Schedule section Section-->
+
+            <LinearLayout
+                android:id="@+id/trainingScheduleBookedSection"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:id="@+id/trainingScheduleLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/trainingScheduleText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:text="Training Session"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/trainingScheduleViewAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="10dp"
+                            android:text="View More Sessions"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_below="@+id/trainingScheduleLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/trainingScheduleRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="1dp"
+                            android:clipToPadding="false"
+                            android:orientation="horizontal"
+                            android:paddingStart="10dp"
+                            android:paddingEnd="10dp"
+                            android:visibility="visible" />
+
+                        <RelativeLayout
+                            android:id="@+id/dashboardTrainingScheduleProgressbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/trainingScheduleSection"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/drawable_bg_gradient"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Register for online training"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_arrow_right"
+                            app:tint="@color/colorWhite" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <!--Quick Action Section-->
+            <LinearLayout
+                android:id="@+id/quickActionMainLayout"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/homeQuickGuidePt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:text="Quick Actions"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="20dp"
+                        android:text="Configure"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    card_view:cardCornerRadius="4dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/card_view_recycler_list"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:orientation="horizontal" />
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/quickActionProgressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/noDataMessageQuickAction"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/homeFollowupEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:text="No data available"
+                            android:textAlignment="center"
+                            android:textSize="14dp" />
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <!--Shared by patient Section-->
+            <LinearLayout
+                android:id="@+id/sharedRecordsSection"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/sharedRecordsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/sharedRecordsText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Records By Patient"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/sharedRecordsViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:text="View All Records"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/sharedRecordsEmptyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sharedRecordsText"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="80dp"
+                        android:text=""
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:background="@android:color/transparent"
+                    android:paddingStart="10dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorInfo"
+                        android:padding="3dp">
+
+                        <RelativeLayout
+                            android:id="@+id/clockLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:src="@drawable/ic_clock"
+                                app:tint="@color/colorWhite" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_toEndOf="@+id/clockLayout">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="5 May 2020 12:30"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sharedRecordsRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:visibility="visible" />
+
+                    <RelativeLayout
+                        android:id="@+id/dashboardSharedRecordProgressbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/noDataMessageSharedByPatient"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/noDataMessageSharedByPatientMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:text="No data available"
+                            android:textAlignment="center"
+                            android:textSize="14sp"
+                            tools:ignore="HardcodedText" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <!--Auto follow-ups Section-->
+            <LinearLayout
+                android:id="@+id/autoFollowUpSection"
+                android:layout_width="match_parent"
+                android:layout_height="325dp"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <RelativeLayout
+                    android:id="@+id/autoFollowUpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/autoFollowUpText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Follow-ups Responses"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/autoFollowUpViewAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="10dp"
+                        android:text="View All Responses"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/autoFollowUpEmptyText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/autoFollowUpText"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="80dp"
+                        android:text=""
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/autoFollowUpRv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="1dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp" />
+
+
+                <RelativeLayout
+                    android:id="@+id/dashboardFollowUpProgressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/noDataMessageAutoFollowUp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:id="@+id/noDataMessageAutoFollowUpMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:text="No data available"
+                        android:textAlignment="center"
+                        android:textSize="14dp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+<!--    <ProgressBar-->
+<!--        android:id="@+id/dashboard_tab_progress"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

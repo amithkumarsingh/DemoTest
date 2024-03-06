@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/onBoardingViewOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/thumbnailOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/on_board_two"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/onBoardTopic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/smoothClinic"
+                android:layout_centerInParent="true"
+                android:text="Smooth Clinic Operations"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/smoothClinic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Get a clear summary, bulk complete/cancel appointments, manage payments/invoices/receipts, notify delays to patients and more."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/onBoardingViewTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:visibility="visible">
+
+
+            <ImageView
+                android:id="@+id/thumbnailTwo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/on_board_three"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/onBoardTopic2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/powerFullDescription"
+                android:layout_centerInParent="true"
+                android:text="Powerful Consultations"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/powerFullDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Manage appointment history and status, track queues, tag patients and more. \n\nVideo consult or chat with patients at any time (optional)"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/onBoardingViewThree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/thumbnailThree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/on_board_five"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/onBoardTopic3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/easyPatient"
+                android:layout_centerInParent="true"
+                android:text="Easy Patient Engagement"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/easyPatient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginTop="30dp"
+                android:text="Enable automatic follow-up and feedback collection, share videos, publish written articles, send push messages and more."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/onBoardingViewFour"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/thumbnailFour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/on_board_four"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/onBoardTopic4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/quickRecord"
+                android:layout_centerInParent="true"
+                android:text="Quick Records Management"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/quickRecord"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="Upload notes, share with patients, view history, access reports from patients and more."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/onBoardingViewFive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:visibility="gone">
+
+
+            <ImageView
+                android:id="@+id/thumbnailFive"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="40dp"
+                android:src="@mipmap/on_board_one"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/onBoardTopic5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/support"
+                android:layout_centerInParent="true"
+                android:text="9*5 Support Availability"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="100dp"
+                android:layout_marginTop="30dp"
+                android:text="Chat with us instantly OR WhatsApp us OR email us to get the help you need."
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

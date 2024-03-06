@@ -1,0 +1,913 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueLight2"
+    tools:context=".activities.EMRActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/videoToolSettingToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Video Tool Setting"
+        app:titleTextColor="@color/colorWhite" />
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/videoToolSettingEnableDisableCard"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/videoToolSettingToolbar"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:text="Enable/Disable"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/siq_18"
+                android:textStyle="bold" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true" />
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/videoToolPreferencesCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/videoToolSettingToolbar"
+        android:layout_marginTop="15dp"
+        card_view:cardBackgroundColor="@android:color/white"
+        card_view:cardElevation="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="15dp">
+
+            <RelativeLayout
+                android:id="@+id/helpMeSetupLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/drawable_rectangle_shape"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Help Me Set Up"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/siq_20"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+            <!--video tool preference Layout-->
+            <RelativeLayout
+                android:id="@+id/videoToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/helpMeSetupLayout"
+                android:layout_marginTop="15dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/videoPreferenceText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Video Tool Preference"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/videoPreferenceText"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/videoToolPreferenceSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="7"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:adjustViewBounds="false"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_chevron_down" />
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <!--            //buid in whitecoats-->
+            <!--whatsapp preference Layout-->
+            <RelativeLayout
+                android:id="@+id/BuidInToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoToolPreferenceLayout"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/buildInSubmitPreferencesButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/siq_50"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Submit Preference"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/siq_20"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+
+
+
+            <!--whatsapp preference Layout-->
+            <RelativeLayout
+                android:id="@+id/whatAppToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoToolPreferenceLayout"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/whatsAppNumberForVideoCallUrlTextViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/whatAppNumberForVideoCall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="WhatsApp Number for video call"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_16" />
+
+                    <ImageView
+                        android:id="@+id/whatsAppInfoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/siq_20"
+                        android:layout_toRightOf="@+id/whatAppNumberForVideoCall"
+                        android:background="@drawable/ic_info"
+                        android:backgroundTint="@color/colorAccent"
+                        android:padding="15dp" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/whatsAppNumberEditTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/whatsAppNumberForVideoCallUrlTextViewLayout"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/whatAppNumberEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:inputType="number"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter WhatsApp Number *"
+                            android:spinnerMode="dropdown"
+                            android:text="" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/videoLinkForYourPatientTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/whatsAppNumberEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_15"
+                    android:text="Video Link For Your Patients"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:id="@+id/videoLinkForYourPatientEditTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/videoLinkForYourPatientTextView"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:backgroundTint="@color/colorGrey2"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/whatsAppVideoLinkEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:clickable="false"
+                            android:enabled="false"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_phone_edit"
+                            android:text="https://wa.me/91" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/submitPreferencesButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/videoLinkForYourPatientEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_50"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Submit Preference"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/siq_20"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <!--zoom preference Layout-->
+            <RelativeLayout
+                android:id="@+id/zoomToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoToolPreferenceLayout"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/zoomWebHookUrlTextViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/zoomWebHookUrlTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="Webhook URL *"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_16" />
+
+                    <ImageView
+                        android:id="@+id/zoomInfoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/siq_20"
+                        android:layout_toRightOf="@+id/zoomWebHookUrlTextView"
+                        android:background="@drawable/ic_info"
+                        android:backgroundTint="@color/colorAccent"
+                        android:padding="15dp" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/zoomWebHookNumberEditTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomWebHookUrlTextViewLayout"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/zoomWebHookNumberEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Webhook URL"
+                            android:text="" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/zoomContactNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomWebHookNumberEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_15"
+                    android:text="Contact Number"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:id="@+id/zoomContactNumberEditTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomContactNumberTextView"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/zoomContactNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Contact Number" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/zoomDefaultVideoJoinUrlTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomContactNumberEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_15"
+                    android:text="Default Video Join URL"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:id="@+id/zoomDefaultJoiningVideoUrlTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomDefaultVideoJoinUrlTextView"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/zoomDefaultJoiningVideoUrlEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Default Video Join URL" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/zoomSubmitPreferencesButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/zoomDefaultJoiningVideoUrlTextLayout"
+                    android:layout_marginTop="@dimen/siq_50"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Submit Preference"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/siq_20"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <!-- google meet preference Layout-->
+            <RelativeLayout
+                android:id="@+id/googlemetToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoToolPreferenceLayout"
+                android:layout_marginTop="5dp"
+                android:padding="10dp"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/googlemetWebHookUrlTextViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:id="@+id/googlemetWebHookUrlTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:text="Webhook URL *"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_16" />
+
+                    <ImageView
+                        android:id="@+id/googlemetInfoButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="@dimen/siq_20"
+                        android:layout_toRightOf="@+id/googlemetWebHookUrlTextView"
+                        android:background="@drawable/ic_info"
+                        android:backgroundTint="@color/colorAccent"
+                        android:padding="15dp" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/googlemetWebHookNumberEditTextLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetWebHookUrlTextViewLayout"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/googlemetWebHookNumberEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="7"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Webhook URL"
+                            android:text="" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/googlemetContactNumberTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetWebHookNumberEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_15"
+                    android:text="Contact Number"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:id="@+id/googlemetContactNumberEditTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetContactNumberTextView"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/googlemetContactNumberEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="number"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Contact Number" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/googlemetDefaultVideoJoinUrlTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetContactNumberEditTextLayout"
+                    android:layout_marginTop="@dimen/siq_15"
+                    android:text="Default Video Join URL"
+                    android:textColor="@color/colorGreyText"
+                    android:textSize="@dimen/siq_16" />
+
+
+                <RelativeLayout
+                    android:id="@+id/googlemetDefaultJoiningVideoUrlTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetDefaultVideoJoinUrlTextView"
+                    android:layout_marginTop="@dimen/siq_5"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:padding="@dimen/siq_10">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/googlemetDefaultJoiningVideoUrlEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="Enter Default Video Join URL" />
+
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/googlemetSubmitPreferencesButtonLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/googlemetDefaultJoiningVideoUrlTextLayout"
+                    android:layout_marginTop="@dimen/siq_50"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Submit Preference"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/siq_20"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <!--other preference Layout-->
+
+            <RelativeLayout
+                android:id="@+id/otherToolPreferenceLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/videoToolPreferenceLayout"
+                android:layout_marginTop="5dp"
+                android:padding="10dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherWebHookUrlTextViewLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/otherWebHookUrlTextView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true"
+                                android:text="Webhook URL *"
+                                android:textColor="@color/colorGreyText"
+                                android:textSize="@dimen/siq_16" />
+
+                            <ImageView
+                                android:id="@+id/otherInfoButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginLeft="@dimen/siq_20"
+                                android:layout_toRightOf="@+id/otherWebHookUrlTextView"
+                                android:background="@drawable/ic_info"
+                                android:backgroundTint="@color/colorAccent"
+                                android:padding="15dp" />
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherWebHookNumberEditTextLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherWebHookUrlTextViewLayout"
+                            android:layout_marginTop="@dimen/siq_5"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:padding="@dimen/siq_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/otherWebHookNumberEditText"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="7"
+                                    android:background="@android:color/transparent"
+                                    android:hint="Enter Webhook URL"
+                                    android:text="" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/toolNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherWebHookNumberEditTextLayout"
+                            android:layout_marginTop="@dimen/siq_15"
+                            android:text="Tool Name *"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="@dimen/siq_14" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherToolNameEditTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/toolNameTextView"
+                            android:layout_marginTop="@dimen/siq_5"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:padding="@dimen/siq_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/otherToolNameEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:hint="Enter Tool Name" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/otherContactNumberTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherToolNameEditTextLayout"
+                            android:layout_marginTop="@dimen/siq_15"
+                            android:text="Contact Number"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="@dimen/siq_16" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherContactNumberEditTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherContactNumberTextView"
+                            android:layout_marginTop="@dimen/siq_5"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:padding="@dimen/siq_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/otherContactNumberEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:inputType="number"
+                                    android:background="@android:color/transparent"
+                                    android:hint="Enter Contact Number" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <TextView
+                            android:id="@+id/otherDefaultVideoJoinUrlTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherContactNumberEditTextLayout"
+                            android:layout_marginTop="@dimen/siq_15"
+                            android:text="Default Video Join URL"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="@dimen/siq_16" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherDefaultJoiningVideoUrlTextLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherDefaultVideoJoinUrlTextView"
+                            android:layout_marginTop="@dimen/siq_5"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:padding="@dimen/siq_10">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <EditText
+                                    android:id="@+id/otherDefaultJoiningVideoUrlEditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@android:color/transparent"
+                                    android:hint="Enter Default Video Join URL" />
+
+
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/otherSubmitPreferencesButtonLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/otherDefaultJoiningVideoUrlTextLayout"
+                            android:layout_marginTop="@dimen/siq_50"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Submit Preference"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/siq_20"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</RelativeLayout>

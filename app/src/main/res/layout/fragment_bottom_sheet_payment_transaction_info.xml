@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationLanguageBottomSheet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetMessageHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/bottomSheetMessageTextHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="Payment Received"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/bottomSheetCancelIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/colorWhite"
+                android:src="@drawable/ic_close" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/totalOverviewLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottomSheetMessageHeading">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/siq_24">
+
+                <RelativeLayout
+                    android:id="@+id/successfulSettlementLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/bottomSheetViewLayout"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/successfulSettlementHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/payment_received"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pendingSettlementLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/successfulSettlementLayout"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/pendingSettlementHeading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/payment_status_initiated"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/pendingSettlementNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/pendingSettlementHeading"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="@string/payment_create_invoice"
+                        android:textColor="@color/colorGreyText" />
+
+                </RelativeLayout>
+                <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pendingSettlementLayout">
+                    <Button
+                        android:id="@+id/button_close"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Close"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/siq_black"
+                        android:layout_toLeftOf="@+id/space"/>
+                    <TextView
+                        android:id="@+id/space"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"/>
+                    <Button
+                        android:id="@+id/button_createInvoice"
+                        android:layout_toRightOf="@id/button_close"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorAccent"
+                        android:text="Create Invoice"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

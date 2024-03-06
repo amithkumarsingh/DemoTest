@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlueLight2"
+    tools:context=".activities.CreateNewAccount">
+
+
+    <!--<androidx.appcompat.widget.Toolbar
+        android:id="@+id/queriesToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:subtitleTextColor="@color/colorWhite"
+        app:theme="@style/AppTheme.Toolbar"
+        app:title="Need Help"
+        app:titleTextColor="@color/colorWhite" >
+
+
+    <ImageButton
+        android:id="@+id/closeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/siq_12"
+        android:layout_marginLeft="220dp"
+        android:background="@drawable/ic_close"
+        android:backgroundTint="@color/white" />
+    </androidx.appcompat.widget.Toolbar>-->
+    <RelativeLayout
+        android:id="@+id/dialogQueriesHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/queriesToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="PayU Merchant Support"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogMerchantSupportCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/queriesWeek_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogQueriesHeader"
+        android:layout_marginTop="@dimen/siq_24">
+
+        <TextView
+            android:id="@+id/weekText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/siq_12"
+            android:layout_marginEnd="@dimen/siq_12"
+            android:justificationMode="inter_word"
+            android:text="@string/support_payU_statement"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/queriesContact_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/queriesWeek_layout"
+        android:layout_marginTop="@dimen/siq_12">
+
+        <RelativeLayout
+            android:id="@+id/phoneContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_icon_feather_globe"
+                android:backgroundTint="@color/colorGrey2"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogMerchantSupportURL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center|end"
+                android:text="@string/support_payU_link"
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/watsappContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phoneContact_layout"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogWatsapp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_call"
+                android:backgroundTint="@color/colorAccent"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogCallBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center|end"
+                android:text="Request a Call Back "
+                android:textColor="@color/colorAccent"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/emailContact_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/watsappContact_layout"
+            android:layout_marginTop="@dimen/siq_16"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_email"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogEmailText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center|end"
+                android:text="whitecoats.support@payu.in"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/help_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/emailContact_layout"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginBottom="@dimen/siq_24"
+            android:visibility="gone"
+            android:padding="@dimen/siq_12">
+
+            <ImageView
+                android:id="@+id/dialogHelp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/siq_8"
+                android:background="@drawable/ic_helpcircle"
+                android:padding="@dimen/siq_16" />
+
+            <TextView
+                android:id="@+id/dialogHelpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text="Help Desk"
+                android:textColor="@color/colorAccent"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

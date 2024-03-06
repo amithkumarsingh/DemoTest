@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_marginTop="50dp"
+        android:id="@+id/caseChannelRecordEvalSymptomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/recordEvalSymptomIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_vertigo" />
+
+        <TextView
+            android:id="@+id/recordEvalSymptom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordEvalSymptomIcon"
+            android:text="@string/symptom"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/recordEvalSymptomAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@+id/recordEvalSymptomCountLayout"
+            android:text="@string/add_new"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/recordEvalSymptomCountLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/recordEvalSymptomArrow"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/caseChannelRecordEvalSymptomCount"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordEvalSymptomArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_right"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGrey2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/caseChannelRecordEvalObsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/caseChannelRecordEvalSymptomLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/recordEvalObsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_investigation" />
+
+        <TextView
+            android:id="@+id/recordEvalObs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordEvalObsIcon"
+            android:text="@string/observation"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/recordEvalObsAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@+id/recordEvalObsCountLayout"
+            android:text="@string/add_new"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/recordEvalObsCountLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/recordEvalObsArrow"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/caseChannelRecordEvalObsCount"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordEvalObsArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGrey2" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/caseChannelRecordEvalInvestLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/caseChannelRecordEvalObsLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/recordEvalInvestIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_investigation_two" />
+
+        <TextView
+            android:id="@+id/recordEvalInvest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordEvalInvestIcon"
+            android:text="@string/investigation"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/recordEvalInvestAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@+id/recordEvalInvestCountLayout"
+            android:text="@string/add_new"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/recordEvalInvestCountLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/recordEvalInvestArrow"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/caseChannelRecordEvalInvestCount"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordEvalInvestArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGrey2" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/caseChannelRecordEvalDiagnosLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_below="@+id/caseChannelRecordEvalInvestLayout"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorWhite">
+
+        <ImageView
+            android:id="@+id/recordEvalDiagnosIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="30dp"
+            android:src="@drawable/ic_diagnosis" />
+
+        <TextView
+            android:id="@+id/recordEvalDiagnos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordEvalDiagnosIcon"
+            android:text="@string/diagnosis"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/recordEvalDiagnosAddNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="10dp"
+            android:layout_toLeftOf="@+id/recordEvalDiagnosCountLayout"
+            android:text="@string/add_new"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/recordEvalDiagnosCountLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toStartOf="@+id/recordEvalDiagnosArrow"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/caseChannelRecordEvalDiagnosCount"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/recordEvalDiagnosArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGrey2" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

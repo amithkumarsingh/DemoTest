@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/patientListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/patientListHeaderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:visibility="visible"
+                android:background="@drawable/drawable_ripple_effect">
+
+                <TextView
+                    android:id="@+id/tv_patient_general_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:layout_alignParentStart="true"
+                    android:layout_toStartOf="@+id/patientListArrowIcon"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="13dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:text="GS-12342"
+                    android:visibility="gone"
+                    />
+                <TextView
+                    android:id="@+id/patientListPatientName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vaibhav sdhshdhdhshdhsjhdhshdkjshdkhshdhsjkdhkshdhshhdkjhskjdhshdhskhdkhsdhshdhshdkhsdhkjshdhshdkjshkjdhshdkhskdhkshdshdkjhskhdksh"
+                    android:textSize="20sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/patientListArrowIcon"
+                    android:textColor="@color/upi_screenText_color"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:layout_below="@+id/tv_patient_general_id"
+                    />
+
+                <ImageView
+                    android:id="@+id/patientListCallIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_call"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_below="@+id/patientListPatientName"
+                    app:tint="@color/colorAccent" />
+
+                <TextView
+                    android:id="@+id/patientListPhoneNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1234567890"
+                    android:textSize="17sp"
+                    android:layout_marginStart="6dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/colorAccent"
+                    android:layout_toEndOf="@+id/patientListCallIcon"
+                    android:layout_below="@+id/patientListPatientName"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/patientRole"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" hsdsd"
+                    android:layout_marginTop="4dp"
+                    android:textSize="15sp"
+                    android:layout_marginStart="10dp"
+                    android:paddingBottom="15dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/colorAccent"
+                    android:layout_below="@+id/patientListCallIcon"
+                    tools:ignore="HardcodedText" />
+
+
+                <ImageView
+                    android:id="@+id/patientListArrowIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_toStartOf="@+id/patientListMoreLayout"
+                    android:src="@drawable/ic_arrow_right" />
+
+                <View
+                    android:id="@+id/horizontalDivider"
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@color/colorGrey1"
+                    android:layout_toRightOf="@+id/patientListArrowIcon"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/patientListMoreLayout"
+                    android:layout_width="60dp"
+                    android:visibility="visible"
+                    android:layout_marginLeft="5dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/drawable_ripple_effect"
+                    android:gravity="center">
+
+
+                    <ImageView
+                        android:id="@+id/patientListMoreIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_add"
+                        app:tint="@color/colorPrimaryDark" />
+
+                    <TextView
+                        android:id="@+id/patientListTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/more"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="bold"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGrey1"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/patientListDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+               <!-- <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/bg_color_light_white"
+                        tools:ignore="Orientation">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/siq_5">
+
+                                <RelativeLayout
+                                    android:id="@+id/searchPageBookLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/colorWhite"
+                                    android:visibility="visible">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="0dp"
+                                        android:layout_marginTop="0dp"
+                                        android:layout_marginEnd="0dp"
+                                        android:layout_marginBottom="0dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/searchPageBookNow"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="10dp"
+                                            android:layout_marginTop="10dp"
+                                            android:text="Book Now" />
+
+                                        <LinearLayout
+                                            android:id="@+id/patientListBookServiceLayout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="5dp"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:id="@+id/ll_row1"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="60dp"
+                                                android:gravity="center">
+
+                                                <LinearLayout
+                                                    android:id="@+id/searchPageBookVideo"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/drawable_capsule_outline"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:paddingStart="10dp"
+                                                    android:paddingTop="5dp"
+                                                    android:paddingEnd="10dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:visibility="gone">
+
+                                                    <LinearLayout
+                                                        android:layout_width="30dp"
+                                                        android:layout_height="30dp"
+                                                        android:background="@drawable/drawable_capsule_view"
+                                                        android:gravity="center">
+
+                                                        <ImageView
+                                                            android:id="@+id/searchPageBookVideoIcon"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/ic_video"
+                                                            app:tint="@color/colorWhite" />
+
+                                                    </LinearLayout>
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="10dp"
+                                                        android:text="Video"
+                                                        android:textSize="16dp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/searchPageBookClinic"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="10dp"
+                                                    android:background="@drawable/drawable_capsule_outline"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:paddingStart="10dp"
+                                                    android:paddingTop="5dp"
+                                                    android:paddingEnd="10dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:visibility="gone">
+
+                                                    <LinearLayout
+                                                        android:layout_width="30dp"
+                                                        android:layout_height="30dp"
+                                                        android:background="@drawable/drawable_capsule_view"
+                                                        android:gravity="center">
+
+                                                        <ImageView
+                                                            android:id="@+id/searchPageBookClinicIcon"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/ic_hospital"
+                                                            app:tint="@color/colorWhite" />
+
+                                                    </LinearLayout>
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="10dp"
+                                                        android:text="Clinic"
+                                                        android:textSize="16dp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/ll_row2"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="60dp"
+                                                android:gravity="center">
+
+                                                <LinearLayout
+                                                    android:id="@+id/searchPageBookInstantV"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:background="@drawable/drawable_capsule_outline"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:paddingStart="10dp"
+                                                    android:paddingTop="5dp"
+                                                    android:paddingEnd="10dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:visibility="gone">
+
+                                                    <LinearLayout
+                                                        android:layout_width="30dp"
+                                                        android:layout_height="30dp"
+                                                        android:background="@drawable/drawable_capsule_view"
+                                                        android:gravity="center">
+
+                                                        <ImageView
+                                                            android:id="@+id/searchPageBookInstantVIcon"
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:src="@drawable/ic_video"
+                                                            app:tint="@color/colorWhite" />
+
+                                                    </LinearLayout>
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="10dp"
+                                                        android:text="Instant Video"
+                                                        android:textSize="16dp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                                <LinearLayout
+                                                    android:id="@+id/searchPageBookChat"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="10dp"
+                                                    android:background="@drawable/drawable_capsule_outline"
+                                                    android:gravity="center"
+                                                    android:orientation="horizontal"
+                                                    android:paddingStart="10dp"
+                                                    android:paddingTop="5dp"
+                                                    android:paddingEnd="10dp"
+                                                    android:paddingBottom="5dp"
+                                                    android:visibility="gone">
+
+                                                    <LinearLayout
+                                                        android:layout_width="30dp"
+                                                        android:layout_height="30dp"
+                                                        android:background="@drawable/drawable_capsule_view"
+                                                        android:gravity="center">
+
+                                                        <ImageView
+                                                            android:id="@+id/searchPageBookChatIcon"
+                                                            android:layout_width="20dp"
+                                                            android:layout_height="20dp"
+                                                            android:src="@drawable/ic_chat"
+                                                            app:tint="@color/colorWhite" />
+
+                                                    </LinearLayout>
+
+                                                    <TextView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginStart="10dp"
+                                                        android:text="Chat"
+                                                        android:textSize="16dp"
+                                                        android:textStyle="bold" />
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                        <View
+                                            android:id="@+id/view_notes"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="2dp"
+                                            android:layout_marginTop="0dp"
+                                            android:background="@color/colorGrey1"
+                                            android:visibility="visible"/>
+
+                                        <LinearLayout
+                                            android:id="@+id/ll_parent_notes"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:layout_marginTop="0dp"
+                                            android:visibility="gone">
+
+                                            <LinearLayout
+                                                android:id="@+id/createNotes"
+                                                android:layout_width="0dp"
+                                                android:layout_height="match_parent"
+                                                android:layout_weight="0.33"
+                                                android:padding="@dimen/siq_10"
+                                                android:gravity="center">
+
+                                                <ImageView
+                                                    android:layout_width="19dp"
+                                                    android:layout_height="19dp"
+                                                    android:src="@drawable/ic_pen" />
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginStart="5dp"
+                                                    android:text="@string/note"
+                                                    android:textStyle="bold" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+
+                                    </LinearLayout>
+
+                                    <TextView
+                                        android:id="@+id/searchPageBookEmptyText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="No Service Available"
+                                        android:layout_marginTop="40dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_alignParentTop="true"
+                                        android:textStyle="bold"
+                                        android:visibility="gone"/>
+
+                                    <Button
+                                        android:id="@+id/patientListSetupService"
+                                        android:layout_width="200dp"
+                                        android:layout_height="40dp"
+                                        android:layout_marginTop="10dp"
+                                        android:textColor="@color/colorWhite"
+                                        android:text="Set up Service"
+                                        android:visibility="gone"
+                                        android:layout_centerInParent="true"
+                                        android:background="@drawable/drawable_capsule_view"
+                                        android:layout_below="@+id/searchPageBookEmptyText"/>
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="320dp"
+                            android:layout_height="200dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="5dp"
+                            android:visibility="gone"
+                            android:layout_marginEnd="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5 Records Shared"
+                                        android:textSize="18dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="10dp"/>
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_arrow_right"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginEnd="10dp"/>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="@color/colorGrey1"
+                                        android:layout_alignParentBottom="true"/>
+
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5 Interaction Done"
+                                        android:textSize="18dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="10dp"/>
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_arrow_right"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginEnd="10dp"/>
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"
+                                        android:background="@color/colorGrey1"
+                                        android:layout_alignParentBottom="true"/>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="5 Categories Assigned"
+                                        android:textSize="18dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_marginStart="10dp"/>
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_arrow_right"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginEnd="10dp"/>
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+                    </LinearLayout>
+
+<!--
+                </HorizontalScrollView>
+-->
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/sharedPatientListHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:elevation="4dp"
+            android:visibility="gone"
+            android:background="@drawable/drawable_ripple_effect">
+
+            <TextView
+                android:id="@+id/sharedPatientListPatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaibhav"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="13dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                />
+
+            <ImageView
+                android:id="@+id/sharedPatientListCallIcon"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_call"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/sharedPatientListPatientName"
+                app:tint="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/sharedPatientListPhoneNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1234567890"
+                android:textSize="17dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_toRightOf="@+id/sharedPatientListCallIcon"
+                android:layout_below="@+id/sharedPatientListPatientName"
+                />
+
+            <TextView
+                android:id="@+id/sharedPatientRole"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Internal"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                />
+
+            <TextView
+                android:id="@+id/sharedRecordRecLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Record Shared: "
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/sharedPatientListPhoneNo"/>
+
+            <TextView
+                android:id="@+id/sharedRecordCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/sharedRecordRecLabel"
+                android:layout_below="@+id/sharedPatientListPhoneNo"/>
+
+            <TextView
+                android:id="@+id/sharedRecordDateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shared On: "
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_below="@+id/sharedRecordRecLabel"/>
+
+            <TextView
+                android:id="@+id/sharedRecordDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:visibility="gone"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/sharedRecordDateLabel"
+                android:layout_below="@+id/sharedRecordRecLabel"/>
+
+
+            <ImageView
+                android:id="@+id/sharedPatientListArrowIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/colorGrey1"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

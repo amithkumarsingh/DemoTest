@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.whitecoats.clinicplus">
+
+    <uses-permission
+        android:name="com.google.android.gms.permission.AD_ID"
+        tools:node="remove" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:remove="android:maxSdkVersion" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <queries>
+        <intent>
+            <action android:name="com.google.android.youtube.api.service.START" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".MyClinicGlobalClass"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".activities.PaymentSetupScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.UPIPaymentSetUpScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.PayUPaymentSetupScreen"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AppointmentRescheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.VoiceEMRActivity"
+            android:screenOrientation="portrait" />
+
+        <activity android:name=".activities.OrderDetailsActivity"></activity>
+        <activity android:name=".activities.PaymentSettingsActivity" />
+        <activity
+            android:name=".activities.MyPaymentsFragment"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.AddProcedureActivity" />
+        <activity android:name=".activities.MedicationActivity" />
+        <activity android:name=".activities.AppointmentDetailsActivity" />
+        <activity
+            android:name=".activities.EMRAddNotesActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".activities.EMRCreateRecordsFormActivity" />
+        <activity
+            android:name=".activities.FeedsYoutubePlayerActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FeedDetailsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize" />
+        <activity
+            android:name=".activities.VideoScreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_video_screen"
+            android:theme="@style/FullscreenTheme" />
+        <activity
+            android:name=".activities.VideoCallActivity"
+            android:excludeFromRecents="true" />
+        <activity android:name=".activities.EMRActivity" />
+        <activity android:name=".activities.AddPatientActivity" />
+        <activity android:name=".activities.EMRAddFamilyActivity" />
+        <activity android:name=".activities.EMRAllCasesActivity" />
+        <activity android:name=".activities.EMRSharedRecordDetails" />
+        <activity android:name=".activities.EMRCaseHistoryMoreInfoActivity" />
+        <activity android:name=".activities.VoiceEMRCreateRecordsFormActivity" />
+        <activity android:name=".activities.VoiceEMRCreateRecordActivity" />
+        <activity android:name=".casechannels.CaseChannelRecordEvaluationDetailsActivity" />
+        <activity android:name=".casechannels.AddDoctorsOrganisationsActivity" />
+        <activity android:name=".casechannels.CaseChannelDashboardActivity" />
+        <activity android:name=".casechannels.CaseChannelListActivity" />
+        <activity android:name=".CreatePdfArticlesActivity" />
+        <activity android:name=".PatientRecordsMoreInfoActivity" />
+        <activity android:name=".PatientRecordsSharedMoreInfoActivity" />
+        <activity android:name=".casechannels.CaseChannelRecordsMoreInfoActivity" />
+        <activity android:name=".patientsharedrecords.PatientSharedRecordsActivity" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommunicationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.FeedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PatientProfileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CreateNoteActivity"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".CommunicationListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommunicationDetailsActivity"
+            android:configChanges="orientation|screenSize" />
+        <activity
+            android:name=".CreateTextArticleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateVideoArticleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommunicationMessageListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BookAppointmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".BlockTimeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity
+            android:name=".ChatRoomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingsFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BookAppointmentTimeSlotActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PayUMearchantDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".trainingschedule.TrainingScheduleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.NotificationSettingActivity"
+            android:screenOrientation="portrait" />
+        <!-- OneSignal Notification Received Event Handler Meta-Data-->
+        <meta-data
+            android:name="com.onesignal.NotificationServiceExtension"
+            android:value="com.whitecoats.clinicplus.NotificationServiceExtension" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <activity
+            android:name=".PatientRecordsCaseActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".JoinVideoActivity" />
+        <activity
+            android:name=".PatientRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PatientRecordViewActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AppointCompletedActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PatientEpisodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AppointmentEpisodeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AppointmentSaveAsPrescriptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PatientCreateRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PatientCreateRecord2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.EMRCreateRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CreateNewAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ConnectExistingAccount"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.VideoToolSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.GBPSharedLinkActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingRecordPreferencesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingAppointmentReminderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingPersonalActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.SettingProfessionalActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".autofollowup.AutoFollowUpActivity" />
+        <activity android:name=".autofollowup.AutoFollowUpPreferenceSetup" />
+        <activity
+            android:name=".activities.PaymentHistoryTimeLineActivity"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name="com.whitecoats.broadcast.HomeBroadCastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.HomeBroadCastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.PatientListBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.PatientListBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.AppointmentBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.AppointmentBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.CommunicationBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.CommunicationBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.SettingsBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.SettingsBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.BookApptBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.BookApptBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.whitecoats.broadcast.CaseChannelBroadcastReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.caregivers.broadcast.CaseChannelBroadcastReceiver" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".onboarding.OnBoardingActivity" />
+        <activity
+            android:name=".activities.AccountDeleteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AccountDeleteAckActivity"
+            android:screenOrientation="portrait" />
+
+
+        <receiver
+            android:name="com.brandkinesis.push.internal.EnhancedPushListener"
+            android:exported="false"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="BK_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.brandkinesis.utils.BKConnectivityStatusReceiver"
+            android:enabled="true"
+            android:exported="false"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver
+            android:name="com.onesignal.BootUpReceiver"
+            android:exported="true"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.onesignal.UpgradeReceiver"
+            android:exported="false"
+            tools:replace="android:exported">
+            <intent-filter>
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

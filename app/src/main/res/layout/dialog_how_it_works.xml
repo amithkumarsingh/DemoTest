@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_corners_transparent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/siq_30">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables"
+        android:layout_marginTop="30dp"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="How it works?"
+            android:textColor="@color/upi_screenText_color"
+            android:textSize="24sp"
+            tools:ignore="HardcodedText"
+            android:gravity="center"
+            android:layout_weight="0.85"/>
+
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_weight="0.15"
+            app:srcCompat="@drawable/ic_close_with_circle"
+            tools:ignore="ContentDescription" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_how_it_works"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/siq_20"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="@dimen/siq_10"
+        android:paddingTop="@dimen/siq_8"/>
+</LinearLayout>

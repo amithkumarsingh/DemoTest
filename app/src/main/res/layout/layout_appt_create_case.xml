@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/colorWhite">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/recordsCaseName"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="20dp"
+                android:hint="@string/enter_case_name"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Interaction"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/recordsCaseCreateInteractionGuide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/colorGrey3">
+
+                <Spinner
+                    android:id="@+id/recordsCaseInteractionType"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:elevation="2dp"
+                    android:background="@drawable/drawable_rectangle_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/on"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:layout_marginStart="20dp"/>
+
+                        <RelativeLayout
+                            android:id="@+id/recordsCaseDateLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="20dp"
+                            android:elevation="2dp"
+                            android:layout_marginBottom="10dp"
+                            android:background="@drawable/drawable_rectangle_shape">
+
+                            <TextView
+                                android:id="@+id/recordsCaseDate"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="20dp"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_calender"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_weight="0.5"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/at"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:layout_marginStart="20dp"/>
+
+                        <RelativeLayout
+                            android:id="@+id/recordsCaseTimeLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:elevation="2dp"
+                            android:background="@drawable/drawable_rectangle_shape">
+
+                            <TextView
+                                android:id="@+id/recordsCaseTime"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginStart="20dp"/>
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_clock"
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginEnd="10dp"/>
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/recordsCaseProceed"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/colorAccent"
+            android:layout_margin="20dp"
+            android:elevation="2dp">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_centerInParent="true"/>
+
+            <!--<ImageView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:src="@drawable/ic_arrow_right2"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_marginEnd="20dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:tint="@color/colorWhite"/>-->
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

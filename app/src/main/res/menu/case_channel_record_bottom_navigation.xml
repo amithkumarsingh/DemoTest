@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_created_by_specialist"
+        android:enabled="true"
+        android:title="Created by Specialist"
+        android:icon="@drawable/icon_stethoscope"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_shared_by_patient"
+        android:enabled="true"
+        android:title="Shared by Patient"
+        android:icon="@drawable/icon_user_add"
+        app:showAsAction="ifRoom" />
+
+</menu>

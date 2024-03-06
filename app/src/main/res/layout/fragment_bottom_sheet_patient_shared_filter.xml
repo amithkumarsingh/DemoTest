@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#fff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="FILTERS"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/filterClear"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_clear_filter" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/durationFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Duration"
+            android:textStyle="bold" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterDurationAll"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterDurationAllTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="All"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterDurationToday"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterDurationTodayTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Today"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:weightSum="1">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterDurationWeek"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterDurationWeekTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="This Week"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterDurationMonth"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterDurationMonthTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="This Month"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterDurationGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterDurationAll"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationToday"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Today"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationWeek"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Week"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterDurationMonth"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Month"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <RadioGroup
+                android:id="@+id/filterDurationGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:id="@+id/consultFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Consult Type"
+            android:textStyle="bold" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:weightSum="1"-->
+        <!--android:padding="10dp">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterConsultVideo"-->
+        <!--android:layout_width="120dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterConsultVideoTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Video"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterConsultClinic"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterConsultClinicTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Clinic"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterConsultGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterAllType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterVideoType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Video"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterClinicType"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Clinic"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#e0e0e0" />
+
+    <LinearLayout
+        android:id="@+id/apptTypeFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Appointment Type"
+            android:textStyle="bold" />
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:weightSum="1"-->
+        <!--android:padding="10dp">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterApptTypeAll"-->
+        <!--android:layout_width="70dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterApptTypeAllTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="All"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterApptTypeRoutine"-->
+        <!--android:layout_width="90dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterApptTypeRoutineTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Routine"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterApptTypeFollow"-->
+        <!--android:layout_width="90dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterApptTypeFollowTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Follow Up"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp">
+
+            <RadioGroup
+                android:id="@+id/filterApptTypeGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeAll"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="All"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeRoutine"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Routine"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeFollow"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Follow Up"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center"-->
+        <!--android:weightSum="1"-->
+        <!--android:padding="10dp">-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterApptTypeProcedure"-->
+        <!--android:layout_width="150dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:padding="10dp"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterApptTypeProcedureTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Procedure/Vaccine"/>-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/filterApptTypeOther"-->
+        <!--android:layout_width="90dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@drawable/filter_outline"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_margin="3dp">-->
+
+        <!--<TextView-->
+        <!--android:id="@+id/filterApptTypeOtherTv"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="Others"/>-->
+
+        <!--</LinearLayout>-->
+
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="0dp">
+
+            <RadioGroup
+                android:id="@+id/filterApptTypeGroup2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeProcedure"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Procedure"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeOther"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="Other"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/filterApptTypeFirstVisit"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:text="First Visit"
+                    android:textColor="@color/colorCardBack"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/filterApptApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            android:text="Apply"/>
+
+    </LinearLayout>
+
+</LinearLayout>

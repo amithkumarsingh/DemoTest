@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:weightSum="3">
+
+        <TextView
+            android:id="@+id/subCategoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".6"
+            android:text="1. fever"
+            android:textColor="@color/colorBlack" />
+
+        <ImageButton
+            android:id="@+id/singleRecordDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="1.2"
+            android:background="@null"
+            android:src="@drawable/ic_delete"
+            android:tint="@color/colorRed"
+            android:paddingLeft="8dp"/>
+
+        <ImageButton
+            android:id="@+id/editRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="1.2"
+            android:background="@null"
+            android:src="@drawable/ic_edit"
+            android:paddingLeft="2dp"/>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

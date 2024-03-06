@@ -1,0 +1,296 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <RelativeLayout
+        android:id="@+id/videoMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- The primary full-screen view. This can be replaced with whatever view
+             is needed to present your content, e.g. VideoView, SurfaceView,
+             TextureView, etc. -->
+        <TextView
+            android:id="@+id/videoFullscreenText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:keepScreenOn="true"
+            android:text="@string/join_video_msg"
+            android:layout_margin="20dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/videoTimer"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginEnd="20dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            android:text="00:00"-->
+<!--            android:textColor="#fff"-->
+<!--            android:textSize="18dp" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/videoPatientName"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text=""-->
+<!--            android:textSize="20dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:textColor="@color/colorWhite"-->
+<!--            android:textStyle="bold"/>-->
+
+        <FrameLayout
+            android:id="@+id/videoFullscreenFrame"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@+id/videoBottomFrame">
+
+            <FrameLayout
+                android:id="@+id/videoSubscriberContainer"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+
+            <TextView
+                android:id="@+id/videoPatientName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text=""
+                android:textSize="20dp"
+                android:layout_margin="20dp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/videoTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:text="00:00"
+                android:textColor="#fff"
+                android:textSize="18dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/switchCamera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="15dp"
+                android:layout_marginBottom="15dp"
+                android:tint="@color/colorWhite"
+                android:src="@drawable/ic_switch_camera_back" />
+
+
+
+            <FrameLayout
+                android:id="@+id/videoPublisherContainer"
+                android:layout_width="90dp"
+                android:layout_height="120dp"
+                android:layout_gravity="bottom|end"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#FFFFFF"
+                android:padding="2dp" />
+        </FrameLayout>
+
+        <!-- This FrameLayout insets its children based on system windows using
+             android:fitsSystemWindows. -->
+        <FrameLayout
+            android:id="@+id/videoBottomFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/fullscreen_content_controls"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="UselessParent">
+
+                <!--<Button-->
+                <!--android:id="@+id/dummy_button"-->
+                <!--style="?metaButtonBarButtonStyle"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="1"-->
+                <!--android:text="@string/dummy_button" />-->
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoMic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="15dp"
+                    android:tint="@color/colorWhite"
+                    android:src="@drawable/ic_mic" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoHangCall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="15dp"
+                    android:tint="@color/colorWhite"
+                    android:backgroundTint="@color/colorDanger"
+                    android:src="@drawable/ic_call_hang" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/videoVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="5dp"
+                    android:tint="@color/colorWhite"
+                    android:layout_toRightOf="@+id/videoMic"
+                    android:src="@drawable/ic_video" />
+
+            </RelativeLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/appointDetailRulesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="#fff"
+            android:padding="0dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:weightSum="1"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/appointDetailHIWTab"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="How It Works"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textSize="17dp"
+                        android:textAlignment="center"
+                        android:layout_toLeftOf="@+id/appointDetailHIWIcon"/>
+
+                    <ImageView
+                        android:id="@+id/appointDetailHIWIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_close"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"/>
+
+                    <View
+                        android:id="@+id/appointDetailHWBottomLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="3dp"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/colorPrimary"/>
+
+                </RelativeLayout>
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/appointDetailCancelTab"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="0.333"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Cancellation"-->
+                <!--android:textStyle="bold"-->
+                <!--android:gravity="center"-->
+                <!--android:textSize="17dp"-->
+                <!--android:textAlignment="center"/>-->
+
+                <!--<View-->
+                <!--android:visibility="invisible"-->
+                <!--android:id="@+id/appointDetailCancelBottomLine"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="3dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="@color/colorPrimary"/>-->
+
+                <!--</RelativeLayout>-->
+
+                <!--<RelativeLayout-->
+                <!--android:id="@+id/appointDetailReschTab"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="0.333"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:text="Reschedule"-->
+                <!--android:textStyle="bold"-->
+                <!--android:gravity="center"-->
+                <!--android:textSize="17dp"-->
+                <!--android:textAlignment="center"/>-->
+
+                <!--<View-->
+                <!--android:id="@+id/appointDetailResBottomLine"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="3dp"-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:background="@color/colorPrimary"-->
+                <!--android:visibility="invisible"/>-->
+
+                <!--</RelativeLayout>-->
+
+            </LinearLayout>
+
+            <!--<ScrollView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_below="@+id/appointDetailRuleTab"-->
+                <!--android:padding="15dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/appointDetailRules"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="@string/large_text"-->
+                        <!--android:layout_marginTop="10dp"/>-->
+
+                <!--</LinearLayout>-->
+
+            <!--</ScrollView>-->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>

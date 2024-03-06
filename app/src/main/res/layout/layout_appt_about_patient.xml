@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecCasePatientInfo"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/patient_info"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <ImageView
+                    android:id="@+id/apptAboutPatientArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:id="@+id/apptRecCasePatientInfoForm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/apptRecCasePatientInfo"
+            android:layout_margin="10dp"
+            android:visibility="gone"
+            android:background="@color/colorGrey3"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPName"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_name"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_phone"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPPhNo"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_phone_edit"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_email"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPEmail"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_email_edit"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_dob"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <TextView
+                android:id="@+id/recordsPDOB"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_dob_edit"
+                android:paddingStart="10dp"
+                android:gravity="center_vertical"
+                android:textSize="20dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/select_gender"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <RadioGroup
+                android:id="@+id/recordsPGender"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation='horizontal'>
+
+                <RadioButton
+                    android:id="@+id/recordPGenderMale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:button="@null"
+                    android:text="@string/male"
+                    android:textAlignment="center" />
+
+                <RadioButton
+                    android:id="@+id/recordPGenderFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:button="@null"
+                    android:text="@string/female"
+                    android:textAlignment="center" />
+
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_bloodg"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <Spinner
+                android:id="@+id/recordsPBloodG"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_id"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPID"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="@string/enter_id_edit"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_height"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPHeight"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/enter_age"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorGrey2"/>
+
+            <EditText
+                android:id="@+id/recordsPAge"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/drawable_rectangle_shape"/>
+
+
+            <Button
+                android:id="@+id/patientProPatientInfoSave"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:textColor="@color/colorWhite"
+                android:backgroundTint="@color/colorAccent"/>
+
+
+
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecCaseFamilyInfo"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/apptRecCasePatientInfoForm">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/family_info"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_new"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:textColor="@color/colorAccent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"/>
+
+                <ImageView
+                    android:id="@+id/apptAboutFamilyArrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:id="@+id/familyMoreInfo"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:visibility="gone"
+            android:layout_below="@+id/apptRecCaseFamilyInfo">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/apptRecCaseFamilyRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:clipToPadding="false" />
+
+            <TextView
+                android:id="@+id/apptRecordFamilyEmptyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Data Available"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                />
+
+        </RelativeLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/apptRecCaseAboutRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/familyMoreInfo"
+            android:layout_marginTop="10dp"
+            android:clipToPadding="false" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

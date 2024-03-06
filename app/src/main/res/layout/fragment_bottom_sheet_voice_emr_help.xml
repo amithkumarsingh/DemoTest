@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationLanguageBottomSheet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetMessageHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/bottomSheetMessageTextHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="How to use it"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/bottomSheetCancelIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/colorWhite"
+                android:src="@drawable/ic_cancel" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetFormLayout"
+            android:layout_width="wrap_content"
+            android:background="@color/colorBlueLight2"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottomSheetMessageHeading">
+
+            <LinearLayout
+                android:id="@+id/howToUse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible">
+
+                <ScrollView
+                    android:id="@+id/helpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="These guidelines will help you use this with ease"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:text="@string/voice_emr_help"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Some Example Commands"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:text="@string/voice_emr_commands"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Mic Testing"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Speck into the mic"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volume"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="12dp" />
+
+                            <ProgressBar
+                                android:id="@+id/volumeProgressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:indeterminate="false"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/greenprogress" />
+                            <ProgressBar
+                                android:id="@+id/volumeProgressBarWhite"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="24dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:indeterminate="false"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/greenprogress" />
+
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/rectangle_gray"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/micTestingButton"
+                            android:layout_width="220dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:text="@string/start_testing_mic"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

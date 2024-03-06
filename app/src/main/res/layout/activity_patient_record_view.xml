@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientRecordViewActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/patientRecordViewToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            android:elevation="6dp"
+            app:titleTextColor="@color/colorWhite" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/patientRecordViewRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/patientRecordViewToolBar"
+            android:layout_marginTop="10dp" />
+
+        <ProgressBar
+            android:id="@+id/patientRecordLoader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_above="@+id/patientRecordEmptyText"/>
+
+        <TextView
+            android:id="@+id/patientRecordEmptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data_found"
+            android:layout_centerInParent="true"
+            android:textSize="17dp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            android:textAlignment="center"/>
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

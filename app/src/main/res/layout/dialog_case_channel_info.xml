@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:id="@+id/caseChannelInfoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Case Channel Name"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_toLeftOf="@+id/closeDialog"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/caseChannelDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Started On: 12 Jan 2020 12:00"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_below="@+id/caseChannelInfoName"
+            android:layout_marginStart="20dp"/>
+
+        <ImageButton
+            android:id="@+id/closeDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:background="@null"
+            app:tint="@color/colorWhite"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Patient Details"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/caseChannelInfoPatientName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Patient Name"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:textColor="@color/colorBlack"
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"/>
+
+            <TextView
+                android:id="@+id/caseChannelInfoPatientContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="1234567890"
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/caseChannelInfoParticipants"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Participants: 8"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_marginEnd="20dp"
+                android:ellipsize="end"
+                android:textColor="@color/colorBlack"
+                android:maxLines="1"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update Participants"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorWhite"/>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

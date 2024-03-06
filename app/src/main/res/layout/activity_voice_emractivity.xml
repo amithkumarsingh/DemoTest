@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.whitecoats.clinicplus.MainActivityViewModel" />
+    </data>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.VoiceEMRActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlueLight2">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/voiceEMRToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                app:menu="@menu/voice_emr_menu"
+                app:title="@string/dictate_pres"
+                app:titleTextColor="@color/white" />
+
+            <LinearLayout
+                android:id="@+id/howToUse"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_above="@+id/bottomCardView"
+                android:layout_below="@+id/voiceEMRToolbar"
+                android:layout_marginTop="50dp"
+                android:visibility="visible">
+
+                <ScrollView
+                    android:id="@+id/helpLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:text="These guidelines will help you use this with ease"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:text="@string/voice_emr_help"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Some Example Commands"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:text="@string/voice_emr_commands"
+                            android:textColor="@color/colorBlack" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Mic Testing"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:text="Speck into the mic"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:gravity="center|left"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volume"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="12dp" />
+
+                            <ProgressBar
+                                android:id="@+id/volumeProgressBar"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:indeterminate="false"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/greenprogress" />
+
+                            <ProgressBar
+                                android:id="@+id/volumeProgressBarWhite"
+                                style="?android:attr/progressBarStyleHorizontal"
+                                android:layout_width="fill_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:indeterminate="false"
+                                android:maxHeight="10dip"
+                                android:minHeight="10dip"
+                                android:progress="0"
+                                android:progressDrawable="@drawable/greenprogress"
+                                android:visibility="gone" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/rectangle_gray"
+                                android:visibility="gone" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/micTestingButton"
+                            android:layout_width="220dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:text="@string/start_testing_mic"
+                            android:textColor="@color/white"
+                            android:textSize="10sp" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/recordsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottomCardView"
+                android:layout_below="@+id/voiceEMRToolbar">
+
+                <TextView
+                    android:id="@+id/notRecordText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="No record added yet."
+                    android:visibility="gone" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/topCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/clearAllDictationButton"
+                            android:layout_width="150dp"
+                            android:layout_height="40dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/drawable_rectangle_border_red"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="@string/clear_dictation"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorRed"
+                                android:textSize="12sp"
+
+                                />
+
+                        </RelativeLayout>
+
+                        <Button
+                            android:id="@+id/saveRecordButton"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/colorSuccess"
+                            android:text="@string/save_records"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/topCardView"
+                    android:layout_marginTop="10dp">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/record_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible" />
+
+                    <ScrollView
+                        android:id="@+id/recordSVLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/voiceRecordsRV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:clipToPadding="false"
+                                android:visibility="gone" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/voiceRecordDiagnosisRV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/voiceRecordsRV"
+                                android:layout_marginTop="10dp"
+                                android:clipToPadding="false"
+                                android:visibility="gone" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/voiceRecordInvestigationRV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/voiceRecordDiagnosisRV"
+                                android:layout_marginTop="10dp"
+                                android:clipToPadding="false"
+                                android:visibility="gone" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/voiceRecordObservationRV"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/voiceRecordInvestigationRV"
+                                android:layout_marginTop="10dp"
+                                android:clipToPadding="false"
+                                android:visibility="gone" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/voiceRecordTreatmentPlanRv"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/voiceRecordObservationRV"
+                                android:layout_marginTop="10dp"
+                                android:clipToPadding="false"
+                                android:visibility="gone" />
+
+
+                        </LinearLayout>
+                    </ScrollView>
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/micPermissionNotGiven"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/transparent"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/permissionText1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Mic permission is not enabled."
+                    android:textColor="@color/exitColor"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/permissionText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/permissionText1"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="20dp"
+                    android:text="Mic needs access to your microphone to use the voice dictation mode."
+                    android:textAlignment="center" />
+
+                <Button
+                    android:id="@+id/GivePermissionButton"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/permissionText2"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="20dp"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="Request Access"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bottomCardView"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/dictateIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/dictateText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@+id/dictateIcon"
+                        android:text="Your dictation will appear here"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/viewFullDictation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:text="View Full Dictation"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="12dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/voiceText"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/buttonLayout"
+                        android:layout_below="@+id/dictateText"
+                        android:layout_margin="10dp"
+                        android:gravity="bottom"
+                        android:scrollbars="vertical"
+                        android:text=""
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:id="@+id/connectingLoaderLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/buttonLayout"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ProgressBar
+                                android:id="@+id/progressbar"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_alignParentStart="true"
+                                android:layout_centerInParent="true" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toRightOf="@+id/progressbar"
+                                android:text="Please wait connecting..." />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/buttonLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/startDictationButton"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:backgroundTint="@color/colorAccent"
+                            android:text="@string/start_dictate"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:visibility="visible" />
+
+                        <Button
+                            android:id="@+id/pauseDictationButton"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:backgroundTint="@color/colorInfo"
+                            android:text="@string/pause_dictate"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12sp"
+                            android:visibility="gone" />
+
+                        <Button
+                            android:id="@+id/stopDictationButton"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:backgroundTint="@color/exitColor"
+                            android:text="@string/stop_dictate"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

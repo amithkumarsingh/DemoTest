@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".fragments.SearchFragment">
+
+    <LinearLayout
+        android:id="@+id/search_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/eightdp"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:id="@+id/layout_ribbon_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="#fffbd7"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/image_ribbon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingEnd="16dp"
+                android:src="@drawable/ic_alert"
+                tools:ignore="ContentDescription,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/verify_now_ribbon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/verify_merchant"
+                android:textColor="#8C231F20"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eightdp"
+            android:layout_marginEnd="@dimen/sixteendp"
+            android:background="@drawable/search_background"
+            android:clickable="true"
+            android:elevation="1dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/patient_search_view"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/eightdp"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:completionThreshold="3"
+                android:ellipsize="end"
+                android:hint="@string/patient_search_text"
+                android:maxLines="1"
+                android:singleLine="true"
+                />
+
+            <ImageView
+                android:id="@+id/search_patient"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/eightdp"
+                android:layout_weight="0.5"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/ic_search"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:id="@+id/cancel_patient_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/eightdp"
+                android:layout_weight="0.5"
+                android:adjustViewBounds="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:src="@drawable/ic_close"
+                android:visibility="gone"
+                tools:ignore="ContentDescription" />
+
+
+            <RelativeLayout
+                android:id="@+id/add_new_patient_button"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@drawable/add_patient_button_background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_new_patient_button_text"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp" />
+
+                <!--                <Button-->
+                <!--                    android:id="@+id/add_new_patient_button"-->
+                <!--                    android:layout_width="0dp"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:layout_weight="2"-->
+                <!--                    android:background="@drawable/add_patient_button_background"-->
+                <!--                    android:text="@string/add_new_patient_button_text"-->
+                <!--                    android:textColor="@color/colorAccent"-->
+                <!--                    android:textSize="12sp" />-->
+
+            </RelativeLayout>
+
+
+            <!--            <Button-->
+<!--                android:id="@+id/add_new_patient_button"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="2"-->
+<!--                android:background="@drawable/add_patient_button_background"-->
+<!--                android:text="@string/add_new_patient_button_text"-->
+<!--                android:textColor="@color/colorAccent"-->
+<!--                android:textSize="12sp" />-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eightdp"
+            android:layout_marginEnd="@dimen/sixteendp"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/searching_patient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/searching_patient"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/search_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/search_error_text"
+                    android:textColor="@color/colorDanger"
+                    android:textSize="11sp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/view_all_patients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="@string/view_all_patients"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                tools:ignore="RtlCompat" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

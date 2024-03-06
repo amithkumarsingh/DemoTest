@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/caseChannelListCard"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/caseChannelListName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="20dp"
+                android:textSize="17dp"
+                android:text="Case Channel Name"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/caseChannelListDate"/>
+
+            <TextView
+                android:id="@+id/caseChannelListLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Created on"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentEnd="true"/>
+
+            <TextView
+                android:id="@+id/caseChannelListDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12 Jan 19"
+                android:layout_below="@+id/caseChannelListLabel"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_marginEnd="20dp"/>
+
+            <TextView
+                android:id="@+id/caseChannelListGroupText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Group Owner: "
+                android:layout_below="@+id/caseChannelListName"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/caseChannelListGroupOwner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dr Example"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_below="@+id/caseChannelListName"
+                android:layout_toRightOf="@+id/caseChannelListGroupText"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/caseChannelListPatientText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For: "
+                android:layout_below="@+id/caseChannelListGroupText"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"/>
+
+            <TextView
+                android:id="@+id/caseChannelListForPatient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaibhav"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_below="@+id/caseChannelListGroupText"
+                android:layout_toRightOf="@+id/caseChannelListPatientText"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"/>
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentEnd="true"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_marginBottom="20dp"-->
+<!--                android:layout_marginEnd="20dp">-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:src="@drawable/ic_pen"-->
+<!--                    android:tint="@color/colorAccent"/>-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginStart="10dp"-->
+<!--                    android:text="@string/edit"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:textColor="@color/colorAccent"-->
+<!--                    android:textSize="20dp"/>-->
+
+<!--            </LinearLayout>-->
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_right"
+                android:layout_centerInParent="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

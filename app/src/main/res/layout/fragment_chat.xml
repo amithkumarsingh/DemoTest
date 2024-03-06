@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/chatListToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/pullToRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/chatListToolbar"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/chatListActiveCardLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/chatListActiveHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimaryDark"
+                                android:padding="8dp"
+                                android:text="@string/active_chat"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="17dp" />
+
+                            <!--<android.support.v4.widget.SwipeRefreshLayout-->
+                            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                            <!--android:id="@+id/appointmentSwipeContainer"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_below="@+id/patientTabLayout">-->
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/chatListActiveRecycleView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/chatListActiveHeader"
+                                android:clipToPadding="false"
+                                android:orientation="horizontal" />
+
+                            <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+                            <RelativeLayout
+                                android:id="@+id/activeEmptyLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp">
+
+                                <TextView
+                                    android:id="@+id/chatListActiveEmptyText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="@string/empty_chat"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"
+                                    android:visibility="visible" />
+
+                                <Button
+                                    android:id="@+id/activeBookChat"
+                                    android:layout_width="150dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/chatListActiveEmptyText"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/drawable_capsule_view"
+                                    android:backgroundTint="@color/colorAccent"
+                                    android:text="Book a chat"
+                                    android:textColor="@color/colorWhite"
+                                    android:textStyle="bold" />
+
+                            </RelativeLayout>
+
+
+                            <RelativeLayout
+                                android:id="@+id/activeProgressBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true">
+
+                                <ProgressBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/chatListPastCardLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/chatListActiveCardLayout"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="10dp"
+                        app:cardCornerRadius="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/chatListPastHeader"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@color/colorPrimaryDark"
+                                android:padding="8dp"
+                                android:text="@string/past_chat"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="17dp" />
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/chatListPastRecycleView"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/chatListPastHeader"
+                                android:clipToPadding="false"
+                                android:orientation="horizontal" />
+
+                            <TextView
+                                android:id="@+id/chatListPastEmptyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginTop="100dp"
+                                android:text="@string/empty_chat"
+                                android:textSize="17dp"
+                                android:textStyle="bold"
+                                android:visibility="gone" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/pastProgressBar"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_centerInParent="true">
+
+                                <ProgressBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </ScrollView>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

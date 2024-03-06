@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.VideoCallActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="40dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            />
+
+        <TextView
+            android:id="@+id/patientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="30dp"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:layout_centerInParent="true"/>
+
+        <TextView
+            android:id="@+id/emptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Video Calling"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="10dp"
+            android:textAlignment="center"
+            android:layout_below="@+id/patientName"
+            android:layout_centerInParent="true"/>
+
+        <FrameLayout
+            android:id="@+id/videoBottomFrame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:fitsSystemWindows="true">
+
+            <RelativeLayout
+                android:id="@+id/fullscreen_content_controls"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                tools:ignore="UselessParent">
+
+                <Button
+                    android:id="@+id/videoIgnore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ignore For Now"
+                    android:textAllCaps="false"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="30dp"
+                    android:background="#33000000"
+                    android:padding="10dp"
+                    android:textColor="@color/colorWhite"/>
+
+                <Button
+                    android:id="@+id/videoPickUp"
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_toRightOf="@+id/videoIgnore"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="Pick Up"
+                    android:textColor="@color/colorWhite" />
+
+                <Button
+                    android:id="@+id/onErrorClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Close"
+                    android:layout_centerInParent="true"
+                    android:background="#33000000"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:textColor="@color/colorWhite"/>
+
+            </RelativeLayout>
+        </FrameLayout>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

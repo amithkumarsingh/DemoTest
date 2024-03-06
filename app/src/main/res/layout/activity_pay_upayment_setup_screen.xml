@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_color_light_white"
+    tools:context=".activities.PayUPaymentSetupScreen">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/payUPaymentToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/colorWhite"
+        app:titleTextColor="@color/colorWhite" />
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/payUPaymentToolbar"
+        tools:ignore="MissingConstraints,ScrollViewCount">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_how_it_works"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/how_its_work"
+                android:textColor="@color/upi_screenText_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.939"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_how_it_works">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/const_payu"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/siq_20"
+                    android:layout_marginBottom="@dimen/siq_20">
+
+                    <TextView
+                        android:id="@+id/tv_payu_body"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="@string/payU_body"
+                        android:textSize="@dimen/siq_16"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tv_select_gateway"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Select Payment Gateway"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.080"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_payu_body"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:id="@+id/ll_selectGateway"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_select_gateway"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="6dp" >
+
+                    <Spinner
+                        android:id="@+id/gateway_spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="7"
+                        android:background="@android:color/transparent"
+                        android:hint="Payment Mode"
+                        android:spinnerMode="dropdown"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:id="@+id/img_select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:adjustViewBounds="false"
+                        android:src="@drawable/ic_chevron_down"
+                        tools:ignore="ContentDescription" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tv_merchantID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Merchant ID*"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/ll_selectGateway"
+                        tools:ignore="HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/et_merchantID"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="Enter ID"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_merchantID"
+                        tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+                    <TextView
+                        android:id="@+id/tv_Key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Key*"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/et_merchantID"
+                        tools:ignore="HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/et_Key"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="Enter Key"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Key"
+                        tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+                    <TextView
+                        android:id="@+id/tv_salt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Salt*"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/et_Key"
+                        tools:ignore="HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/et_salt"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="Enter Salt"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_salt"
+                        tools:ignore="Autofill,HardcodedText,RtlSymmetry" />
+                    <TextView
+                        android:id="@+id/tv_Auth_Header"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:text="Auth Header*"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.045"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="@dimen/siq_20"
+                        app:layout_constraintTop_toBottomOf="@+id/et_salt"
+                        tools:ignore="HardcodedText"
+                        android:visibility="visible"/>
+
+                    <EditText
+                        android:id="@+id/et_Auth_Header"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:inputType="textPersonName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="6dp"
+                        android:hint="Enter Auth Header"
+                        android:paddingStart="10dp"
+                        android:singleLine="true"
+                        android:scrollHorizontally="true"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:background="@drawable/drawable_upi_rectangle_round_curve"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Auth_Header"
+                        tools:ignore="Autofill,HardcodedText,RtlSymmetry"
+                        android:visibility="visible"/>
+
+                    <TextView
+                        android:id="@+id/tv_Status_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="14sp"
+                        android:text="Status: "
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/et_Auth_Header"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_Status_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginTop="16dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="@+id/tv_Status_text"
+                        app:layout_constraintTop_toBottomOf="@+id/et_Auth_Header"
+                        tools:ignore="HardcodedText" />
+
+                    <TextView
+                        android:id="@+id/tv_account_status_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginTop="5dp"
+                        android:textColor="@color/upi_screenText_color"
+                        android:textSize="14sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_Status_text"
+                        tools:ignore="HardcodedText" />
+
+                    <ImageView
+                        android:id="@+id/img_refresh_status"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="20dp"
+                        android:padding="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.950"
+                        app:layout_constraintStart_toEndOf="@+id/tv_Status_value"
+                        app:layout_constraintTop_toBottomOf="@+id/et_Auth_Header"
+                        app:srcCompat="@drawable/ic_refresh"
+                        android:background="@drawable/blue_round_corner"
+                        tools:ignore="ContentDescription" />
+
+
+                      <androidx.appcompat.widget.SwitchCompat
+                          android:id="@+id/sw_payU"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layoutDirection="ltr"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintHorizontal_bias="0.100"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/tv_account_status_message"
+                          app:switchPadding="8dp"
+                          android:layout_marginTop="8dp"
+                          tools:ignore="HardcodedText" />
+
+                      <TextView
+                          android:id="@+id/tv_switch_text"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_marginStart="6dp"
+                          android:layout_marginTop="18dp"
+                          android:text="Set Payment Mode"
+                          android:textColor="@color/upi_screenText_color"
+                          android:textSize="18sp"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintHorizontal_bias="0.0"
+                          app:layout_constraintStart_toEndOf="@+id/sw_payU"
+                          app:layout_constraintTop_toBottomOf="@+id/tv_account_status_message"
+                          tools:ignore="HardcodedText" />
+
+                      <Button
+                          android:id="@+id/btn_save_Merchant"
+                          android:layout_width="match_parent"
+                          android:layout_height="50dp"
+                          android:layout_margin="@dimen/siq_16"
+                          android:backgroundTint="@color/colorAccent"
+                          android:text="Save Merchant"
+                          android:textAllCaps="false"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintHorizontal_bias="0.800"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toBottomOf="@+id/sw_payU"
+                          tools:ignore="HardcodedText" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

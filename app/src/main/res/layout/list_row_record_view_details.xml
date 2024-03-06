@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/recordViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/recordViewRecordIdTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewPrimaryKeyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Primary Key: "/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewPrimaryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@id/recordViewPrimaryKeyTv"
+            android:text="" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewSecondaryKeyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Secondary Key: "
+            android:layout_below="@+id/recordViewPrimaryKeyTv"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewSecondaryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordViewSecondaryKeyTv"
+            android:layout_below="@+id/recordViewPrimaryTv"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewTernaryKeyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_below="@+id/recordViewSecondaryKeyTv"/>
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:id="@+id/recordViewTernaryTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/recordViewTernaryKeyTv"
+            android:layout_below="@+id/recordViewSecondaryTv"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

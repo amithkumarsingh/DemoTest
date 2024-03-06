@@ -1,0 +1,470 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="0dp">
+
+    <LinearLayout
+        android:id="@+id/assistantTabAiMsgLayout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="left"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="50dp"
+        android:elevation="2dp"
+        android:background="@drawable/drawable_rounded_rectangle">
+
+        <TextView
+            android:id="@+id/assistantTabAiMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="How can I help you?"
+            android:textColor="@color/colorWhite"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/assistTabAppointmentRow"
+        android:layout_width="match_parent"
+        android:layout_marginEnd="40dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/drawable_rectangle_chat_box"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/assistTabAppointmentPName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vaibhav Taylor"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"
+            android:textSize="18dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/assistTabAppointmentDate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:text="23 April, 19"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/assistTabAppointmentTime"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="12:00"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <ImageView
+                android:id="@+id/assistTabAppointmentType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tint="@color/colorAccent"
+                android:src="@drawable/ic_video"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGrey1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/assistTabAppointmentProfile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_tie"
+                    android:tint="@color/colorPrimaryDark"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:text="Profile"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assistTabAppointmentRecord"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_folder2"
+                    android:tint="@color/colorPrimaryDark"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:text="Records"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/assistantTabChatSelfMsgLayout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="10dp"
+        android:elevation="2dp"
+        android:background="@drawable/drawable_capsule_view">
+
+        <TextView
+            android:id="@+id/assistantTabChatSelfMsgTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:layout_margin="10dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/assistTabRecordPatient"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/drawable_rectangle_chat_box"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/assistTabPatientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_call"
+                android:tint="@color/colorAccent"/>
+
+            <TextView
+                android:id="@+id/assistTabPatientPhNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/colorAccent"
+                android:textSize="15dp"
+                android:layout_marginStart="10dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGrey1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/assistTabPatientProfile"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_profile_tie"
+                    android:tint="@color/colorPrimaryDark"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"
+                    android:text="Profile"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assistTabPatientRecord"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_folder2"
+                    android:tint="@color/colorPrimaryDark"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:text="Records"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/assistTabCancelApptLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/drawable_rectangle_chat_box"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/assistTabCancelApptText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGrey1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/assistTabCancelApptYes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_tick"
+                    android:tint="@color/colorSuccess"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSuccess"
+                    android:textStyle="bold"
+                    android:text="@string/yes"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assistTabCancelApptNo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/colorDanger"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDanger"
+                    android:text="@string/no"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/assistTabLateInformLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/drawable_rectangle_chat_box"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:elevation="2dp"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/assistTabLateInformText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGrey1"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="10dp">
+
+            <LinearLayout
+                android:id="@+id/assistTabLateInformYes"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_tick"
+                    android:tint="@color/colorSuccess"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorSuccess"
+                    android:textStyle="bold"
+                    android:text="@string/yes"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/assistTabLateInformNo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:tint="@color/colorDanger"
+                    android:layout_marginEnd="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorDanger"
+                    android:text="@string/no"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

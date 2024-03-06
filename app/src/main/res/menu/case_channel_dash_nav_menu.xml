@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/case_info" android:title="Info" android:icon="@drawable/ic_info" app:showAsAction="always" android:iconTint="@color/colorWhite" android:iconTintMode="src_in" />
+<!--    <item android:id="@+id/menu_task" android:title="Task" android:icon="@drawable/ic_task" />-->
+<!--    <item android:id="@+id/menu_records" android:title="Records" android:icon="@drawable/ic_pdf_file" />-->
+<!--    <item android:id="@+id/menu_post" android:title="Discussions" android:icon="@drawable/ic_talk" />-->
+</menu>

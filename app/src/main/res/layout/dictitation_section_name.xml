@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="16dp"
+    android:background="#ffffff"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:id="@+id/categoryNameLinearLayoutCompact"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:weightSum="4"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/categoryName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_weight=".65"
+            android:text="investigation plan"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/addRecord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1.25"
+            android:background="@null"
+            android:src="@drawable/ic_add2"
+            android:tint="@color/colorAccent"/>
+
+        <ImageButton
+            android:id="@+id/allRecordDelete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="1.05"
+            android:background="@null"
+            android:src="@drawable/ic_delete"
+            android:tint="@color/colorRed"
+            android:paddingLeft="20dp"/>
+
+        <ImageButton
+            android:id="@+id/infoButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center"
+            android:layout_weight="1.05"
+            android:background="@null"
+            android:src="@drawable/ic_help"
+            android:tint="@color/colorPrimaryDark"
+            android:paddingRight="8dp"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBackground" />
+
+
+</LinearLayout>

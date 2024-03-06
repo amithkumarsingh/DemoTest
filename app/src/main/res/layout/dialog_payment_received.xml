@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:paddingBottom="10dp"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/dialogPaymentReceived"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/PaymentReceivedHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Payment Received"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/PaymentReceivedCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_invoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogPaymentReceived"
+        android:gravity="center"
+        android:paddingTop="@dimen/siq_24"
+        android:text="@string/InvoiceShared"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/siq_16" />
+
+    <TextView
+        android:id="@+id/tv_findInvoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_invoice"
+        android:gravity="center"
+        android:paddingTop="@dimen/siq_24"
+        android:text="@string/FindInvoice"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/siq_16" />
+
+    <RelativeLayout
+        android:id="@+id/close_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_findInvoice"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/drawable_rectangle_outline"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/close_payment_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Close" />
+    </RelativeLayout>
+
+</RelativeLayout>

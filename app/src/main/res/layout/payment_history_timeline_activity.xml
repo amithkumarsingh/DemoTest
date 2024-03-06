@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    tools:context=".activities.AddPatientActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addPatientToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:subtitleTextColor="@color/colorWhite"
+        app:theme="@style/AppTheme.Toolbar"
+        app:title="Payment Timeline"
+        app:titleTextColor="@color/colorWhite" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/addPatientToolbar"
+        tools:context=".activities.AddPatientActivity">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/appInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/apptBookedInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textColor="@color/colorBlack" />
+
+                <TextView
+                    android:id="@+id/apptStatusInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptBookedInfo"
+                    android:layout_marginTop="15dp"
+                    android:text=""
+                    android:textColor="@color/colorBlack" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/apptStatusInfo"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorGrey1" />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/mainLayout"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/appInfoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_height="wrap_content"
+                    android:overScrollMode="never"
+                    android:scrollbars="vertical" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="50dp">
+
+
+        <RelativeLayout
+            android:id="@+id/createReceiptLayout"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/drawable_radius_shape"
+            android:backgroundTint="@color/colorGreen3">
+
+
+            <TextView
+                android:id="@+id/createReceiptText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Create Invoice"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/createInvoiceLayout"
+            android:layout_width="120dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/drawable_radius_shape"
+            android:backgroundTint="@color/colorAccent">
+
+
+            <TextView
+                android:id="@+id/createInvoiceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Create Invoice"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

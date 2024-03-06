@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/gbpListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/gbpListHeaderLayout"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/drawable_ripple_effect"
+                android:elevation="4dp">
+
+                <TextView
+                    android:id="@+id/serviceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_toLeftOf="@+id/gbpSwitchButton"
+                    android:layout_marginTop="13dp"
+                    android:text=""
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    android:singleLine="false"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/gbpSwitchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/gbpListArrowIcon" />
+
+
+                <ImageView
+                    android:id="@+id/gbpListArrowIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_arrow_down" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorGrey1" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/gbpListDetailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:id="@+id/gbpListFormLayout"
+                    android:layout_width="match_parent"
+                    android:visibility="visible"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/gbpProfileLinkLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/gbpProfileLinkTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GBP Profile Link" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/gpbProfileLinkEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/gbpProfileLinkTextView"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_rectangle_border_grey">
+
+                            <EditText
+                                android:id="@+id/gbpPageLinkEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:hint="Enter Link"
+                                android:background="@android:color/transparent"
+                                android:enabled="false"
+                                android:maxLines="2"
+                                android:textColor="@color/black"
+                                android:paddingLeft="2dp"
+                                android:paddingHorizontal="8dp"/>
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/gbpReviewLinkLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/gbpProfileLinkLayout"
+                        android:layout_marginTop="10dp"
+                        android:padding="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/gbpReviewLinkTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="GBP Review Link" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/gpbProfileReviewEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_below="@+id/gbpReviewLinkTextView"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_rectangle_border_grey">
+
+                            <EditText
+                                android:id="@+id/reviewLinkEditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@android:color/transparent"
+                                android:enabled="false"
+                                android:hint="Enter Link"
+                                android:textColor="@color/black"
+                                android:paddingHorizontal="8dp"
+                                android:paddingLeft="2dp" />
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <!--gbpLinkActionButton-->
+                    <RelativeLayout
+                        android:id="@+id/gbpLinkActionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/gbpReviewLinkLayout"
+                        android:layout_marginTop="10dp"
+                        android:padding="10dp"
+                        android:visibility="visible">
+
+
+                        <RelativeLayout
+                            android:id="@+id/deleteButtonLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_toLeftOf="@+id/applyLinkToAllButtonLayout"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/red"
+                            android:padding="10dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_delete"
+                                android:backgroundTint="@color/colorWhite" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/applyLinkToAllButtonLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="20dp"
+                            android:layout_toLeftOf="@+id/editLinkButtonLayout"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorPrimary"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Apply Link To All"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/editLinkButtonLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorAccent"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="Edit Link"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+                    <!--gbpLinkEditActionButton-->
+                    <RelativeLayout
+                        android:id="@+id/gbpLinkEditActionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/gbpReviewLinkLayout"
+                        android:layout_marginTop="10dp"
+                        android:padding="10dp"
+                        android:visibility="gone">
+
+
+                        <RelativeLayout
+                            android:id="@+id/applyToAllCheckBoxLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginRight="20dp">
+
+                            <CheckBox
+                                android:id="@+id/applyLinkToAllCB"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="  Apply Link To All" />
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/applyToAllCheckBoxLayout"
+                            android:layout_marginTop="20dp">
+
+                            <RelativeLayout
+                                android:id="@+id/CloseEditButtonLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/drawable_radius_shape"
+                                android:backgroundTint="@color/colorGrey1"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Close Edit"
+                                    android:textColor="@color/black"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/saveChangeButtonLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/drawable_radius_shape"
+                                android:backgroundTint="@color/colorAccent"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:text="Save Changes"
+                                    android:textColor="@color/colorWhite"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/chatServiceLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:textStyle="italic"
+                        android:text="Chat Service will not be applicable for this feature as Chat service is based on more duration" />
+
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorGrey1" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

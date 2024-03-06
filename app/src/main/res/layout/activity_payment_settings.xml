@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F7F7"
+    tools:context=".activities.PaymentSettingsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarHeader_settings"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/paymentSettings_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/eightdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/eightdp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/paymentSettingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/siq_48"
+            android:padding="@dimen/siq_10"
+            android:text="@string/payment_notification"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/siq_20" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/enableOrDisable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbarHeader_settings"
+        android:padding="@dimen/siq_25">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_notification_preference"
+            android:textColor="@color/siq_black"
+            android:textSize="@dimen/siq_16"
+            android:textStyle="bold"
+            tools:ignore="RelativeOverlap" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/settingSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/note_payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/enableOrDisable"
+        android:padding="23sp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_note"
+            android:textAlignment="gravity"
+            android:textSize="@dimen/siq_16"
+            android:textStyle="italic" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/report_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/note_payment"
+        android:padding="@dimen/siq_14">
+
+        <CheckBox
+            android:id="@+id/cb_daily"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="34dp"
+            android:padding="@dimen/siq_14"
+            android:paddingStart="@dimen/siq_30"
+            android:text="Daily"
+            android:textSize="@dimen/siq_15"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/cb_weekly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cb_daily"
+            android:layout_marginStart="34dp"
+            android:padding="@dimen/siq_14"
+            android:text="Weekly"
+            android:textSize="@dimen/siq_15"
+            tools:ignore="HardcodedText" />
+
+        <CheckBox
+            android:id="@+id/cb_monthly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cb_weekly"
+            android:layout_marginStart="34dp"
+            android:padding="@dimen/siq_14"
+            android:paddingStart="@dimen/siq_30"
+            android:text="Monthly"
+            android:textSize="@dimen/siq_15"
+            tools:ignore="HardcodedText,RtlSymmetry" />
+
+        <CheckBox
+            android:id="@+id/cb_everyTransaction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cb_monthly"
+            android:layout_marginStart="34dp"
+            android:padding="@dimen/siq_14"
+            android:text="Every Transaction"
+            android:textSize="@dimen/siq_15"
+            tools:ignore="HardcodedText" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/report_checkBox">
+
+        <Button
+            android:id="@+id/save_prefButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/save_patient_button_background"
+            android:text="@string/payment_save_preference"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

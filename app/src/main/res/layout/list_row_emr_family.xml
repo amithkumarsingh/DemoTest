@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/emrFamCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/familyName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tool:text="Family Member Name"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_toLeftOf="@+id/familyRelation"
+                    android:layout_marginRight="15dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/colorBlack"/>
+
+                <TextView
+                    android:id="@+id/familyRelation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tool:text="Father"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorPrimary"/>
+
+                <TextView
+                    android:id="@+id/familyAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tool:text="Age: 50"
+                    android:textSize="15dp"
+                    android:layout_below="@+id/familyName"
+                    android:layout_marginTop="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:textColor="@color/colorBlack"/>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.OrderDetailsActivity">
+
+    <RelativeLayout
+        android:id="@+id/toolbarHeader_OrderDetails"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+        <ImageButton
+            android:id="@+id/toolbarOrderDetails_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/eightdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/eightdp"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/paymentsToolbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/siq_48"
+            android:padding="@dimen/siq_10"
+            android:text="Order Details"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/siq_20" />
+
+        <ImageButton
+            android:id="@+id/toolbarSettingsIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="17dp"
+            android:visibility="gone"
+            android:background="@drawable/ic_share2"
+            android:backgroundTint="@color/colorWhite" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbarHeader_OrderDetails">
+
+        <LinearLayout
+            android:id="@+id/scrollview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/appt_details_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/patient_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:text="Appt Details"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/siq_18"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/order_details_date_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appt_details_header"
+                android:layout_marginTop="@dimen/siq_16">
+
+                <LinearLayout
+                    android:id="@+id/order_details_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:id="@+id/appt_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="23 jan,2021 @ 12:06"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/order_details_date"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/siq_55">
+
+                    <TextView
+                        android:id="@+id/patient_application_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video Consult"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_12" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/order_details_status_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/order_details_date_header"
+                android:layout_marginTop="@dimen/siq_6">
+
+                <LinearLayout
+                    android:id="@+id/order_details_linlayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true">
+
+                        <TextView
+                            android:id="@+id/order_details_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Appt Status: "
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/siq_14" />
+
+                        <TextView
+                            android:id="@+id/order_details_status_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/order_details_status"
+                            android:text=""
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/siq_14" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/apptStatusSpinnerLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:backgroundTint="@color/colorBlack">
+
+
+                        <Spinner
+                            android:id="@+id/spinner_ApptStatus"
+                            android:layout_width="150dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_margin="1dp"
+                            android:background="@drawable/drawable_rectangle_shape"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="10dp"
+                            android:src="@drawable/ic_arrow_down" />
+
+
+                    </RelativeLayout>
+
+
+                    <!--                    <Spinner-->
+                    <!--                        android:id="@+id/spinner_ApptStatus"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content" />-->
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/orderDetails_heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/order_details_status_header"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/siq_16"
+                android:text="Order Details"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/siq_18"
+                android:textStyle="bold" />
+
+            <!--<RelativeLayout
+                android:id="@+id/order_details_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/siq_14"
+                android:layout_below="@+id/orderDetails_heading">-->
+            <RelativeLayout
+                android:id="@+id/appointment_order_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orderDetails_heading"
+                android:layout_marginStart="@dimen/siq_10"
+                android:layout_marginTop="@dimen/siq_14"
+                android:layout_marginEnd="@dimen/siq_10"
+                android:layout_marginBottom="@dimen/eightdp"
+                android:paddingBottom="15dp"
+                android:background="@drawable/drawable_rectangle_payments">
+
+                <LinearLayout
+                    android:id="@+id/orderDetails_serviceName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:layout_marginTop="@dimen/siq_10"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_order_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Service Name"
+                        android:textSize="@dimen/siq_14" />
+
+                    <TextView
+                        android:id="@+id/orderDetailsServiceName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Video Consultation"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_16" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/siq_10"
+                    android:layout_marginEnd="@dimen/siq_28"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount"
+                        android:textSize="@dimen/siq_14" />
+
+                    <TextView
+                        android:id="@+id/orderDetails_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_16" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/layout_expand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/orderDetails_serviceName"
+                    android:layout_marginTop="@dimen/siq_14">
+
+                    <LinearLayout
+                        android:id="@+id/layout_expandCollapse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="@dimen/siq_20"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:id="@+id/orderDetails_expand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/siq_10"
+                            android:layout_weight="0.8"
+                            android:text="Expand"
+                            android:textSize="@dimen/siq_14" />
+
+                        <TextView
+                            android:id="@+id/orderDetails_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/siq_10"
+                            android:text="Collapse"
+                            android:textSize="@dimen/siq_14"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/icon_expand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:background="@drawable/ic_expand"
+                            android:visibility="visible" />
+
+                        <ImageButton
+                            android:id="@+id/icon_collapse"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.2"
+                            android:background="@drawable/ic_collapse"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/costDetails_Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/layout_expand"
+                    android:padding="@dimen/siq_10"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/tax_Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/serviceTax_Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Service Cost"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/serviceCost_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text=""
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/taxGst_Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tax_Layout"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/gst_Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Tax(15% GST)"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/taxAmt_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text=""
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/discount_Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/taxGst_Layout"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/discount_Text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Discount"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/discountRemoveText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/discount_Text"
+                            android:text="(Apply Coupon)"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="15dp" />
+
+                        <TextView
+                            android:id="@+id/discountText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/totalPay_Layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/discount_Layout"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/totalPay_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="Total Pay"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="15dp" />
+
+
+                        <TextView
+                            android:id="@+id/totalPay_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_add_serviceRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appointment_order_type"
+                android:layout_marginStart="@dimen/siq_10"
+                android:layout_marginTop="@dimen/siq_20"
+                android:layout_marginEnd="@dimen/siq_10">
+
+
+                <RelativeLayout
+                    android:id="@+id/addProcedureTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="Add Service"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="17dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/addProcedure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="Add Service"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/add_services_note_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/addProcedure"
+                        android:text="@string/add_services_note"
+                        android:layout_marginTop="8dp"
+                        android:layout_centerHorizontal="true"/>
+
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/no_procedure_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addProcedureTextLayout"
+                    android:text="No Service found"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true"/>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/service_recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/addProcedureTextLayout">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+                <RelativeLayout
+                    android:id="@+id/appointmentDetailsProgressbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_add_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_add_serviceRecycler"
+                android:layout_marginStart="@dimen/siq_12"
+                android:layout_marginTop="2dp"
+                android:visibility="gone"
+                android:background="@drawable/drawable_rectangle_payments"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/addService_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:text="Add Service"
+                    android:textColor="@color/siq_black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/image_ribbon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingLeft="16dp"
+                    android:src="@drawable/ic_arrow_down" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/procedure_search_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_add_service"
+                android:layout_marginStart="@dimen/eightdp"
+                android:layout_marginTop="@dimen/sixteendp"
+                android:layout_marginEnd="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/fourdp"
+                android:background="@drawable/drawable_rectangle_payments"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <AutoCompleteTextView
+                    android:id="@+id/autoText_procedure_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:layout_marginBottom="@dimen/eightdp"
+                    android:background="@android:color/transparent"
+                    android:drawableEnd="@drawable/ic_search"
+                    android:ellipsize="end"
+                    android:hint="E.g Sonography, X-ray"
+                    android:paddingStart="@dimen/siq_12"
+                    android:paddingEnd="@dimen/sixteendp"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:textStyle="italic"
+                android:text="Note:Invoice will created only when the appointment is completed or cancel" />
+
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/totalOverviewCardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/siq_10">
+
+                    <RelativeLayout
+                        android:id="@+id/layout_totalAmount_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/siq_14">
+
+                        <LinearLayout
+                            android:id="@+id/layout_total_amount_bottom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="@dimen/sixteendp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+
+                            <TextView
+                                android:id="@+id/text_total_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Amount"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/siq_14" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_bottom_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toRightOf="@+id/layout_total_amount_bottom"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/siq_55">
+
+                            <EditText
+                                android:id="@+id/bottom_amount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="@drawable/drawable_rectangle_shape"
+                                android:paddingLeft="15dp"
+                                android:paddingTop="5dp"
+                                android:paddingRight="15dp"
+                                android:paddingBottom="5dp"
+                                android:text=""
+                                android:textColor="@color/colorBlack"
+                                android:textSize="@dimen/siq_12" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/layout_bottom_amount_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:layout_toRightOf="@+id/layout_bottom_amount"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:paddingLeft="@dimen/siq_20">
+
+                            <TextView
+                                android:id="@+id/bottom_amount_received"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Received"
+                                android:textColor="@color/colorGreenLight"
+                                android:textSize="@dimen/siq_12"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/viewInvoiceSmallLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_toRightOf="@+id/layout_bottom_amount_status"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:gravity="center"
+                            android:visibility="gone"
+                            android:orientation="vertical"
+                            android:padding="5dp">
+
+                            <TextView
+                                android:id="@+id/viewInvoiceText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View Invoice"
+                                android:textColor="@color/colorWhite"
+                                android:textSize="@dimen/siq_12" />
+                        </LinearLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/layout_bottom_amount_status">
+
+                            <!--payment header status layout-->
+                            <RelativeLayout
+                                android:id="@+id/payment_header_layout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:padding="10dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/paymentStatusLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentLeft="true">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Payment Status"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="@dimen/siq_16" />
+
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="5dp"
+                                    android:layout_toRightOf="@+id/paymentStatusLabel"
+                                    android:gravity="center">
+
+                                    <TextView
+                                        android:id="@+id/paymentStatusData"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Payment Status"
+                                        android:textSize="@dimen/siq_16" />
+
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                            <!--payment details array list layout-->
+
+                            <RelativeLayout
+                                android:id="@+id/paymentDetailsArrayListLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/payment_header_layout"
+                                android:visibility="visible">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/recycler_view"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginRight="10dp" />
+
+
+                            </RelativeLayout>
+
+                            <!--refund layout action button layout-->
+
+                            <RelativeLayout
+                                android:id="@+id/refundActionLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/paymentDetailsArrayListLayout">
+
+                                <RelativeLayout
+                                    android:id="@+id/cancelRefund"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorDanger"
+                                    android:visibility="gone">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="1dp"
+                                        android:background="@drawable/drawable_radius_shape"
+                                        android:backgroundTint="@color/colorWhite">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:text="Cancel Refund"
+                                            android:textColor="@color/colorDanger"
+                                            android:textStyle="bold" />
+
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/refundNow"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorDanger"
+                                    android:visibility="gone">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="1dp"
+                                        android:background="@drawable/drawable_radius_shape"
+                                        android:backgroundTint="@color/colorWhite">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:text="Refund Now"
+                                            android:textColor="@color/colorDanger"
+                                            android:textStyle="bold" />
+
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+                            <!--payment Mode Layout-->
+                            <RelativeLayout
+                                android:id="@+id/paymentModeLayout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/payment_header_layout"
+                                android:visibility="gone">
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_paymentMode_header"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/paymentMode_heading"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/siq_16"
+                                        android:layout_marginTop="@dimen/siq_16"
+                                        android:text="Payment Mode"
+                                        android:textSize="@dimen/siq_15" />
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_spinnerMode"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/layout_paymentMode_header"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/drawable_rectangle_shape">
+
+
+                                    <Spinner
+                                        android:id="@+id/spinner_paymentMode"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="30dp"
+                                        android:layout_alignParentLeft="true"
+                                        android:layout_margin="1dp"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginRight="10dp"
+                                        android:src="@drawable/ic_arrow_down"
+                                        android:visibility="gone" />
+
+
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+                            <!--payment received and create invoice layout-->
+                            <RelativeLayout
+                                android:id="@+id/paymentReceivedAndCreateInvoiceLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/paymentDetailsArrayListLayout"
+                                android:layout_marginTop="120dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/viewReceipt"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorPrimaryDark"
+                                    android:visibility="gone">
+
+
+                                    <TextView
+                                        android:id="@+id/receivedAndCreateReceiptText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:gravity="center"
+                                        android:text="Received &amp; Create Receipt"
+                                        android:textColor="@color/colorWhite"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/createInvoice"
+                                    android:layout_width="150dp"
+                                    android:layout_height="40dp"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_marginRight="10dp"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:visibility="gone">
+
+
+                                    <TextView
+                                        android:id="@+id/createInvoiceText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:text="Create Invoice"
+                                        android:textColor="@color/colorWhite"
+                                        android:textStyle="bold" />
+
+
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/layout_paymentMode_btn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="@dimen/siq_10"
+                                    android:layout_marginTop="@dimen/siq_10"
+                                    android:layout_marginEnd="@dimen/siq_10"
+                                    android:visibility="gone">
+
+                                    <Button
+                                        android:id="@+id/btn_payRec_createInv"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:background="@drawable/save_patient_button_background"
+                                        android:text="@string/create_payment"
+                                        android:textColor="@color/white" />
+                                </RelativeLayout>
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    <!--end order details-->
+
+</RelativeLayout>

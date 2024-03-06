@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBlueLight2"
+    tools:context=".activities.CreateNewAccount">
+
+
+    <!-- <androidx.appcompat.widget.Toolbar
+         android:id="@+id/createSubmitToolbar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_alignParentStart="true"
+         android:background="@color/colorPrimary"
+         android:elevation="5dp"
+         app:subtitleTextColor="@color/colorWhite"
+         app:theme="@style/AppTheme.Toolbar"
+         app:title="Data Submitted"
+         app:titleTextColor="@color/colorWhite" >
+
+
+     <ImageButton
+         android:id="@+id/closeToolBarButton"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/siq_12"
+         android:layout_marginLeft="220dp"
+         android:background="@drawable/ic_close"
+         android:backgroundTint="@color/white" />
+     </androidx.appcompat.widget.Toolbar>-->
+
+    <RelativeLayout
+        android:id="@+id/dialogSubmittedHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/createSubmitToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:text="Merchant Account Created Successfully"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/closeToolBarButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogSubmittedHeader"
+        android:layout_marginTop="@dimen/siq_22">
+
+        <TextView
+            android:id="@+id/dialogSuccessMsg1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/siq_16"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/siq_12"
+            android:text="@string/create_success_dialog"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dialogSuccessMsg2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogSuccessMsg1"
+            android:layout_marginStart="@dimen/siq_16"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/siq_12"
+            android:text="@string/success_dialog2"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dialogSuccessMsg3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogSuccessMsg2"
+            android:layout_marginStart="@dimen/siq_16"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/siq_12"
+            android:text="@string/success_dialog3"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dialogSuccessMsg4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogSuccessMsg3"
+            android:layout_marginStart="@dimen/siq_16"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/siq_12"
+            android:text="@string/success_dialog4"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/dialogSuccessMsg5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogSuccessMsg4"
+            android:layout_marginStart="@dimen/siq_16"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/siq_12"
+            android:text="@string/success_dialog5"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/close_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialogSuccessMsg5"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/siq_16"
+            android:layout_marginEnd="@dimen/siq_32"
+            android:layout_marginBottom="@dimen/siq_24"
+            android:text="Close"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockTimeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/blockTimeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+        <RelativeLayout
+            android:id="@+id/blockTimeListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/blockTimeToolbar"
+            android:visibility="visible">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/blockTimeRecycleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/blockTimeAddNew"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false" />
+
+
+            <Button
+                android:id="@+id/blockTimeAddNew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_capsule_view"
+                android:text="@string/add_new"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/blockTimeAddForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/blockTimeToolbar"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/blockTimeAddTime"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="@string/select_service"
+                        android:textColor="@color/colorGrey2"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="2dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/blockTimeServiceRecycleView"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="10dp"
+                            android:clipToPadding="false" />
+
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/time_to_block"
+                        android:textColor="@color/colorGrey2"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/blockTimeDateLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorWhite"
+                        android:padding="10dp"
+                        android:elevation="2dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.45"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/timeBlockStart"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/start"
+                                android:textColor="@color/colorGrey2"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/startDateCalender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/timeBlockStart"
+                                android:text="1 Jan, 2019"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="19sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/startTimeCalender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/startDateCalender"
+                                android:text="12:30"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="19sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.1"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_arrow_right2"
+                            android:padding="5dp"
+                            tools:ignore="ContentDescription" />
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.45"
+                            android:layout_marginStart="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/timeBlockEnd"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentTop="true"
+                                android:text="@string/end"
+                                android:textColor="@color/colorGrey2"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/endDateCalender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/timeBlockEnd"
+                                android:text="1 Jan, 2019"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="19sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <TextView
+                                android:id="@+id/endTimeCalender"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/endDateCalender"
+                                android:text="12:30"
+                                android:layout_marginTop="10dp"
+                                android:textColor="@color/colorAccent"
+                                android:textSize="19sp"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="2dp">
+
+                        <EditText
+                            android:id="@+id/reasonText"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:hint="Enter reason"
+                            android:layout_marginStart="20dp"
+                            tools:ignore="Autofill,HardcodedText,TextFields" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/blockTimeAddTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/drawable_capsule_view"
+                android:text="@string/block_time"
+                android:textColor="@color/colorWhite" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/blockTimeEmptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/no_block_time"
+            android:layout_centerInParent="true"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textAlignment="center"/>
+
+        <Button
+            android:id="@+id/blockTimeAddNew2"
+            android:layout_width="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/blockTimeEmptyText"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/drawable_capsule_view"
+            android:text="@string/add_new"
+            android:textStyle="bold"
+            android:visibility="gone"
+            android:textColor="@color/colorWhite" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

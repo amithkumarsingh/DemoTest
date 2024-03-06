@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingBottom="5dp"
+        app:elevation="0dp">
+
+<!--        <androidx.appcompat.widget.Toolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            app:layout_collapseMode="pin"-->
+<!--            android:background="@color/colorPrimary"-->
+<!--            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>-->
+        <RelativeLayout
+            android:id="@+id/homeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:elevation="6dp"
+            android:background="@color/colorPrimary">
+
+            <ImageView
+                android:id="@+id/homeDocImg"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:background="@drawable/ic_profile"
+                android:layout_marginStart="10dp"
+                android:layout_centerInParent="true"
+                android:layout_alignParentStart="true"
+                android:backgroundTint="@color/colorWhite"
+                />
+
+            <TextView
+                android:id="@+id/homeWelcomeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome,"
+                android:layout_marginStart="7dp"
+                android:textColor="@color/colorWhite"
+                android:layout_toRightOf="@+id/homeDocImg"/>
+
+            <TextView
+                android:id="@+id/homeDocName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="22dp"
+                android:layout_marginStart="7dp"
+                android:textColor="@color/colorWhite"
+                android:layout_toEndOf="@+id/homeDocImg"
+                android:layout_below="@+id/homeWelcomeText"/>
+
+            <ImageView
+                android:id="@+id/homeSettings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_settings"
+                android:layout_alignParentEnd="true"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="10dp"/>
+
+        </RelativeLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            app:tabGravity="fill"
+            app:tabTextColor="@color/colorPrimary"
+            android:background="@color/colorWhite"
+            android:elevation="5dp"
+            app:tabMode="scrollable"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <ProgressBar
+        android:id="@+id/dashboard_tab_progress"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:visibility="visible"
+
+         />
+
+    </RelativeLayout>
+
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

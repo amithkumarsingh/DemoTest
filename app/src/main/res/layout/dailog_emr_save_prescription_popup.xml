@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/dialogPrescriptionFieldHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dialogPrescriptionFieldHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Prescription Field Preferences"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <!--        <ImageView-->
+        <!--            android:id="@+id/dialogEvaluationCancel"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentRight="true"-->
+        <!--            android:layout_centerInParent="true"-->
+        <!--            android:layout_marginRight="15dp"-->
+        <!--            android:background="@drawable/ic_close"-->
+        <!--            android:backgroundTint="@color/colorWhite" />-->
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/dialogEvaluationCategoryLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogPrescriptionFieldHeader"
+        android:background="@color/colorWhite"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+
+        <RelativeLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/preferencesAvailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/textLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="15dp">
+
+                    <TextView
+                        android:id="@+id/headerField"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="Select fields you wish to save in Prescription"
+                        android:textColor="@color/colorGreyText" />
+
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/shareEpisodeDataListLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textLayout"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+
+                    <CheckBox
+                        android:id="@+id/shareEcntEval"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:tag="Eval"
+                        android:text="Evaluations"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:id="@+id/shareEcntEvalListLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp">
+
+                        <CheckBox
+                            android:id="@+id/shareEcntSymptom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="Symptoms"
+                            android:text="Symptoms"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/shareEcntObs"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="Obs"
+                            android:text="Observations"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/shareEcntInvest"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="Invest"
+                            android:text="Investigation Results"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <CheckBox
+                            android:id="@+id/shareEcntDiag"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tag="Diag"
+                            android:text="Diagnosis"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/treatmentPlanView"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorGrey2"
+                        android:visibility="gone" />
+
+                    <CheckBox
+                        android:id="@+id/shareEcntTreatPlan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:tag="TreatPlan"
+                        android:text="Treatment Plan"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/noteTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/shareEpisodeDataListLayout"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:id="@+id/noteText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="Notes: Upload Handwritten Notes cannot be display in the Prescription"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="italic|bold" />
+
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/preferencesNotAvailable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Prescription can only be created with data from Evaluations and Treatment Plan
+Enable Evaluations and Treatment Plan control from Settings"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold"
+                    android:textSize="15dp"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/mainLayout"
+            android:layout_marginTop="15dp">
+
+            <TextView
+                android:id="@+id/prescriptionCloseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="30dp"
+                android:text="Close"
+                android:textColor="@color/colorDanger"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/createPrescriptionLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Create Prescription"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

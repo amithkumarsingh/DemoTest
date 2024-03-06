@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:id="@+id/search_patient_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/sixteendp"
+        android:layout_marginEnd="@dimen/sixteendp"
+        android:background="@drawable/search_dialog_background"
+        android:elevation="2dp"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+            android:id="@+id/dialog_patient_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@android:color/transparent"
+            android:ellipsize="end"
+            android:hint="@string/patient_search_text"
+            android:paddingStart="@dimen/sixteendp"
+            android:paddingTop="@dimen/eightdp"
+            android:paddingBottom="@dimen/eightdp"
+            android:singleLine="true" />
+
+        <ImageView
+            android:id="@+id/cancel_search"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:src="@drawable/ic_close" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/sixteendp"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/twentyfourdp"
+        android:paddingBottom="@dimen/sixteendp">
+
+        <TextView
+            android:id="@+id/searching_patient_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eightdp"
+            android:text="@string/searching_patient"
+            android:textColor="@color/colorBlack"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/no_patient_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/no_patient_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/sixteendp"
+                android:layout_marginBottom="@dimen/sixteendp"
+                android:text="No patient found in the name of suhail ahmed"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/twelevesp"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/add_patient_dialog_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorAccent"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/tv_add_patient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:backgroundTint="@color/white"
+                    android:gravity="center"
+                    android:drawablePadding="@dimen/siq_4"
+                    app:drawableTint="@color/white"
+                    app:drawableLeftCompat="@drawable/ic_add2"
+                    android:paddingEnd="@dimen/siq_10"
+                    android:paddingStart="@dimen/siq_6"
+                    android:paddingTop="@dimen/siq_4"
+                    android:paddingBottom="@dimen/siq_4"/>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/patient_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/eightdp"
+            android:orientation="vertical"
+            android:visibility="visible">
+            <TextView
+                android:id="@+id/tv_patient_general_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/siq_16"
+                android:textStyle="bold"
+                android:text="GS-120234"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/search_patient_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/twentyfoursp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/search_patient_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:layout_marginTop="4dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/twelevesp" />
+
+            <TextView
+                android:id="@+id/search_patient_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:layout_marginTop="4dp"
+                android:textAlignment="textStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/twelevesp" />
+
+            <TextView
+                android:id="@+id/view_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:text="@string/view_profile"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/sixteensp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/create_note"
+                    android:text="@string/create_note"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary"
+                    android:drawableLeft="@drawable/ic_pen"
+                    app:drawableTint="@color/colorPrimary"
+                    android:padding="@dimen/siq_12"
+                    android:layout_marginStart="@dimen/siq_15"
+                    android:drawablePadding="@dimen/siq_10"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:id="@+id/book_new_appt"
+                    android:background="@color/colorWhite"
+                    android:text="@string/book_new"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:drawableStart="@drawable/ic_calendar"
+                    app:drawableTint="@color/colorAccent"
+                    android:padding="@dimen/siq_12"
+                    android:layout_marginStart="@dimen/siq_15"
+                    android:drawablePadding="@dimen/siq_10" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/empty_patient_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/eightdp"
+            android:text="@string/empty_patient_text"
+            android:textAlignment="center"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/sixteensp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

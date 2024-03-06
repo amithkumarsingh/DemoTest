@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateNoteActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/createNoteToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="6dp"
+            android:textAlignment="center"
+            app:titleTextColor="@color/colorWhite" />
+
+        <ScrollView
+            android:id="@+id/createNoteStep1Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_from_current_case"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/createNoteProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_capsule_view"
+                    android:text="@string/proceed"
+                    android:textColor="@color/colorWhite" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/or"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                </LinearLayout>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:hint="@string/enter_case_name"
+                    android:paddingStart="10dp" />
+
+                <Button
+                    android:id="@+id/createNoteCreateProceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_capsule_view"
+                    android:text="@string/create_proceed"
+                    android:textColor="@color/colorWhite" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/createNoteStep2Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/create_interaction"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Case Name"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="22dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/select_mode"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/on"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/createNoteCaseDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/createNoteCaseDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="12/12/2018"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_calender"
+                        android:tint="@color/colorAccent" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:gravity="center">
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="@string/at"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <View
+                        android:layout_width="90dp"
+                        android:layout_height="2dp"
+                        android:background="@color/colorGrey1" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/createNoteCaseTimeLayout"
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/createNoteCaseTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:text="12:12"
+                        android:textSize="18dp"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginEnd="10dp"
+                        android:src="@drawable/ic_clock"
+                        android:tint="@color/colorAccent" />
+
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/createNoteStep2Proceed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/drawable_capsule_view"
+                    android:text="@string/proceed"
+                    android:textColor="@color/colorWhite" />
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/createNoteStep3Layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:layout_above="@+id/createNoteStep3BottomLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/colorWhite"
+                        android:gravity="center"
+                        android:elevation="2dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Case Name"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="22dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="2dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/interaction_details"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Clinic on 12/12/2018 @ 12:12"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="20dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="20dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:id="@+id/createNoteNotesLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/drawable_ripple_effect"
+                                android:padding="0dp"
+                                android:elevation="4dp">
+
+                                <ImageView
+                                    android:id="@+id/createNoteNotesIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentStart="true"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginStart="10dp"
+                                    android:src="@drawable/ic_notes" />
+
+                                <TextView
+                                    android:id="@+id/createNoteNotes"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_toRightOf="@+id/createNoteNotesIcon"
+                                    android:text="@string/written_notes"
+                                    android:textSize="18dp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/createNoteNoteCount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/add"
+                                    android:textAlignment="center"
+                                    android:textStyle="bold"
+                                    android:textSize="17dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_toStartOf="@+id/createNoteNotesArrow"
+                                    android:textColor="@color/colorAccent" />
+
+                                <ImageView
+                                    android:id="@+id/createNoteNotesArrow"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_arrow_right" />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:background="@color/colorGrey1" />
+
+                            </RelativeLayout>
+
+                            <LinearLayout
+                                android:id="@+id/createNoteNoteListLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="40dp"
+                                    android:text="@string/view_all"
+                                    android:gravity="center"
+                                    android:textSize="16dp"
+                                    android:textStyle="bold"
+                                    android:background="@color/colorPrimaryDark"
+                                    android:textColor="@color/colorWhite"/>
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="3dp"
+                                    android:background="@color/colorAccent"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/createNoteNoteRView"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:clipToPadding="false"
+                                    android:paddingStart="10dp"
+                                    android:paddingEnd="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginBottom="5dp"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/createNoteStep3BottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    android:background="@color/colorGreyText"
+                    android:textColor="@color/colorWhite"
+                    />
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/save"
+                    android:textColor="@color/colorWhite"
+                    android:background="@color/colorAccent"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/serviceCardViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorWhite"
+            android:layout_margin="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:id="@+id/serviceNameLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <ImageView
+                        android:id="@+id/serviceIcon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:padding="20dp"
+                        android:tint="@color/colorAccent"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_video"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/serviceNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Setup"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorBlack"
+                        android:layout_gravity="center"/>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/serviceRsIcon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:src="@drawable/ic_rupee"
+                    android:visibility="gone"
+                    android:tint="@color/colorGrey2"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignParentBottom="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/serviceRsIcon"
+                    />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/switchButton"
+                    android:layout_width="wrap_content"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginEnd="10dp"
+                    />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

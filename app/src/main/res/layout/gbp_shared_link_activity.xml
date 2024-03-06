@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueLight2"
+    tools:context=".activities.GBPSharedLinkActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/gbpSharedLinkToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Google Business Profile (GBP)"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/colorWhite" />
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gbpSharedLinkToolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/gbpLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="3dp">
+
+                    <RelativeLayout
+                        android:id="@+id/socialProfileGBPLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="10dp">
+
+                        <TextView
+                            android:id="@+id/headingTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Auto Share Your \nGoogle Business Profile (GBP)"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/descriptionTextView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/headingTextView"
+                            android:layout_marginTop="10dp"
+                            android:text=""
+                            android:textColor="@color/black" />
+
+
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/gbpServiceListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gbpLayout"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/gbpConfigTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="GBP Configurations"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gbpRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gbpConfigTextView"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+
+
+                <RelativeLayout
+                    android:id="@+id/noServiceSetupLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gbpConfigTextView"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/noServiceSetupImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="270dp"
+                            android:layout_height="200dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_no_service_setup" />
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:id="@+id/noServiceSetupTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/noServiceSetupImage"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="10dp"
+                        android:text="No Service Setup"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/setupDescriptionTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/noServiceSetupTextView"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="To configure your GBP first you need to setup Your Practice to link your GBP to your Practice for Auto Share of GBP link"
+                        android:textColor="@color/black"
+                        android:textSize="14dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/setupPracticeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/setupDescriptionTextView"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/drawable_radius_shape">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:text="Setup Service"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/gbpStaffListLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/gbpServiceListLayout"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:id="@+id/gbpStaffTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:text="Staff Permissions"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/gbpStaffRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gbpStaffTextView"
+                    android:layout_marginTop="10dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+
+                <RelativeLayout
+                    android:id="@+id/noStaffMemberAddedLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/gbpStaffTextView"
+                    android:layout_margin="10dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/noMemberTextViewOne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textSize="16dp"
+                            android:layout_centerHorizontal="true"
+                            android:text="No Staff Member Added"
+                            android:textColor="@color/black"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/noMemberTextViewTwo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/noMemberTextViewOne"
+                            android:text="Add and give permission to your staff members so that they can manage your auto GBP setup." />
+
+                        <TextView
+                            android:id="@+id/noMemberTextViewThree"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@+id/noMemberTextViewTwo"
+                            android:text="You can add staff from ClinicPlus web portal." />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

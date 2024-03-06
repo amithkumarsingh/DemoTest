@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@drawable/drawable_radius_shape"
+            android:backgroundTint="@color/colorGrey2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorWhite">
+
+                <RelativeLayout
+                    android:id="@+id/serviceNameLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/serviceNameText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:text="Apollo HYD"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <!--pending layout-->
+                <RelativeLayout
+                    android:id="@+id/amountLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/serviceNameLayout"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:id="@+id/rupeeIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_rupee"
+                        android:backgroundTint="@color/colorGrey2" />
+
+                    <TextView
+                        android:id="@+id/pendingLeftRupeeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/rupeeIcon"
+                        android:text="20,000"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_22"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountLayout"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="Received"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_12" />
+
+
+                </RelativeLayout>
+
+
+                <!--received layout-->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:layout_below="@+id/serviceNameLayout"
+                    android:layout_marginRight="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/receivedAmountLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true">
+
+                        <ImageView
+                            android:id="@+id/receivedRupeeIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_rupee"
+                            android:backgroundTint="@color/colorGrey2" />
+
+                        <TextView
+                            android:id="@+id/receivedRupeeText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="3dp"
+                            android:layout_toRightOf="@+id/receivedRupeeIcon"
+                            android:text="20,000"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/siq_22"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/receivedAmountLayoutText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/receivedAmountLayout"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="Received"
+                            android:textColor="@color/colorGreyText"
+                            android:textSize="@dimen/siq_12" />
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <!--appt status layout-->
+
+                <RelativeLayout
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:visibility="gone"
+                    android:layout_marginLeft="3dp"
+                    android:layout_below="@+id/amountLayout"
+                    android:layout_marginTop="40dp"
+                    android:background="@drawable/drawable_capsule_view">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="1dp"
+                        android:background="@drawable/drawable_capsule_view"
+                        android:backgroundTint="@color/colorWhite">
+
+
+                        <TextView
+                            android:id="@+id/number_of_appt_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:padding="5dp"
+                            android:text="8 appointments in progress"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="18dp" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

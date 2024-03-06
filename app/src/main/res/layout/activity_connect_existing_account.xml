@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ConnectExistingAccount">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/existingAccountToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:subtitleTextColor="@color/colorWhite"
+        app:theme="@style/AppTheme.Toolbar"
+        app:title="@string/connect_existing_account"
+        app:titleTextColor="@color/colorWhite" />
+
+    <ProgressBar
+        android:id="@+id/progressExiBar_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
+
+    </ProgressBar>
+
+    <RelativeLayout
+        android:id="@+id/heading_text"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/existingAccountToolbar">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/headingId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/existing_account_heading1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eighteensp"
+                        android:text="@string/connect_existing_account_heading1"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/existing_account_heading2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eighteensp"
+                        android:lineSpacingExtra="@dimen/siq_5"
+                        android:lines="4"
+                        android:text="@string/connect_existing_account_heading2"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/divider"
+                    android:layout_width="wrap_content"
+                    android:layout_height="2dp"
+                    android:layout_below="@+id/headingId"
+                    android:layout_marginTop="@dimen/siq_24">
+
+                    <View
+                        android:id="@+id/dividerExistingAccLine"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@color/colorGrey1" />
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/card_fields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/divider"
+                    android:layout_marginTop="@dimen/siq_16">
+
+                    <TextView
+                        android:id="@+id/enter_merchant_mid"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:text="@string/merchant_mid"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/enter_merMid_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="@dimen/fourdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/enter_merchant_mid">
+
+                        <EditText
+                            android:id="@+id/et_merchantMid"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_merchant_mid"
+                            android:padding="@dimen/eightdp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/midErrorText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="Please enter Registered Name"
+                        android:textColor="@color/colorRed"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/enter_merMid_card" />
+
+                    <TextView
+                        android:id="@+id/merchant_key"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="@string/merchant_key"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/midErrorText" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/enter_merKey_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="@dimen/fourdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/merchant_key">
+
+                        <EditText
+                            android:id="@+id/et_merchatKey"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_merchant_key"
+                            android:padding="@dimen/eightdp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/keyErrorText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="Please enter Registered Name"
+                        android:textColor="@color/colorRed"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/enter_merKey_card" />
+
+                    <TextView
+                        android:id="@+id/merchant_salt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="@string/merchant_Salt"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/keyErrorText" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/enter_merSalt_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        app:cardCornerRadius="@dimen/fourdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/merchant_salt">
+
+                        <EditText
+                            android:id="@+id/et_merchantSalt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_merchant_salt"
+                            android:padding="@dimen/eightdp"
+                            android:textStyle="bold" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/saltErrorText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="Please enter Registered Name"
+                        android:textColor="@color/colorRed"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/enter_merSalt_card" />
+
+                    <Button
+                        android:id="@+id/bt_createAccount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="@dimen/siq_24"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/save_patient_button_background"
+                        android:text="@string/connect_account"
+                        android:textColor="@color/colorWhite"
+                        app:layout_constraintTop_toBottomOf="@+id/saltErrorText" />
+
+                    <TextView
+                        android:id="@+id/bottom_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/siq_15"
+                        android:text="@string/bottom_heading1"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/bt_createAccount" />
+
+                    <TextView
+                        android:id="@+id/bottom_heading2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sixteendp"
+                        android:layout_marginTop="@dimen/siq_15"
+                        android:text="@string/bottom_heading2"
+                        android:textStyle="bold"
+                        app:layout_constraintTop_toBottomOf="@+id/bottom_heading" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </RelativeLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+</RelativeLayout>

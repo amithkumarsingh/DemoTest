@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/appointment_filter_sheet"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+    android:background="@color/white"
+    android:elevation="@dimen/eightdp"
+    android:orientation="vertical"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="0dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:elevation="@dimen/fourdp"
+        android:padding="@dimen/fourdp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/eightdp"
+            android:text="Filters"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sixteensp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/close_transfilter_sheet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="@dimen/eightdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/fourdp"
+            android:src="@drawable/ic_close"
+            android:tint="@color/white" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/filter_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eightdp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="Mode Of Consult"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/clinic_checkbox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Clinic"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/video_checkbox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="Video"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/chat_checkbox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Chat"
+                    android:checked="true"
+                    android:textSize="@dimen/sixteensp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eightdp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/eightdp"
+                android:text="Payment Mode"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <!-- <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="@dimen/eightdp">-->
+
+            <RadioGroup
+                android:id="@+id/type_of_payment_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/text_payment_status"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/mode_type_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="All"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/consult_type_online"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Online"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/consult_type_offline"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Offline"
+                    android:textStyle="bold" />
+            </RadioGroup>
+            <!-- </RelativeLayout>-->
+
+            <TextView
+                android:id="@+id/text_payment_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eightdp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/eightdp"
+                android:text="Payment Status"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <!--<RadioGroup
+                android:id="@+id/type_of_consult_radio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/payment_status_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="All"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/payment_status_pendingPatient"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Partial Refund Pending"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/payment_status_receivedPatient"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Payment Completed"
+                    android:textStyle="bold" />
+
+
+                <CheckBox
+                    android:id="@+id/payment_status_pendingSettled"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Partial Refund Completed"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/payment_status_parSettledPending"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Settlement Pending"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/payment_status_settlement_done"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Payment Pending"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/payment_status_partial_settlement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Refund Scheduled"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/payment_status_schdRefund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Settlement Completed"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/eightdp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/payment_status_pendingRefund"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Refund Completed"
+                    android:textStyle="bold" />
+
+                <CheckBox
+                    android:id="@+id/payment_status_refundComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Refund Pending"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <!--</RadioGroup>-->
+            <TextView
+                android:id="@+id/text_appt_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/eightdp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:layout_marginBottom="@dimen/eightdp"
+                android:text="Appt. Status"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                tools:layout_marginTop="@dimen/siq_10" />
+
+            <RadioGroup
+                android:id="@+id/type_of_payment_apptStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/text_payment_status"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/payment_appt_status_all"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="All"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/payment_appt_status_active"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Active"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/payment_appt_status_completed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/eightdp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_weight="1"
+                    android:text="Completed"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="@dimen/eightdp">
+
+                <TextView
+                    android:id="@+id/payment_clear_filter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="Reset Filter"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/payment_apply_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/drawable_radius_shape"
+                        android:paddingStart="32dp"
+                        android:paddingTop="@dimen/eightdp"
+                        android:paddingEnd="32dp"
+                        android:paddingBottom="@dimen/eightdp"
+                        android:text="Apply Filter"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

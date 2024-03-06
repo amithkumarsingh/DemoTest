@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlueLight2">
+
+    <RelativeLayout
+        android:id="@+id/dialogPennyLayoutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dialogPennyVerifyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Penny Verification"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogPennyVerifyCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/headingId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogPennyLayoutHeader"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/otp_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eighteensp"
+            android:lines="2"
+            android:text="@string/penny_otp_heading"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/otp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/enter_penny"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/siq_30"
+                android:text="@string/enter_OTP"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/siq_16"
+            android:weightSum="3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_otp_penny_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="2"
+                app:cardCornerRadius="@dimen/fourdp">
+
+                <EditText
+                    android:id="@+id/et_pennyOtp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter OTP"
+                    android:inputType="number"
+                    android:padding="@dimen/eightdp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/siq_20"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_below="@+id/enter_otp_penny_card">
+
+                <TextView
+                    android:id="@+id/tv_penny_expires_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:text="OTP Expires in "
+                    android:textColor="@color/colorGreen3"
+                    android:textSize="@dimen/siq_15"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tv_penny_OTPExpired"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:layout_marginTop="@dimen/siq_24"
+                    android:text="OTP Expired"
+                    android:textColor="@color/colorGreen3"
+                    android:textSize="@dimen/siq_15"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/text_view_penny_countdown"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/tv_penny_expires_timer"
+                    android:text="00:00"
+                    android:textColor="@android:color/black"
+                    android:textSize="12dp" />
+
+                <TextView
+                    android:id="@+id/tv_penny_reSendOtp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="Re-send OTP"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/siq_15"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <!---->
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_divider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingId">
+
+        <View
+            android:id="@+id/dividerLine"
+            android:layout_width="wrap_content"
+            android:layout_height="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorGrey1" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/headingId1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headingId"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/penny_account_heading1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sixteendp"
+            android:layout_marginTop="@dimen/eighteensp"
+            android:lines="2"
+            android:text="@string/heading_penny_amount"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/penny_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/enter_penny_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/siq_30"
+                android:text="@string/enter_amount"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_penny_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="2"
+                app:cardCornerRadius="@dimen/fourdp">
+
+                <EditText
+                    android:id="@+id/et_pennyAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="Enter Amount"
+                    android:inputType="number"
+                    android:padding="@dimen/eightdp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_verify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/save_patient_button_background"
+            android:text="@string/verify"
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+<!--
+            <LinearLayout
+                android:id="@+id/categoryNameLinearLayoutCompact"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:weightSum="4"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/categoryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".65"
+                    android:text="investigation plan"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/addRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1.25"
+                    android:background="@null"
+                    android:src="@drawable/ic_add2"
+                    android:tint="@color/colorAccent"/>
+
+                <ImageButton
+                    android:id="@+id/allRecordDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_weight="1.05"
+                    android:background="@null"
+                    android:src="@drawable/ic_delete"
+                    android:tint="@color/colorRed"
+                    android:paddingLeft="20dp"/>
+
+                <ImageButton
+                    android:id="@+id/infoButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_weight="1.05"
+                    android:background="@null"
+                    android:src="@drawable/ic_help"
+                    android:tint="@color/colorPrimaryDark"
+                    android:paddingRight="8dp"/>
+
+            </LinearLayout>
+-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorBackground" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/subCategoryName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight=".6"
+                    android:text="1. fever"
+                    android:textColor="@color/colorBlack" />
+
+                <ImageButton
+                    android:id="@+id/singleRecordDelete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_weight="1.2"
+                    android:background="@null"
+                    android:src="@drawable/ic_delete"
+                    android:tint="@color/colorRed"
+                    android:paddingLeft="8dp"/>
+
+                <ImageButton
+                    android:id="@+id/editRecord"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:layout_weight="1.2"
+                    android:background="@null"
+                    android:src="@drawable/ic_edit"
+                    android:paddingLeft="2dp"/>
+
+            </LinearLayout>
+
+
+            <!--                <androidx.recyclerview.widget.RecyclerView-->
+            <!--                    android:id="@+id/categoryRecordsRV"-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:clipToPadding="false" />-->
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

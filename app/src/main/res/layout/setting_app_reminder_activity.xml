@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFormActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="5dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/settingFormToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+
+        <!--Appt Reminder-->
+        <RelativeLayout
+            android:id="@+id/settingApptReminderForm"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/settingFormToolbar"
+            android:background="@color/colorNavIcon"
+            android:visibility="visible">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="UselessParent">
+
+                <RelativeLayout
+                    android:id="@+id/reminderLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/settingApptReminderNote"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Note: These reminders are for clinic appointments only."
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="@string/appt_setting_text"
+                            android:textColor="@color/colorBlack" />
+
+                    </LinearLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/settingApptReminderCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingApptReminderNote"
+                        android:layout_margin="15dp">
+
+                        <ScrollView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            tools:ignore="NestedScrolling">
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp">
+
+                                    <TextView
+                                        android:id="@+id/smsone"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:text="@string/sms_1"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold"
+                                        tools:ignore="TooDeepLayout" />
+
+                                    <EditText
+                                        android:id="@+id/appReminderSmsOne"
+                                        android:layout_width="60dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginStart="24dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_toEndOf="@+id/smsone"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:isScrollContainer="true"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:gravity="center"
+                                        tools:ignore="Autofill,HardcodedText"
+                                        />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_toEndOf="@+id/appReminderSmsOne"
+                                        android:text="@string/hours_before_appt_text"
+                                        android:textSize="@dimen/siq_12" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp">
+
+                                    <TextView
+                                        android:id="@+id/smstwo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:text="@string/sms_2"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/appReminderSmsTwo"
+                                        android:layout_width="60dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginStart="24dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_toEndOf="@+id/smstwo"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:isScrollContainer="true"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:gravity="center"
+                                        tools:ignore="Autofill,HardcodedText" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_toEndOf="@+id/appReminderSmsTwo"
+                                        android:text="@string/hours_before_appt_text"
+                                        android:textSize="@dimen/siq_12" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp">
+
+                                    <TextView
+                                        android:id="@+id/emailOne"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:text="@string/email_1"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/appReminderEmailOne"
+                                        android:layout_width="60dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginStart="18dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_toEndOf="@+id/emailOne"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:isScrollContainer="true"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:gravity="center"
+                                        tools:ignore="Autofill,HardcodedText,TextFields" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_toEndOf="@+id/appReminderEmailOne"
+                                        android:text="@string/hours_before_appt_text"
+                                        android:textSize="@dimen/siq_12" />
+
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp">
+
+                                    <TextView
+                                        android:id="@+id/emailtwo"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentStart="true"
+                                        android:layout_centerInParent="true"
+                                        android:layout_marginStart="20dp"
+                                        android:text="@string/email_2"
+                                        android:textSize="17sp"
+                                        android:textStyle="bold" />
+
+                                    <EditText
+                                        android:id="@+id/appReminderEmailTwo"
+                                        android:layout_width="60dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_marginStart="18dp"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_marginEnd="20dp"
+                                        android:layout_marginBottom="10dp"
+                                        android:layout_toEndOf="@+id/emailtwo"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:hint="0"
+                                        android:inputType="number"
+                                        android:isScrollContainer="true"
+                                        android:paddingStart="10dp"
+                                        android:paddingEnd="10dp"
+                                        android:gravity="center"
+                                        tools:ignore="Autofill,HardcodedText,TextFields" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_marginTop="10dp"
+                                        android:layout_toEndOf="@+id/appReminderEmailTwo"
+                                        android:text="@string/hours_before_appt_text"
+                                        android:textSize="@dimen/siq_12" />
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                        </ScrollView>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/apptRemText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingApptReminderCard"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="@string/hr_before"
+                        android:textAlignment="center"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/appReminderUpdateButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/apptRemText"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/drawable_rectangle_shape"
+                        android:text="@string/update"
+                        android:textColor="@color/colorWhite" />
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/appReminderUpdateButton"
+                        android:layout_margin="15dp"
+                        android:layout_marginTop="20dp">
+
+                        <View
+                            android:id="@+id/viewTop"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorGrey1"
+                            android:visibility="gone" />
+
+                        <RelativeLayout
+                            android:id="@+id/preAppointmentSwitchLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/viewTop"
+                            android:layout_marginTop="15dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:text="Pre-appointment form"
+                                android:textColor="@color/colorGreyText"
+                                android:textStyle="bold"
+                                tools:ignore="HardcodedText" />
+
+                            <Switch
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                        </RelativeLayout>
+
+                        <View
+                            android:id="@+id/viewBottom"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="15dp"
+                            android:background="@color/colorGrey1" />
+
+                        <TextView
+                            android:id="@+id/rescheduleAppointmentNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/viewBottom"
+                            android:layout_marginTop="20dp"
+                            android:text="Reschedule Appointment Notification"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/rescheduleAppointmentNoteText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rescheduleAppointmentNote"
+                            android:layout_marginTop="20dp"
+                            android:text="Select if you want to get notify about the appointments which are getting rescheduled."
+                            android:textColor="@color/colorGreyText"
+                            tools:ignore="HardcodedText" />
+
+                        <CheckBox
+                            android:id="@+id/rescheduleCB"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rescheduleAppointmentNoteText"
+                            android:text="Doctor"
+                            tools:ignore="HardcodedText"
+                            android:layout_marginTop="@dimen/siq_6"/>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </ScrollView>
+
+        </RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

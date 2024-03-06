@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecAboutFamilyCard"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/nonEpisodicDataLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Handwritten Notes -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecHistHandNotesCard"
+            android:layout_width="250dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="visible">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <TextView
+                    android:id="@+id/apptRecHistAttachLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/attachment" />
+
+                <TextView
+                    android:id="@+id/apptRecHistAttachView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistAttachLabel"
+                    android:text="View"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDespLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistAttachLabel"
+                    android:text="@string/description" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDesp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistAttachLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistDespLabel"
+                    android:text=""
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistMedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDespLabel"
+                    android:text="@string/medical_prescription" />
+
+                <TextView
+                    android:id="@+id/apptRecHistMed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDespLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistMedLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistTestLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistMedLabel"
+                    android:text="@string/test_prescription" />
+
+                <TextView
+                    android:id="@+id/apptRecHistTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistMedLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistTestLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistValidLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistTestLabel"
+                    android:text="@string/valid_till" />
+
+                <TextView
+                    android:id="@+id/apptRecHistValidDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistTestLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistValidLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Symptoms -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecHistSymptomCard"
+            android:layout_width="250dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistSymptomNameLabel"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomDespLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomNameLabel"
+                    android:text="@string/description" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomDesp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomNameLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistSymptomDespLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomFirstReportLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomDespLabel"
+                    android:text="@string/first_report" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomFirstReport"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomDespLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistSymptomFirstReportLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomFirstReportLabel"
+                    android:text="@string/status" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomFirstReportLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistSymptomStatusLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Investigation -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecHistInvestCard"
+            android:layout_width="250dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestFileLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/file" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestFile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistInvestFileLabel"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestFileLabel"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestFileLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistInvestNameLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistSymptomInvestParameterLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestNameLabel"
+                    android:text="@string/parameters" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestParameter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestNameLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistSymptomInvestParameterLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomInvestParameterLabel"
+                    android:text="@string/value" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistSymptomInvestParameterLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistInvestValueLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestNoteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestValueLabel"
+                    android:text="@string/note" />
+
+                <TextView
+                    android:id="@+id/apptRecHistInvestNotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistInvestValueLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistInvestValueLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Diagonis -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/apptRecHistDiagCard"
+            android:layout_width="250dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagNameLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistDiagNameLabel"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagPositLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagNameLabel"
+                    android:text="@string/posited_on" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagPosit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagNameLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistDiagPositLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagPositLabel"
+                    android:text="@string/status" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagPositLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistDiagStatusLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagConfirmedLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagStatusLabel"
+                    android:text="@string/confirmed_ruled" />
+
+                <TextView
+                    android:id="@+id/apptRecHistDiagConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/apptRecHistDiagStatusLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/apptRecHistDiagConfirmedLabel"
+                    android:text=""
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

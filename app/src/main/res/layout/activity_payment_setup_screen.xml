@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.PaymentSetupScreen"
+    android:background="@color/bg_color_light_white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/paymentOptionsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:subtitleTextColor="@color/colorWhite"
+        app:titleTextColor="@color/colorWhite" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/siq_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/paymentOptionsToolbar"
+        android:background="@color/white">
+        <TextView
+            android:id="@+id/tv_error_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:textSize="@dimen/siq_16"
+            android:visibility="gone"/>
+     <androidx.recyclerview.widget.RecyclerView
+         android:id="@+id/rv_PaymentsOptions"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="10dp"
+         android:paddingBottom="16dp"
+         android:paddingTop="8dp"
+         android:visibility="visible"/>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+tools:context=".activities.PaymentSetupScreen"
+android:visibility="gone">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/const_PayU"
+    android:padding="@dimen/siq_12"
+    tools:ignore="MissingConstraints">
+
+    <TextView
+        android:id="@+id/tv_PayU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="I have PayU Account"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_PayU"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="HardcodedText"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorGreyText"/>
+
+    <ImageView
+        android:id="@+id/img_PayU"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_right"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/const_offline"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/siq_12"
+    app:layout_constraintTop_toBottomOf="@+id/const_UPI"
+    tools:layout_editor_absoluteX="8dp">
+
+    <TextView
+        android:id="@+id/tv_offline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="All Payments Offline"
+        android:textAllCaps="false"
+        android:textColor="@color/colorGreyText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_offline"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img_offline"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_right"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/const_UPI"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/siq_12"
+    app:layout_constraintTop_toBottomOf="@+id/const_PayU"
+    tools:layout_editor_absoluteX="-2dp">
+
+    <TextView
+        android:id="@+id/tv_UPI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add My UPI Id"
+        android:textAllCaps="false"
+        android:textColor="@color/colorGreyText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/img_UPI"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.03"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/img_UPI"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_right"
+        tools:ignore="ContentDescription" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->

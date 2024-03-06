@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/caseChannelRecordsHandWrittenCardView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:id="@+id/caseChannelReocrdSection"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordHandWrittenDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dr.Example"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/caseChannelCreateDateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created On "
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="normal"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_below="@+id/caseChannelCreateDateOn"
+                    android:id="@+id/caseChannelRecordHandWrittenDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/12/2019"
+                    android:textSize="16dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/caseChannelReocrdSection"
+                android:id="@+id/caeChannelRecordEcntNotesLayout"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:background="@color/colorWhite"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordNotesPresValidLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Prescription Valid Till: "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelRecordNotesPresValid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/caseChannelRecordNotesPresValidLabel"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordNotesDescriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordNotesPresValid"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Description: "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caeChannelRecordNotesDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordNotesPresValid"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordNotesDescriptionLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelrecordNotesMedPres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caeChannelRecordNotesDescription"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/medical_prescription"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/caseChannelRecordNotesMedPresIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caeChannelRecordNotesDescription"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_toRightOf="@+id/caseChannelrecordNotesMedPres"
+                    android:src="@drawable/ic_close" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordNotesTestPres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelrecordNotesMedPres"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/test_prescription"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordNotesTestPresIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_close"
+                    android:layout_toRightOf="@+id/caseChannelRecordNotesTestPres"
+                    android:layout_below="@+id/caseChannelrecordNotesMedPres"
+                    android:layout_marginStart="10dp"/>
+
+                <View
+                    android:id="@+id/caseChannelRecordline"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/caseChannelRecordNotesTestPres"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGrey2" />
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_below="@+id/caseChannelRecordline"
+                    android:id="@+id/caseChannelRecordCreatOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text=" On :"
+                    android:textSize="14dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:visibility="gone"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/caseChannelRecordCreateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12-12-1990"
+                    android:textSize="14dp"
+                    android:textStyle="normal"
+                    android:layout_toRightOf="@+id/caseChannelRecordCreatOn"
+                    android:layout_below="@+id/caseChannelRecordline"
+                    android:layout_marginStart="10dp"/>
+
+                <TextView
+                    android:visibility="visible"
+                    android:id="@+id/caseChannelRecordView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordline"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/view"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/caseChannelSymptomsCardView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/caseChannelReocrdSymptomsSection"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordSymptomsDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dr.Example"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/caseChannelSymptomsCreateDateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created On "
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="normal"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_below="@+id/caseChannelSymptomsCreateDateOn"
+                    android:id="@+id/caseChannelRecordSymptomsDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/12/2019"
+                    android:textSize="16dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/caseChannelReocrdSymptomsSection"
+                android:id="@+id/caeChannelRecordSymtomsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorWhite"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/caseChannelRecordSymptomsNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Name : "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelRecordSymptomsName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/caseChannelRecordSymptomsNam"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordSymptomsDescriptionLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordSymptomsName"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Description: "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caeChannelRecordSymtomsDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordSymptomsNam"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordSymptomsDescriptionLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <View
+                    android:id="@+id/caseChannelRecordSymptomsline"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/caseChannelRecordSymptomsDescriptionLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGrey2" />
+
+                <TextView
+                    android:layout_below="@+id/caseChannelRecordSymptomsline"
+                    android:id="@+id/caseChannelRecordSymptomsStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="Status :"
+                    android:textSize="14dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/caseChannelRecordSymtomsStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ongoing"
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    android:layout_toRightOf="@+id/caseChannelRecordSymptomsStatus"
+                    android:layout_below="@+id/caseChannelRecordSymptomsline"
+                    android:layout_marginStart="10dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/caseChannelInvestgationCardView"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/caseChannelReocrdInvestgationSection"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordInvestgationDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dr.Example"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/caseChannelInvestgationCreateDateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created On "
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="normal"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_below="@+id/caseChannelInvestgationCreateDateOn"
+                    android:id="@+id/caseChannelRecordInvestgationDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/12/2019"
+                    android:textSize="16dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/caseChannelReocrdInvestgationSection"
+                android:id="@+id/caeChannelRecordInvestgationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorWhite"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/caseChannelRecordInvestgationNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Name : "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelRecordInvestgationName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/caseChannelRecordInvestgationNam"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordInvestgationParameterLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordInvestgationName"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Parameter: "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caeChannelRecordInvestgationParameter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordInvestgationNam"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordInvestgationParameterLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordInvestgationNoteLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordInvestgationParameterLabel"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Notes : "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caeChannelRecordInvestgationNote"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordInvestgationParameterLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordInvestgationNoteLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <View
+                    android:id="@+id/caseChannelRecordInvestgationline"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/caseChannelRecordInvestgationNoteLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGrey2" />
+
+                <TextView
+                    android:layout_below="@+id/caseChannelRecordInvestgationline"
+                    android:id="@+id/caseChannelRecordInvestgationValueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Value :"
+                    android:textSize="14dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/caseChannelRecordInvestgationValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    android:layout_toRightOf="@+id/caseChannelRecordInvestgationValueLabel"
+                    android:layout_below="@+id/caseChannelRecordInvestgationline"
+                    android:layout_marginStart="10dp"/>
+                <TextView
+                    android:id="@+id/caseChannelRecordInvestgationView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordInvestgationline"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/view"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="16dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/caseChannelDiagnosisCardView"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/caseChannelReocrdDiagnosisSection"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordDiagnosisDoctorName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Dr.Example"
+                    android:textSize="18dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"/>
+                <TextView
+                    android:id="@+id/caseChannelDiagnosisCreateDateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created On "
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="normal"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_below="@+id/caseChannelDiagnosisCreateDateOn"
+                    android:id="@+id/caseChannelRecordDiagnosisDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20/12/2019"
+                    android:textSize="16dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/caseChannelReocrdDiagnosisSection"
+                android:id="@+id/caeChannelRecordDiagnosisLayout"
+                android:layout_width="match_parent"
+                android:layout_height="115dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorWhite"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/caseChannelRecordDiagnosisNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Name : "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelRecordDiagnosisnName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/caseChannelRecordDiagnosisNam"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordDiagnosisPositedOnLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisNam"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Posited On: "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caeChannelRecordDiagnosisPositedOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisNam"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordDiagnosisPositedOnLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordDiagnosisConfirmed_RuledOutOnLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisPositedOnLabel"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text="Confirmed/Ruled Out On : "/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordDiagnosisConfirmed_RuledOutOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisPositedOnLabel"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordDiagnosisConfirmed_RuledOutOnLabel"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <View
+                    android:id="@+id/caseChannelRecordDiagnosisline"
+                    android:layout_marginTop="8dp"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisConfirmed_RuledOutOnLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/colorGrey2" />
+
+                <TextView
+                    android:layout_below="@+id/caseChannelRecordDiagnosisline"
+                    android:id="@+id/caseChannelRecordDiagnosisStatusLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Status :"
+                    android:textSize="14dp"
+                    android:textStyle="normal"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/caseChannelRecordDiagnosisStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="15dp"
+                    android:textStyle="normal"
+                    android:layout_toRightOf="@+id/caseChannelRecordDiagnosisStatusLabel"
+                    android:layout_below="@+id/caseChannelRecordDiagnosisline"
+                    android:layout_marginStart="10dp"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/caseChannelObservationCardView"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/caseChannelReocrdObservationSection"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/colorAccent">
+
+                <TextView
+                    android:id="@+id/caseChannelRecordObservationDoctorName"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:text=""
+                    android:maxLines="4"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:textSize="16dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/caseChannelObservationCreateDateOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Created On "
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="normal"
+                    android:layout_marginRight="10dp"/>
+                <TextView
+                    android:layout_below="@+id/caseChannelObservationCreateDateOn"
+                    android:id="@+id/caseChannelRecordObservationDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="14dp"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"
+                    android:layout_marginRight="10dp"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_below="@+id/caseChannelReocrdObservationSection"
+                android:id="@+id/caeChannelRecordObservationLayout"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorWhite"
+                android:visibility="visible">
+                <TextView
+                    android:id="@+id/caseChannelRecordPrimaryKeyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/caseChannelRecordPrimaryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text=""
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:layout_toRightOf="@+id/caseChannelRecordPrimaryKeyName"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordSecondKeyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordPrimaryKeyName"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordSecondName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordPrimaryKeyName"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordSecondKeyName"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordTernaryKeyName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordSecondKeyName"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="1"
+                    android:text=""/>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/caseChannelRecordTernaryName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/caseChannelRecordSecondKeyName"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/caseChannelRecordTernaryKeyName"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+                <TextView
+                    android:id="@+id/caseChannelRecordViewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:textStyle="bold"
+                    android:text="More"
+                    android:textColor="@color/colorAccent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:id="@+id/caseChannelRecordEvalObservationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorWhite">
+
+        <TextView
+            android:id="@+id/caseChannelRecordObservationText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="10dp"
+            android:text="@string/diagnosis"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/caseChannelRecordObArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/marginStart20"
+            android:src="@drawable/ic_arrow_right" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorGrey2" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

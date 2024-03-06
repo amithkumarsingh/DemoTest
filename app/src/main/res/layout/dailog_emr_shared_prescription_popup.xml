@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/dialogPrescriptionFieldHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dialogPrescriptionFieldHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="Select Data to Share"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogSharePrescriptionCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/dialogSharedPrescriptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogPrescriptionFieldHeader"
+        android:background="@color/colorWhite"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp">
+
+
+        <LinearLayout
+            android:id="@+id/sharePrescriptionDataListLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textLayout"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+
+            <CheckBox
+                android:id="@+id/generatedPrescriptionCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:tag="gp"
+                android:text="Generated Prescription"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/handWrittenNoteCb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:tag="hrn"
+                android:text="HandWritten Notes"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/sharePrescriptionDataListLayout"
+            android:layout_marginTop="15dp">
+
+
+            <RelativeLayout
+                android:id="@+id/createNewButton"
+                android:layout_width="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:padding="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerInParent="true"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="14dp"
+                    android:textStyle="bold"
+                    android:text="Create New"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/sharedPrescriptionLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:text="Share Prescription"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

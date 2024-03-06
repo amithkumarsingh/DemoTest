@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/dialogAllPrescriptionFieldHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dialogAllPrescriptionFieldHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="15dp"
+            android:gravity="center"
+            android:text="All Prescriptions"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dialogAllPrescriptionCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/dialogNoPrescriptionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialogAllPrescriptionFieldHeader"
+        android:background="@color/colorWhite"
+        android:paddingTop="10dp"
+        android:paddingBottom="20dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/noCaseCreated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/consultNoteIcon"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/onboarding_image_background_green"
+                android:paddingStart="@dimen/eightdp"
+                android:paddingTop="@dimen/twentyfourdp"
+                android:paddingEnd="@dimen/eightdp"
+                android:src="@drawable/ic_medical_prescription" />
+
+            <TextView
+                android:id="@+id/consultNoteEmptyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/consultNoteIcon"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="40dp"
+                android:text="You have not created any prescriptions yet"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="17dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/prescriptionCreateNewText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/consultNoteEmptyText"
+                android:layout_marginTop="30dp"
+                android:text="Create New"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="26dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/prescriptionAllListLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dialogAllPrescriptionFieldHeader"
+        android:background="@color/colorWhite"
+        android:paddingTop="10dp"
+        android:visibility="visible">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allPrescriptionRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="30dp"
+            android:clipToPadding="false"
+            android:layout_above="@+id/share_prescription_popup"
+            android:orientation="horizontal" />
+
+        <RelativeLayout
+            android:id="@+id/share_prescription_popup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="20dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/drawable_radius_shape"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:text="Share Prescription"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/prescription_progress"
+        android:layout_centerInParent="true"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/serviceCardViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorWhite">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/dayLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/colorAccent">
+
+                    <TextView
+                        android:id="@+id/daysText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:padding="3dp"
+                        android:text="Monday"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/slotOneLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/dayLayout"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/slotOneText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slot 1"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20dp" />
+
+                    <RelativeLayout
+                        android:id="@+id/spinnerSlotOneFromLayout"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/slotOneText"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/spinnerSlotOneFrom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="5sp"></Spinner>
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="7dp"
+                        android:layout_toRightOf="@+id/spinnerSlotOneFromLayout"
+                        android:text="To" />
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/spinnerSlotOneTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"></Spinner>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/slotTwoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/slotOneLayout"
+                    android:layout_marginTop="20dp"
+                    android:padding="5dp">
+
+                    <TextView
+                        android:id="@+id/slotTwoText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Slot 2"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="20dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/spinnerSlotTwoFromLayout"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/slotTwoText"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/spinnerSlotTwoFrom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"></Spinner>
+
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="7dp"
+                        android:layout_toRightOf="@+id/spinnerSlotTwoFromLayout"
+                        android:text="To" />
+
+                    <RelativeLayout
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/drawable_rectangle_shape">
+
+                        <Spinner
+                            android:id="@+id/spinnerSlotTwoTo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"></Spinner>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

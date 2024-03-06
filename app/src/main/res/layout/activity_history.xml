@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HistoryActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<android.support.v7.widget.Toolbar-->
+            <!--android:id="@+id/historyToolbar"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="@color/colorPrimary"-->
+            <!--android:elevation="5dp"-->
+            <!--app:subtitleTextColor="@color/colorWhite"-->
+            <!--app:titleTextColor="@color/colorWhite" />-->
+        
+        <LinearLayout
+            android:id="@+id/historyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:orientation="vertical"
+            android:background="@color/colorWhite"
+            android:elevation="4dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@color/colorPrimaryDark"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Wednesday"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorWhite"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentTop="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="7"
+                    android:textStyle="bold"
+                    android:textSize="40dp"
+                    android:textColor="@color/colorWhite"
+                    android:layout_centerInParent="true"/>
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_arrow_right"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:tint="@color/colorWhite"
+                    android:background="?selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_arrow_back2"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentStart="true"
+                    android:tint="@color/colorWhite"
+                    android:background="?selectableItemBackgroundBorderless"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/colorAccent2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DECEMBER 2019"
+                    android:layout_centerInParent="true"
+                    android:textSize="17dp"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold"/>
+
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_calender"
+                    android:layout_centerInParent="true"
+                    android:layout_alignParentEnd="true"
+                    android:tint="@color/colorWhite"
+                    android:background="?selectableItemBackgroundBorderless"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/historyRecycleView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/historyToolbar"
+            android:clipToPadding="false"
+            android:orientation="horizontal"/>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationDetailsActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/communicationDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/communicationDetailsVideoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/libViewRecodedVideoLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <VideoView
+                    android:id="@+id/libViewRecordedVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <ProgressBar
+                    android:id="@+id/libViewLoader"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/libViewYoutubeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible">
+
+                <WebView
+                    android:id="@+id/libViewYoutubeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    tools:ignore="WebViewLayout" />
+
+<!--                <com.google.android.youtube.player.YouTubePlayerView-->
+<!--                    android:id="@+id/libViewYoutubeView"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="200dp" />-->
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/communicationDetailsCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communicationDetailsVideoLayout">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/VideoAndTextHeaderLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/communicationDetailsVideoAndTextHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="25 TRICKS WITH FRUITS AND VEGGIES"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/communicationDetailsDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/VideoAndTextHeaderLayout"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp">
+
+
+                    <TextView
+                        android:id="@+id/date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="12 Dec,2019"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/communicationDetailsCardView"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/communicationDetailsDescriptionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp">
+
+                    <TextView
+                        android:id="@+id/communicationDetailsDescriptionHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/description"
+                        android:textSize="14dp" />
+
+                    <WebView
+                        android:id="@+id/communicationDetailsDescriptionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/communicationDetailsDescriptionHeader"
+                        android:layout_marginTop="10dp"
+                        android:text="Wanna feel like a pro in the kitchen? Cook your favorite meal in no time? then I highly recommend to watch this video | Find out how to peel and cut fruits and vegetables in the quickest way possible."
+                        android:textSize="15dp"
+
+                        />
+
+
+                    <!--                    <WebView-->
+                    <!--                        android:id="@+id/communicationDetailsDescriptionText"-->
+                    <!--                        android:layout_alignParentTop="true"-->
+                    <!--                        android:layout_alignParentLeft="true"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="match_parent"-->
+                    <!--                        tools:ignore="WebViewLayout" />-->
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/communicationTextDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/communicationTextDetailsVideoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/libViewTextLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.android.volley.toolbox.NetworkImageView
+                    android:id="@+id/libViewArticleImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp" />
+
+                <ProgressBar
+                    android:id="@+id/libViewTextLoader"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/imageNotAvailableText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="NA" />
+
+
+                <RelativeLayout
+                    android:id="@+id/libViewZoomImgLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/colorAccent"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/libViewCloseImage"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_close"
+                        android:tint="@color/colorWhite" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/libViewCloseImage"
+                        android:text="Close"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/communicationTextDetailsCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/communicationTextDetailsVideoLayout">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/TextHeaderLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/communicationDetailsTextHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="25 TRICKS WITH FRUITS AND VEGGIES"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/communicationTextDetailsDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/TextHeaderLayout"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp">
+
+
+                    <TextView
+                        android:id="@+id/dateTextArticles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="12 Dec,2019"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/communicationTextDetailsCardView"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/communicationTextDetailsDescriptionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="15dp">
+
+                        <TextView
+                            android:id="@+id/communicationTextDetailsDescriptionHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/description"
+                            android:textSize="14dp" />
+
+                        <!--                    <TextView-->
+                        <!--                        android:id="@+id/communicationTextDetailsDescriptionText"-->
+                        <!--                        android:layout_width="wrap_content"-->
+                        <!--                        android:layout_height="wrap_content"-->
+                        <!--                        android:layout_below="@+id/communicationTextDetailsDescriptionHeader"-->
+                        <!--                        android:layout_marginTop="10dp"-->
+                        <!--                        android:text="Wanna feel like a pro in the kitchen? Cook your favorite meal in no time? then I highly recommend to watch this video | Find out how to peel and cut fruits and vegetables in the quickest way possible."-->
+                        <!--                        android:textSize="15dp"-->
+
+                        <!--                        />-->
+
+
+                        <WebView
+                            android:id="@+id/communicationTextDetailsDescriptionText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/communicationTextDetailsDescriptionHeader"
+                            android:layout_marginTop="10dp"
+                            android:scrollbars="none"
+                            android:text="Wanna feel like a pro in the kitchen? Cook your favorite meal in no time? then I highly recommend to watch this video | Find out how to peel and cut fruits and vegetables in the quickest way possible."
+                            android:textSize="15dp"
+
+                            />
+
+
+                        <TextView
+                            android:id="@+id/communicationContentTextHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/communicationTextDetailsDescriptionText"
+                            android:text="Content"
+                            android:textSize="14dp" />
+
+                        <WebView
+                            android:id="@+id/communicationContentText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/communicationContentTextHeader"
+                            android:layout_marginTop="10dp"
+                            android:scrollbars="none"
+                            android:text=""
+                            android:textSize="15dp"
+
+                            />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <!--pdf details-->
+
+    <RelativeLayout
+        android:id="@+id/communicationPDFDetailsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:id="@+id/pdfLayout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp">
+
+
+            <WebView
+                android:id="@+id/webViewPDF"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="none" />
+
+            <ProgressBar
+                android:id="@+id/pdfProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+
+        </RelativeLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/communicationPDFDetailsCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pdfLayout">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/pdfHeaderLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/communicationDetailsPDFHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="25 TRICKS WITH FRUITS AND VEGGIES"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/communicationPDFDetailsDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/pdfHeaderLayout"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp">
+
+
+                    <TextView
+                        android:id="@+id/datePDFArticles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="12 Dec,2019"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="13dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/communicationPDFDetailsCardView"
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="7dp">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/communicationPDFDetailsDescriptionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="15dp">
+
+                        <TextView
+                            android:id="@+id/communicationPDFDetailsDescriptionHeader"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/description"
+                            android:textSize="14dp" />
+
+
+                        <WebView
+                            android:id="@+id/communicationPDFDetailsDescriptionText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/communicationPDFDetailsDescriptionHeader"
+                            android:layout_marginTop="10dp"
+                            android:scrollbars="none"
+                            android:text="Wanna feel like a pro in the kitchen? Cook your favorite meal in no time? then I highly recommend to watch this video | Find out how to peel and cut fruits and vegetables in the quickest way possible."
+                            android:textSize="15dp"
+
+                            />
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/viewPDF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/communicationPDFDetailsDescriptionLayout"
+                        android:background="@drawable/drawable_capsule_outline"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageVIew"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_pdf"
+                            android:backgroundTint="@color/white" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_toRightOf="@+id/imageVIew"
+                            android:text="View Pdf"
+                            android:textColor="@color/white"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/communicationDetailsFabDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/colorDanger"
+        android:src="@drawable/ic_delete" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

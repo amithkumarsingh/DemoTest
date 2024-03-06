@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorNavText">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Filters"
+            android:textColor="#fff"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+<!--        <ImageView-->
+<!--            android:id="@+id/caseChannelFilterClear"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:src="@drawable/ic_clear_filter"-->
+<!--            android:tint="#FFFF" />-->
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/filterLayOut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nav">
+
+        <TextView
+            android:id="@+id/caseChannelLabel1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Sort By"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/caseChannelSortBy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/caseChannelLabel1"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/drawable_rectangle_shape">
+
+            <Spinner
+                android:id="@+id/caseChannelSortBySpinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/colorGrey2"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/caseChannelLabel2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_below="@+id/caseChannelSortBy"
+            android:text="Sort Order"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/caseChannelSortOrder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/caseChannelLabel2"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/drawable_rectangle_shape">
+
+            <Spinner
+                android:id="@+id/caseChannelSortOrderSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:backgroundTint="@color/colorGrey2"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/caseChannelApplyFilterBtn"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/filterLayOut"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/marginStart20"
+        android:background="@drawable/drawable_capsule_view"
+        android:text="Apply Filter"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

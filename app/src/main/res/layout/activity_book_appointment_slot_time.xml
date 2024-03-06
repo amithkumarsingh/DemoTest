@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BlockTimeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/blockTimeToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+        <RelativeLayout
+            android:id="@+id/appointmentSlotSpiBackgroundLayout"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_below="@+id/blockTimeToolbar"
+            android:background="@color/colorWhite"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/appointmentSlotSpinnerLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/drawable_rectangle_shape">
+
+                <Spinner
+                    android:id="@+id/appointmentServiceSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/slotView"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/appointmentSlotSpiBackgroundLayout"
+            android:background="@color/colorGrey2">
+
+        </View>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dateSelectCardView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/slotView"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+
+                <RelativeLayout
+                    android:id="@+id/dateSelectionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/dateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="12/12/2018" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/ic_calender"
+                        app:tint="@color/colorAccent" />
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/earlierAndNextDateLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/dateSelectionLayout"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary">
+
+                    <TextView
+                        android:id="@+id/earlierDateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:padding="5dp"
+                        android:paddingLeft="10dp"
+                        android:text="Find Earliest"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/nextDateTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:padding="5dp"
+                        android:paddingRight="10dp"
+                        android:text="Next Date"
+                        android:textColor="@color/colorWhite"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <RelativeLayout
+            android:layout_below="@+id/dateSelectCardView"
+            android:id="@+id/timeFormat_setting_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/timeFormatSpinnerLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:text="Time Format:"
+                    android:textColor="@color/black" />
+
+
+                <FrameLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/drawable_rectangle_border_grey"
+                    android:layout_alignParentRight="true">
+                    <Spinner
+                        android:id="@+id/timeFormatSpinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="false"
+                        android:padding="12dp"
+                        android:layout_gravity="end|bottom"
+                        android:src="@drawable/ic_arrow_down" />
+                </FrameLayout>
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/slotSelectCardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/appointmentBookNow"
+            android:layout_below="@+id/timeFormat_setting_layout"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            app:cardCornerRadius="5dp">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/categorySaveLayout"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp">
+
+                <GridView
+                    android:id="@+id/gridView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"
+                    android:visibility="visible">
+
+                </GridView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ProgressBar
+                        android:id="@+id/bookLoading"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+                    <!--Android UI  - Display the message for slots availability-->
+                    <LinearLayout
+                        android:id="@+id/ll_No_Slots_Available"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:layout_marginTop="@dimen/siq_30">
+
+                        <TextView
+                            android:id="@+id/bookEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Slot_Not_aVail_Header"
+                            android:textColor="@color/noSlotsHeaderColor"
+                            android:textSize="@dimen/siq_text_17"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/bookEmptyText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/Slot_Not_Available"
+                            android:textColor="@color/noSlotsTitleColor"
+                            android:textSize="@dimen/siq_text_17" />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:id="@+id/appointmentBookNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/drawable_capsule_view"
+            android:text="@string/common_book_now"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

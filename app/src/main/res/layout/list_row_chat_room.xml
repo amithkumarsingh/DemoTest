@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/chatRoomMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/chatRoomSelfLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_rectangle_chat_box2"
+            android:layout_marginBottom="7dp"
+            android:elevation="2dp"
+            android:backgroundTint="@color/colorAccent3"
+            android:layout_alignParentEnd="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/chatRoomMsgText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingRight="120dp"
+                    android:text="Hello world adfasdfsadfasdfsadfsadfsdafsadfsdafasdfasdfas"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/chatTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/chatRoomMsgText"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_toEndOf="@+id/chatRoomMsgText"
+                    android:text="25 Apr 22 11:20 am"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/chatRoomOppoLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/drawable_rectangle_chat_box"
+        android:layout_marginBottom="7dp"
+        android:elevation="2dp"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/chatRoomOppoMsgText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello world"
+                android:textSize="18dp"
+                android:textColor="@color/colorBlack"
+                android:layout_margin="10dp"
+                android:paddingRight="120dp"/>
+
+            <TextView
+                android:id="@+id/optChatTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="12:30"
+                android:textSize="12sp"
+                android:layout_below="@+id/chatRoomOppoMsgText"
+                android:layout_toEndOf="@+id/chatRoomOppoMsgText"
+                android:layout_marginBottom="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_gravity="end"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/siq_10"
+    android:layout_marginTop="@dimen/siq_2"
+    android:layout_marginRight="@dimen/siq_10"
+    android:layout_marginBottom="@dimen/siq_10"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/transactionCardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorGreyText">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_margin="2dp"
+            android:background="@color/colorWhite"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:id="@+id/appt_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="8dp"
+                android:paddingTop="10dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tv_patient_general_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="textStart"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/siq_16"
+                        android:textStyle="bold"
+                        android:layout_marginTop="@dimen/eightdp"
+                        android:text="GS-120234"
+                        tools:ignore="HardcodedText"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:id="@+id/patient_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginBottom="@dimen/eightdp"
+                        android:layout_toStartOf="@+id/paymentPaymentStatus"
+                        android:text="Suhail ahmed"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_14"
+                        android:textStyle="bold"
+                        android:layout_below="@+id/tv_patient_general_id"
+                        tools:ignore="HardcodedText" />
+
+                    <LinearLayout
+                        android:id="@+id/paymentPaymentStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="@dimen/fourdp">
+
+                        <TextView
+                            android:id="@+id/bulletPoint"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
+                            android:text="\u25CF"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="@dimen/siq_14"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/patient_payment_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Payment Pending"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/appointment_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/siq_6">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:id="@+id/patient_ph_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="986612666"
+                            android:textColor="@color/colorGrey2"
+                            android:textSize="@dimen/siq_14"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/appointmentStatusL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/drawable_capsule_outline"
+                        android:backgroundTintMode="@color/colorBlack"
+                        android:orientation="vertical"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="5dp"
+                        android:paddingRight="10dp"
+                        android:paddingBottom="5dp">
+
+                        <TextView
+                            android:id="@+id/patient_application_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="In-Progress"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/appointment_order_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/eightdp"
+                    android:layout_marginBottom="@dimen/eightdp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_order_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Order Details"
+                            android:textSize="@dimen/siq_14" />
+
+                        <TextView
+                            android:id="@+id/patient_appointment_time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="23, jan, 2021 @ 12:06"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/siq_14"
+                            android:textStyle="bold"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="right"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Total Amount"
+                            android:textSize="@dimen/siq_14"
+                            tools:ignore="HardcodedText" />
+
+                        <TextView
+                            android:id="@+id/patient_amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1500"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/siq_14"
+                            tools:ignore="HardcodedText" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/transaction_bottom_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appt_layout"
+                android:background="@color/colorGrey3">
+
+                <TextView
+                    android:id="@+id/create_receipt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:layout_marginTop="@dimen/fourdp"
+                    android:layout_marginBottom="@dimen/fourdp"
+                    android:text=""
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/siq_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/patient_history"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginStart="@dimen/sixteendp"
+                    android:padding="10dp"
+                    android:text="@string/payment_history"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/siq_14"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/order_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginEnd="@dimen/sixteendp"
+                    android:text=""
+                    android:textColor="@color/colorAccent"
+                    android:textSize="@dimen/siq_14"
+                    android:textStyle="bold"
+                    tools:ignore="RelativeOverlap" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

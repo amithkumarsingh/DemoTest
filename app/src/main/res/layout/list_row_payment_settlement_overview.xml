@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
+    <LinearLayout
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:layout_width="210dp"
+            android:layout_height="75dp"
+            android:background="@drawable/drawable_radius_shape"
+            android:backgroundTint="@color/colorGrey2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorWhite"
+                android:id="@+id/online_collect_lay">
+
+
+                <RelativeLayout
+                    android:id="@+id/amountLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:id="@+id/rupeeIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_rupee"
+                        android:backgroundTint="@color/colorGrey2" />
+
+                    <TextView
+                        android:id="@+id/leftSettlementRupeeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/rupeeIcon"
+                        android:text="20,000"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_22"
+                        android:textStyle="bold" />
+
+
+                    <RelativeLayout
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_fill_circle"
+                        android:backgroundTint="@color/colorAccent">
+
+                        <ImageView
+                            android:id="@+id/rightArrowIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_arrow_right2"
+                            android:backgroundTint="@color/colorWhite" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountLayout"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="Total Online Collection"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_12" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:background="@drawable/drawable_radius_shape"
+            android:backgroundTint="@color/colorGrey2">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="1dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorWhite">
+
+                <RelativeLayout
+                    android:id="@+id/amountLayoutRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+
+                    <ImageView
+                        android:id="@+id/rupeeIconRight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/ic_rupee"
+                        android:backgroundTint="@color/colorGrey2" />
+
+                    <TextView
+                        android:id="@+id/rightSettlementRupeeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="3dp"
+                        android:layout_toRightOf="@+id/rupeeIconRight"
+                        android:text="20,000"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="@dimen/siq_22"
+                        android:textStyle="bold" />
+
+
+                    <RelativeLayout
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="10dp"
+                        android:background="@drawable/drawable_fill_circle"
+                        android:backgroundTint="@color/colorAccent">
+
+                        <ImageView
+                            android:id="@+id/rightArrowIconRight"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/ic_arrow_right2"
+                            android:backgroundTint="@color/colorWhite" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountLayoutRight"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:text="Total settlement done"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_12" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

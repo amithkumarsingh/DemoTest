@@ -1,0 +1,1002 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/patientProToolBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:textAlignment="center"
+            android:elevation="6dp"
+            app:titleTextColor="@color/colorWhite" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:id="@+id/patientProMainLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:elevation="2dp"
+                        android:background="@color/colorPrimary">
+
+                        <TextView
+                            android:id="@+id/patientProCat"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_toStartOf="@+id/patientProCatEdit"
+                            android:text="Category: NA"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/patientProCatEdit"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/edit"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="17dp"
+                            android:layout_centerInParent="true"
+                            android:textStyle="bold" />
+
+                        <!--<View-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="2dp"-->
+                        <!--android:background="@color/colorGrey1"-->
+                        <!--android:layout_alignParentBottom="true"-->
+                        <!--android:layout_marginStart="20dp"-->
+                        <!--/>-->
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:background="@color/colorPrimary">
+
+                        <TextView
+                            android:id="@+id/patientProDiag"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_toStartOf="@+id/patientProDiagView"
+                            android:text="Diagnosis: NA"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/patientProDiagView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:text="@string/view"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/patientProIcon1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:tint="@color/colorGreyText"
+                            android:src="@drawable/ic_profile" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/colorBlack"
+                            android:layout_toEndOf="@+id/patientProIcon1"
+                            android:text="@string/background"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/patientProBgMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/more"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:visibility="visible"
+                            android:layout_alignParentEnd="true"
+                            android:textColor="@color/colorAccent"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/patientProBgEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No data found"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:layout_centerInParent="true"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patientProPatientInfoFormCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_margin="10dp"
+                            android:layout_below="@+id/patientProIcon1">
+
+                            <LinearLayout
+                                android:id="@+id/patientProPatientInfoForm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:visibility="visible"
+                                android:background="@color/colorGrey3"
+                                android:padding="10dp">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/name"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPName"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:hint="@string/enter_name"
+                                    android:paddingStart="10dp"
+                                    android:textSize="15dp"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_phone"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPPhNo"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:hint="@string/enter_phone_edit"
+                                    android:paddingStart="10dp"
+                                    android:textSize="15dp"
+                                    android:inputType="numberSigned"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_email"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPEmail"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:textSize="15dp"
+                                    android:hint="@string/enter_email_edit"
+                                    android:paddingStart="10dp"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_dob"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <TextView
+                                    android:id="@+id/patientProPatientInfoPDOB"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:hint="@string/enter_dob_edit"
+                                    android:paddingStart="10dp"
+                                    android:gravity="center_vertical"
+                                    android:textSize="15dp"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/select_gender"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <RadioGroup
+                                    android:id="@+id/patientProPatientInfoPGender"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation='horizontal'>
+
+                                    <RadioButton
+                                        android:id="@+id/recordPGenderMale"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:button="@null"
+                                        android:text="@string/male"
+                                        android:textAlignment="center" />
+
+                                    <RadioButton
+                                        android:id="@+id/recordPGenderFemale"
+                                        android:layout_width="0dp"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/drawable_rectangle_shape"
+                                        android:button="@null"
+                                        android:text="@string/female"
+                                        android:textAlignment="center" />
+
+                                </RadioGroup>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_bloodg"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <Spinner
+                                    android:id="@+id/patientProPatientInfoPBloodG"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:textSize="15dp"
+                                    android:paddingStart="10dp"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_id"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPID"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:textSize="15dp"
+                                    android:hint="@string/enter_id_edit"
+                                    android:paddingStart="10dp"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_height"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPHeight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:textSize="15dp"
+                                    android:paddingStart="10dp"
+                                    android:inputType="numberSigned"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/enter_age"
+                                    android:layout_marginTop="10dp"
+                                    android:textColor="@color/colorGrey2"/>
+
+                                <EditText
+                                    android:id="@+id/patientProPatientInfoPAge"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:textSize="15dp"
+                                    android:paddingStart="10dp"
+                                    android:inputType="numberSigned"
+                                    android:background="@drawable/drawable_rectangle_shape"/>
+
+                                <Button
+                                    android:id="@+id/patientProPatientInfoSave"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/save"
+                                    android:textColor="@color/colorWhite"
+                                    android:backgroundTint="@color/colorAccent"/>
+
+
+
+                            </LinearLayout>
+
+                            <RelativeLayout
+                                android:id="@+id/backgroundLoader"
+                                android:layout_width="match_parent"
+                                android:layout_centerInParent="true"
+                                android:layout_height="match_parent">
+
+                                <ProgressBar
+                                    android:layout_width="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_height="wrap_content" />
+
+                            </RelativeLayout>
+
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/patientProIcon2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:visibility="visible"
+                            android:tint="@color/colorGreyText"
+                            android:src="@drawable/ic_multiple_people" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/patientProIcon2"
+                            android:text="@string/family"
+                            android:visibility="visible"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/patientProAddFamily"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:visibility="visible"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"/>
+
+                        <RelativeLayout
+                            android:id="@+id/patientProFamInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:layout_below="@+id/patientProIcon2">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/patientProFamRv"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:clipToPadding="false" />
+
+                            <TextView
+                                android:id="@+id/patientProFamInfoEmptyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="No data available"
+                                android:textStyle="bold"
+                                android:textSize="18dp"
+                                android:layout_centerInParent="true"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/patientProRecordsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:id="@+id/patientProIcon4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:tint="@color/colorGreyText"
+                            android:src="@drawable/ic_folder" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/patientProIcon4"
+                            android:text="@string/records"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/patientProRecordsAdd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/add"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:visibility="gone"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"/>
+
+                        <TextView
+                            android:id="@+id/patientProRecordsEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No case created"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:layout_centerInParent="true"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patientProRecordsCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:visibility="visible"
+                            android:layout_below="@+id/patientProIcon4"
+                            android:layout_marginBottom="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/patientProRecordCaseName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:text="Case Name"/>
+
+                                <TextView
+                                    android:id="@+id/patientProRecordInteraction"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="2 Interaction"
+                                    android:layout_marginTop="5dp"
+                                    android:textColor="@color/colorBlack"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/patientProRecordCaseName"/>
+
+                                <TextView
+                                    android:id="@+id/patientProRecordDiag"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Diagnosis: NA"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/patientProRecordInteraction"/>
+
+                                <TextView
+                                    android:id="@+id/patientProRecordView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/view"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="19dp"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:visibility="visible"
+                                    android:layout_toStartOf="@+id/patientProRecordViewAll"/>
+
+                                <TextView
+                                    android:id="@+id/patientProRecordViewAll"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:text="View \n All"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@color/colorPrimary"
+                                    android:textColor="@color/colorWhite"
+                                    android:textStyle="bold"
+                                    />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/patientProApptLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="270dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/patientProIcon5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:tint="@color/colorGreyText"
+                            android:src="@drawable/ic_calender" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/patientProIcon5"
+                            android:text="@string/appointment"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17dp" />
+
+                        <TextView
+                            android:id="@+id/patientProApptBook"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/book"
+                            android:visibility="invisible"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:textSize="17dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="20dp"/>
+
+                        <TextView
+                            android:id="@+id/patientProApptEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No appointments found"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:layout_centerInParent="true"/>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/patientProApptCard"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@+id/patientProIcon5"
+                            android:layout_marginBottom="15dp"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/patientProApptName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="20dp"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold"
+                                    android:text="Clinic Consult"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptDate"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="12/03/2018 @ 12:30"
+                                    android:layout_marginTop="5dp"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorBlack"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/patientProApptName"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptPayText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/payment"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="18dp"
+                                    android:layout_below="@+id/patientProApptDate"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptPay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/payment"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textColor="@color/colorSuccess"
+                                    android:textStyle="bold"
+                                    android:textSize="18dp"
+                                    android:layout_toEndOf="@+id/patientProApptPayText"
+                                    android:layout_below="@+id/patientProApptDate"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptTypeText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/type"
+                                    android:layout_marginTop="10dp"
+                                    android:textSize="18dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/patientProApptPay"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptType"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/none"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="18dp"
+                                    android:layout_toEndOf="@+id/patientProApptTypeText"
+                                    android:layout_below="@+id/patientProApptPay"/>
+
+                                <TextView
+                                    android:id="@+id/patientProApptViewAll"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:text="View \n All"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@color/colorPrimary"
+                                    android:textColor="@color/colorWhite"
+                                    android:textStyle="bold"
+                                    />
+
+                                <View
+                                    android:layout_width="match_parent"
+                                    android:layout_height="2dp"
+                                    android:background="@color/colorGrey1"
+                                    android:layout_below="@+id/patientProApptType"
+                                    android:layout_toStartOf="@+id/patientProApptViewAll"
+                                    android:layout_marginTop="15dp"/>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="50dp"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_toStartOf="@+id/patientProApptViewAll">
+
+                                    <LinearLayout
+                                        android:id="@+id/patientProApptCancel"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="0.33"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="19dp"
+                                            android:layout_height="19dp"
+                                            android:tint="@color/colorDanger"
+                                            android:src="@drawable/ic_cancel"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:textStyle="bold"
+                                            android:textColor="@color/colorDanger"
+                                            android:text="@string/cancel"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/patientProApptNotes"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="0.33"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:layout_width="19dp"
+                                            android:layout_height="19dp"
+                                            android:src="@drawable/ic_pen"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:textStyle="bold"
+                                            android:text="@string/note"/>
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/patientProApptComplete"
+                                        android:layout_width="0dp"
+                                        android:layout_weight="0.33"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center">
+
+                                        <ImageView
+                                            android:id="@+id/patientProApptCompleteIcon"
+                                            android:layout_width="19dp"
+                                            android:layout_height="19dp"
+                                            android:tint="@color/colorSuccess"
+                                            android:src="@drawable/ic_tick"/>
+
+                                        <TextView
+                                            android:id="@+id/patientProApptCompleteText"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginStart="5dp"
+                                            android:textColor="@color/colorSuccess"
+                                            android:textStyle="bold"
+                                            android:text="@string/completed"/>
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/patientProIcon6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:tint="@color/colorGreyText"
+                            android:src="@drawable/ic_folder2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_toEndOf="@+id/patientProIcon6"
+                            android:text="@string/shared_by_patient"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17dp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_below="@+id/patientProIcon6"
+                            android:layout_marginBottom="15dp">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/patientProSharedFileTex"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginStart="10dp"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"
+                                    android:text="File"/>
+
+                                <TextView
+                                    android:id="@+id/patientProSharedAttach"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/view_attachment"
+                                    android:layout_marginTop="20dp"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/colorAccent"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_toEndOf="@+id/patientProSharedFileTex"/>
+
+                                <TextView
+                                    android:id="@+id/patientProSharedOnText"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Shared on: 12/03/2018"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_below="@+id/patientProSharedFileTex"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="@string/more"
+                                    android:textColor="@color/colorAccent"
+                                    android:textSize="19dp"
+                                    android:textStyle="bold"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_marginEnd="20dp"
+                                    android:layout_marginBottom="20dp"
+                                    android:layout_toStartOf="@+id/patientProSharedViewAll"/>
+
+                                <TextView
+                                    android:id="@+id/patientProSharedViewAll"
+                                    android:layout_width="50dp"
+                                    android:layout_height="match_parent"
+                                    android:text="View \n All"
+                                    android:textAlignment="center"
+                                    android:gravity="center"
+                                    android:layout_alignParentEnd="true"
+                                    android:background="@color/colorPrimary"
+                                    android:textColor="@color/colorWhite"
+                                    android:textStyle="bold"
+                                    />
+
+                            </RelativeLayout>
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/patientProAddFamForm"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:background="@color/colorWhite">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="true"
+                    android:layout_above="@+id/patientProSaveFamily">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/patientProFamClose"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_close"
+                            android:layout_gravity="end"
+                            android:layout_margin="10dp"/>
+
+                        <EditText
+                            android:id="@+id/patientProFamName"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:textSize="15dp"
+                            android:hint="@string/family_name"
+                            android:paddingStart="10dp"
+                            android:background="@drawable/drawable_rectangle_shape"/>
+
+
+                        <EditText
+                            android:id="@+id/patientProFamAge"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:layout_margin="10dp"
+                            android:textSize="15dp"
+                            android:hint="@string/family_age"
+                            android:paddingStart="10dp"
+                            android:inputType="numberSigned"
+                            android:background="@drawable/drawable_rectangle_shape"/>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/drawable_rectangle_shape">
+
+                            <Spinner
+                                android:id="@+id/patientProFamRelation"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"/>
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/problems"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            />
+
+                        <LinearLayout
+                            android:id="@+id/patientProProblemCheckBox"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="10dp" />
+
+                    </LinearLayout>
+
+                </ScrollView>
+
+                <Button
+                    android:id="@+id/patientProSaveFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:backgroundTint="@color/colorAccent"
+                    android:text="@string/save"
+                    android:textColor="@color/colorWhite"/>
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

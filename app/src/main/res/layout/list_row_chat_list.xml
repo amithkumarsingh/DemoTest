@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/chatListMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/chatListImage"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/drawable_capsule_view">
+
+            <TextView
+                android:id="@+id/chatListImageText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text=""
+                android:textColor="@color/colorWhite"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <!--<RelativeLayout-->
+        <!--android:id="@+id/newMessageLayout"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/chatListImage"-->
+        <!--android:layout_marginLeft="-20dp"-->
+        <!--android:layout_marginTop="-20dp"-->
+        <!--android:layout_toRightOf="@+id/chatListImage"-->
+        <!--android:background="@drawable/drawable_capsule_view"-->
+        <!--android:backgroundTint="@color/colorWhite"-->
+        <!--android:padding="1dp">-->
+
+        <!--<ImageView-->
+        <!--android:id="@+id/newMessageIcon"-->
+        <!--android:layout_width="15dp"-->
+        <!--android:layout_height="15dp"-->
+        <!--android:src="@drawable/ic_circle" />-->
+
+
+        <!--</RelativeLayout>-->
+
+
+        <TextView
+            android:id="@+id/chatListPatientName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_toEndOf="@+id/chatListImage"
+            android:paddingEnd="20dp"
+            android:text="hgdhgjfgdjgfjdgfgdgfgjdgfjgdjfgjdgfgsdgfjgdsjgfdsjhf"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/chatListDateTimeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatListPatientName"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/chatListImage"
+            android:text="@string/valid_till"
+            android:textColor="@color/colorGrey2" />
+
+        <TextView
+            android:id="@+id/chatListDateTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatListPatientName"
+            android:layout_toEndOf="@+id/chatListDateTimeLabel"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/paymentStatusLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatListDateTimeLabel"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/chatListImage"
+            android:text="Payment:"
+            android:textColor="@color/colorGrey2" />
+
+        <TextView
+            android:id="@+id/paymentStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatListDateTimeLabel"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/paymentStatusLabel"
+            android:padding="3dp"
+            android:text="Pending"
+            android:layout_marginTop="2dp"
+            android:visibility="visible"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/apptListSendPaymentLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/paymentStatus"
+            android:text="Send payment link"
+            android:layout_toRightOf="@+id/paymentStatusLabel"
+            android:padding="3dp"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:id="@+id/receivedLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/chatListDateTimeLabel"
+            android:layout_marginStart="10dp"
+            android:visibility="gone"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/paymentStatusLabel">
+
+
+            <TextView
+                android:id="@+id/paymentStatusReceivedLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Received"
+                android:gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/paymentStatusCreateReceipt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/paymentStatusReceivedLabel"
+                android:padding="2dp"
+                android:text="Create Receipt"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/chatListBookAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="@string/book_again"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/chatListUnreadCountLayout"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/drawable_capsule_view"
+            android:backgroundTint="@color/colorInfo"
+            android:padding="1dp">
+
+            <TextView
+                android:id="@+id/chatListUnreadCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="100"
+                android:textColor="@color/colorWhite"
+                android:textSize="9dp"
+                android:visibility="visible" />
+
+
+        </RelativeLayout>
+
+
+        <View
+            android:id="@+id/chatListBottomLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="40dp"
+            android:background="@color/colorGrey1" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

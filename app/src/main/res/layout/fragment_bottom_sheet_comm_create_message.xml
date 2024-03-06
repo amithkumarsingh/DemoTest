@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".CommunicationLanguageBottomSheet">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetMessageHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/bottomSheetMessageTextHeading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:text="@string/create_message"
+                android:textColor="@color/colorWhite"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:id="@+id/bottomSheetCancelIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/colorWhite"
+                android:src="@drawable/ic_cancel" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetFormLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottomSheetMessageHeading">
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp">
+
+                <EditText
+                    android:id="@+id/bottomSheetMessageText"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/drawable_rectangle_shape"
+                    android:gravity="top|left"
+                    android:hint="@string/write_message_here"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:imeOptions="actionDone"
+                    android:text="">
+
+                </EditText>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetToggleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bottomSheetMessage"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/bottomSheetConsultedUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/consulted_patient"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bottomSheetToggleIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true">
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/bottomSheetAllRegisterUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/all_register_user"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <View
+                android:id="@+id/bottomSheetViewLayout"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/bottomSheetToggleLayout"
+                android:layout_marginTop="7dp"
+                android:background="@color/colorGrey1">
+
+            </View>
+
+            <RelativeLayout
+                android:id="@+id/bottomSheetMessageNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/bottomSheetViewLayout"
+                android:layout_centerInParent="true"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/this_message_will_only"
+                    android:textColor="@color/colorDanger" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/selectInterface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/bottomSheetFormLayout"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/drawable_rectangle_shape"
+            android:visibility="gone">
+
+            <Spinner
+                android:id="@+id/interFaceSpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </Spinner>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottomSheetDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/selectInterface"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp">
+
+            <Button
+                android:id="@+id/bottomSheetSendMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/drawable_capsule_view"
+                android:text="@string/send_message"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

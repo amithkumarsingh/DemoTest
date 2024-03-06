@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/accountDelete_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:title="Delete My Account"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/colorWhite"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/accountDelete_tb">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Why are you deleting your account?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="8dp"
+                android:text="Select one option from below"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView1">
+
+            </TextView>
+
+            <RadioGroup
+                android:id="@+id/reason_radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+                <RadioButton
+                    android:id="@+id/notInterested_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="I am no longer interested in the services provided"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/issues_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="I am issues with the services provided"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/differentProduct_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="I am using a different product for the same services"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></RadioButton>
+
+                <RadioButton
+                    android:id="@+id/other_rb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="Other"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"></RadioButton>
+            </RadioGroup>
+
+            <EditText
+                android:id="@+id/reason_other_et"
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/rectangle_blue"
+                android:backgroundTint="@color/colorGrey2"
+                android:gravity="top"
+                android:hint="Please specify (optional)"
+                android:inputType="textCapSentences|textMultiLine"
+                android:overScrollMode="always"
+                android:padding="8dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reason_radioGroup">
+
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="How can we improve?"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/reason_other_et">
+
+            </TextView>
+
+            <EditText
+                android:id="@+id/improvement_et"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/rectangle_blue"
+                android:backgroundTint="@color/colorGrey2"
+                android:gravity="top"
+                android:hint="Share suggestions (if any)"
+                android:inputType="textCapSentences|textMultiLine"
+                android:overScrollMode="always"
+                android:padding="8dp"
+                android:scrollbarStyle="insideInset"
+                android:scrollbars="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            </EditText>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/delete_btn_bg"
+                android:paddingVertical="12dp"
+                android:text="Proceed To Delete"
+                android:textAllCaps="false"
+                android:textColor="@color/delete_btn_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/improvement_et">
+
+            </Button>
+
+            <Button
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/colorGrey1"
+                android:paddingVertical="12dp"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/btn_delete"
+                app:layout_constraintTop_toBottomOf="@+id/improvement_et"></Button>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CaptureNotesFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="4dp">
+
+<!--                android:layout_marginBottom="65dp" add in below layout in second phase-->
+
+                <RelativeLayout
+                    android:id="@+id/captureNoteLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorGrey3"
+                    android:elevation="5dp">
+
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fillViewport="false">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:id="@+id/notesRelativeMainLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/notesRelativeLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="15dp">
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/noteCapturedText"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="10dp">
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Notes Captured"
+                                            android:textColor="@color/colorBlack"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/noteLayoutHideAndShow"
+                                        android:layout_width="wrap_content"
+                                        android:layout_below="@+id/noteCapturedText"
+                                        android:layout_height="wrap_content">
+
+
+                                        <RelativeLayout
+                                            android:id="@+id/notesEditTextLayout"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/drawable_radius_shape_two"
+                                            android:backgroundTint="@color/colorGreyText">
+
+
+                                            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                                android:id="@+id/sharedRecordCardView"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:layout_marginBottom="2dp"
+                                                card_view:cardCornerRadius="4dp">
+
+                                                <RelativeLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content">
+
+                                                    <EditText
+                                                        android:id="@+id/notesCaptureEditText"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="35dp"
+                                                        android:background="@android:color/transparent"
+                                                        android:hint="Type and press enter"
+                                                        android:paddingLeft="7dp"
+                                                        android:maxLength="300"
+                                                        android:textColor="@color/colorBlack"
+                                                        android:textSize="19dp"
+                                                        android:digits="abcdefghijklmnopqrstuvwxyz0123456789 "
+                                                        android:textStyle="bold" />
+
+
+                                                </RelativeLayout>
+                                            </androidx.cardview.widget.CardView>
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/notesCapturedEditTextLayoutButton"
+                                            android:layout_width="50dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:layout_marginTop="10dp"
+                                            android:background="@drawable/drawable_radius_shape_two">
+
+
+                                            <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                                android:id="@+id/addNotesCardView"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_gravity="center"
+                                                android:layout_marginStart="2dp"
+                                                android:layout_marginTop="2dp"
+                                                android:layout_marginEnd="2dp"
+                                                android:layout_marginBottom="2dp"
+                                                card_view:cardCornerRadius="4dp">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="35dp">
+
+                                                    <ImageView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true"
+                                                        android:background="@drawable/ic_plus"
+                                                        android:backgroundTint="@color/colorAccent" />
+
+
+                                                </RelativeLayout>
+                                            </androidx.cardview.widget.CardView>
+                                        </RelativeLayout>
+
+                                    </RelativeLayout>
+
+                                    <androidx.recyclerview.widget.RecyclerView
+                                        android:id="@+id/recycler_view"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:overScrollMode="never"
+                                        android:layout_below="@+id/noteLayoutHideAndShow"
+                                        android:scrollbars="vertical" />
+
+                                    <ProgressBar
+                                        android:id="@+id/appointmentNoteProgressBar"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerInParent="true"
+                                        android:visibility="gone" />
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/deletePointLayout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/recycler_view"
+                                        android:layout_alignParentRight="true"
+                                        android:layout_marginTop="10dp"
+                                        android:background="@drawable/drawable_radius_shape_two"
+                                        android:backgroundTint="@color/colorDanger"
+                                        android:padding="1dp">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:background="@drawable/drawable_radius_shape_two"
+                                            android:backgroundTint="@color/colorWhite"
+                                            android:paddingLeft="20dp"
+                                            android:paddingTop="8dp"
+                                            android:paddingRight="20dp"
+                                            android:paddingBottom="8dp"
+                                            android:text="Delete Point"
+                                            android:textColor="@color/colorDanger" />
+
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+                                <ProgressBar
+                                    android:id="@+id/noteMainLayoutProgressBar"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true" />
+
+
+                            </RelativeLayout>
+
+
+                            <!--prescriptionView-->
+
+                            <View
+                                android:id="@+id/notesViewLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/notesRelativeMainLayout"
+                                android:background="@color/colorGrey2" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/prescriptionLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/notesViewLayout"
+                                android:padding="15dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/prescriptionTextLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="Prescriptions"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/prescriptionViewAll"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentRight="true"
+                                        android:text="View all"
+                                        android:textColor="@color/colorAccent"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+                                </RelativeLayout>
+
+
+                                <RelativeLayout
+                                    android:id="@+id/prescriptionImageViewLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/prescriptionTextLayout"
+                                    android:layout_marginTop="10dp">
+
+                                    <RelativeLayout
+                                        android:id="@+id/gridViewLayout"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="match_parent"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="match_parent"
+                                                android:orientation="horizontal">
+
+                                                <androidx.recyclerview.widget.RecyclerView
+                                                    android:id="@+id/prescription_view_recycler_list"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent"
+                                                    android:layout_gravity="center"
+                                                    android:orientation="horizontal" />
+
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </RelativeLayout>
+
+
+                                    <RelativeLayout
+                                        android:visibility="gone"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:orientation="horizontal"
+                                            android:weightSum="5">
+
+                                            <LinearLayout
+                                                android:id="@+id/imageTileOneLayout"
+                                                android:layout_width="55dp"
+                                                android:layout_height="55dp"
+                                                android:layout_margin="7dp"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/drawable_radius_shape_two"
+                                                android:backgroundTint="@color/colorWhite">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+
+                                                    <ImageView
+                                                        android:id="@+id/imageTileOne"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true" />
+
+                                                </RelativeLayout>
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/imageTileTwoLayout"
+                                                android:layout_width="55dp"
+                                                android:layout_height="55dp"
+                                                android:layout_margin="7dp"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/drawable_radius_shape_two"
+                                                android:backgroundTint="@color/colorWhite">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+
+                                                    <ImageView
+                                                        android:id="@+id/imageTileTwo"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true" />
+
+                                                </RelativeLayout>
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/imageTileThreeLayout"
+                                                android:layout_width="55dp"
+                                                android:layout_height="55dp"
+                                                android:layout_margin="7dp"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/drawable_radius_shape_two"
+                                                android:backgroundTint="@color/colorWhite">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+
+
+                                                    <ImageView
+                                                        android:id="@+id/imageTileThree"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true" />
+                                                </RelativeLayout>
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/imageTileFourLayout"
+                                                android:layout_width="55dp"
+                                                android:layout_height="55dp"
+                                                android:layout_margin="7dp"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/drawable_radius_shape_two"
+                                                android:backgroundTint="@color/colorWhite">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+
+
+                                                    <ImageView
+                                                        android:id="@+id/imageTileFour"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true" />
+
+                                                </RelativeLayout>
+
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:id="@+id/addPrescriptionButton"
+                                                android:layout_width="55dp"
+                                                android:layout_height="55dp"
+                                                android:layout_margin="7dp"
+                                                android:layout_weight="1"
+                                                android:background="@drawable/drawable_radius_shape_two"
+                                                android:backgroundTint="@color/colorWhite">
+
+                                                <RelativeLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
+
+
+                                                    <ImageView
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_centerInParent="true"
+                                                        android:background="@drawable/ic_plus"
+                                                        android:backgroundTint="@color/colorAccent" />
+
+                                                </RelativeLayout>
+
+
+                                            </LinearLayout>
+                                        </LinearLayout>
+
+
+                                    </RelativeLayout>
+
+
+                                </RelativeLayout>
+
+
+                            </RelativeLayout>
+
+
+                            <!--medication view-->
+
+
+                            <View
+                                android:id="@+id/medicationViewLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_below="@+id/prescriptionLayout"
+                                android:background="@color/colorGrey2" />
+
+
+                            <RelativeLayout
+                                android:id="@+id/medicationSectionLayout"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/medicationViewLayout"
+                                android:padding="15dp">
+
+
+                                <RelativeLayout
+                                    android:id="@+id/addMedicationTextLayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentLeft="true"
+                                        android:text="Medication"
+                                        android:textColor="@color/colorBlack"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold" />
+
+                                    <RelativeLayout
+                                        android:id="@+id/addMedicineLayoutRight"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:visibility="visible"
+                                        android:layout_alignParentRight="true">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_toLeftOf="@+id/addMedicine"
+                                            android:background="@drawable/ic_plus"
+                                            android:backgroundTint="@color/colorAccent" />
+
+                                        <TextView
+                                            android:id="@+id/addMedicine"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentRight="true"
+                                            android:text="Add Medicine"
+                                            android:textColor="@color/colorAccent"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+                                </RelativeLayout>
+
+                                <RelativeLayout
+                                    android:id="@+id/noMedicationLayout"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/addMedicationTextLayout"
+                                    android:layout_marginTop="15dp">
+
+
+                                    <RelativeLayout
+                                        android:id="@+id/noMedicationText"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="No Medication added"
+                                            android:textColor="@color/colorBlack"
+                                            android:textStyle="bold" />
+                                    </RelativeLayout>
+
+                                    <RelativeLayout
+                                        android:id="@+id/addMedicineNoRecordClick"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/noMedicationText"
+                                        android:layout_marginTop="15dp">
+
+                                        <ImageView
+                                            android:id="@+id/plusIcon"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_centerInParent="true"
+                                            android:src="@drawable/ic_plus"
+                                            android:tint="@color/colorAccent" />
+
+                                        <TextView
+                                            android:id="@+id/addMedicineNoRecord"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:layout_marginLeft="5dp"
+                                            android:layout_toRightOf="@+id/plusIcon"
+                                            android:text="Add Medicine"
+                                            android:textColor="@color/colorAccent"
+                                            android:textSize="17dp"
+                                            android:textStyle="bold" />
+
+                                    </RelativeLayout>
+
+                                </RelativeLayout>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/medicationRecyclerView"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_below="@+id/addMedicationTextLayout"
+                                    android:layout_marginTop="10dp"
+                                    android:overScrollMode="never"
+                                    android:scrollbars="vertical" />
+
+
+                            </RelativeLayout>
+                            <ProgressBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:id="@+id/notes_progress"/>
+
+                        </RelativeLayout>
+
+                    </androidx.core.widget.NestedScrollView>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/consultBottomLayout"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:padding="5dp">
+
+                <RelativeLayout
+                    android:id="@+id/consultationDurationLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true">
+
+                    <TextView
+                        android:id="@+id/cunsultationTimeText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="Consultation Duration:00:30min"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/cunsultaionClickButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/drawable_radius_shape_two"
+                    android:backgroundTint="@color/colorDanger"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="3dp"
+                    android:paddingRight="25dp"
+                    android:paddingBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/cunsultationText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:layout_marginBottom="20dp"
+                        android:text="End Consult"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/allPrescriptionViewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#99000000"
+            android:visibility="gone">
+
+
+            <RelativeLayout
+                android:id="@+id/webViewRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:visibility="gone"
+                android:layout_centerInParent="true">
+
+                <WebView
+                    android:id="@+id/webViewLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pdfRelativeLayout"
+                android:layout_width="match_parent"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:visibility="gone"
+                android:background="@color/colorWhite"
+                android:layout_height="250dp"
+                android:layout_centerInParent="true">
+
+               <RelativeLayout
+                   android:id="@+id/pdfImageLayout"
+                   android:layout_width="match_parent"
+                   android:layout_marginTop="20dp"
+                   android:layout_height="wrap_content">
+
+                   <ImageView
+                       android:layout_centerInParent="true"
+                       android:layout_width="70dp"
+                       android:layout_height="70dp"
+                       android:background="@drawable/ic_pdf"
+                       android:backgroundTint="@color/colorDanger"/>
+
+               </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/pdfFileTextLayout"
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@+id/pdfImageLayout"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="This is a PDF file"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/siq_16"
+                        android:textColor="@color/colorBlack"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/vewFileLayout"
+                    android:layout_width="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/drawable_radius_shape"
+                    android:layout_below="@+id/pdfFileTextLayout"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_centerInParent="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="View File"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/siq_16"
+                        android:textColor="@color/colorWhite"
+                        />
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <RelativeLayout
+                        android:id="@+id/backButtonLayout"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_alignParentStart="true"
+                        android:background="@drawable/drawable_fill_circle"
+                        android:backgroundTint="@color/colorWhite">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/backButtonImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/ic_arrow_back2" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <RelativeLayout
+                            android:id="@+id/cancelLayout"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="25dp"
+                            android:background="@drawable/drawable_fill_circle"
+                            android:backgroundTint="@color/colorWhite">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/cancelImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_close"
+                                    android:backgroundTint="@color/colorDanger" />
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/DownloadLayout"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="25dp"
+                            android:layout_toRightOf="@+id/cancelLayout"
+                            android:background="@drawable/drawable_fill_circle"
+                            android:backgroundTint="@color/colorWhite">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+
+                                <ImageView
+                                    android:id="@+id/downloadImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:background="@drawable/ic_download"
+                                    android:backgroundTint="@color/colorPrimary" />
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+                    </LinearLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/nextArrowLayout"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="25dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="@drawable/drawable_fill_circle"
+                        android:backgroundTint="@color/colorWhite">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+
+                            <ImageView
+                                android:id="@+id/nextArrowImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+
+                                android:background="@drawable/ic_arrow_right" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/dailogArticleHeader"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/colorPrimary">
+
+
+        <TextView
+            android:id="@+id/dailogArticleHeaderText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="5dp"
+            android:gravity="center"
+            android:text="Cancel Appointment"
+            android:textColor="@color/colorWhite"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/dailogArticleCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/ic_close"
+            android:backgroundTint="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/refundMainLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:layout_marginTop="10dp"
+        android:visibility="visible">
+
+
+        <RelativeLayout
+            android:id="@+id/videoNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/notesText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Select the reason to cancel the appointment"
+                android:textAlignment="center"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/cancelReasonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/videoNotes"
+            android:padding="10dp">
+
+            <RelativeLayout
+                android:id="@+id/amountPaidTextLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Consulted"
+                        android:textSize="18sp"
+                        android:visibility="gone" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cancelled by Patient"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cancelled by Doctor"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Specialist No Show"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Patient No Show"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/refundFullLayout"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/amountPaidTextLayout"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/relative_cancel_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_cancel_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:text="@string/AppointmentCancel_status"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/refundLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/relative_cancel_status">
+
+                    <RelativeLayout
+                        android:id="@+id/amountPaidStatus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup_onlineStatus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:orientation="horizontal">
+
+                            <RadioButton
+                                android:id="@+id/radioButton_yes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingRight="@dimen/siq_16"
+                                android:text="Yes"
+                                android:textSize="18sp" />
+
+                            <RadioButton
+                                android:id="@+id/radioButton_no"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/siq_16"
+                                android:text="No"
+                                android:textSize="18sp" />
+
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/amountPaid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/amountPaidStatus"
+                        android:padding="@dimen/siq_10"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/amount_paid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amount Paid:Rs.6000"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/amountRefund"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/amountPaid"
+                        android:padding="@dimen/siq_10"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tv_refund"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Refund Amount:"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@id/editTextLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tv_refund"
+                            android:layout_marginTop="10dp">
+
+                            <EditText
+                                android:id="@+id/et_refund_amount"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"
+                                android:layout_marginRight="30dp"
+                                android:background="@drawable/drawable_rectangle_outline"
+                                android:clickable="false"
+                                android:inputType="number"
+                                android:paddingLeft="10dp"
+                                android:text="0"
+                                android:textColor="@color/siq_black"
+                                android:textSize="@dimen/siq_10" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerInParent="true"
+                                android:layout_centerVertical="true"
+                                android:text="Rs."
+                                android:textSize="@dimen/siq_16" />
+
+                        </RelativeLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/editTextLayout"
+                            android:layout_marginTop="10dp"
+                            android:text="@string/AppointmentRefundPolicy" />
+                    </RelativeLayout>
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/updateStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/refundFullLayout"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/drawable_radius_shape"
+                android:backgroundTint="@color/colorPrimary"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/updateStatusTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Update Status"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/refundMessageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dailogArticleHeader"
+        android:paddingBottom="20dp"
+        android:visibility="gone">
+
+        <RelativeLayout
+            android:id="@+id/headingLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Appointment Cancelled Successfully"
+                android:textColor="@color/colorDanger"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/messageNoteLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headingLayout"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/messageNoteText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="Yor Settlement will be initiated in 2-3 days.\n Please make sure you have completed the KYC Verification. "
+                android:textColor="@color/colorGreyText"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/messageNoteButton"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/messageNoteLayout"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/drawable_rectangle_outline"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Close"
+                android:textColor="@color/colorGreyText"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

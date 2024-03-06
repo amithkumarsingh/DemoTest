@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:id="@+id/secondPaymentStatusLayout"
+        android:layout_width="match_parent"
+        android:paddingTop="@dimen/siq_10"
+        android:paddingBottom="@dimen/siq_10"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/secondStatusLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/leftCircleImageSecond"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true">
+
+            </ImageView>
+
+            <TextView
+                android:id="@+id/paymentStatusTextSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/leftCircleImageSecond"
+                android:text="Payment Collection Done"
+                android:textColor="@color/colorGreen3"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/secondStatusLayout"
+            android:layout_marginLeft="8dp">
+
+            <RelativeLayout
+                android:id="@+id/lineLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorGrey1">
+
+
+                <RelativeLayout
+                    android:id="@+id/linelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:background="@color/colorWhite">
+
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/secondBlankText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/totalBalanceSecond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:text="Total Balance: 7000"
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <TextView
+                            android:id="@+id/totalBalanceNotesSecond"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/totalBalanceSecond"
+                            android:layout_marginTop="5dp"
+                            android:text="Amount will be settle in 2-3 days"
+                            android:textColor="@color/colorDanger"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/cancelRefundLayout"
+                            android:layout_width="180dp"
+                            android:layout_height="35dp"
+                            android:layout_below="@+id/totalBalanceSecond"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorDanger"
+                            android:visibility="gone">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="1dp"
+                                android:background="@drawable/drawable_radius_shape"
+                                android:backgroundTint="@color/colorWhite">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginTop="5dp"
+                                    android:text="Cancel Refund"
+                                    android:textColor="@color/colorDanger"
+                                    android:textStyle="bold" />
+
+
+                            </RelativeLayout>
+
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/toPayUPortalLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/totalBalanceNotesSecond"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/toPayUPortalLayoutText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:paddingTop="10dp"
+                                android:paddingBottom="10dp"
+                                android:text="To PayU Portal"
+                                android:textColor="@color/white"
+                                android:textStyle="bold"
+                                android:visibility="visible" />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PayUMearchantDetailsActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/appointTab"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/trainingScheduleToolbar"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <RelativeLayout
+                android:id="@+id/appointActiveTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Booked Training"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/appointTabActiveBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary"
+                    android:visibility="invisible" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/appointPastTab"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Upcoming Training"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/appointTabPastBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="3dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/colorPrimary" />
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/appointLoader"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:id="@+id/mainLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/appointTab">
+
+            <RelativeLayout
+                android:id="@+id/upComingTraining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/headerLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/detailsHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp">
+
+
+                        <TextView
+                            android:id="@+id/detailsHeaderText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:gravity="center"
+                            android:text="We update our training schedules every week"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14dp"
+                            android:textStyle="bold" />
+
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/viewLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/detailsHeader"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#D3D3D3" />
+
+
+                </RelativeLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/trainingScheduleRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/headerLayout"
+                    android:layout_marginBottom="5dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/bookedTraining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/bookedTrainingRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/appointEmptyText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="10dp"
+            android:text="No data found."
+            android:textAlignment="center"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/trainingScheduleToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:elevation="5dp"
+            app:subtitleTextColor="@color/colorWhite"
+            app:titleTextColor="@color/colorWhite" />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

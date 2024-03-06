@@ -1,0 +1,51 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.vam.whitecoats.ui.activities.AcademicActivity">
+    <item
+        android:id="@+id/action_italic"
+        android:orderInCategory="100"
+        android:title="Italic"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_bold"
+        android:orderInCategory="100"
+        android:title="Bold"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Normal"
+        android:orderInCategory="100"
+        android:title="Normal"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Strikethrough"
+        android:orderInCategory="100"
+        android:title="Strikethrough"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_UnderLine"
+        android:orderInCategory="100"
+        android:title="Underline"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Left"
+        android:orderInCategory="100"
+        android:title="Align Left"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Right"
+        android:orderInCategory="100"
+        android:title="Align Right"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_Center"
+        android:orderInCategory="100"
+        android:title="Align Center"
+        app:showAsAction="never" />
+
+</menu>

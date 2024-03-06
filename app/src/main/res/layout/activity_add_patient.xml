@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AddPatientActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/addPatientToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:elevation="5dp"
+        app:subtitleTextColor="@color/colorWhite"
+        app:theme="@style/AppTheme.Toolbar"
+        app:title="@string/add_patient_title"
+        app:titleTextColor="@color/colorWhite" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/addPatientToolbar"
+        tools:context=".activities.AddPatientActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/enter_name_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_patient_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_name_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_name_text">
+
+                <EditText
+                    android:id="@+id/patient_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enter_invest_name"
+                    android:padding="@dimen/eightdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/enter_contact_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_patient_contact"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_name_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_contact_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_contact_text">
+
+                <EditText
+                    android:id="@+id/patient_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enterPhone"
+                    android:inputType="phone"
+                    android:padding="@dimen/eightdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/enter_email_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_patient_email"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_contact_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_email_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_email_text">
+
+                <EditText
+                    android:id="@+id/patient_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enterEmail"
+                    android:inputType="textEmailAddress"
+                    android:padding="@dimen/eightdp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/enter_age_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_patient_age"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_email_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_age_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_age_text">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/patient_age"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/enterage"
+                        android:inputType="numberDecimal"
+                        android:maxLength="10"
+                        android:padding="@dimen/eightdp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/patient_age"
+                        android:background="@color/colorGrey1"
+                        android:orientation="horizontal">
+
+                        <Spinner
+                            android:id="@+id/patient_age_spin"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:background="@android:color/transparent"
+                            android:hint="@string/enter_phone_edit"
+                            android:spinnerMode="dropdown" />
+
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="3"
+                            android:adjustViewBounds="false"
+                            android:padding="12dp"
+                            android:src="@drawable/ic_chevron_down" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/enter_gender_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/select_patient_gender"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_age_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_gender_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_gender_text">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/patient_gender"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/enter_phone_edit"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_chevron_down" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/enter_interface_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_gender_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_interface_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_interface_text">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/patient_interface"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/enter_phone_edit"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:id="@+id/selectInterfaceDownArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_chevron_down"
+                        android:visibility="gone"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/patient_type_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/patient_type"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_interface_card"
+                android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/patient_type_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/patient_type_text"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/patient_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="7"
+                        android:background="@android:color/transparent"
+                        android:spinnerMode="dropdown" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:adjustViewBounds="false"
+                        android:padding="12dp"
+                        android:src="@drawable/ic_chevron_down" />
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/enter_id_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_id_edit"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/patient_type_card"
+                android:visibility="gone"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_id_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_id_text"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/patient_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enterid"
+                    android:padding="@dimen/eightdp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/enter_category_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sixteendp"
+                android:layout_marginTop="@dimen/eightdp"
+                android:text="@string/enter_patient_category"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_id_card" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/enter_category_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                app:cardCornerRadius="@dimen/fourdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_category_text">
+
+                <EditText
+                    android:id="@+id/patient_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/enter_category"
+                    android:padding="@dimen/eightdp" />
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/save_patient"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/save_patient_button_background"
+                android:text="@string/save_patient"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/siq_16"
+                app:backgroundTint="@null"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/enter_category_card" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+</RelativeLayout>

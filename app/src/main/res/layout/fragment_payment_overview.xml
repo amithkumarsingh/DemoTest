@@ -1,0 +1,1202 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#66D3D3D3">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/filters_recyclerView" />
+
+
+    <RelativeLayout
+        android:id="@+id/paymentFilterLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filters_recyclerView"
+        android:visibility="gone">
+
+        <HorizontalScrollView
+            android:id="@+id/assistantTabHorizontalScrollView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/assistantTabLayoutChatbox"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appointTab"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <RadioButton
+                    android:id="@+id/apptFilterDurationAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="true"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:text="All Transactions"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/apptFilterDurationToday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="Custom Date"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/apptFilterDurationWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="This Week"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/apptFilterDurationMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="This Month"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/apptFilterDurationYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/filter_outline"
+                    android:button="@null"
+                    android:checked="false"
+                    android:text="This Year"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorBlack"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+    </RelativeLayout>
+
+
+    <!-- ViewPager -->
+    <!-- Footer -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/filters_recyclerView">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--total overview card view-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/totalOverviewCardView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/totalOverviewLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/totalOverviewText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="Total Overview"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/totalOverviewInfo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/totalOverviewText"
+                            android:background="@drawable/ic_info"
+                            android:visibility="gone"
+                            android:backgroundTint="@color/colorGreen3">
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/viewPagerLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/totalOverviewLayout">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/imageviewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+
+<!--                            <include layout="@layout/total_payment_overview_footer" />-->
+                        </androidx.viewpager.widget.ViewPager>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/swipeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/toSwipeOne"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <ImageView
+                                android:id="@+id/toSwipeTwo"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/toSwipeOne"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <!--                        <ImageView-->
+                            <!--                            android:id="@+id/toSwipeThree"-->
+                            <!--                            android:layout_width="14dp"-->
+                            <!--                            android:layout_height="14dp"-->
+                            <!--                            android:layout_marginLeft="3dp"-->
+                            <!--                            android:layout_toRightOf="@+id/toSwipeTwo"-->
+                            <!--                            android:background="@drawable/ic_circle_two"-->
+                            <!--                            android:backgroundTint="@color/colorAccent" />-->
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--online payment overview card view-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/onlinePaymentOverviewCardView"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/totalOverviewCardView"
+                android:layout_height="150dp"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/onlinePaymentOverviewLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp">
+
+                        <TextView
+                            android:id="@+id/onlinePaymentOverviewText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:text="Online Payment Overview"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+
+                        <RelativeLayout
+                            android:id="@+id/onlinePaymentOverviewInfo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/onlinePaymentOverviewText"
+                            android:background="@drawable/ic_info"
+                            android:backgroundTint="@color/colorGreen3">
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/onlinePaymentViewPagerLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/onlinePaymentOverviewLayout">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/onlinePaymentImageviewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible">
+
+                            <!--                            <include layout="@layout/total_payment_overview_footer" />-->
+                        </androidx.viewpager.widget.ViewPager>
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/onlinePaymentSwipeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/onlinePaymentSwipeOne"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <ImageView
+                                android:id="@+id/onlinePaymentSwipeTwo"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/onlinePaymentSwipeOne"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <!--                        <ImageView-->
+                            <!--                            android:id="@+id/toSwipeThree"-->
+                            <!--                            android:layout_width="14dp"-->
+                            <!--                            android:layout_height="14dp"-->
+                            <!--                            android:layout_marginLeft="3dp"-->
+                            <!--                            android:layout_toRightOf="@+id/toSwipeTwo"-->
+                            <!--                            android:background="@drawable/ic_circle_two"-->
+                            <!--                            android:backgroundTint="@color/colorAccent" />-->
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!--active consultaion cardview-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activeConsultationCardView"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_below="@+id/onlinePaymentOverviewCardView"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/activeConsultationLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp">
+
+
+                        <TextView
+                            android:id="@+id/activeConsultationText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Active Consultation Overview"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/activeConsultationInfo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/activeConsultationText"
+                            android:background="@drawable/ic_info"
+                            android:backgroundTint="@color/colorGreen3">
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/viewTransactionActiveConsult"
+                            android:layout_width="140dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorAccent">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="View transactions"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/viewPagerActiveConLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/activeConsultationLayout">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/ActiveConViewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+<!--                            <include layout="@layout/total_payment_overview_footer" />-->
+                        </androidx.viewpager.widget.ViewPager>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/activeConSwipeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true">
+
+                            <ImageView
+                                android:id="@+id/activeSwipeOne"
+                                android:layout_width="14dp"
+                                android:visibility="gone"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <ImageView
+                                android:id="@+id/activeSwipeTwo"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeOne"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <ImageView
+                                android:id="@+id/activeSwipeThree"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeTwo"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+                            <ImageView
+                                android:id="@+id/activeSwipeFour"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeThree"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+                            <ImageView
+                                android:id="@+id/activeSwipeFive"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeFour"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+                            <ImageView
+                                android:id="@+id/activeSwipeSix"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_marginLeft="3dp"
+                                android:visibility="gone"
+                                android:layout_toRightOf="@+id/activeSwipeFive"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+                            <ImageView
+                                android:id="@+id/activeSwipeSeven"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeSix"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+                            <ImageView
+                                android:id="@+id/activeSwipeEight"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeSeven"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+                            <ImageView
+                                android:id="@+id/activeSwipeNine"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:visibility="gone"
+                                android:layout_marginLeft="3dp"
+                                android:layout_toRightOf="@+id/activeSwipeSeven"
+                                android:background="@drawable/ic_circle_two"
+                                android:backgroundTint="@color/colorAccent" />
+
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--settlement overview cardview-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/settlementOverviewCardView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/activeConsultationCardView"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/settlementOverviewLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp">
+
+
+                        <TextView
+                            android:id="@+id/settlementOverviewText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Settlement Overview"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/settlementOverviewInfo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/settlementOverviewText"
+                            android:background="@drawable/ic_info"
+                            android:backgroundTint="@color/colorGreen3">
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/viewTransactionOverviewSettlement"
+                            android:layout_width="140dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorAccent">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="View transactions"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/settlementOverviewPaymentLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settlementOverviewLayout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="75dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorGrey2">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="1dp"
+                                        android:background="@drawable/drawable_radius_shape"
+                                        android:backgroundTint="@color/colorWhite">
+
+                                        <!--pending settlement-->
+                                        <RelativeLayout
+                                            android:id="@+id/pendingSettlementLayout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_centerInParent="true">
+
+                                            <RelativeLayout
+                                                android:id="@+id/amountLayout"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentLeft="true">
+
+                                                <ImageView
+                                                    android:id="@+id/rupeeIcon"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_centerInParent="true"
+                                                    android:background="@drawable/ic_rupee"
+                                                    android:backgroundTint="@color/colorGrey2" />
+
+                                                <TextView
+                                                    android:id="@+id/pendingRupeeText"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:layout_toRightOf="@+id/rupeeIcon"
+                                                    android:text="20,000"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="@dimen/siq_22"
+                                                    android:textStyle="bold" />
+
+
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/amountLayout"
+                                                android:layout_alignParentLeft="true">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:text="Settlement Pending"
+                                                    android:textColor="@color/colorGreyText"
+                                                    android:textSize="@dimen/siq_12" />
+
+
+                                            </RelativeLayout>
+
+                                        </RelativeLayout>
+
+                                        <!--successful settlement-->
+                                        <RelativeLayout
+                                            android:id="@+id/successfulettlementLayout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:layout_centerHorizontal="true">
+
+                                            <RelativeLayout
+                                                android:id="@+id/successfulAmountLayout"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentLeft="true">
+
+                                                <ImageView
+                                                    android:id="@+id/successfulRupeeIcon"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_centerInParent="true"
+                                                    android:background="@drawable/ic_rupee"
+                                                    android:backgroundTint="@color/colorGrey2" />
+
+                                                <TextView
+                                                    android:id="@+id/successfulRupeeText"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:layout_toRightOf="@+id/successfulRupeeIcon"
+                                                    android:text="20,000"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="@dimen/siq_22"
+                                                    android:textStyle="bold" />
+
+
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/successfulAmountLayout"
+                                                android:layout_alignParentLeft="true">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:text="Settlement Completed"
+                                                    android:textColor="@color/colorGreyText"
+                                                    android:textSize="@dimen/siq_12" />
+
+
+                                            </RelativeLayout>
+
+                                        </RelativeLayout>
+
+
+                                    </RelativeLayout>
+
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <!--refund overview cardview-->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/refundOverviewCardView"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_below="@+id/settlementOverviewCardView"
+                android:layout_marginTop="20dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <RelativeLayout
+                        android:id="@+id/refundOverviewLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:padding="2dp">
+
+
+                        <TextView
+                            android:id="@+id/refundOverviewText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:text="Refund Overview"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="@dimen/sixteensp"
+                            android:textStyle="bold" />
+
+                        <RelativeLayout
+                            android:id="@+id/refundOverviewInfo"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="20dp"
+                            android:layout_toRightOf="@+id/refundOverviewText"
+                            android:background="@drawable/ic_info"
+                            android:backgroundTint="@color/colorGreen3">
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/viewTransactionRefundOverview"
+
+                            android:layout_width="140dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="10dp"
+                            android:background="@drawable/drawable_radius_shape"
+                            android:backgroundTint="@color/colorAccent">
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:text="View transactions"
+                                android:textColor="@color/colorWhite"
+                                android:textStyle="bold" />
+
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/refundOverviewPaymentLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/refundOverviewLayout">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:paddingTop="8dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="horizontal"
+                                android:padding="5dp">
+
+                                <RelativeLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="75dp"
+                                    android:layout_weight="1"
+                                    android:background="@drawable/drawable_radius_shape"
+                                    android:backgroundTint="@color/colorGrey2">
+
+                                    <RelativeLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="1dp"
+                                        android:background="@drawable/drawable_radius_shape"
+                                        android:backgroundTint="@color/colorWhite">
+
+                                        <!--Scheduled refund-->
+                                        <RelativeLayout
+                                            android:id="@+id/refundScheduleLayout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignParentLeft="true"
+                                            android:layout_centerInParent="true">
+
+                                            <RelativeLayout
+                                                android:id="@+id/refundScheduleAmountLayout"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentLeft="true">
+
+                                                <ImageView
+                                                    android:id="@+id/refundScheduleRupeeIcon"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_centerInParent="true"
+                                                    android:background="@drawable/ic_rupee"
+                                                    android:backgroundTint="@color/colorGrey2" />
+
+                                                <TextView
+                                                    android:id="@+id/refundScheduleRupeeText"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:layout_toRightOf="@+id/refundScheduleRupeeIcon"
+                                                    android:text="20,000"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="@dimen/siq_22"
+                                                    android:textStyle="bold" />
+
+
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/refundScheduleAmountLayout"
+                                                android:layout_alignParentLeft="true">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:text="Refund Scheduled"
+                                                    android:textColor="@color/colorGreyText"
+                                                    android:textSize="@dimen/siq_12" />
+
+
+                                            </RelativeLayout>
+
+                                        </RelativeLayout>
+
+
+
+                                        <!--pending settlement-->
+                                        <RelativeLayout
+                                            android:id="@+id/refundPendingSettlementLayout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerHorizontal="true"
+                                            android:layout_centerInParent="true">
+
+                                            <RelativeLayout
+                                                android:id="@+id/refundPendingAmountLayout"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentLeft="true">
+
+                                                <ImageView
+                                                    android:id="@+id/refundPendingRupeeIcon"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_centerInParent="true"
+                                                    android:background="@drawable/ic_rupee"
+                                                    android:backgroundTint="@color/colorGrey2" />
+
+                                                <TextView
+                                                    android:id="@+id/refundPendingRupeeText"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:layout_toRightOf="@+id/refundPendingRupeeIcon"
+                                                    android:text="20,000"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="@dimen/siq_22"
+                                                    android:textStyle="bold" />
+
+
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/refundPendingAmountLayout"
+                                                android:layout_alignParentLeft="true">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:text="Refund Pending"
+                                                    android:textColor="@color/colorGreyText"
+                                                    android:textSize="@dimen/siq_12" />
+
+
+                                            </RelativeLayout>
+
+                                        </RelativeLayout>
+
+                                        <!--successful settlement-->
+                                        <RelativeLayout
+                                            android:id="@+id/refundSuccessfulettlementLayout"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_centerInParent="true"
+                                            android:layout_alignParentRight="true">
+
+                                            <RelativeLayout
+                                                android:id="@+id/refundSuccessfulAmountLayout"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentLeft="true">
+
+                                                <ImageView
+                                                    android:id="@+id/refundSuccessfulRupeeIcon"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_alignParentLeft="true"
+                                                    android:layout_centerInParent="true"
+                                                    android:background="@drawable/ic_rupee"
+                                                    android:backgroundTint="@color/colorGrey2" />
+
+                                                <TextView
+                                                    android:id="@+id/refundSuccessfulLeftRupeeText"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerInParent="true"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:layout_toRightOf="@+id/refundSuccessfulRupeeIcon"
+                                                    android:text="20,000"
+                                                    android:textColor="@color/colorBlack"
+                                                    android:textSize="@dimen/siq_22"
+                                                    android:textStyle="bold" />
+
+
+                                            </RelativeLayout>
+
+                                            <RelativeLayout
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_below="@+id/refundSuccessfulAmountLayout"
+                                                android:layout_alignParentLeft="true">
+
+                                                <TextView
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_marginLeft="3dp"
+                                                    android:text="Refund Completed"
+                                                    android:textColor="@color/colorGreyText"
+                                                    android:textSize="@dimen/siq_12" />
+
+
+                                            </RelativeLayout>
+
+                                        </RelativeLayout>
+
+
+                                    </RelativeLayout>
+
+
+                                </RelativeLayout>
+
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.wang.avi.AVLoadingIndicatorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:indicatorName="BallClipRotatePulseIndicator"
+        android:id="@+id/aviInPaymentOver"
+        app:indicatorColor="@color/colorPrimary"
+        android:layout_centerInParent="true"
+        android:visibility="visible"/>
+
+</RelativeLayout>
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>-->
+    <!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--    android:layout_width="match_parent"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:background="#F7F7F7">-->
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/searchSelectCardView"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="170dp"-->
+    <!--        android:layout_marginTop="20dp">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:id="@+id/mainLayout"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content">-->
+
+    <!--            <RelativeLayout-->
+    <!--                android:id="@+id/totalOverviewLayout"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:padding="@dimen/eightdp">-->
+
+    <!--                <TextView-->
+    <!--                    android:id="@+id/totalOverviewText"-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_alignParentStart="true"-->
+    <!--                    android:text="Total Overview"-->
+    <!--                    android:textColor="@color/colorBlack"-->
+    <!--                    android:textSize="@dimen/sixteensp"-->
+    <!--                    android:textStyle="bold" />-->
+
+
+    <!--                <RelativeLayout-->
+    <!--                    android:id="@+id/totalOverviewProgressbar"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="match_parent"-->
+    <!--                    android:visibility="gone">-->
+
+    <!--                    <ProgressBar-->
+    <!--                        android:layout_width="wrap_content"-->
+    <!--                        android:layout_height="wrap_content"-->
+    <!--                        android:layout_centerInParent="true" />-->
+
+    <!--                </RelativeLayout>-->
+
+
+    <!--                <androidx.recyclerview.widget.RecyclerView-->
+    <!--                    android:id="@+id/totalOverview_recyclerview"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_below="@+id/totalOverviewText"-->
+    <!--                    android:layout_marginTop="@dimen/eightdp"-->
+    <!--                    android:clipToPadding="false"-->
+    <!--                    android:orientation="horizontal" />-->
+
+
+    <!--            </RelativeLayout>-->
+
+
+    <!--            <RelativeLayout-->
+    <!--                android:id="@+id/swipeLayout"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_alignParentBottom="true"-->
+    <!--                android:layout_marginTop="10dp">-->
+
+    <!--                <RelativeLayout-->
+    <!--                    android:layout_width="50dp"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:layout_centerInParent="true">-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/toSwipeOne"-->
+    <!--                        android:layout_width="14dp"-->
+    <!--                        android:layout_height="14dp"-->
+    <!--                        android:layout_marginLeft="3dp"-->
+    <!--                        android:src="@drawable/ic_circle_two"-->
+    <!--                        android:backgroundTintMode="@color/colorAccent" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/toSwipeTwo"-->
+    <!--                        android:layout_width="14dp"-->
+    <!--                        android:layout_height="14dp"-->
+    <!--                        android:layout_marginLeft="3dp"-->
+    <!--                        android:layout_toRightOf="@+id/toSwipeOne"-->
+    <!--                        android:background="@drawable/ic_circle_two"-->
+    <!--                        android:backgroundTint="@color/colorAccent" />-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/toSwipeThree"-->
+    <!--                        android:layout_width="14dp"-->
+    <!--                        android:layout_height="14dp"-->
+    <!--                        android:layout_marginLeft="3dp"-->
+    <!--                        android:layout_toRightOf="@+id/toSwipeTwo"-->
+    <!--                        android:background="@drawable/ic_circle_two"-->
+    <!--                        android:backgroundTint="@color/colorAccent" />-->
+
+
+    <!--                </RelativeLayout>-->
+
+
+    <!--            </RelativeLayout>-->
+
+
+    <!--        </RelativeLayout>-->
+
+
+    <!--    </androidx.cardview.widget.CardView>-->
+
+
+    <!--</RelativeLayout>-->

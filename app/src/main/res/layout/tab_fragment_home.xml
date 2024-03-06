@@ -1,0 +1,793 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/trainingScheduleWebinarLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerInParent="true"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textSize="16dp"
+                android:text="Free Online Training" />
+
+            <Button
+                android:id="@+id/trainingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/drawable_rectangle_chat_box"
+                android:text="Register" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorGrey1"
+                android:layout_alignParentBottom="true"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:id="@+id/homeScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/trainingScheduleWebinarLayout"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <!--Ad Card Section-->
+                <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/homeAdCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center"
+                    android:visibility="gone"
+                    card_view:cardCornerRadius="4dp">
+
+                </androidx.cardview.widget.CardView>
+
+
+                <!--Todays Appt Section-->
+                <LinearLayout
+                    android:id="@+id/homeApptGuidePt"
+                    android:layout_width="match_parent"
+                    android:layout_height="235dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="Summary"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/summaryDurationIcon"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_toStartOf="@+id/summaryDuration"
+                            android:src="@drawable/ic_filter"
+                            android:tint="@color/colorAccent" />
+
+                        <TextView
+                            android:id="@+id/summaryDuration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="@string/today"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <!--<RelativeLayout-->
+                        <!--android:id="@+id/appt_duration_Layout"-->
+                        <!--android:layout_width="100dp"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_marginRight="10dp"-->
+                        <!--android:background="@drawable/drawable_rectangle_shape">-->
+
+
+                        <!--<Spinner-->
+                        <!--android:id="@+id/durationSpinner"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:textSize="20dp" />-->
+                        <!--</RelativeLayout>-->
+
+                    </RelativeLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/homeApptList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/summaryProgressBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/noDataMessage"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/homeApptSummaryEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text="No data available"
+                            android:textSize="16dp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <!--<HorizontalScrollView-->
+                <!--android:id="@+id/assistantTabHorizontalScrollView1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_above="@+id/assistantTabLayoutChatbox"-->
+                <!--android:layout_marginBottom="5dp"-->
+                <!--android:scrollbars="none">-->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp">
+
+                    <!--<RelativeLayout-->
+                    <!--android:id="@+id/blockTime"-->
+                    <!--android:layout_width="150dp"-->
+                    <!--android:layout_height="35dp"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_marginEnd="10dp"-->
+                    <!--android:layout_marginTop="5dp"-->
+                    <!--android:background="@drawable/drawable_capsule_view"-->
+                    <!--android:paddingStart="5dp">-->
+
+                    <!--<Button-->
+                    <!--android:id="@+id/blockTimeButton"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentLeft="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:background="@android:color/transparent"-->
+                    <!--android:padding="5dp"-->
+                    <!--android:text="Blocked Time"-->
+                    <!--android:textAllCaps="false"-->
+                    <!--android:textColor="@color/colorWhite"-->
+                    <!--android:textSize="16dp"-->
+                    <!--android:textStyle="bold" />-->
+
+
+                    <!--<ImageView-->
+
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:layout_marginRight="10dp"-->
+                    <!--android:background="@drawable/ic_arrow_right"-->
+                    <!--android:backgroundTint="@color/colorWhite" />-->
+
+
+                    <!--</RelativeLayout>-->
+
+
+                    <RelativeLayout
+                        android:id="@+id/upcomingAppointment"
+                        android:layout_width="280dp"
+                        android:layout_height="35dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="@drawable/drawable_capsule_view"
+                        android:paddingStart="5dp">
+
+                        <Button
+                            android:id="@+id/upcomingAppointmentButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_centerInParent="true"
+                            android:background="@android:color/transparent"
+                            android:padding="5dp"
+                            android:text="View upcoming appointments"
+                            android:textAllCaps="false"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+
+                        <ImageView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/ic_arrow_right"
+                            android:backgroundTint="@color/colorWhite" />
+
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+                <!--</HorizontalScrollView>-->
+
+
+                <!--Quick Action Section-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/homeQuickGuidePt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="20dp"
+                            android:text="Quick Actions"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+
+                        <!--<android.support.v7.widget.CardView-->
+                        <!--android:id="@+id/homeShortcutCategoryCard"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="25dp"-->
+                        <!--android:layout_alignParentRight="true"-->
+                        <!--android:layout_margin="10dp"-->
+                        <!--android:visibility="gone">-->
+
+                        <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent">-->
+
+                        <!--<ImageButton-->
+                        <!--android:id="@+id/homeShortcutImage"-->
+                        <!--android:layout_width="30dp"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:layout_alignParentStart="true"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:background="@color/colorAccent"-->
+                        <!--android:src="@drawable/ic_time" />-->
+
+                        <!--<TextView-->
+                        <!--android:id="@+id/homeShortcutName"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_centerInParent="true"-->
+                        <!--android:layout_marginEnd="10dp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:layout_toRightOf="@+id/homeShortcutImage"-->
+                        <!--android:text="Blocked Time"-->
+                        <!--android:textSize="16dp"-->
+                        <!--android:textStyle="bold" />-->
+
+                        <!--</RelativeLayout>-->
+
+                        <!--</android.support.v7.widget.CardView>-->
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="Configure"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="15dp"
+                        card_view:cardCornerRadius="4dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/card_view_recycler_list"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:orientation="horizontal" />
+
+                                <!--<LinearLayout-->
+                                <!--android:id="@+id/homeTabQANotes"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:gravity="center"-->
+                                <!--android:clickable="true"-->
+                                <!--android:focusable="true"-->
+                                <!--android:background="@drawable/drawable_ripple_effect">-->
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_pen"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Take Notes"/>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:id="@+id/homeTabQABookAppt"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:background="@drawable/drawable_ripple_effect"-->
+                                <!--android:gravity="center">-->
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_calender"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Book Appt"/>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:clickable="true"-->
+                                <!--android:focusable="true"-->
+                                <!--android:background="@drawable/drawable_ripple_effect"-->
+                                <!--android:gravity="center">-->
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_add_person"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Add Patient"/>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:id="@+id/homeTabQABlockTime"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="95dp"-->
+                                <!--android:orientation="horizontal">-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:gravity="center">-->
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_calender_clock"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Block Time"/>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:gravity="center"-->
+                                <!--android:clickable="true"-->
+                                <!--android:focusable="true"-->
+                                <!--android:background="@drawable/drawable_ripple_effect">-->
+
+                                <!--<ImageView-->
+                                <!--android:id="@+id/homeQAShareVideoIcon"-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_share"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Share Video"/>-->
+
+                                <!--</LinearLayout>-->
+
+                                <!--<LinearLayout-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="0.33"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:orientation="vertical"-->
+                                <!--android:gravity="center"-->
+                                <!--android:clickable="true"-->
+                                <!--android:focusable="true"-->
+                                <!--android:background="@drawable/drawable_ripple_effect">-->
+
+                                <!--<ImageView-->
+                                <!--android:layout_width="25dp"-->
+                                <!--android:layout_height="25dp"-->
+                                <!--android:tint="@color/colorGreyText"-->
+                                <!--android:src="@drawable/ic_send"/>-->
+
+                                <!--<TextView-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginTop="10dp"-->
+                                <!--android:textColor="@color/colorBlack"-->
+                                <!--android:text="Send Message"/>-->
+
+                                <!--</LinearLayout>-->
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/quickActionProgressbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ProgressBar
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true" />
+
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:id="@+id/noDataMessageQuickAction"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:id="@+id/homeFollowupEmptyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:text="No data available"
+                                android:textAlignment="center"
+                                android:textSize="14dp" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </LinearLayout>
+
+                <!--Communication Section-->
+                <LinearLayout
+                    android:id="@+id/communicationSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/communicationLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/communicationText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="Communications"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/homeCommMore"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="View all"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/serviceNotAvailable"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/communicationText"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="80dp"
+                            android:text="Service are not available."
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/homeCommunicationList"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+                </LinearLayout>
+
+                <!--Shared by patient Section-->
+                <LinearLayout
+                    android:id="@+id/sharedRecordsSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/sharedRecordsLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/sharedRecordsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="Shared By Patient"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/sharedRecordsViewAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="View all"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/sharedRecordsEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/sharedRecordsText"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="80dp"
+                            android:text=""
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sharedRecordsRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/noDataMessageSharedByPatient"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/noDataMessageSharedByPatientMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:text="No data available"
+                            android:textAlignment="center"
+                            android:textSize="14dp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+                <!--Auto follow-ups Section-->
+                <LinearLayout
+                    android:id="@+id/autoFollowUpSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/autoFollowUpLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/autoFollowUpText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="Follow-ups Responses"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/autoFollowUpViewAll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="View all"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/autoFollowUpEmptyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/autoFollowUpText"
+                            android:layout_centerInParent="true"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="80dp"
+                            android:text=""
+                            android:visibility="gone" />
+
+                    </RelativeLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/autoFollowUpRv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="1dp"
+                        android:clipToPadding="false"
+                        android:orientation="horizontal"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/noDataMessageAutoFollowUp"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp">
+
+                        <TextView
+                            android:id="@+id/noDataMessageAutoFollowUpMsg"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:text="No data available"
+                            android:textAlignment="center"
+                            android:textSize="14dp" />
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exOneDayText1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/exOneDayText"
+        android:layout_width="@dimen/siq_30"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        tools:background="@color/white"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/siq_1"
+        android:id="@+id/img_dot"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="@color/blue"
+        tools:background="@color/white"
+        android:src="@drawable/dot_selected"
+        android:tint="@color/blue"
+        tools:ignore="UseAppTint"
+        android:visibility="gone"/>
+</LinearLayout>

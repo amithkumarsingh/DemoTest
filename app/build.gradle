@@ -1,0 +1,212 @@
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' }
+    }
+    dependencies {
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:0.14.0'
+    }
+}
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
+
+repositories {
+    maven { url 'https://maven.google.com' }
+}
+
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+android {
+    compileSdkVersion 34
+    defaultConfig {
+        applicationId "com.whitecoats.clinicplus"
+        minSdkVersion 23
+        targetSdkVersion 34
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+
+        manifestPlaceholders = [
+                onesignal_app_id               : '64c60354-296b-4753-8fbc-7c795a8a627b',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        /*debug {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }*/
+    }
+    buildTypes.each {
+        // it.buildConfigField 'String', 'YOUTUBE_VIDEO_API_KEY', YoutubeApiKey
+        it.buildConfigField 'String', 'YOUTUBE_VIDEO_API_KEY', "\"$System.env.YOUTUBE_VIDEO_API_KEY\""
+
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+
+        coreLibraryDesugaringEnabled true
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions("default")
+    productFlavors {
+        dev {
+            applicationId "com.whitecoats.clinicplus.dev"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus DEV")
+        }
+        qa {
+            applicationId "com.whitecoats.clinicplus.qa"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus QA")
+        }
+        qakb {
+            applicationId "com.whitecoats.clinicplus.qakb"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus QAKB")
+        }
+        uat {
+            applicationId "com.whitecoats.clinicplus.uat"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus UAT")
+        }
+        staging {
+            applicationId "com.whitecoats.clinicplus.staging"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus STAGING")
+        }
+        prod {
+            applicationId "com.whitecoats.clinicplus"
+            versionCode 8400
+            versionName "8.4.0"
+            resValue("string", "app_name", "Clinic Plus")
+        }
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors clinicplus release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.viewpager:viewpager:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.3.0'
+    implementation 'com.github.prolificinteractive:material-calendarview:2.0.0'
+    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.0.2'
+    implementation 'com.github.kizitonwose:CalendarView:1.0.0'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.0'
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'ai.api:libai:1.6.12'
+    implementation 'ai.api:sdk:2.0.7@aar'
+    implementation 'com.android.volley:volley:1.2.1'
+    implementation 'com.opentok.android:opentok-android-sdk:2.26.1'
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
+    implementation 'com.zoho.salesiq:mobilisten:4.2.0'
+    implementation 'com.github.mreram:showcaseview:1.1'
+    implementation 'com.yamlee:materialintro:1.0.10'
+    implementation "com.google.android.gms:play-services-tagmanager:18.0.2"
+    implementation 'androidx.lifecycle:lifecycle-compiler:2.6.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.viewpager2:viewpager2:1.1.0-beta01'
+    implementation 'androidx.fragment:fragment-ktx:1.6.0-alpha07'
+    implementation 'com.google.android.material:material:1.9.0-alpha02'
+    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.github.clans:fab:1.6.4'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'org.jsoup:jsoup:1.13.1'
+    implementation 'com.google.android.exoplayer:exoplayer:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-dash:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-ui:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-hls:2.18.4'
+    implementation 'com.google.android.exoplayer:exoplayer-smoothstreaming:2.18.4'
+    implementation 'com.github.bumptech.glide:glide:4.15.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.0'
+
+    implementation 'com.github.vihtarb:tooltip:0.2.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+
+    //upshot
+    //implementation project(':BrandKinesis')
+//    implementation files('libs/BrandKinesis-live-release-V1.6.1.aar')//old commented by dileep
+    implementation files('libs/BrandKinesis-androidx-live-release-V1.6.5.aar')
+    implementation "com.squareup.duktape:duktape-android:1.1.0"
+    implementation 'com.google.firebase:firebase-messaging:23.1.2'
+    implementation "com.google.android.gms:play-services-location:21.0.1" //optional
+    implementation "com.github.bumptech.glide:glide:4.15.0"
+    implementation('android.arch.work:work-runtime:1.0.1') {
+        exclude group: 'com.google.guava', module: 'listenablefuture'
+    }
+
+    // For Java
+    implementation 'androidx.work:work-runtime:2.8.0'
+    // For Kotlin
+    implementation 'androidx.work:work-runtime-ktx:2.8.0'
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+
+    implementation "androidx.core:core-ktx:1.9.0"
+
+    //implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.21"
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+
+    implementation files("libs/SimboAlphaHelperSDK.aar")
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.2'
+
+    implementation "com.google.android.material:material:1.9.0-alpha02"
+    //sentry for crashAnalytics
+/*
+    implementation 'io.sentry:sentry-android:5.0.1'
+*/
+    implementation 'org.greenrobot:eventbus:3.3.1'
+    implementation 'com.wang.avi:library:2.1.3'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+
+    // retrofit2 /app/build.gradle dependencies
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4'
+    def arch_version = '2.6.0'
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
+}

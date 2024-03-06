@@ -1,0 +1,1137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:elevation="4dp"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:id="@+id/settingDocImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerInParent="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_profile"
+                        android:backgroundTint="@color/colorWhite" />
+
+
+                    <ImageView
+                        android:id="@+id/settingHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_home"
+                        android:backgroundTint="@color/colorWhite" />
+
+
+                    <TextView
+                        android:id="@+id/settingDocName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:text="Doc Name"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="19dp" />
+
+                    <ImageView
+                        android:id="@+id/settingEmailIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingDocName"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:src="@drawable/ic_email"
+                        app:tint="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/settingDocEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingDocName"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/settingEmailIcon"
+                        android:text="Doc Email"
+                        android:textColor="@color/colorWhite" />
+
+                    <ImageView
+                        android:id="@+id/settingPhoneIcon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingDocEmail"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:src="@drawable/ic_call"
+                        app:tint="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/settingDocPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingDocEmail"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_toEndOf="@+id/settingPhoneIcon"
+                        android:text="00 00 0000"
+                        android:textColor="@color/colorWhite" />
+
+                    <View
+                        android:id="@+id/settingSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_below="@+id/settingDocPhone"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:background="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/settingDocExp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingSeparator"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:text="12 Yr Exp"
+                        android:textColor="@color/colorWhite" />
+
+                    <TextView
+                        android:id="@+id/settingDocQua"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/settingDocExp"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/settingDocImage"
+                        android:text="MMBBS"
+                        android:textColor="@color/colorWhite" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/profile"
+                    android:textAllCaps="true"
+                    android:textStyle="bold" />
+
+
+                <LinearLayout
+                    android:id="@+id/settingsProfileGuidePt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorWhite"
+                    android:elevation="4dp">
+
+                    <RelativeLayout
+                        android:id="@+id/settingPersonalLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_profile_tie"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/personal"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/settingProfLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+
+                                android:padding="20dp"
+                                android:src="@drawable/ic_bag"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/professional"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/settingFinanceLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+
+                                android:padding="20dp"
+                                android:src="@drawable/ic_rupee"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/financial"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+
+                    </RelativeLayout>
+
+
+
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="@string/service"
+                        android:textAllCaps="true"
+                        android:textStyle="bold" />
+
+
+                    <TextView
+                        android:id="@+id/settingSetupText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="Setup"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/settingServiceRecycleView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/noServiceTextMsg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="No service setup yet."
+                    android:textAllCaps="true"
+                    android:textStyle="bold" />
+
+                <RelativeLayout
+                    android:id="@+id/videoToolSetupLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/HeadingVideoToolsSetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Video Tool Settings"
+                            android:textAllCaps="true"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/videoToolSettingSetupText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="Setup"
+                            android:visibility="gone"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/videoToolOptionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/HeadingVideoToolsSetting"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="3dp"
+                        android:visibility="gone">
+
+                        <!--WhiteCoats build in-->
+                        <RelativeLayout
+                            android:id="@+id/whiteCoatsBuildInLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_whatapp"
+                                    app:tint="@color/colorPrimary"
+                                    android:visibility="gone" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="No external video tools available, please setup"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:background="@color/colorGrey1" />
+
+                        </RelativeLayout>
+
+                        <!--whatsapp-->
+                        <RelativeLayout
+                            android:id="@+id/WhatAppLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_whatapp"
+                                    app:tint="@color/colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Whats APP"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:background="@color/colorGrey1" />
+
+                        </RelativeLayout>
+
+                        <!--zoom-->
+                        <RelativeLayout
+                            android:id="@+id/zoomLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_video_call"
+                                    app:tint="@color/colorAccent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Zoom"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!--GoogleMeet-->
+                        <RelativeLayout
+                            android:id="@+id/googleMeetLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_google_meet" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Google Meet"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <!--other-->
+                        <RelativeLayout
+                            android:id="@+id/otherLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_other" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Other"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/noExternalVideoSetupText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/HeadingVideoToolsSetting"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center_horizontal"
+                        android:text="No external video tool available, please setup"
+                        android:textColor="@color/colorGreyText"
+                        android:textSize="@dimen/siq_16"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+
+                </RelativeLayout>
+
+                <!--<RelativeLayout
+                    android:id="@+id/videoToolSetupLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/HeadingVideoToolsSetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:text="Video Tool Settings"
+                            android:textAllCaps="true"
+                            android:textStyle="bold" />
+
+
+                        <TextView
+                            android:id="@+id/videoToolSettingSetupText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="20dp"
+                            android:text="Setup"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="bold" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/videoToolOptionLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/HeadingVideoToolsSetting"
+                        android:layout_marginTop="5dp"
+                        android:background="@color/colorWhite"
+                        android:elevation="3dp"
+                        android:visibility="gone">
+
+                        <RelativeLayout
+                            android:id="@+id/WhatAppLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:visibility="visible">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_whatapp"
+                                    android:tint="@color/colorPrimary" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Whats APP"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="2dp"
+                                android:layout_height="70dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_centerInParent="true"
+                                android:background="@color/colorGrey1" />
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/zoomLayout"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_margin="10dp"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:layout_gravity="center"
+
+                                    android:padding="20dp"
+                                    android:src="@drawable/ic_video_call"
+                                    android:tint="@color/colorAccent" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Zoom"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/noExternalVideoSetupText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/HeadingVideoToolsSetting"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center_horizontal"
+                        android:text="No external video tool available, please setup"
+                        android:textColor="@color/colorBlack"
+                        android:visibility="visible" />
+
+
+                </RelativeLayout>-->
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/appointment"
+                    android:textAllCaps="true"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorWhite"
+                    android:elevation="3dp"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/settingRecordLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_folder2"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/record_pref"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/settingApptReminderLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+
+                                android:padding="20dp"
+                                android:src="@drawable/ic_bell"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/appt_reminder"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+                    </RelativeLayout>
+
+
+
+                    <RelativeLayout
+                        android:id="@+id/settingTimeBloclLayout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+
+                                android:padding="20dp"
+                                android:src="@drawable/ic_clock"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Block Time"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Notification Setting"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:visibility="gone" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/colorWhite"
+                    android:elevation="3dp"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:id="@+id/notification_setting_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_gravity="center"
+                                android:padding="20dp"
+                                android:src="@drawable/ic_bell_icon"
+                                app:tint="@color/colorAccent" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Preferences"
+                                android:textColor="@color/colorBlack"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="2dp"
+                            android:layout_height="70dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerInParent="true"
+                            android:background="@color/colorGrey1" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <!--social profile layout-->
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Social Profiles"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:elevation="3dp"
+                            app:cardCornerRadius="5dp"
+                            android:layout_margin="10dp">
+
+                            <RelativeLayout
+                                android:id="@+id/socialProfileLayout"
+                                android:layout_width="match_parent"
+                                android:padding="5dp"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/googleBusinessProfileImage"
+                                    android:layout_width="18dp"
+                                    android:layout_height="18dp"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_gbp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_centerInParent="true"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_toRightOf="@+id/googleBusinessProfileImage"
+                                    android:text="Google Business Profile"
+                                    android:textColor="@color/colorBlack"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:id="@+id/googleBusinessArrowImage"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_centerInParent="true"
+                                    android:src="@drawable/ic_arrow_right" />
+
+
+                            </RelativeLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+                <!--other setting layout-->
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Other Settings"
+                    android:textAllCaps="true"
+                    android:textStyle="bold"
+                    android:visibility="visible" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/colorWhite"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <RelativeLayout
+                        android:id="@+id/noAccessMessageLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp">
+
+                        <TextView
+                            android:id="@+id/noAccessMessageTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:text=""
+                            android:textColor="@color/colorBlack"
+                            android:textStyle="bold" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/timeFormat_setting_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:id="@+id/timeFormatSpinnerLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerInParent="true"
+                                android:text="Time Format:"
+                                android:textColor="@color/black" />
+
+
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/drawable_rectangle_border_grey"
+                                android:orientation="horizontal">
+
+                                <Spinner
+                                    android:id="@+id/timeFormatSpinner"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="10"
+                                    android:background="@android:color/transparent"
+                                    android:spinnerMode="dropdown" />
+
+                                <ImageView
+                                    android:layout_width="2dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="4"
+                                    android:adjustViewBounds="false"
+                                    android:padding="12dp"
+                                    android:src="@drawable/ic_arrow_down" />
+                            </LinearLayout>
+
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/timeFormatSpinnerLayout"
+                            android:paddingVertical="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="15dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="The time format will be applied on all the platforms." />
+
+                        </RelativeLayout>
+
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Delete Account"
+                        android:textAllCaps="true"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:id="@+id/delete_account_tv"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Delete My Account"
+                        android:textAllCaps="false"
+                        android:backgroundTint="@color/red"
+                        android:id="@+id/delete_account_btn"
+                        android:layout_marginEnd="20dp"
+                        android:layout_gravity="end"
+                        android:layout_marginBottom="20dp">
+
+                    </Button>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
